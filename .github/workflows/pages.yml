@@ -39,6 +39,11 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.9.4
         with:
           working-directory: ManiaPlanet
+      
+      - name: Organize the docs
+        run: |
+          mkdir docs
+          mv ManiaPlanet/docs/html/* docs/maniaplanet
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
@@ -46,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'ManiaPlanet/docs/html' # Test
+          path: docs
           
       - name: Deploy to GitHub Pages
         id: deployment
