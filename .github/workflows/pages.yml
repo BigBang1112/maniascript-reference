@@ -47,11 +47,17 @@ jobs:
         with:
           working-directory: Trackmania
       
+      - name: Generate Trackmania Turbo documentation
+        uses: mattnotmitt/doxygen-action@v1.9.4
+        with:
+          working-directory: TrackmaniaTurbo
+      
       - name: Organize the docs
         run: |
           mkdir docs
           mkdir docs/maniaplanet | sudo mv ManiaPlanet/docs/html/* docs/maniaplanet
           mkdir docs/trackmania | sudo mv Trackmania/docs/html/* docs/trackmania
+          mkdir docs/tmturbo | sudo mv TrackmaniaTurbo/docs/html/* docs/tmturbo
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
