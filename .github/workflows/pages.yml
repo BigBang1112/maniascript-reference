@@ -40,10 +40,16 @@ jobs:
         with:
           working-directory: ManiaPlanet
       
+      - name: Generate Trackmania documentation
+        uses: mattnotmitt/doxygen-action@v1.9.4
+        with:
+          working-directory: Trackmania
+      
       - name: Organize the docs
         run: |
           mkdir docs
           mkdir docs/maniaplanet | sudo mv ManiaPlanet/docs/html/* docs/maniaplanet
+          mkdir docs/trackmania | sudo mv Trackmania/docs/html/* docs/trackmania
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
