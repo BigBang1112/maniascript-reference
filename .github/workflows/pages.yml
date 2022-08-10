@@ -34,6 +34,8 @@ jobs:
     
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - run: mkdir -p docs/maniaplanet
       
       - name: Generate ManiaPlanet documentation
         uses: mattnotmitt/doxygen-action@v1.9.4
