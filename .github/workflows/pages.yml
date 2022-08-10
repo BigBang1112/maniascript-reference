@@ -38,7 +38,7 @@ jobs:
       - name: Generate ManiaPlanet documentation
         uses: mattnotmitt/doxygen-action@v1.9.4
         with:
-          doxyfile-path: 'ManiaPlanet/Doxygen'
+          doxyfile-path: 'ManiaPlanet/Doxyfile'
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
