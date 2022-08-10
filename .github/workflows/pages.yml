@@ -34,6 +34,8 @@ jobs:
     
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
       
       - name: Generate ManiaPlanet documentation
         uses: mattnotmitt/doxygen-action@v1.9.4
