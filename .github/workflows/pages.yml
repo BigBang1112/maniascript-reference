@@ -43,7 +43,7 @@ jobs:
       - name: Organize the docs
         run: |
           mkdir docs
-          mkdir docs/maniaplanet | mv ManiaPlanet/docs/html/* docs/maniaplanet
+          mkdir docs/maniaplanet | sudo mv ManiaPlanet/docs/html/* docs/maniaplanet
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
