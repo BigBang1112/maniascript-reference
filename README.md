@@ -1,1 +1,19 @@
 # ManiaScript Reference
+
+- **ManiaPlanet** 2019.11.19.1850: https://bigbang1112.github.io/maniascript-reference/maniaplanet
+- **Trackmania** 2022.7.6.1137: https://bigbang1112.github.io/maniascript-reference/trackmania
+
+Because I don't like Doxywizard and dealing with thousands of HTML files, I decided to make a ManiaScript reference generator that just requires to manually update the `doc.h` in the associated folders + the build version in the Doxyfile (`PROJECT_NUMBER`).
+
+## Contribute with new doc.h
+
+If there are new updates to Trackmania 2020, you can contribute by updating the `doc.h` in the associated folder and making a pull request.
+
+For ManiaPlanet, it's no longer expected that the game will update.
+
+## Plans
+
+- Add `index.html` to the root folder to with game options to pick
+- Automatically update the build version in Doxyfile in some way
+- Deploy to [bigbang1112.cz](https://bigbang1112.cz)
+- Add some very wacky way to automatically update the `doc.h` files (probably won't happen)
