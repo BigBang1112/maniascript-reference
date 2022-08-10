@@ -5943,7 +5943,7 @@ struct CSmBase : public CNod {
 };
 
 /*! 
-*
+* \brief (undocumented)
 */
 namespace MathLib {
 
@@ -6086,7 +6086,7 @@ namespace MathLib {
 };
 
 /*! 
-*
+* \brief (undocumented)
 */
 namespace TextLib {
 
@@ -6326,7 +6326,7 @@ namespace TextLib {
 };
 
 /*! 
-*
+* \brief (undocumented)
 */
 namespace MapUnits {
 
@@ -6365,7 +6365,7 @@ namespace MapUnits {
 };
 
 /*! 
-*
+* \brief (undocumented)
 */
 namespace AnimLib {
 
