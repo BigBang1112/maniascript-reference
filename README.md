@@ -11,6 +11,10 @@ If there are new updates to Trackmania 2020, you can contribute by updating the 
 
 For ManiaPlanet, it's no longer expected that the game will update.
 
+## Doxygen Awesome
+
+The project includes the Doxygen Awesome CSS theme as submodule, but it is not currently used for official builds.
+
 ## Plans
 
 - Add `index.html` to the root folder to with game options to pick
