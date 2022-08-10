@@ -14654,7 +14654,7 @@ struct CSmBase : public CNod {
 };
 
 /*!
-* \brief Standard mathematical operations, angles are in radians unless specified.
+*
 */
 namespace MathLib {
 
@@ -14845,7 +14845,7 @@ namespace MathLib {
 };
 
 /*!
-* \brief Standard Text manipulation functions.
+*
 */
 namespace TextLib {
 
@@ -15159,7 +15159,7 @@ namespace TextLib {
 };
 
 /*!
-* \brief Standard map coordinates manipulation functions.
+*
 */
 namespace MapUnits {
 
@@ -15198,7 +15198,7 @@ namespace MapUnits {
 };
 
 /*!
-* \brief Standard animation functions.
+*
 */
 namespace AnimLib {
 
@@ -15421,7 +15421,7 @@ namespace AnimLib {
 };
 
 /*!
-* \brief Standard time manipulation functions.
+*
 */
 namespace TimeLib {
 
@@ -15504,7 +15504,7 @@ namespace TimeLib {
 };
 
 /*!
-* \brief Standard color manipulation functions.
+*
 */
 namespace ColorLib {
 

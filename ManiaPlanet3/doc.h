@@ -5942,6 +5942,9 @@ struct CSmBase : public CNod {
 	const	Integer NumberOfCollectors;
 };
 
+/*! 
+*
+*/
 namespace MathLib {
 
 	/*! 
@@ -6082,6 +6085,9 @@ namespace MathLib {
 	Real Clamp(Real _X, Real _Min, Real _Max);
 };
 
+/*! 
+*
+*/
 namespace TextLib {
 
 	/*! 
@@ -6319,6 +6325,9 @@ namespace TextLib {
 	Text GetTranslatedText(Text _Text);
 };
 
+/*! 
+*
+*/
 namespace MapUnits {
 
 	/*! 
@@ -6355,6 +6364,9 @@ namespace MapUnits {
 	Int3 GetRotatedOffsetPositive(Int3 Argument1, CardinalDirections Argument2, Int3 Argument3);
 };
 
+/*! 
+*
+*/
 namespace AnimLib {
 
 	/*! 
