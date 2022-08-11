@@ -60,10 +60,10 @@ jobs:
       - name: Organize the docs
         run: |
           mkdir docs
-          sudo mv ManiaPlanet/docs/html docs/maniaplanet
-          sudo mv Trackmania/docs/html docs/trackmania
-          sudo mv TrackmaniaTurbo/docs/html docs/tmturbo
-          sudo mv ManiaPlanet3/docs/html docs/maniaplanet3outdated
+          mv ManiaPlanet/docs/html docs/maniaplanet
+          mv Trackmania/docs/html docs/trackmania
+          mv TrackmaniaTurbo/docs/html docs/tmturbo
+          mv ManiaPlanet3/docs/html docs/maniaplanet3outdated
         
       - name: Setup Pages
         uses: actions/configure-pages@v1
