@@ -740,16 +740,16 @@ public :
 		Weapon,
 		Secondary,
 		Movement,
-		Activable1,
-		Activable2,
-		Activable3,
-		Activable4,
-		Activable5,
-		Activable6,
-		Activable7,
-		Activable8,
-		Activable9,
-		Activable0,
+		QuickAccess1,
+		QuickAccess2,
+		QuickAccess3,
+		QuickAccess4,
+		QuickAccess5,
+		QuickAccess6,
+		QuickAccess7,
+		QuickAccess8,
+		QuickAccess9,
+		QuickAccess0,
 		Consumable1,
 		Consumable2,
 		None,
@@ -1386,6 +1386,10 @@ Allow players to see others with a delay when CrudeExtrapolation is used. The qu
 /*!
 
 */
+			Ident ActionGetModelId(Text ActionName);
+/*!
+
+*/
 			Void ActionLoad(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Ident ModelId);
 /*!
 
@@ -1418,7 +1422,15 @@ Allow players to see others with a delay when CrudeExtrapolation is used. The qu
 /*!
 
 */
-			Void ActionSetVariant(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+			Void ActionSetVariant1(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+/*!
+
+*/
+			Void ActionSetVariant2(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+/*!
+
+*/
+			Void ActionSetVariant3(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
 /*!
 
 */
@@ -1576,7 +1588,15 @@ public :
 /*!
 
 */
-	const	Integer Variant;
+	const	Integer Variant1;
+/*!
+
+*/
+	const	Integer Variant2;
+/*!
+
+*/
+	const	Integer Variant3;
 /*!
 
 */
@@ -1772,14 +1792,6 @@ Is true only once during action init. Allow to init state variables
 /*!
 
 */
-			Integer GetPlayerAmmo(CSmPlayer Player);
-/*!
-
-*/
-			Integer GetPlayerAmmoMax(CSmPlayer Player);
-/*!
-
-*/
 			Void Vehicle_TriggerTurbo();
 /*!
 
@@ -1800,59 +1812,59 @@ Is true only once during action init. Allow to init state variables
 /*!
 
 */
-	const	Boolean Focused_Main;
+	const	Boolean Trigger0;
 /*!
 
 */
-	const	Boolean Focused_Secondary;
+	const	Boolean Trigger1;
 /*!
 
 */
-	const	Boolean Focused_Activable1;
+	const	Boolean Trigger2;
 /*!
 
 */
-	const	Boolean Focused_Activable2;
+	const	Boolean Trigger3;
 /*!
 
 */
-	const	Boolean Focused_Activable3;
+	const	Boolean Trigger4;
 /*!
 
 */
-	const	Boolean Focused_Activable4;
+	const	Boolean Trigger5;
 /*!
 
 */
-	const	Boolean Focused_Activable5;
+	const	Boolean Trigger6;
 /*!
 
 */
-	const	Boolean Focused_Activable6;
+	const	Boolean Trigger7;
 /*!
 
 */
-	const	Boolean Focused_Activable7;
+	const	Boolean Trigger8;
 /*!
 
 */
-	const	Boolean Focused_Activable8;
+	const	Boolean Trigger9;
 /*!
 
 */
-	const	Boolean Focused_Activable9;
+	const	Boolean Trigger10;
 /*!
 
 */
-	const	Boolean Focused_Activable0;
+	const	Boolean Trigger11;
 /*!
 
 */
-	const	Boolean Focused_Consumable1;
+	const	Boolean Trigger12;
 /*!
 
 */
-	const	Boolean Focused_Consumable2;
+	const	Boolean Trigger13;
 /*!
 
 */
@@ -2749,6 +2761,21 @@ Will be Null if the script is not runing in a layer of an app.
 };
 
 /*!
+* \brief This is the base Manialink page interface.
+*
+* Supported declare modes :
+* - Local
+* - Persistent
+*/
+class CMapEditorPluginLayer : public CMlScript {
+public :
+/*!
+
+*/
+	const	CMapEditorPlugin Editor;
+};
+
+/*!
 * \brief This is the stations Manialink interface.
 *
 * Supported declare modes :
@@ -2769,21 +2796,6 @@ Will be Null if the script is not runing in a layer of an app.
 
 */
 			Void EnterStation();
-};
-
-/*!
-* \brief This is the base Manialink page interface.
-*
-* Supported declare modes :
-* - Local
-* - Persistent
-*/
-class CMapEditorPluginLayer : public CMlScript {
-public :
-/*!
-
-*/
-	const	CMapEditorPlugin Editor;
 };
 
 /*!
@@ -4295,7 +4307,10 @@ public :
 		Auth,
 		Reward,
 		Rewards,
-		Actions,
+		Challenge,
+		Challenges,
+		CoreChallenges,
+		TimeLimitedChallenges,
 	};
 	/*!
 	
@@ -4608,6 +4623,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 
 */
 			Void PlaneReflectRefresh();
+/*!
+
+*/
+			Void SetBackgroundQuads(Ident SceneId,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
 /*!
 
 */
@@ -5653,6 +5672,10 @@ public :
 /*!
 
 */
+			Boolean IsMapFileNameAvailable(Text MapName);
+/*!
+
+*/
 			Vec3 GetVec3FromCoord(Int3 Coord);
 /*!
 
@@ -5785,6 +5808,14 @@ public :
 /*!
 
 */
+	const	Boolean EditorInputIsDown_CursorTiltLeft;
+/*!
+
+*/
+	const	Boolean EditorInputIsDown_CursorTiltRight;
+/*!
+
+*/
 	const	Boolean EditorInputIsDown_CursorUp;
 /*!
 
@@ -5898,18 +5929,6 @@ public :
 
 */
 	const	Boolean EditorInputIsDown_Save;
-/*!
-
-*/
-	const	Boolean EditorInputIsDown_SaveAs;
-/*!
-
-*/
-	const	Boolean EditorInputIsDown_MapStyle;
-/*!
-
-*/
-	const	Boolean EditorInputIsDown_ClassicMapEditor;
 /*!
 
 */
@@ -7312,6 +7331,10 @@ Always use NullId as UserId.
 
 */
 			Void SetViewerCount(Integer ViewerCount);
+/*!
+
+*/
+	const	Text PlatformRestriction;
 };
 
 /*!
@@ -7956,6 +7979,10 @@ Values in range (0.100000-10.000000)
 /*!
 
 */
+			Integer ActionWheelSelectedSlotIndex;
+/*!
+
+*/
 			Integer Armor;
 /*!
 
@@ -8357,6 +8384,7 @@ public :
 		OnVehicleArmorEmpty,
 		OnVehicleCollision,
 		OnVehicleVsVehicleCollision,
+		OnPlayerRequestItemInteraction,
 	};
 	/*!
 	
@@ -8378,16 +8406,16 @@ public :
 		Weapon,
 		Secondary,
 		Movement,
-		Activable1,
-		Activable2,
-		Activable3,
-		Activable4,
-		Activable5,
-		Activable6,
-		Activable7,
-		Activable8,
-		Activable9,
-		Activable0,
+		QuickAccess1,
+		QuickAccess2,
+		QuickAccess3,
+		QuickAccess4,
+		QuickAccess5,
+		QuickAccess6,
+		QuickAccess7,
+		QuickAccess8,
+		QuickAccess9,
+		QuickAccess0,
 		Consumable1,
 		Consumable2,
 		None,
@@ -8428,6 +8456,14 @@ public :
 
 */
 	const	Real Height;
+/*!
+
+*/
+	const	Integer UserData;
+/*!
+
+*/
+	const	Vec3 ItemPosition;
 /*!
 
 */
@@ -9002,16 +9038,16 @@ public :
 		IsActive,
 		Focused_Main,
 		Focused_Secondary,
-		Focused_Activable1,
-		Focused_Activable2,
-		Focused_Activable3,
-		Focused_Activable4,
-		Focused_Activable5,
-		Focused_Activable6,
-		Focused_Activable7,
-		Focused_Activable8,
-		Focused_Activable9,
-		Focused_Activable0,
+		Focused_QuickAccess1,
+		Focused_QuickAccess2,
+		Focused_QuickAccess3,
+		Focused_QuickAccess4,
+		Focused_QuickAccess5,
+		Focused_QuickAccess6,
+		Focused_QuickAccess7,
+		Focused_QuickAccess8,
+		Focused_QuickAccess9,
+		Focused_QuickAccess0,
 		Focused_Consumable1,
 		Focused_Consumable2,
 	};
@@ -11088,6 +11124,7 @@ public :
 		Triangles3D,
 		CameraOrbital,
 		OpponentVisibility,
+		Spectators,
 	};
 	/*!
 	
@@ -11308,6 +11345,10 @@ public :
 
 */
 			Boolean IsPlaying();
+/*!
+
+*/
+			Boolean IsDevMode();
 /*!
 
 */
@@ -15111,6 +15152,10 @@ public :
 		CursorRaise,
 		CursorLower,
 		CursorTurn,
+		CursorTurnSlightly,
+		CursorTurnSlightlyAntiClockwise,
+		CursorTiltLeft,
+		CursorTiltRight,
 		CursorPick,
 		CursorPlace,
 		CursorDelete,
@@ -15125,17 +15170,12 @@ public :
 		Camera7,
 		Camera9,
 		PivotChange,
-		CursorTurnSlightly,
-		CursorTurnSlightlyAntiClockwise,
 		IconUp,
 		IconRight,
 		IconDown,
 		IconLeft,
 		RemoveAll,
 		Save,
-		SaveAs,
-		MapStyle,
-		ClassicMapEditor,
 		SelectAll,
 		Copy,
 		Cut,
@@ -15756,6 +15796,10 @@ public :
 
 */
 			Void WatchCustomSelection(Boolean WatchCustomSelection);
+/*!
+
+*/
+			Void ActivateScrollRotateMode(Boolean ActivateScrollRotateMode);
 };
 
 /*!
@@ -16180,14 +16224,6 @@ public :
 
 */
 	const	Real PlayersLevelMax;
-/*!
-
-*/
-	const	Integer ServerLevel;
-/*!
-
-*/
-	const	Text ServerLevelText;
 /*!
 
 */
@@ -17197,6 +17233,18 @@ Change some settings from the mode with new values. No need to include unchanged
 nb: you can use TriggerPageAction('maniaplanet:editsettings'); to use the legacy UI.
 */
 			Void RequestChangeModeScriptSettings(Text SettingsXml);
+/*!
+
+*/
+	const	Text Vote_Question;
+/*!
+
+*/
+	const	Boolean Vote_CanVote;
+/*!
+
+*/
+			Void Vote_Cast(Boolean Answer);
 /*!
 
 */
@@ -19091,6 +19139,22 @@ public :
 
 */
 	const	Text CountryFlagUrl;
+/*!
+
+*/
+	const	Text Model_CarSport_SkinName;
+/*!
+
+*/
+	const	Text Model_CarSport_SkinUrl;
+/*!
+
+*/
+	const	Text Model_HelmetPilot_SkinName;
+/*!
+
+*/
+	const	Text Model_HelmetPilot_SkinUrl;
 };
 
 /*!
