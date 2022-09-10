@@ -4041,7 +4041,7 @@ Refresh the list of media stored in the specified path. Scope is used to specify
 */
 			CTaskResult UserSave_DeleteFile(Text Path);
 /*!
-Available space for user files, in kilobytes.
+Available space for user files, in kilobytes. (clamped to 1Gb)
 */
 	const	Integer UserSave_AvailableSpace;
 /*!
