@@ -391,6 +391,30 @@ Explore to given file or folder. Returns False if it does not exist on the files
 
 */
 			Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+/*!
+
+*/
+			Boolean TTS_Disabled;
+/*!
+
+*/
+			Ident TTS_Context_Enter(Integer Level);
+/*!
+
+*/
+			Void TTS_Context_Leave(Ident ContextId);
+/*!
+
+*/
+			Void TTS_Context_Change(Ident ContextId,CMlControl Control);
+/*!
+
+*/
+			Void TTS_Context_Change(Ident ContextId,Text Text,Boolean Translate);
+/*!
+
+*/
+			Void TTS_Context_Read(Integer Level);
 };
 
 /*!
@@ -2946,14 +2970,6 @@ public :
 		Stereo,
 		HMD,
 	};
-	/*!
-	
-	*/
-	enum EMuteSetting {
-		Auto,
-		Muted,
-		NotMuted,
-	};
 /*!
 
 */
@@ -3117,19 +3133,7 @@ public :
 /*!
 
 */
-	const	Boolean VoiceChat_Supported;
-/*!
-
-*/
-			CUser::EMuteSetting VoiceChat_MuteSetting;
-/*!
-
-*/
-	const	Boolean VoiceChat_IsSpeaking;
-/*!
-
-*/
-	const	Boolean VoiceChat_IsMuted;
+	const	CGameUserVoiceChat VoiceChat;
 /*!
 
 */
@@ -4461,6 +4465,26 @@ NullId for the mainuser.
 /*!
 
 */
+			Text VoiceChat_Channel;
+/*!
+
+*/
+	const	Array<CGameUserVoiceChat> VoiceChat_Users;
+/*!
+
+*/
+			CGameUserVoiceChat VoiceChat_UserAdd(Text WebServicesUserId);
+/*!
+
+*/
+			Void VoiceChat_ClearUsers();
+/*!
+
+*/
+			CGameUserVoiceChat VoiceChat_FindUserFromWebServicesUserId(Text WebServicesUserId);
+/*!
+
+*/
 			Integer Subscription_GetEndTimeStamp(Ident UserId,Text SubscriptionName);
 /*!
 
@@ -4826,10 +4850,6 @@ Call as soon as the request has been consumed and is being processed.
 
 */
 			Void LogToSessionTrace(Text Text);
-/*!
-
-*/
-	const	CBadgeManager BadgeManager;
 /*!
 
 */
@@ -6072,65 +6092,93 @@ Release a task result no more used.
 */
 			Void TaskResult_Release(Ident TaskId);
 /*!
-
+Track_Context_MenuStart
 */
-			Void Track_ContextMenuStart(Ident UserId,Text MenuName);
+			Void Track_Context_MenuStart(Ident UserId,Text MenuName);
 /*!
-
+Track_Context_MenuStop
 */
-			Void Track_ContextMenuStop(Ident UserId,Text MenuName);
+			Void Track_Context_MenuStop(Ident UserId,Text MenuName);
 /*!
-
+Track_Context_GameModeStart
 */
-			Void Track_ContextGameModeStart(Ident UserId,Text GameMode);
+			Void Track_Context_GameModeStart(Ident UserId,Text GameMode);
 /*!
-
+Track_Context_GameModeStop
 */
-			Void Track_ContextGameModeStop(Ident UserId,Text GameMode);
+			Void Track_Context_GameModeStop(Ident UserId,Text GameMode);
 /*!
-
+Track_Context_MapStart
 */
-			Void Track_ContextMapStart(Ident UserId,Text MapUid,Text Environment);
+			Void Track_Context_MapStart(Ident UserId,Text MapUid,Text Environment);
 /*!
-
+Track_Context_MapStop
 */
-			Void Track_ContextMapStop(Ident UserId,Text MapUid);
+			Void Track_Context_MapStop(Ident UserId,Text MapUid);
 /*!
-
+Track_Context_PlayStart
 */
-			Void Track_ContextPlayStart(Ident UserId,Text Type);
+			Void Track_Context_PlayStart(Ident UserId,Text Type);
 /*!
-
+Track_Context_PlayStop
 */
-			Void Track_ContextPlayStop(Ident UserId,Text Type,Text Reason,Integer NbRespawns);
+			Void Track_Context_PlayStop(Ident UserId,Text Type,Text Reason,Integer NbRespawns);
 /*!
-
+Track_Create_NewMapCreated
 */
-			Void Track_NewMapCreated(Ident UserId,Text Environment,Boolean IsRandomlyGenerated);
+			Void Track_Create_NewMapCreated(Ident UserId,Text Environment,Boolean IsRandomlyGenerated);
 /*!
-
+Track_Live_COTDPlayed
 */
-			Void Track_NewsImpression(Ident UserId,Text NewsId);
+			Void Track_Live_COTDPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-
+Track_Live_MultiplayerPlayed
 */
-			Void Track_NewsClick(Ident UserId,Text NewsId);
+			Void Track_Live_MultiplayerPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-
+Track_Live_RankedPlayed
 */
-			Void Track_PlayerAchievement(Ident UserId,Integer AchievementId);
+			Void Track_Live_RankedPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-
+Track_Live_RoyalPlayed
 */
-			Void Track_StatOnline(Ident UserId,Integer Echelon);
+			Void Track_Live_RoyalPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-
+Track_Live_RoyalSectionFinished
 */
-			Void Track_StatSeasonOfficial(Ident UserId,Integer PlayedMapCount,Integer BronzeMedalCount,Integer SilverMedalCount,Integer GoldMedalCount,Integer AuthorMedalCount,Integer MaxDifficultyLevel,Integer Year,Text Season);
+			Void Track_Live_RoyalSectionFinished(Ident UserId,Integer Color);
 /*!
-
+Track_Local_HotseatPlayed
 */
-			Void Track_StatSeasonWeekly(Ident UserId,Integer PlayedMapCount,Integer BronzeMedalCount,Integer SilverMedalCount,Integer GoldMedalCount,Integer AuthorMedalCount,Integer MaxDifficultyLevel,Integer Year,Integer Week);
+			Void Track_Local_HotseatPlayed(Ident UserId,Integer Rank,Boolean Win);
+/*!
+Track_Local_SplitScreenPlayed
+*/
+			Void Track_Local_SplitScreenPlayed(Ident UserId,Integer Rank,Boolean Win);
+/*!
+Track_News_PlayerAction
+*/
+			Void Track_News_PlayerAction(Ident UserId,Text NewsId);
+/*!
+Track_News_PlayerImpression
+*/
+			Void Track_News_PlayerImpression(Ident UserId,Text NewsId);
+/*!
+Track_Player_MedalEarned
+*/
+			Void Track_Player_MedalEarned(Ident UserId,Integer Finished,Integer BronzeMedal,Integer SilverMedal,Integer GoldMedal,Integer AuthorMedal,Boolean IsOfficialCampaign,Boolean IsTOTD);
+/*!
+Track_Player_OfficialCampaignAllTrackCompleted
+*/
+			Void Track_Player_OfficialCampaignAllTrackCompleted(Ident UserId,Integer Year,Integer Season,Integer MedalLevel);
+/*!
+Track_Player_TrackOfTheDayWeekAllTrackCompleted
+*/
+			Void Track_Player_TrackOfTheDayWeekAllTrackCompleted(Ident UserId,Integer Year,Integer Week,Integer MedalLevel);
+/*!
+Track_Player_TrophyEarned
+*/
+			Void Track_Player_TrophyEarned(Ident UserId,Integer T1CountPtr,Integer T2CountPtr,Integer T3CountPtr,Integer T4CountPtr,Integer T5CountPtr,Integer T6CountPtr,Integer T7CountPtr,Integer T8CountPtr,Integer T9CountPtr);
 };
 
 /*!
@@ -7953,30 +8001,6 @@ Values in range (0.000000-10.000000)
 */
 			Real AmmoGain;
 /*!
-Values in range (0.100000-10.000000)
-*/
-			Real AmmoPower;
-/*!
-
-*/
-	const	Boolean AutoSwitchWeapon;
-/*!
-
-*/
-	const	Integer CurWeapon;
-/*!
-
-*/
-	const	Integer CurAmmo;
-/*!
-
-*/
-	const	Integer CurAmmoMax;
-/*!
-
-*/
-	const	Integer CurAmmoUnit;
-/*!
 
 */
 			Integer ActionWheelSelectedSlotIndex;
@@ -9543,6 +9567,38 @@ public :
 
 */
 			Text Device_NextApply;
+/*!
+
+*/
+	const	Integer VoiceChat_Devices_DirtyCounter;
+/*!
+
+*/
+	const	Array<Text> VoiceChat_Devices_In;
+/*!
+
+*/
+	const	Array<Text> VoiceChat_Devices_Out;
+/*!
+
+*/
+	const	Text VoiceChat_Device_In_Current;
+/*!
+
+*/
+	const	Text VoiceChat_Device_Out_Current;
+/*!
+
+*/
+			Text VoiceChat_Device_In_NextApply;
+/*!
+
+*/
+			Text VoiceChat_Device_Out_NextApply;
+/*!
+
+*/
+			Real VoiceChat_SpeakerVolume;
 };
 
 /*!
@@ -12128,10 +12184,6 @@ Result of the latest command issued.
 /*!
 
 */
-			Void EditBadges();
-/*!
-
-*/
 	const	Boolean CanPublishFiles;
 /*!
 Set FileName='' to open a file select dialog.
@@ -12523,6 +12575,41 @@ public :
 
 */
 			Boolean DisablePreload;
+};
+
+/*!
+* \brief Documentation for class CGameUserVoiceChat
+*/
+class CGameUserVoiceChat : public CNod {
+public :
+	/*!
+	
+	*/
+	enum EMuteSetting {
+		Auto,
+		Muted,
+		NotMuted,
+	};
+/*!
+
+*/
+			CGameUserVoiceChat::EMuteSetting MuteSetting;
+/*!
+
+*/
+	const	Boolean IsLocal;
+/*!
+
+*/
+	const	Boolean IsMuted;
+/*!
+
+*/
+	const	Boolean IsSpeaking;
+/*!
+
+*/
+	const	Boolean Supported;
 };
 
 /*!
@@ -13053,6 +13140,18 @@ Used to include styling attributes like $s,$o...
 
 */
 			Real ComputeHeight(Text Text);
+/*!
+
+*/
+			Void TTS_Focused();
+/*!
+
+*/
+			Text TTS_AltText;
+/*!
+
+*/
+			Void TTS_Focused(Boolean IsLowPrio);
 };
 
 /*!
@@ -13192,6 +13291,14 @@ public :
 
 */
 			Void RefreshImages();
+/*!
+
+*/
+			Text TTS_AltText;
+/*!
+
+*/
+			Boolean TTS_AltText_Translate;
 };
 
 /*!
@@ -14579,6 +14686,22 @@ Values in range (-1.000000-1.000000)
 
 */
 			Boolean Adverts_UsePersonnalData;
+/*!
+
+*/
+			Boolean TTS_Enabled;
+/*!
+
+*/
+			Boolean VoiceChat_Loopback;
+/*!
+
+*/
+			Boolean VoiceChat_Enabled;
+/*!
+
+*/
+			Boolean VoiceChat_PTT_Enabled;
 };
 
 /*!
@@ -14649,14 +14772,6 @@ Connection status: NotConnected, Connecting, Connected or Disconnecting.
 
 */
 	const	Text LastConnectionErrorDescription;
-/*!
-Return if the user has a Uplay profile.
-*/
-	const	Boolean HasUplayProfile;
-/*!
-Return if the user has a accepted DNA.
-*/
-	const	Boolean HasAcceptedNDA;
 };
 
 /*!
@@ -15013,41 +15128,6 @@ List of the Notifications.
 
 */
 			CNotificationsConsumer::EFilterPriority Filter_Priority;
-};
-
-/*!
-* \brief Documentation for class CBadgeManager
-*/
-class CBadgeManager : public CNod {
-public :
-/*!
-
-*/
-	const	Array<CBadge> Badges;
-/*!
-
-*/
-			CBadge BadgeCreate();
-/*!
-
-*/
-			Void BadgeDestroy(CBadge Badge);
-/*!
-
-*/
-			Void BadgeCopy(CBadge Source,CBadge Destination);
-/*!
-
-*/
-			Void BadgeReadFromProfile(CBadge Badge,Ident UserId);
-/*!
-
-*/
-			Void BadgeWriteToProfile(CBadge Badge,Ident UserId);
-/*!
-
-*/
-			Boolean ProfileIsReady(Ident UserId);
 };
 
 /*!
@@ -17245,10 +17325,6 @@ nb: you can use TriggerPageAction('maniaplanet:editsettings'); to use the legacy
 
 */
 			Void Vote_Cast(Boolean Answer);
-/*!
-
-*/
-			Boolean DisablePlayingStateTracking;
 };
 
 /*!
@@ -19506,37 +19582,6 @@ The user has clicked on the Notification.
 };
 
 /*!
-* \brief Documentation for class CBadge
-*/
-class CBadge : public CNod {
-public :
-/*!
-
-*/
-			Vec3 PrimaryColor;
-/*!
-
-*/
-			Text SkinName;
-/*!
-
-*/
-			Text StickerSlot_Get(Text Slot);
-/*!
-
-*/
-			Void StickerSlot_Set(Text Slot,Text Sticker);
-/*!
-
-*/
-			Void StickerSlot_Clear();
-/*!
-
-*/
-			Array<Text> Layers;
-};
-
-/*!
 * \brief Documentation for class CMapEditorInventoryDirectory
 */
 class CMapEditorInventoryDirectory : public CMapEditorInventoryNode {
@@ -19930,89 +19975,6 @@ Name of the map
 True if the file is found
 */
 	const	Boolean FileExists;
-};
-
-/*!
-* \brief API for Maniaplanet client scripts.
-*
-* Supported declare modes :
-* - Local
-* - Persistent
-*/
-class CBadgeEditor : public CManiaAppBase {
-public :
-/*!
-
-*/
-			Void Leave();
-/*!
-
-*/
-			CBadge DisplayCurrentBadge;
-/*!
-
-*/
-			Vec2 DisplayPosN;
-/*!
-
-*/
-			Vec2 DisplaySize;
-/*!
-
-*/
-			Real DisplayFoV;
-/*!
-Values in range (0.100000-10.000000)
-*/
-			Real CameraTransitionDuration;
-/*!
-Values in range (-10.000000-10.000000)
-*/
-			Real MeshRotation_MaxSpeed;
-/*!
-Values in range (0.100000-10.000000)
-*/
-			Real MeshRotation_Acceleration;
-/*!
-
-*/
-			Ident DisplayCurrentMeshId;
-/*!
-
-*/
-	const	Array<Ident> MeshIds;
-/*!
-
-*/
-			Void MeshId_Next();
-/*!
-
-*/
-			Void MeshId_Previous();
-/*!
-
-*/
-	const	Array<CBadge> Badges;
-/*!
-
-*/
-			CBadge BadgeCreate();
-/*!
-
-*/
-			Void BadgeDestroy(CBadge Badge);
-/*!
-
-*/
-			Void BadgeCopy(CBadge Source,CBadge Destination);
-/*!
-
-*/
-			Void BadgeReadFromProfile(CBadge Badge,Ident UserId);
-/*!
-
-*/
-			Void BadgeWriteToProfile(CBadge Badge,Ident UserId);
 };
 
 /*!
