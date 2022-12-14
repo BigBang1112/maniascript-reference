@@ -72,191 +72,191 @@ public :
 /*!
 
 */
-	const	CMlPage Page;
+	CMlPage * const  Page;
 /*!
 
 */
-	const	Boolean PageIsVisible;
+	Boolean  const PageIsVisible;
 /*!
 
 */
-			Boolean PageAlwaysUpdateScript;
+	Boolean PageAlwaysUpdateScript;
 /*!
 
 */
-	const	Integer Now;
+	Integer  const Now;
 /*!
 
 */
-	const	Integer Period;
+	Integer  const Period;
 /*!
 
 */
-	const	Integer CurrentTime;
+	Integer  const CurrentTime;
 /*!
 Local user structure.
 */
-	const	CUser LocalUser;
+	CUser * const  LocalUser;
 /*!
 
 */
-	const	CTitle LoadedTitle;
+	CTitle * const  LoadedTitle;
 /*!
 
 */
-	const	Array<CMlScriptEvent> PendingEvents;
+	Array<CMlScriptEvent* const > PendingEvents;
 /*!
 
 */
-			Void Dbg_SetProcessed(CMlScriptEvent Event);
+	Void Dbg_SetProcessed(CMlScriptEvent Event);
 /*!
 
 */
-			Boolean Dbg_WarnOnDroppedEvents;
+	Boolean Dbg_WarnOnDroppedEvents;
 /*!
 
 */
-	const	Real MouseX;
+	Real  const MouseX;
 /*!
 
 */
-	const	Real MouseY;
+	Real  const MouseY;
 /*!
 
 */
-	const	Boolean MouseLeftButton;
+	Boolean  const MouseLeftButton;
 /*!
 
 */
-	const	Boolean MouseRightButton;
+	Boolean  const MouseRightButton;
 /*!
 
 */
-	const	Boolean MouseMiddleButton;
+	Boolean  const MouseMiddleButton;
 /*!
 
 */
-	const	Boolean KeyUp;
+	Boolean  const KeyUp;
 /*!
 
 */
-	const	Boolean KeyDown;
+	Boolean  const KeyDown;
 /*!
 
 */
-	const	Boolean KeyLeft;
+	Boolean  const KeyLeft;
 /*!
 
 */
-	const	Boolean KeyRight;
+	Boolean  const KeyRight;
 /*!
 
 */
-	const	Boolean KeyReturn;
+	Boolean  const KeyReturn;
 /*!
 
 */
-	const	Boolean KeySpace;
+	Boolean  const KeySpace;
 /*!
 
 */
-	const	Boolean KeyDelete;
+	Boolean  const KeyDelete;
 /*!
 
 */
-			Boolean IsKeyPressed(Integer KeyCode);
+	Boolean IsKeyPressed(Integer KeyCode);
 /*!
 
 */
-			Boolean EnableMenuNavigationInputs;
+	Boolean EnableMenuNavigationInputs;
 /*!
 
 */
-			Void EnableMenuNavigation(Boolean EnableInputs,Boolean WithAutoFocus,CMlControl AutoBackControl,Integer InputPriority);
+	Void EnableMenuNavigation(Boolean EnableInputs,Boolean WithAutoFocus,CMlControl AutoBackControl,Integer InputPriority);
 /*!
 
 */
-			Void EnableMenuNavigation(Boolean EnableInputs,Boolean WithAutoFocus,Boolean WithManualScroll,CMlControl AutoBackControl,Integer InputPriority);
+	Void EnableMenuNavigation(Boolean EnableInputs,Boolean WithAutoFocus,Boolean WithManualScroll,CMlControl AutoBackControl,Integer InputPriority);
 /*!
 
 */
-	const	Boolean IsMenuNavigationForeground;
+	Boolean  const IsMenuNavigationForeground;
 /*!
 
 */
-			Void OpenLink(Text Url,CMlScript::LinkType LinkType);
+	Void OpenLink(Text Url,CMlScript::LinkType LinkType);
 /*!
 
 */
-			Void TriggerPageAction(Text ActionString);
+	Void TriggerPageAction(Text ActionString);
 /*!
 
 */
-	const	CParsingManager Xml;
+	CParsingManager * const  Xml;
 /*!
 
 */
-	const	CHttpManager Http;
+	CHttpManager * const  Http;
 /*!
 
 */
-	const	CVideoManager Video;
+	CVideoManager * const  Video;
 /*!
 
 */
-	const	CAudioManager Audio;
+	CAudioManager * const  Audio;
 /*!
 
 */
-	const	CInputManager Input;
+	CInputManager * const  Input;
 /*!
 
 */
-	const	CDataFileMgr DataFileMgr;
+	CDataFileMgr * const  DataFileMgr;
 /*!
 
 */
-	const	CScoreMgr ScoreMgr;
+	CScoreMgr * const  ScoreMgr;
 /*!
 
 */
-	const	CRankingsZoneMgr ZoneMgr;
+	CRankingsZoneMgr * const  ZoneMgr;
 /*!
 
 */
-	const	CUserV2Manager UserMgr;
+	CUserV2Manager * const  UserMgr;
 /*!
 
 */
-	const	CAnimManager AnimMgr;
+	CAnimManager * const  AnimMgr;
 /*!
 
 */
-	const	CMenuSceneManager MenuSceneMgr;
+	CMenuSceneManager * const  MenuSceneMgr;
 /*!
 
 */
-	const	CSystemPlatform System;
+	CSystemPlatform * const  System;
 /*!
 
 */
-	const	CWSNotificationManager WSNotificationMgr;
+	CWSNotificationManager * const  WSNotificationMgr;
 /*!
 Send a custom event to the owner of the layer.
 */
-			Void SendCustomEvent(Text Type,Array<Text> Data);
+	Void SendCustomEvent(Text Type,Array<Text> Data);
 /*!
 
 */
-			Void PreloadImage(Text ImageUrl);
+	Void PreloadImage(Text ImageUrl);
 /*!
 
 */
-			Void PreloadAll();
+	Void PreloadAll();
 /*!
 
 */
-			Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+	Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
 };
 
 /*!
@@ -278,143 +278,147 @@ public :
 /*!
 
 */
-	const	Text ManiaAppUrl;
+	Text  const ManiaAppUrl;
 /*!
 
 */
-	const	Text ManiaAppBaseUrl;
+	Text  const ManiaAppBaseUrl;
 /*!
 
 */
-	const	Integer Now;
+	Integer  const Now;
 /*!
 
 */
-	const	Boolean IsVisible;
+	Boolean  const IsVisible;
 /*!
 
 */
-			Integer LayersDefaultManialinkVersion;
+	Integer LayersDefaultManialinkVersion;
 /*!
 
 */
-	const	CUser LocalUser;
+	CUser * const  LocalUser;
 /*!
 
 */
-	const	CTitle LoadedTitle;
+	CTitle * const  LoadedTitle;
 /*!
 
 */
-			Boolean EnableMenuNavigationInputs;
+	Boolean EnableMenuNavigationInputs;
 /*!
 
 */
-	const	Array<CUILayer> UILayers;
+	Array<CUILayer* const > UILayers;
 /*!
 
 */
-			CUILayer UILayerCreate();
+	CUILayer UILayerCreate();
 /*!
 
 */
-			Void UILayerDestroy(CUILayer Layer);
+	Void UILayerDestroy(CUILayer Layer);
 /*!
 
 */
-			Void UILayerDestroyAll();
+	Void UILayerDestroyAll();
 /*!
 
 */
-			Void LayerCustomEvent(CUILayer Layer,Text Type,Array<Text> Data);
+	Void LayerCustomEvent(CUILayer Layer,Text Type,Array<Text> Data);
 /*!
 
 */
-			Void OpenLink(Text Url,CManiaApp::ELinkType LinkType);
+	Void OpenLink(Text Url,CManiaApp::ELinkType LinkType);
 /*!
 Explore to given file or folder. Returns False if it does not exist on the filesystem. (may be because it is in a pack)
 */
-			Boolean OpenFileInExplorer(Text FileName);
+	Boolean OpenFileInExplorer(Text FileName);
 /*!
 
 */
-			Void Dialog_Message(Text Message);
+	Void Dialog_Message(Text Message);
 /*!
 
 */
-	const	CParsingManager Xml;
+	CParsingManager * const  Xml;
 /*!
 
 */
-	const	CHttpManager Http;
+	CHttpManager * const  Http;
 /*!
 
 */
-	const	CVideoManager Video;
+	CVideoManager * const  Video;
 /*!
 
 */
-	const	CAudioManager Audio;
+	CAudioManager * const  Audio;
 /*!
 
 */
-	const	CInputManager Input;
+	CInputManager * const  Input;
 /*!
 
 */
-	const	CDataFileMgr DataFileMgr;
+	CDataFileMgr * const  DataFileMgr;
 /*!
 
 */
-	const	CScoreMgr ScoreMgr;
+	CScoreMgr * const  ScoreMgr;
 /*!
 
 */
-	const	CRankingsZoneMgr ZoneMgr;
+	CRankingsZoneMgr * const  ZoneMgr;
 /*!
 
 */
-	const	CTrackingMgr TrackingMgr;
+	CTrackingMgr * const  TrackingMgr;
 /*!
 
 */
-	const	CUserV2Manager UserMgr;
+	CUserV2Manager * const  UserMgr;
 /*!
 
 */
-	const	CWSNotificationManager WSNotificationMgr;
+	CWSNotificationManager * const  WSNotificationMgr;
 /*!
 
 */
-	const	CSystemPlatform System;
+	CSystemPlatform * const  System;
 /*!
 
 */
-			Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+	Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
 /*!
 
 */
-			Boolean TTS_Disabled;
+	Boolean TTS_Disabled;
 /*!
 
 */
-			Ident TTS_Context_Enter(Integer Level);
+	Ident TTS_Context_Enter(Integer Level);
 /*!
 
 */
-			Void TTS_Context_Leave(Ident ContextId);
+	Ident TTS_Context_Leave(Ident ContextId);
 /*!
 
 */
-			Void TTS_Context_Change(Ident ContextId,CMlControl Control);
+	Void TTS_Context_Change(Ident ContextId,CMlControl Control);
 /*!
 
 */
-			Void TTS_Context_Change(Ident ContextId,Text Text,Boolean Translate);
+	Void TTS_Context_Change(Ident ContextId,Text Text,Boolean Translate);
 /*!
 
 */
-			Void TTS_Context_Read(Integer Level);
+	Void TTS_Context_Read(Integer Level);
+/*!
+
+*/
+	Void TTS_Context_Read(Ident ContextId);
 };
 
 /*!
@@ -442,51 +446,51 @@ public :
 /*!
 
 */
-			Void Help_Open();
+	Void Help_Open();
 /*!
 
 */
-			Void Help_Close();
+	Void Help_Close();
 /*!
 
 */
-			CEditorPluginHandle GetPluginHandle(Text Name);
+	CEditorPluginHandle GetPluginHandle(Text Name);
 /*!
 
 */
-			Void SendPluginEvent(CEditorPluginHandle Handle,Text Type,Array<Text> Data);
+	Void SendPluginEvent(CEditorPluginHandle Handle,Text Type,Array<Text> Data);
 /*!
 
 */
-			Void Context_SetActive(Text ContextName,Boolean IsActive);
+	Void Context_SetActive(Text ContextName,Boolean IsActive);
 /*!
 
 */
-			Boolean Context_IsActive(Text ContextName);
+	Boolean Context_IsActive(Text ContextName);
 /*!
 
 */
-			Boolean Binding_IsActive(Text BindingName);
+	Boolean Binding_IsActive(Text BindingName);
 /*!
 
 */
-			Boolean Binding_IsActive(Text ContextName,Text BindingName);
+	Boolean Binding_IsActive(Text ContextName,Text BindingName);
 /*!
 
 */
-			Void Plugin_SetClearance(CEditorPluginHandle Handle,CEditorMainPlugin::EMeshEditorAPI API,Boolean IsAllowed);
+	Void Plugin_SetClearance(CEditorPluginHandle Handle,CEditorMainPlugin::EMeshEditorAPI API,Boolean IsAllowed);
 /*!
 
 */
-	const	Array<CEditorPluginHandle> Plugins;
+	Array<CEditorPluginHandle* const > Plugins;
 /*!
 
 */
-			Void Module_Load(Text ModuleName);
+	Void Module_Load(Text ModuleName);
 /*!
 
 */
-	const	Array<CGameModuleEditorBase> Modules;
+	Array<CGameModuleEditorBase* const > Modules;
 };
 
 /*!
@@ -501,211 +505,921 @@ public :
 /*!
 
 */
-	const	CTitle LoadedTitle;
+	CTitle * const  LoadedTitle;
 /*!
 
 */
-	const	CMapInfo MapInfo;
+	CMapInfo * const  MapInfo;
 /*!
 
 */
-			CClient GetClient(Text Login);
+	CClient GetClient(Text Login);
 /*!
 
 */
-			CClient GetClient(CUIConfig UI);
+	CClient GetClient(CUIConfig UI);
 /*!
 
 */
-			CClient GetClient(CUser Login);
+	CClient GetClient(CUser Login);
 /*!
 
 */
-			CClient GetClientFromWebServicesUserId(Text WebServicesUserId);
+	CClient GetClientFromWebServicesUserId(Text WebServicesUserId);
 /*!
 Currently connected Users.
 */
-	const	Array<CClient> Clients;
+	Array<CClient* const > Clients;
 /*!
 Users connected as spectators.
 */
-	const	Array<CClient> Spectators;
+	Array<CClient* const > Spectators;
 /*!
 Users connected as players.
 */
-	const	Array<CClient> Players;
+	Array<CClient* const > Players;
 /*!
 
 */
-			CPlayer GetPlaygroundPlayer(Text Login);
+	CPlayer GetPlaygroundPlayer(Text Login);
 /*!
 Sorted scores.
 */
-	const	Array<CScore> Scores;
+	Array<CScore* const > Scores;
 /*!
 
 */
-	const	Array<CUser> Users;
+	Array<CUser* const > Users;
 /*!
 
 */
-	const	Array<CTeam> Teams;
+	Array<CTeam* const > Teams;
 /*!
 
 */
-			Text NeutralEmblemUrl;
+	Text NeutralEmblemUrl;
 /*!
 
 */
-			Text ForcedClubLinkUrl1;
+	Text ForcedClubLinkUrl1;
 /*!
 
 */
-			Text ForcedClubLinkUrl2;
+	Text ForcedClubLinkUrl2;
 /*!
 
 */
-			Void TweakTeamColorsToAvoidHueOverlap();
+	Void TweakTeamColorsToAvoidHueOverlap();
 /*!
 
 */
-	const	Array<Integer> ClansNbPlayers;
+	Array<Integer> ClansNbPlayers;
 /*!
 
 */
-	const	Array<Integer> ClanScores;
+	Array<Integer> ClanScores;
 /*!
 
 */
-	const	Integer Now;
+	Integer  const Now;
 /*!
 
 */
-	const	Array<CServerPluginEvent> PendingEvents;
+	Array<CServerPluginEvent* const > PendingEvents;
 /*!
 
 */
-			Void TriggerModeScriptEvent(Text Type,Array<Text> Data);
+	Void TriggerModeScriptEvent(Text Type,Array<Text> Data);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Boolean BoolVal);
+	Void SendModeScriptCommand(Text CommandName,Boolean BoolVal);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Integer IntVal);
+	Void SendModeScriptCommand(Text CommandName,Integer IntVal);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Real RealVal);
+	Void SendModeScriptCommand(Text CommandName,Real RealVal);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Text TextVal);
+	Void SendModeScriptCommand(Text CommandName,Text TextVal);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Vec2 Vec2Val);
+	Void SendModeScriptCommand(Text CommandName,Vec2 Vec2Val);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Vec3 Vec3Val);
+	Void SendModeScriptCommand(Text CommandName,Vec3 Vec3Val);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Int2 Int2Val);
+	Void SendModeScriptCommand(Text CommandName,Int2 Int2Val);
 /*!
 
 */
-			Void SendModeScriptCommand(Text CommandName,Int3 Int3Val);
+	Void SendModeScriptCommand(Text CommandName,Int3 Int3Val);
 /*!
 
 */
-	const	Boolean MapLoaded;
+	Boolean  const MapLoaded;
 /*!
 
 */
-	const	Boolean MapUnloadRequested;
+	Boolean  const MapUnloadRequested;
 /*!
 
 */
-	const	Array<CMapInfo> MapList;
+	Array<CMapInfo* const > MapList;
 /*!
 
 */
-	const	Integer CurMapIndex;
+	Integer  const CurMapIndex;
 /*!
 
 */
-			Integer NextMapIndex;
+	Integer NextMapIndex;
 /*!
 
 */
-			Void RestartMap();
+	Void RestartMap();
 /*!
 
 */
-			Void NextMap();
+	Void NextMap();
 /*!
 
 */
-			Boolean HoldMapUnloadRequest;
+	Boolean HoldMapUnloadRequest;
 /*!
 Enable minimap on the clients, even if the mode does not do it.
 */
-			Boolean Client_ComputeMinimap;
+	Boolean Client_ComputeMinimap;
 /*!
 
 */
-	const	CUIConfigMgr UIManager;
+	CUIConfigMgr * const  UIManager;
 /*!
 
 */
-	const	CServerAdmin ServerAdmin;
+	CServerAdmin * const  ServerAdmin;
 /*!
 
 */
-	const	CXmlRpc XmlRpc;
+	CXmlRpc * const  XmlRpc;
 /*!
 
 */
-	const	CParsingManager Xml;
+	CParsingManager * const  Xml;
 /*!
 
 */
-	const	CHttpManager Http;
+	CHttpManager * const  Http;
 /*!
 
 */
-	const	CSystemPlatform System;
+	CSystemPlatform * const  System;
 /*!
 
 */
-			Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+	Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
 /*!
 
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 
 */
-			Void TaskResult_Release(Ident TaskResultId);
+	Void TaskResult_Release(Ident TaskResultId);
 /*!
 
 */
-	const	Array<CGhost> Ghosts;
+	Array<CGhost* const > Ghosts;
 /*!
 
 */
-			CTaskResult_Ghost Ghost_Download(Text Url);
+	CTaskResult_Ghost Ghost_Download(Text Url);
 /*!
 
 */
-			Void GhostDriver_Playlist_Clear(CPlayer Player);
+	Void GhostDriver_Playlist_Clear(CPlayer Player);
 /*!
 
 */
-			Void GhostDriver_Playlist_Add(CPlayer Player,CGhost Ghost);
+	Void GhostDriver_Playlist_Add(CPlayer Player,CGhost Ghost);
+};
+
+/*!
+* \brief Documentation for class CNotification_PrestigeEarned
+*/
+class CNotification_PrestigeEarned : public CNotification_Prestige {
+public :
+/*!
+
+*/
+	Text  const CategoryType;
+/*!
+
+*/
+	Integer  const CategoryLevel;
+/*!
+
+*/
+	NWebServicesPrestige::EPrestigeMode const  Mode;
+/*!
+
+*/
+	Text  const PrestigeId;
+/*!
+
+*/
+	Integer  const PrestigeLevel;
+/*!
+
+*/
+	Text  const RewardDisplayName;
+/*!
+
+*/
+	Text  const RewardFileUrl;
+/*!
+
+*/
+	Text  const RewardThumbnailUrl;
+/*!
+
+*/
+	Text  const RewardType;
+/*!
+
+*/
+	Text  const SkinOptions;
+/*!
+
+*/
+	Integer  const StatCurrentValue;
+/*!
+
+*/
+	Integer  const StatValueForNextLevel;
+/*!
+
+*/
+	Integer  const TimeStamp;
+/*!
+
+*/
+	Integer  const Year;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadDeleted
+*/
+class CNotification_SquadDeleted : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationAccepted
+*/
+class CNotification_SquadInvitationAccepted : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedSkinOptions;
+/*!
+
+*/
+	Array<CSkinInfo*> InvitedSkinList;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationAdded
+*/
+class CNotification_SquadInvitationAdded : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const InviterAccountId;
+/*!
+
+*/
+	Text  const InviterCountryFlagUrl;
+/*!
+
+*/
+	Text  const InviterDisplayName;
+/*!
+
+*/
+	Boolean  const InviterIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InviterWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationCanceled
+*/
+class CNotification_SquadInvitationCanceled : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const CancelerAccountId;
+/*!
+
+*/
+	Text  const CancelerCountryFlagUrl;
+/*!
+
+*/
+	Text  const CancelerDisplayName;
+/*!
+
+*/
+	Boolean  const CancelerIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const CancelerWebServicesUserId;
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationCanceledForExitingPlayer
+*/
+class CNotification_SquadInvitationCanceledForExitingPlayer : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationCanceledForFullSquad
+*/
+class CNotification_SquadInvitationCanceledForFullSquad : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationDeclined
+*/
+class CNotification_SquadInvitationDeclined : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InvitedAccountId;
+/*!
+
+*/
+	Text  const InvitedCountryFlagUrl;
+/*!
+
+*/
+	Text  const InvitedDisplayName;
+/*!
+
+*/
+	Boolean  const InvitedIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InvitedWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadInvitationReceived
+*/
+class CNotification_SquadInvitationReceived : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const InviterAccountId;
+/*!
+
+*/
+	Text  const InviterCountryFlagUrl;
+/*!
+
+*/
+	Text  const InviterDisplayName;
+/*!
+
+*/
+	Boolean  const InviterIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const InviterWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadMemberKicked
+*/
+class CNotification_SquadMemberKicked : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const KickerAccountId;
+/*!
+
+*/
+	Text  const KickerCountryFlagUrl;
+/*!
+
+*/
+	Text  const KickerDisplayName;
+/*!
+
+*/
+	Boolean  const KickerIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const KickerWebServicesUserId;
+/*!
+
+*/
+	Text  const MemberAccountId;
+/*!
+
+*/
+	Text  const MemberCountryFlagUrl;
+/*!
+
+*/
+	Text  const MemberDisplayName;
+/*!
+
+*/
+	Boolean  const MemberIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const MemberWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadMemberRemoved
+*/
+class CNotification_SquadMemberRemoved : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const MemberAccountId;
+/*!
+
+*/
+	Text  const MemberCountryFlagUrl;
+/*!
+
+*/
+	Text  const MemberDisplayName;
+/*!
+
+*/
+	Boolean  const MemberIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const MemberWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory
+*/
+class CAccountTrophyGainForHistory : public CAccountTrophyGain {
+public :
+/*!
+
+*/
+	CTrophyAchievement * TrophyAchievement;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory_CompetitionMatch
+*/
+class CAccountTrophyGainForHistory_CompetitionMatch : public CAccountTrophyGainForHistory {
+public :
+/*!
+
+*/
+	Integer  const Rank;
+/*!
+
+*/
+	CTrophyAchievement_CompetitionMatch * TrophyAchievement_CompetitionMatch;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory_CompetitionRanking
+*/
+class CAccountTrophyGainForHistory_CompetitionRanking : public CAccountTrophyGainForHistory {
+public :
+/*!
+
+*/
+	Integer  const Rank;
+/*!
+
+*/
+	CTrophyAchievement_CompetitionRanking * TrophyAchievement_CompetitionRanking;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory_LiveMatch
+*/
+class CAccountTrophyGainForHistory_LiveMatch : public CAccountTrophyGainForHistory {
+public :
+/*!
+
+*/
+	Integer  const Rank;
+/*!
+
+*/
+	CTrophyAchievement_LiveMatch * TrophyAchievement_LiveMatch;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory_SoloMedal
+*/
+class CAccountTrophyGainForHistory_SoloMedal : public CAccountTrophyGainForHistory {
+public :
+/*!
+
+*/
+	Integer  const Level;
+/*!
+
+*/
+	Integer  const PreviousLevel;
+/*!
+
+*/
+	CTrophyAchievement_SoloMedal * TrophyAchievement_SoloMedal;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGainForHistory_SoloRanking
+*/
+class CAccountTrophyGainForHistory_SoloRanking : public CAccountTrophyGainForHistory {
+public :
+/*!
+
+*/
+	Integer  const Rank;
+/*!
+
+*/
+	CTrophyAchievement_SoloRanking * TrophyAchievement_SoloRanking;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement_CompetitionMatch
+*/
+class CTrophyAchievement_CompetitionMatch : public CTrophyAchievement {
+public :
+/*!
+
+*/
+	Text  const CompetitionId;
+/*!
+
+*/
+	Text  const CompetitionMatchInfo;
+/*!
+
+*/
+	Text  const CompetitionName;
+/*!
+
+*/
+	Text  const CompetitionStage;
+/*!
+
+*/
+	Text  const CompetitionStageStep;
+/*!
+
+*/
+	Text  const CompetitionType;
+/*!
+
+*/
+	Text  const ServerId;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement_CompetitionRanking
+*/
+class CTrophyAchievement_CompetitionRanking : public CTrophyAchievement {
+public :
+/*!
+
+*/
+	Text  const CompetitionId;
+/*!
+
+*/
+	Text  const CompetitionName;
+/*!
+
+*/
+	Text  const CompetitionStage;
+/*!
+
+*/
+	Text  const CompetitionStageStep;
+/*!
+
+*/
+	Text  const CompetitionType;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement_LiveMatch
+*/
+class CTrophyAchievement_LiveMatch : public CTrophyAchievement {
+public :
+/*!
+
+*/
+	Integer  const Duration;
+/*!
+
+*/
+	Text  const GameMode;
+/*!
+
+*/
+	Text  const GameModeCustomData;
+/*!
+
+*/
+	Boolean  const IsOfficial;
+/*!
+
+*/
+	Text  const ServerId;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement_SoloMedal
+*/
+class CTrophyAchievement_SoloMedal : public CTrophyAchievement {
+public :
+/*!
+
+*/
+	Text  const SoloMedalAchievementType;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement_SoloRanking
+*/
+class CTrophyAchievement_SoloRanking : public CTrophyAchievement {
+public :
+/*!
+
+*/
+	Text  const MapId;
+/*!
+
+*/
+	Text  const SeasonId;
+/*!
+
+*/
+	Text  const SoloRankingAchievementType;
 };
 
 /*!
@@ -814,1089 +1528,787 @@ public :
 /*!
 
 */
-			Integer StartTime;
+	Integer StartTime;
 /*!
 
 */
-			Integer EndTime;
+	Integer EndTime;
 /*!
 
 */
-			Integer SpawnInvulnerabilityDuration;
+	Integer SpawnInvulnerabilityDuration;
 /*!
 
 */
-			Integer UnspawnAnimDuration;
+	Integer UnspawnAnimDuration;
 /*!
 
 */
-			Integer SpawnDelayDuration;
+	Integer SpawnDelayDuration;
 /*!
 
 */
-			CSmMode::ERespawnBehaviour RespawnBehaviour;
+	CSmMode::ERespawnBehaviour RespawnBehaviour;
 /*!
 
 */
-			CSmMode::ECheckpointBehaviour CheckpointBehaviour;
+	CSmMode::ECheckpointBehaviour CheckpointBehaviour;
 /*!
 
 */
-			CSmMode::EGiveUpBehaviour GiveUpBehaviour;
+	CSmMode::EGiveUpBehaviour GiveUpBehaviour;
 /*!
 
 */
-			Boolean GiveUpBehaviour_RespawnAfter;
+	Boolean GiveUpBehaviour_RespawnAfter;
 /*!
 
 */
-			Boolean GiveUpBehaviour_SkipAfterFinishLine;
+	Boolean GiveUpBehaviour_SkipAfterFinishLine;
 /*!
 If not 0, we use this number of laps instead of the number defined in the map
 */
-			Integer LapCountOverride;
+	Integer LapCountOverride;
 /*!
 
 */
-			Boolean UseMultiClans;
+	Boolean UseMultiClans;
 /*!
 
 */
-			Boolean UseClans;
+	Boolean UseClans;
 /*!
 
 */
-			Boolean UseForcedClans;
+	Boolean UseForcedClans;
 /*!
 
 */
-			Boolean UsePvECollisions;
+	Boolean UsePvECollisions;
 /*!
 
 */
-			Boolean UsePvPCollisions;
+	Boolean UsePvPCollisions;
 /*!
 
 */
-			Boolean UseGuns;
+	Boolean UseGuns;
 /*!
 
 */
-			Boolean UsePvPWeapons;
+	Boolean UsePvPWeapons;
 /*!
 
 */
-			Boolean UseInterractiveScreensIn3d;
+	Boolean UseInterractiveScreensIn3d;
 /*!
 
 */
-			Boolean UseLaserVsBullets;
+	Boolean UseLaserVsBullets;
 /*!
 
 */
-			Boolean UseLaserSkewering;
+	Boolean UseLaserSkewering;
 /*!
 
 */
-			Boolean UsePlayerTagging;
+	Boolean UsePlayerTagging;
 /*!
 
 */
-			Boolean UseBeaconsWithRecipients;
+	Boolean UseBeaconsWithRecipients;
 /*!
 
 */
-			Boolean UseAmmoBonusOnHit;
+	Boolean UseAmmoBonusOnHit;
 /*!
 
 */
-			Boolean UseSameWallJump;
+	Boolean UseSameWallJump;
 /*!
 
 */
-			Boolean UseDefaultActionEvents;
+	Boolean UseDefaultActionEvents;
 /*!
 
 */
-			Boolean UseLaunchedCheckpoints;
+	Boolean UseLaunchedCheckpoints;
 /*!
 
 */
-			Boolean ReadonlyLaunchedCheckpoints;
+	Boolean ReadonlyLaunchedCheckpoints;
 /*!
 
 */
-			Boolean UseProtectClanmates;
+	Boolean UseProtectClanmates;
 /*!
 
 */
-			Boolean UseAllies;
+	Boolean UseAllies;
 /*!
 Declare that the game mode will only use forced models, so the client can avoid preloading player own skins.
 */
-			Boolean DisableDefaultSkinPreload;
+	Boolean DisableDefaultSkinPreload;
 /*!
 
 */
-			Integer GameplayVersion;
+	Integer GameplayVersion;
 /*!
 
 */
-			CSmMode::EGameplay Gameplay;
+	CSmMode::EGameplay Gameplay;
 /*!
 
 */
-			Real Mood_GetTimeOfDay();
+	Real Mood_GetTimeOfDay();
 /*!
 
 */
-			Void Mood_SetTimeOfDay(Real Time01);
+	Void Mood_SetTimeOfDay(Real Time01);
 /*!
 
 */
-			Integer Mood_GetDayDuration();
+	Integer Mood_GetDayDuration();
 /*!
 
 */
-			Boolean Mood_IsNight();
+	Boolean Mood_IsNight();
 /*!
 
 */
-			Real OffZoneRadius;
+	Real OffZoneRadius;
 /*!
 
 */
-			Real OffZoneRadiusSpeed;
+	Real OffZoneRadiusSpeed;
 /*!
 
 */
-			Ident OffZoneCenterLandmarkId;
+	Ident OffZoneCenterLandmarkId;
 /*!
 
 */
-	const	Integer PlayersNbTotal;
+	Integer  const PlayersNbTotal;
 /*!
 
 */
-	const	Integer PlayersNbAlive;
+	Integer  const PlayersNbAlive;
 /*!
 
 */
-	const	Integer PlayersNbDead;
+	Integer  const PlayersNbDead;
 /*!
 
 */
-	const	Integer ClansNbTotal;
+	Integer  const ClansNbTotal;
 /*!
 
 */
-	const	Integer ClansNbAlive;
+	Integer  const ClansNbAlive;
 /*!
 
 */
-	const	Integer ClansNbDead;
+	Integer  const ClansNbDead;
 /*!
 
 */
-	const	Array<Integer> ClansNbPlayers;
+	Array<Integer> ClansNbPlayers;
 /*!
 
 */
-	const	Array<Integer> ClansNbPlayersAlive;
+	Array<Integer> ClansNbPlayersAlive;
 /*!
 
 */
-	const	Array<CSmPlayer> Players;
+	Array<CSmPlayer* const > Players;
 /*!
 
 */
-	const	Array<CSmPlayer> BotPlayers;
+	Array<CSmPlayer* const > BotPlayers;
 /*!
 
 */
-	const	Array<CSmPlayer> Spectators;
+	Array<CSmPlayer* const > Spectators;
 /*!
 
 */
-	const	Array<CSmPlayer> AllPlayers;
+	Array<CSmPlayer* const > AllPlayers;
 /*!
 
 */
-	const	Array<CSmModeEvent> PendingEvents;
+	Array<CSmModeEvent* const > PendingEvents;
 /*!
 
 */
-			CSmPlayer GetPlayer(CUIConfig UI);
+	CSmPlayer GetPlayer(CUIConfig UI);
 /*!
 
 */
-			CSmPlayer GetPlayer(Text Login);
+	CSmPlayer GetPlayer(Text Login);
 /*!
 
 */
-	const	Array<CSmMapBase> MapBases;
+	Array<CSmMapBase* const > MapBases;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks;
+	Array<CSmMapLandmark* const > MapLandmarks;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_PlayerSpawn;
+	Array<CSmMapLandmark* const > MapLandmarks_PlayerSpawn;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gauge;
+	Array<CSmMapLandmark* const > MapLandmarks_Gauge;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Sector;
+	Array<CSmMapLandmark* const > MapLandmarks_Sector;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_BotPath;
+	Array<CSmMapLandmark* const > MapLandmarks_BotPath;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_BotSpawn;
+	Array<CSmMapLandmark* const > MapLandmarks_BotSpawn;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_ObjectAnchor;
+	Array<CSmMapLandmark* const > MapLandmarks_ObjectAnchor;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gate;
+	Array<CSmMapLandmark* const > MapLandmarks_Gate;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Foundation;
+	Array<CSmMapLandmark* const > MapLandmarks_Foundation;
 /*!
 
 */
-			Integer UiScoresPointsLimit;
+	Integer UiScoresPointsLimit;
 /*!
 
 */
-	const	Array<CSmScore> Scores;
+	Array<CSmScore* const > Scores;
 /*!
 
 */
-			Array<Integer> ClanScores;
+	Array<Integer> ClanScores;
 /*!
 
 */
-			Boolean SetPlayer_DelayedIsFull(CSmPlayer Player);
+	Boolean SetPlayer_DelayedIsFull(CSmPlayer Player);
 /*!
 Changes player's vehicle grip with a 250ms delay
 */
-			Void SetPlayer_Delayed_AdherenceCoef(CSmPlayer Player,Real AdherenceCoef);
+	Void SetPlayer_Delayed_AdherenceCoef(CSmPlayer Player,Real AdherenceCoef);
 /*!
 Changes player's vehicle control coef with a 250ms delay
 */
-			Void SetPlayer_Delayed_ControlCoef(CSmPlayer Player,Real ControlCoef);
+	Void SetPlayer_Delayed_ControlCoef(CSmPlayer Player,Real ControlCoef);
 /*!
 Changes player's vehicle accel coef with a 250ms delay
 */
-			Void SetPlayer_Delayed_AccelCoef(CSmPlayer Player,Real AccelCoef);
+	Void SetPlayer_Delayed_AccelCoef(CSmPlayer Player,Real AccelCoef);
 /*!
 Changes player's vehicle gravity coef with a 250ms delay
 */
-			Void SetPlayer_Delayed_GravityCoef(CSmPlayer Player,Real GravityCoef);
+	Void SetPlayer_Delayed_GravityCoef(CSmPlayer Player,Real GravityCoef);
 /*!
 Changes the color of the player's vehicle tires with a 250ms delay
 */
-			Void SetPlayer_Delayed_TireWear(CSmPlayer Player,Real TireWear);
+	Void SetPlayer_Delayed_TireWear(CSmPlayer Player,Real TireWear);
 /*!
 Reset all change from the game mode on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_Reset(CSmPlayer Player);
+	Void SetPlayer_Delayed_Reset(CSmPlayer Player);
 /*!
 Activate or Deactivate NoEngine on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_NoEngine(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_NoEngine(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate ForceEngine on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_ForceEngine(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_ForceEngine(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate NoBrake on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_NoBrakes(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_NoBrakes(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate NoSteer on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_NoSteer(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_NoSteer(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate BoostUp on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_BoostUp(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_BoostUp(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate BoostDown on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_BoostDown(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_BoostDown(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate Boost2Up on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_Boost2Up(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_Boost2Up(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate Boost2Down on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_Boost2Down(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_Boost2Down(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate SlowMotion on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_SlowMotion(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_SlowMotion(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate Fragile on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_Fragile(CSmPlayer Player,Boolean Activate);
+	Void SetPlayer_Delayed_Fragile(CSmPlayer Player,Boolean Activate);
 /*!
 Activate or Deactivate Cruise at the given speed on the player's vehicle with a 250ms delay
 */
-			Void SetPlayer_Delayed_Cruise(CSmPlayer Player,Boolean Activate,Real CruiseSpeedValue);
+	Void SetPlayer_Delayed_Cruise(CSmPlayer Player,Boolean Activate,Real CruiseSpeedValue);
 /*!
 
 */
-			Void SetPlayerVehicle_ControlledByMode(CSmPlayer Player,Boolean Activate);
+	Void SetPlayerVehicle_ControlledByMode(CSmPlayer Player,Boolean Activate);
 /*!
 
 */
-			Void SetPlayerVehicle_Accelerate(CSmPlayer Player,Boolean Activate);
+	Void SetPlayerVehicle_Accelerate(CSmPlayer Player,Boolean Activate);
 /*!
 
 */
-			Void SetPlayerVehicle_TargetSpeedValue(CSmPlayer Player,Real TargetSpeedValue);
+	Void SetPlayerVehicle_TargetSpeedValue(CSmPlayer Player,Real TargetSpeedValue);
 /*!
 
 */
-			Void SetPlayerVehicle_MaxSpeedValue(CSmPlayer Player,Real MaxSpeedValue);
+	Void SetPlayerVehicle_MaxSpeedValue(CSmPlayer Player,Real MaxSpeedValue);
 /*!
 
 */
-			Void SetPlayerVehicle_BrakeValue(CSmPlayer Player,Real BrakeValue);
+	Void SetPlayerVehicle_BrakeValue(CSmPlayer Player,Real BrakeValue);
 /*!
 
 */
-			Void SetPlayerVehicle_SteerValue(CSmPlayer Player,Real SteerValue);
+	Void SetPlayerVehicle_SteerValue(CSmPlayer Player,Real SteerValue);
 /*!
 
 */
-			Void SetPlayerVehicle_ResetControlledModeValues(CSmPlayer Player);
+	Void SetPlayerVehicle_ResetControlledModeValues(CSmPlayer Player);
 /*!
 
 */
-			Void SetGameModeNameAndCustomData(Text GameModeName);
+	Void SetGameModeNameAndCustomData(Text GameModeName);
 /*!
 
 */
-			Void SetGameModeNameAndCustomData(Text GameModeName,Text Leaderbord_CustomData);
+	Void SetGameModeNameAndCustomData(Text GameModeName,Text Leaderbord_CustomData);
 /*!
 
 */
-			Void SetGameModeNameAndCustomData(Text GameModeName,Text Leaderbord_CustomData,Text GhostDriver_CustomData);
+	Void SetGameModeNameAndCustomData(Text GameModeName,Text Leaderbord_CustomData,Text GhostDriver_CustomData);
 /*!
 
 */
-			Void SetClubLogoUrl(Text ClubLogoUrl);
+	Void SetClubLogoUrl(Text ClubLogoUrl);
 /*!
 
 */
-			Void SetDecoImageUrl_DecalSponsor4x1(Text ImageUrl);
+	Void SetDecoImageUrl_DecalSponsor4x1(Text ImageUrl);
 /*!
 
 */
-			Void SetDecoImageUrl_Screen16x9(Text ImageUrl);
+	Void SetDecoImageUrl_Screen16x9(Text ImageUrl);
 /*!
 
 */
-			Void SetDecoImageUrl_Screen8x1(Text ImageUrl);
+	Void SetDecoImageUrl_Screen8x1(Text ImageUrl);
 /*!
 
 */
-			Void SetDecoImageUrl_Screen16x1(Text ImageUrl);
+	Void SetDecoImageUrl_Screen16x1(Text ImageUrl);
 /*!
 
 */
-			Void PassOn(CSmModeEvent Event);
+	Void PassOn(CSmModeEvent Event);
 /*!
 
 */
-			Void Discard(CSmModeEvent Event);
+	Void Discard(CSmModeEvent Event);
 /*!
 
 */
-			Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapSpawn PlayerSpawn,Integer ActivationDate);
+	Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapSpawn PlayerSpawn,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeTurret Turret,Integer ActivationDate);
+	Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeTurret Turret,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeVehicle Vehicle,Integer ActivationDate);
+	Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeVehicle Vehicle,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeVehicle Vehicle,Integer SlotIndex,Integer ActivationDate);
+	Void SpawnPlayer(CSmPlayer Player,Integer ClanNum,CModeVehicle Vehicle,Integer SlotIndex,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapSpawn PlayerSpawn,Integer ActivationDate);
+	Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapSpawn PlayerSpawn,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapBotPath BotPath,Integer ActivationDate);
+	Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapBotPath BotPath,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapBotSpawn BotSpawn,Integer ActivationDate);
+	Void SpawnBotPlayer(CSmPlayer Player,Integer ClanNum,Integer Armor,CMapBotSpawn BotSpawn,Integer ActivationDate);
 /*!
 
 */
-			Void SpawnBotPlayer(CSmPlayer Player,CSmPlayer Owner,Integer Armor,Vec3 Offset,Integer ActivationDate);
+	Void SpawnBotPlayer(CSmPlayer Player,CSmPlayer Owner,Integer Armor,Vec3 Offset,Integer ActivationDate);
 /*!
 
 */
-			Void UnspawnPlayer(CSmPlayer Player);
+	Void UnspawnPlayer(CSmPlayer Player);
 /*!
 
 */
-	const	CSmMode::ESmScoreSortOrder Scores_SortCriteria;
+	CSmMode::ESmScoreSortOrder const  Scores_SortCriteria;
 /*!
 
 */
-			Boolean Scores_AutoUpdateLadderRank;
+	Boolean Scores_AutoUpdateLadderRank;
 /*!
 
 */
-			Boolean Scores_AutoUploadPersonalBests;
+	Boolean Scores_AutoUploadPersonalBests;
 /*!
 
 */
-			Void Scores_SetSortCriteria(CSmMode::ESmScoreSortOrder Criteria);
+	Void Scores_SetSortCriteria(CSmMode::ESmScoreSortOrder Criteria);
 /*!
 
 */
-			Void Scores_ComputeLadderRank(CSmMode::ESmScoreSortOrder Criteria);
+	Void Scores_ComputeLadderRank(CSmMode::ESmScoreSortOrder Criteria);
 /*!
 
 */
-			Void Scores_ClearAll();
+	Void Scores_ClearAll();
 /*!
 
 */
-			Void Score_ClearPrevRace(CSmScore Score);
+	Void Score_ClearPrevRace(CSmScore Score);
 /*!
 
 */
-			Void Score_ClearPrevLap(CSmScore Score);
+	Void Score_ClearPrevLap(CSmScore Score);
 /*!
 
 */
-			Void Score_Clear(CSmScore Score);
+	Void Score_Clear(CSmScore Score);
 /*!
 
 */
-			Void SetPlayerClan(CSmPlayer Player,Integer ClanNum);
+	Void SetPlayerClan(CSmPlayer Player,Integer ClanNum);
 /*!
 
 */
-			Void SetPlayerWeapon(CSmPlayer Player,CSmMode::EWeapon DefaultWeapon,Boolean AutoSwitchWeapon);
+	Void SetPlayerWeapon(CSmPlayer Player,CSmMode::EWeapon DefaultWeapon,Boolean AutoSwitchWeapon);
 /*!
 
 */
-			Void SetPlayerWeaponAvailable(CSmPlayer Player,CSmMode::EWeapon Weapon,Boolean Available);
+	Void SetPlayerWeaponAvailable(CSmPlayer Player,CSmMode::EWeapon Weapon,Boolean Available);
 /*!
 
 */
-			Void SetPlayerAllWeaponAvailable(CSmPlayer Player,Boolean Available);
+	Void SetPlayerAllWeaponAvailable(CSmPlayer Player,Boolean Available);
 /*!
 
 */
-			Void SetPlayerReloadAllWeapons(CSmPlayer Player,Boolean ReloadAllWeapons);
+	Void SetPlayerReloadAllWeapons(CSmPlayer Player,Boolean ReloadAllWeapons);
 /*!
 
 */
-			Void SetPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon,Integer Count);
+	Void SetPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon,Integer Count);
 /*!
 
 */
-			Integer GetPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon);
+	Integer GetPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon);
 /*!
 
 */
-			Void AddPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon,Real DeltaCount);
+	Void AddPlayerAmmo(CSmPlayer Player,CSmMode::EWeapon Weapon,Real DeltaCount);
 /*!
 
 */
-			Void SetPlayerAmmoMax(CSmPlayer Player,CSmMode::EWeapon Weapon,Integer Count);
+	Void SetPlayerAmmoMax(CSmPlayer Player,CSmMode::EWeapon Weapon,Integer Count);
 /*!
 
 */
-			Integer GetPlayerAmmoMax(CSmPlayer Player,CSmMode::EWeapon Weapon);
+	Integer GetPlayerAmmoMax(CSmPlayer Player,CSmMode::EWeapon Weapon);
 /*!
 
 */
-			Void Entity_AddArmor(CEntity Victim,Integer DeltaArmor,CEntity Shooter,Integer ShooterPoints);
+	Void Entity_AddArmor(CEntity Victim,Integer DeltaArmor,CEntity Shooter,Integer ShooterPoints);
 /*!
 
 */
-			Void Entity_RemoveArmor(CEntity Victim,Integer DeltaArmor,CEntity Shooter,Integer ShooterPoints);
+	Void Entity_RemoveArmor(CEntity Victim,Integer DeltaArmor,CEntity Shooter,Integer ShooterPoints);
 /*!
 
 */
-			Void Entity_TriggerTurbo(CEntity Target,Integer StartTime);
+	Void Entity_TriggerTurbo(CEntity Target,Integer StartTime);
 /*!
 
 */
-			Integer GetWeaponNum(CSmMode::EWeapon Weapon);
+	Integer GetWeaponNum(CSmMode::EWeapon Weapon);
 /*!
 
 */
-			Boolean CanRespawnPlayer(CSmPlayer Player);
+	Boolean CanRespawnPlayer(CSmPlayer Player);
 /*!
 
 */
-			Void RespawnPlayer(CSmPlayer Player);
+	Void RespawnPlayer(CSmPlayer Player);
 /*!
 
 */
-			Void RespawnPlayer(CSmPlayer Player,CMapWaypoint Waypoint);
+	Void RespawnPlayer(CSmPlayer Player,CMapWaypoint Waypoint);
 /*!
 
 */
-			Void RespawnPlayer(CSmPlayer Player,CMapSpawn Spawn);
+	Void RespawnPlayer(CSmPlayer Player,CMapSpawn Spawn);
 /*!
 
 */
-			Void GiveUpBehaviour_RespawnAfter_SetLandmark(CSmPlayer Player,CMapSpawn Spawn,Integer Date);
+	Void GiveUpBehaviour_RespawnAfter_SetLandmark(CSmPlayer Player,CMapSpawn Spawn,Integer Date);
 /*!
 Debug helper: create/destroy bot players to match provided values.  (see Users_SetNbFakeUsers() for fake players that appear and the score table, ...)
 */
-			Void SetNbBotPlayers(Integer NbClan1,Integer NbClan2);
+	Void SetNbBotPlayers(Integer NbClan1,Integer NbClan2);
 /*!
 
 */
-			CSmPlayer CreateBotPlayer(Ident ModelId,Integer ClanNum);
+	CSmPlayer CreateBotPlayer(Ident ModelId,Integer ClanNum);
 /*!
 
 */
-			Void DestroyBotPlayer(CSmPlayer BotPlayer);
+	Void DestroyBotPlayer(CSmPlayer BotPlayer);
 /*!
 
 */
-			Void DestroyAllBotPlayers();
+	Void DestroyAllBotPlayers();
 /*!
 
 */
-			Boolean Bots_AutoSpawn;
+	Boolean Bots_AutoSpawn;
 /*!
 
 */
-			Boolean Bots_AutoRespawn;
+	Boolean Bots_AutoRespawn;
 /*!
 
 */
-			Boolean Bots_AutoIgnoreBotEvents;
+	Boolean Bots_AutoIgnoreBotEvents;
 /*!
 Navigation maps are needed for bots to move. If the current map has bot paths or items the navigation maps will always be computed, otherwise you will need to set this explicitely to True. May be necessary if you use CreateBotPlayer or SetNbBotPlayers.
 */
-			Boolean ForceNavMapsComputation;
+	Boolean ForceNavMapsComputation;
 /*!
 Allow players to see others with a delay when CrudeExtrapolation is used. The quality of the visuals is better (e.g. cars won't go through walls), but it is not suitable for 'real time' game modes, such as Rounds.
 */
-			Boolean CrudeExtrapolation_AllowDelay;
+	Boolean CrudeExtrapolation_AllowDelay;
 /*!
 
 */
-			Ident ActionGetModelId(Text ActionName);
+	Ident ActionGetModelId(Text ActionName);
 /*!
 
 */
-			Void ActionLoad(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Ident ModelId);
+	Void ActionLoad(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Ident ModelId);
 /*!
 
 */
-			Void ActionLoad(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Ident ModelId,Boolean MeleeMode);
+	Void ActionLoad(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Ident ModelId,Boolean MeleeMode);
 /*!
 
 */
-			Void ActionLoad(CModeVehicle Vehicle,Integer VehicleSlotIndex,CSmMode::EActionSlot ActionSlot,Ident ModelId);
+	Void ActionLoad(CModeVehicle Vehicle,Integer VehicleSlotIndex,CSmMode::EActionSlot ActionSlot,Ident ModelId);
 /*!
 
 */
-			Void ActionLoad(CModeTurret Turret,CSmMode::EActionSlot ActionSlot,Ident ModelId);
+	Void ActionLoad(CModeTurret Turret,CSmMode::EActionSlot ActionSlot,Ident ModelId);
 /*!
 
 */
-			Integer Action_GetCooldown(CSmPlayer Player,CSmMode::EActionInput ActionInput);
+	Integer Action_GetCooldown(CSmPlayer Player,CSmMode::EActionInput ActionInput);
 /*!
 
 */
-			Integer Action_GetRemainingCooldown(CSmPlayer Player,CSmMode::EActionInput ActionInput);
+	Integer Action_GetRemainingCooldown(CSmPlayer Player,CSmMode::EActionInput ActionInput);
 /*!
 
 */
-			Void ActionBind(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,CSmMode::EActionInput ActionInput);
+	Void ActionBind(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,CSmMode::EActionInput ActionInput);
 /*!
 
 */
-			Void ActionUnBind(CSmPlayer Player,CSmMode::EActionInput ActionInput);
+	Void ActionUnBind(CSmPlayer Player,CSmMode::EActionInput ActionInput);
 /*!
 
 */
-			Void ActionSetVariant1(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+	Void ActionSetVariant1(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
 /*!
 
 */
-			Void ActionSetVariant2(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+	Void ActionSetVariant2(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
 /*!
 
 */
-			Void ActionSetVariant3(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
+	Void ActionSetVariant3(CSmPlayer Player,CSmMode::EActionSlot ActionSlot,Integer ActionVariant);
 /*!
 
 */
-	const	Array<CSmObject> Objects;
+	Array<CSmObject* const > Objects;
 /*!
 
 */
-			CSmObject ObjectCreate(Ident ModelId);
+	CSmObject ObjectCreate(Ident ModelId);
 /*!
 
 */
-			Void ObjectDestroy(CSmObject Object);
+	Void ObjectDestroy(CSmObject Object);
 /*!
 
 */
-			Void ObjectDestroyAll();
+	Void ObjectDestroyAll();
 /*!
 
 */
-			Void RemoveShieldArmor(Integer VictimShieldId,Integer Damage);
+	Void RemoveShieldArmor(Integer VictimShieldId,Integer Damage);
 /*!
 
 */
-			Void Replay_SaveAttackScore(CSmPlayer Player,Integer Score);
+	Void Replay_SaveAttackScore(CSmPlayer Player,Integer Score);
 /*!
 
 */
-			Void Replay_SaveDefenseScore(CSmPlayer Player,Integer Score);
+	Void Replay_SaveDefenseScore(CSmPlayer Player,Integer Score);
 /*!
 
 */
-			Void Replay_SaveTeamScore(Integer Team,Integer Score);
+	Void Replay_SaveTeamScore(Integer Team,Integer Score);
 /*!
 
 */
-			Void Replay_SavePlayerOfInterest(CSmPlayer Player);
+	Void Replay_SavePlayerOfInterest(CSmPlayer Player);
 /*!
 
 */
-			Void Replay_SaveWinner(CSmPlayer Player);
+	Void Replay_SaveWinner(CSmPlayer Player);
 /*!
 
 */
-			Void Replay_SaveInterface();
+	Void Replay_SaveInterface();
 /*!
 
 */
-			Void Player_BeginNewRace(CSmPlayer Player,Integer AbsoluteTime);
+	Void Player_BeginNewRace(CSmPlayer Player,Integer AbsoluteTime);
 /*!
 
 */
-			Void Player_BeginNewLap(CSmPlayer Player,Integer RaceTime);
+	Void Player_BeginNewLap(CSmPlayer Player,Integer RaceTime);
 /*!
 
 */
-			Void Player_RemoveLastWaypointTime(CSmPlayer Player);
+	Void Player_RemoveLastWaypointTime(CSmPlayer Player);
 /*!
 
 */
-			Void Player_AddWaypointTime(CSmPlayer Player,Integer Time,CSmMapLandmark Landmark);
+	Void Player_AddWaypointTime(CSmPlayer Player,Integer Time,CSmMapLandmark Landmark);
 /*!
 
 */
-			Void Player_SetFinishTime(CSmPlayer Player,Integer Time,CSmMapLandmark Landmark);
+	Void Player_SetFinishTime(CSmPlayer Player,Integer Time,CSmMapLandmark Landmark);
 /*!
 
 */
-			Void Player_ClearRaceWaypointTimes(CSmPlayer Player);
+	Void Player_ClearRaceWaypointTimes(CSmPlayer Player);
 /*!
 
 */
-			Void Player_ClearLapWaypointTimes(CSmPlayer Player);
+	Void Player_ClearLapWaypointTimes(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerCurRaceAsScoreBestRace(CSmPlayer Player);
+	Void Player_SetPlayerCurRaceAsScoreBestRace(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerCurRaceAsScorePrevRace(CSmPlayer Player);
+	Void Player_SetPlayerCurRaceAsScorePrevRace(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerCurLapAsScoreBestLap(CSmPlayer Player);
+	Void Player_SetPlayerCurLapAsScoreBestLap(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerCurLapAsScorePrevLap(CSmPlayer Player);
+	Void Player_SetPlayerCurLapAsScorePrevLap(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerPrevLapAsScoreBestLap(CSmPlayer Player);
+	Void Player_SetPlayerPrevLapAsScoreBestLap(CSmPlayer Player);
 /*!
 
 */
-			Void Player_SetPlayerPrevLapAsScorePrevLap(CSmPlayer Player);
+	Void Player_SetPlayerPrevLapAsScorePrevLap(CSmPlayer Player);
 /*!
 Only available in solo mode and map is loaded.
 */
-	const	CGhostManager GhostMgr;
+	CGhostManager * const  GhostMgr;
 /*!
 
 */
-			Void Ghosts_SetStartTime(Integer StartTime);
+	Void Ghosts_SetStartTime(Integer StartTime);
 /*!
 
 */
-			Void Ghosts_SetMaxAlpha(Real MaxAlpha);
+	Void Ghosts_SetMaxAlpha(Real MaxAlpha);
 /*!
 
 */
-			CGhost Ghost_RetrieveFromPlayer(CSmPlayer Player);
+	CGhost Ghost_RetrieveFromPlayer(CSmPlayer Player);
 /*!
 
 */
-			CGhost Ghost_RetrieveFromPlayer(CSmPlayer Player,Boolean TruncateLaunchedCheckpointsRespawns);
+	CGhost Ghost_RetrieveFromPlayer(CSmPlayer Player,Boolean TruncateLaunchedCheckpointsRespawns);
 /*!
 Transfer this ghost checkpoint-times to the score best race. The best lap of this ghost is transferred as the score best lap.
 */
-			Void Ghost_CopyToScoreBestRaceAndLap(CGhost Ghost,CSmScore Score);
+	Void Ghost_CopyToScoreBestRaceAndLap(CGhost Ghost,CSmScore Score);
 /*!
 
 */
-			Void GhostRecorder_SetEnabled(CSmPlayer Player,Boolean Value);
+	Void GhostRecorder_SetEnabled(CSmPlayer Player,Boolean Value);
 /*!
 
 */
-			Void GhostRecorder_Ghosts_Select(CSmPlayer Player);
+	Void GhostRecorder_Ghosts_Select(CSmPlayer Player);
 /*!
 
 */
-			Void GhostRecorder_Clear(CSmPlayer Player);
+	Void GhostRecorder_Clear(CSmPlayer Player);
 /*!
 
 */
-	const	Array<CGhost> GhostRecorder_Ghosts;
+	Array<CGhost* const > GhostRecorder_Ghosts;
 /*!
 
 */
-			CSmMapLandmark GhostDriver_Playlist_GetNextSpawn(CPlayer Player);
-};
-
-/*!
-* \brief An action
-*
-* Supported declare modes :
-* - Local
-*/
-class CSmAction : public CAction {
-public :
-/*!
-
-*/
-	const	Integer Now;
-/*!
-
-*/
-	const	Integer Variant1;
-/*!
-
-*/
-	const	Integer Variant2;
-/*!
-
-*/
-	const	Integer Variant3;
-/*!
-
-*/
-	const	Array<CSmPlayer> Players;
-/*!
-
-*/
-	const	CSmPlayer Owner;
-/*!
-
-*/
-	const	CModeVehicle OwnerVehicle;
-/*!
-
-*/
-	const	Boolean IsActive;
-/*!
-
-*/
-	const	Boolean IsBound;
-/*!
-Is true only once during action init. Allow to init state variables
-*/
-	const	Boolean IsInitialFrame;
-/*!
-
-*/
-			Integer Energy;
-/*!
-
-*/
-			Integer EnergyMax;
-/*!
-
-*/
-			Integer EnergyCost;
-/*!
-
-*/
-			Boolean EnergyReload;
-/*!
-
-*/
-			Real AmmoGain;
-/*!
-
-*/
-			Ident State_EntityId1;
-/*!
-
-*/
-			Integer State_Integer1;
-/*!
-
-*/
-			Integer State_Integer2;
-/*!
-
-*/
-			Boolean State_Boolean1;
-/*!
-
-*/
-	const	Array<CSmActionEvent> PendingEvents;
-/*!
-
-*/
-			Boolean IsJumping;
-/*!
-
-*/
-			Boolean IsGliding;
-/*!
-
-*/
-			Boolean IsAttractor;
-/*!
-
-*/
-			Boolean IsFlying;
-/*!
-
-*/
-			Boolean IsSliding;
-/*!
-
-*/
-			Boolean IsRunning;
-/*!
-
-*/
-			Boolean IsFrozen;
-/*!
-
-*/
-			Boolean IsSneaking;
-/*!
-
-*/
-			Boolean IsFreeLooking;
-/*!
-
-*/
-			Boolean HasNoPlayerCollision;
-/*!
-
-*/
-			Void SendRulesEvent(Text Param1,Array<Text> Param2,CEntity Shooter,CEntity Victim);
-/*!
-
-*/
-			Ident Anim_GetModelId(Text ModelName);
-/*!
-
-*/
-			Ident Anim_PlayAtLocation(Ident AnimModelId,Vec3 Position,Vec3 Direction);
-/*!
-
-*/
-			Ident Anim_PlayOnPlayer(Ident AnimModelId,CSmPlayer Player);
-/*!
-
-*/
-			Void Anim_Stop(Ident AnimId);
-/*!
-
-*/
-			Ident Projectile_GetModelId(Text ModelName);
-/*!
-
-*/
-			Ident Projectile_CreateAtLocation(Ident ProjectileModelId,CSmPlayer PlayerToIgnore,Vec3 InitialPosition,Vec3 InitialDirection,Vec3 InitialVelocity);
-/*!
-
-*/
-			Ident Projectile_CreateOnPlayer(Ident ProjectileModelId,CSmPlayer Shooter);
-/*!
-
-*/
-			Integer Cooldown;
-/*!
-
-*/
-			Boolean Cooldown_IsReady();
-/*!
-
-*/
-			Void Cooldown_Start();
-/*!
-
-*/
-			Ident Shield_CreateAtLocation(Vec3 Position,Vec3 Direction);
-/*!
-
-*/
-			Ident Shield_CreateOnPlayer(CSmPlayer ShieldOwner);
-/*!
-
-*/
-			Void Shield_Destroy(Ident ShieldId);
-/*!
-
-*/
-			Boolean Shield_Exists(Ident ShieldId);
-/*!
-
-*/
-			Integer Shield_GetArmor(Ident ShieldId);
-/*!
-
-*/
-			Void Shield_SetArmor(Ident ShieldId,Integer ShieldArmor);
-/*!
-
-*/
-			Boolean Shield_GetIsActive(Ident ShieldId);
-/*!
-
-*/
-			Void Shield_SetIsActive(Ident ShieldId,Boolean ShieldIsActive);
-/*!
-
-*/
-			Integer Shield_GetArmorMax(Ident ShieldId);
-/*!
-
-*/
-			Integer Shield_GetTickReload(Ident ShieldId);
-/*!
-
-*/
-			Integer Shield_GetCooldown(Ident ShieldId);
-/*!
-
-*/
-			Void Vehicle_TriggerTurbo();
-/*!
-
-*/
-			Void Vehicle_TriggerTurboBrake();
-/*!
-
-*/
-			Boolean Focus_Request();
-/*!
-
-*/
-			Void Focus_Release();
-/*!
-
-*/
-	const	Boolean Focus_Active;
-/*!
-
-*/
-	const	Boolean Trigger0;
-/*!
-
-*/
-	const	Boolean Trigger1;
-/*!
-
-*/
-	const	Boolean Trigger2;
-/*!
-
-*/
-	const	Boolean Trigger3;
-/*!
-
-*/
-	const	Boolean Trigger4;
-/*!
-
-*/
-	const	Boolean Trigger5;
-/*!
-
-*/
-	const	Boolean Trigger6;
-/*!
-
-*/
-	const	Boolean Trigger7;
-/*!
-
-*/
-	const	Boolean Trigger8;
-/*!
-
-*/
-	const	Boolean Trigger9;
-/*!
-
-*/
-	const	Boolean Trigger10;
-/*!
-
-*/
-	const	Boolean Trigger11;
-/*!
-
-*/
-	const	Boolean Trigger12;
-/*!
-
-*/
-	const	Boolean Trigger13;
-/*!
-
-*/
-			Integer Focused_Scroll;
-/*!
-
-*/
-			Integer Focused_Scroll_Max;
+	CSmMapLandmark GhostDriver_Playlist_GetNextSpawn(CPlayer Player);
 };
 
 /*!
@@ -1911,23 +2323,325 @@ public :
 /*!
 
 */
-	const	CSmMode Mode;
+	CSmMode * const  Mode;
 /*!
 
 */
-			Void AuthorTime_SetFromGhost(CGhost Ghost);
+	Void AuthorTime_SetFromGhost(CGhost Ghost);
 /*!
 
 */
-			Void SetAuthorTimeAndGhost(CGhost Ghost);
+	Void SetAuthorTimeAndGhost(CGhost Ghost);
 /*!
 
 */
-	const	Array<CSmPlayer> AllPlayers;
+	Array<CSmPlayer* const > AllPlayers;
 /*!
 
 */
-	const	Array<CSmPlayer> Players;
+	Array<CSmPlayer* const > Players;
+};
+
+/*!
+* \brief An action
+*
+* Supported declare modes :
+* - Local
+*/
+class CSmAction : public CAction {
+public :
+/*!
+
+*/
+	Integer  const Now;
+/*!
+
+*/
+	Integer  const Variant1;
+/*!
+
+*/
+	Integer  const Variant2;
+/*!
+
+*/
+	Integer  const Variant3;
+/*!
+
+*/
+	Array<CSmPlayer* const > Players;
+/*!
+
+*/
+	CSmPlayer * const  Owner;
+/*!
+
+*/
+	CModeVehicle * const  OwnerVehicle;
+/*!
+
+*/
+	Boolean  const IsActive;
+/*!
+
+*/
+	Boolean  const IsBound;
+/*!
+Is true only once during action init. Allow to init state variables
+*/
+	Boolean  const IsInitialFrame;
+/*!
+
+*/
+	Integer Energy;
+/*!
+
+*/
+	Integer EnergyMax;
+/*!
+
+*/
+	Integer EnergyCost;
+/*!
+
+*/
+	Boolean EnergyReload;
+/*!
+
+*/
+	Real AmmoGain;
+/*!
+
+*/
+	Ident State_EntityId1;
+/*!
+
+*/
+	Integer State_Integer1;
+/*!
+
+*/
+	Integer State_Integer2;
+/*!
+
+*/
+	Boolean State_Boolean1;
+/*!
+
+*/
+	Array<CSmActionEvent* const > PendingEvents;
+/*!
+
+*/
+	Boolean IsJumping;
+/*!
+
+*/
+	Boolean IsGliding;
+/*!
+
+*/
+	Boolean IsAttractor;
+/*!
+
+*/
+	Boolean IsFlying;
+/*!
+
+*/
+	Boolean IsSliding;
+/*!
+
+*/
+	Boolean IsRunning;
+/*!
+
+*/
+	Boolean IsFrozen;
+/*!
+
+*/
+	Boolean IsSneaking;
+/*!
+
+*/
+	Boolean IsFreeLooking;
+/*!
+
+*/
+	Boolean HasNoPlayerCollision;
+/*!
+
+*/
+	Void SendRulesEvent(Text Param1,Array<Text> Param2,CEntity Shooter,CEntity Victim);
+/*!
+
+*/
+	Ident Anim_GetModelId(Text ModelName);
+/*!
+
+*/
+	Ident Anim_PlayAtLocation(Ident AnimModelId,Vec3 Position,Vec3 Direction);
+/*!
+
+*/
+	Ident Anim_PlayOnPlayer(Ident AnimModelId,CSmPlayer Player);
+/*!
+
+*/
+	Void Anim_Stop(Ident AnimId);
+/*!
+
+*/
+	Ident Projectile_GetModelId(Text ModelName);
+/*!
+
+*/
+	Ident Projectile_CreateAtLocation(Ident ProjectileModelId,CSmPlayer PlayerToIgnore,Vec3 InitialPosition,Vec3 InitialDirection,Vec3 InitialVelocity);
+/*!
+
+*/
+	Ident Projectile_CreateOnPlayer(Ident ProjectileModelId,CSmPlayer Shooter);
+/*!
+
+*/
+	Integer Cooldown;
+/*!
+
+*/
+	Boolean Cooldown_IsReady();
+/*!
+
+*/
+	Void Cooldown_Start();
+/*!
+
+*/
+	Ident Shield_CreateAtLocation(Vec3 Position,Vec3 Direction);
+/*!
+
+*/
+	Ident Shield_CreateOnPlayer(CSmPlayer ShieldOwner);
+/*!
+
+*/
+	Void Shield_Destroy(Ident ShieldId);
+/*!
+
+*/
+	Boolean Shield_Exists(Ident ShieldId);
+/*!
+
+*/
+	Integer Shield_GetArmor(Ident ShieldId);
+/*!
+
+*/
+	Void Shield_SetArmor(Ident ShieldId,Integer ShieldArmor);
+/*!
+
+*/
+	Boolean Shield_GetIsActive(Ident ShieldId);
+/*!
+
+*/
+	Void Shield_SetIsActive(Ident ShieldId,Boolean ShieldIsActive);
+/*!
+
+*/
+	Integer Shield_GetArmorMax(Ident ShieldId);
+/*!
+
+*/
+	Integer Shield_GetTickReload(Ident ShieldId);
+/*!
+
+*/
+	Integer Shield_GetCooldown(Ident ShieldId);
+/*!
+
+*/
+	Void Vehicle_TriggerTurbo();
+/*!
+
+*/
+	Void Vehicle_TriggerTurboBrake();
+/*!
+
+*/
+	Boolean Focus_Request();
+/*!
+
+*/
+	Void Focus_Release();
+/*!
+
+*/
+	Boolean  const Focus_Active;
+/*!
+
+*/
+	Boolean  const Trigger0;
+/*!
+
+*/
+	Boolean  const Trigger1;
+/*!
+
+*/
+	Boolean  const Trigger2;
+/*!
+
+*/
+	Boolean  const Trigger3;
+/*!
+
+*/
+	Boolean  const Trigger4;
+/*!
+
+*/
+	Boolean  const Trigger5;
+/*!
+
+*/
+	Boolean  const Trigger6;
+/*!
+
+*/
+	Boolean  const Trigger7;
+/*!
+
+*/
+	Boolean  const Trigger8;
+/*!
+
+*/
+	Boolean  const Trigger9;
+/*!
+
+*/
+	Boolean  const Trigger10;
+/*!
+
+*/
+	Boolean  const Trigger11;
+/*!
+
+*/
+	Boolean  const Trigger12;
+/*!
+
+*/
+	Boolean  const Trigger13;
+/*!
+
+*/
+	Integer Focused_Scroll;
+/*!
+
+*/
+	Integer Focused_Scroll_Max;
 };
 
 /*!
@@ -1942,71 +2656,71 @@ public :
 /*!
 
 */
-			Integer ArenaNow;
+	Integer ArenaNow;
 /*!
 Player receiving the inputs. Null if spectating other players.
 */
-	const	CSmPlayer InputPlayer;
+	CSmPlayer * const  InputPlayer;
 /*!
 Player currently targetted by the camera. Same as InputPlayer when playing. Can be null in freecam when there's no specific target.
 */
-	const	CSmPlayer GUIPlayer;
+	CSmPlayer * const  GUIPlayer;
 /*!
 
 */
-	const	Array<CSmPlayer> Players;
+	Array<CSmPlayer const * const > Players;
 /*!
 
 */
-	const	Array<CModeVehicle> Vehicles;
+	Array<CModeVehicle const * const > Vehicles;
 /*!
 
 */
-	const	Array<CSmScore> Scores;
+	Array<CSmScore const * const > Scores;
 /*!
 
 */
-	const	Array<Integer> ClanScores;
+	Array< const Integer> ClanScores;
 /*!
 
 */
-			Boolean HideResumePlayingButton;
+	Boolean HideResumePlayingButton;
 /*!
 
 */
-	const	Array<CSmMapBase> MapBases;
+	Array<CSmMapBase const * const > MapBases;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks;
+	Array<CSmMapLandmark const * const > MapLandmarks;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_PlayerSpawn;
+	Array<CSmMapLandmark const * const > MapLandmarks_PlayerSpawn;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gauge;
+	Array<CSmMapLandmark const * const > MapLandmarks_Gauge;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Sector;
+	Array<CSmMapLandmark const * const > MapLandmarks_Sector;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_BotPath;
+	Array<CSmMapLandmark const * const > MapLandmarks_BotPath;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_ObjectAnchor;
+	Array<CSmMapLandmark const * const > MapLandmarks_ObjectAnchor;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gate;
+	Array<CSmMapLandmark const * const > MapLandmarks_Gate;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Foundation;
+	Array<CSmMapLandmark const * const > MapLandmarks_Foundation;
 };
 
 /*!
@@ -2017,706 +2731,126 @@ public :
 /*!
 
 */
-			Integer ArenaNow;
+	Integer ArenaNow;
 /*!
 Player receiving the inputs. Null if spectating other players.
 */
-	const	CSmPlayer InputPlayer;
+	CSmPlayer const  * const  InputPlayer;
 /*!
 Player currently targetted by the camera. Same as InputPlayer when playing. Can be null in freecam when there's no specific target.
 */
-	const	CSmPlayer GUIPlayer;
+	CSmPlayer const  * const  GUIPlayer;
 /*!
 
 */
-	const	Array<CSmPlayer> Players;
+	Array<CSmPlayer const * const > Players;
 /*!
 
 */
-	const	Array<CModeVehicle> Vehicles;
+	Array<CModeVehicle const * const > Vehicles;
 /*!
 
 */
-	const	Array<CSmScore> Scores;
+	Array<CSmScore const * const > Scores;
 /*!
 
 */
-	const	Array<CSmMapBase> MapBases;
+	Array<CSmMapBase const * const > MapBases;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks;
+	Array<CSmMapLandmark const * const > MapLandmarks;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_PlayerSpawn;
+	Array<CSmMapLandmark const * const > MapLandmarks_PlayerSpawn;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gauge;
+	Array<CSmMapLandmark const * const > MapLandmarks_Gauge;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Sector;
+	Array<CSmMapLandmark const * const > MapLandmarks_Sector;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_BotPath;
+	Array<CSmMapLandmark const * const > MapLandmarks_BotPath;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_ObjectAnchor;
+	Array<CSmMapLandmark const * const > MapLandmarks_ObjectAnchor;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Gate;
+	Array<CSmMapLandmark const * const > MapLandmarks_Gate;
 /*!
 
 */
-	const	Array<CSmMapLandmark> MapLandmarks_Foundation;
+	Array<CSmMapLandmark const * const > MapLandmarks_Foundation;
 };
 
 /*!
-* \brief Documentation for class CNotification_SquadDeleted
+* \brief Documentation for class CVoiceChatEvent_SpeakingUsersChanged
 */
-class CNotification_SquadDeleted : public CNotification {
+class CVoiceChatEvent_SpeakingUsersChanged : public CVoiceChatEvent {
+public :
+};
+
+/*!
+* \brief Documentation for class CVoiceChatEvent_User_IsMuted
+*/
+class CVoiceChatEvent_User_IsMuted : public CVoiceChatEvent {
 public :
 /*!
 
 */
-	const	Text SquadId;
+	CGameUserVoiceChat * const  User;
 /*!
 
 */
-	const	Text SquadType;
+	Boolean  const NewValue;
 /*!
 
 */
-	const	Integer TimeStamp;
+	Boolean  const ChangePending;
 };
 
 /*!
-* \brief Documentation for class CNotification_SquadInvitationAccepted
+* \brief Documentation for class CVoiceChatEvent_User_IsConnected
 */
-class CNotification_SquadInvitationAccepted : public CNotification {
+class CVoiceChatEvent_User_IsConnected : public CVoiceChatEvent {
 public :
 /*!
 
 */
-	const	Text InvitedAccountId;
+	CGameUserVoiceChat * const  User;
 /*!
 
 */
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-			Array<CSkinInfo> InvitedSkinList;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
+	Boolean  const NewValue;
 };
 
 /*!
-* \brief Documentation for class CNotification_SquadInvitationAdded
+* \brief Documentation for class CVoiceChatEvent_User_IsSpeaking
 */
-class CNotification_SquadInvitationAdded : public CNotification {
+class CVoiceChatEvent_User_IsSpeaking : public CVoiceChatEvent {
 public :
 /*!
 
 */
-	const	Text InvitedAccountId;
+	CGameUserVoiceChat * const  User;
 /*!
 
 */
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text InviterAccountId;
-/*!
-
-*/
-	const	Text InviterCountryFlagUrl;
-/*!
-
-*/
-	const	Text InviterDisplayName;
-/*!
-
-*/
-	const	Boolean InviterIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InviterWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
+	Boolean  const NewValue;
 };
 
 /*!
-* \brief Documentation for class CNotification_SquadInvitationCanceled
+* \brief Documentation for class CVoiceChatEvent
 */
-class CNotification_SquadInvitationCanceled : public CNotification {
+class CVoiceChatEvent : public CNod {
 public :
-/*!
-
-*/
-	const	Text CancelerAccountId;
-/*!
-
-*/
-	const	Text CancelerCountryFlagUrl;
-/*!
-
-*/
-	const	Text CancelerDisplayName;
-/*!
-
-*/
-	const	Boolean CancelerIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text CancelerWebServicesUserId;
-/*!
-
-*/
-	const	Text InvitedAccountId;
-/*!
-
-*/
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadInvitationCanceledForExitingPlayer
-*/
-class CNotification_SquadInvitationCanceledForExitingPlayer : public CNotification {
-public :
-/*!
-
-*/
-	const	Text InvitedAccountId;
-/*!
-
-*/
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadInvitationCanceledForFullSquad
-*/
-class CNotification_SquadInvitationCanceledForFullSquad : public CNotification {
-public :
-/*!
-
-*/
-	const	Text InvitedAccountId;
-/*!
-
-*/
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadInvitationDeclined
-*/
-class CNotification_SquadInvitationDeclined : public CNotification {
-public :
-/*!
-
-*/
-	const	Text InvitedAccountId;
-/*!
-
-*/
-	const	Text InvitedCountryFlagUrl;
-/*!
-
-*/
-	const	Text InvitedDisplayName;
-/*!
-
-*/
-	const	Boolean InvitedIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InvitedWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadInvitationReceived
-*/
-class CNotification_SquadInvitationReceived : public CNotification {
-public :
-/*!
-
-*/
-	const	Text InviterAccountId;
-/*!
-
-*/
-	const	Text InviterCountryFlagUrl;
-/*!
-
-*/
-	const	Text InviterDisplayName;
-/*!
-
-*/
-	const	Boolean InviterIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text InviterWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadMemberKicked
-*/
-class CNotification_SquadMemberKicked : public CNotification {
-public :
-/*!
-
-*/
-	const	Text KickerAccountId;
-/*!
-
-*/
-	const	Text KickerCountryFlagUrl;
-/*!
-
-*/
-	const	Text KickerDisplayName;
-/*!
-
-*/
-	const	Boolean KickerIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text KickerWebServicesUserId;
-/*!
-
-*/
-	const	Text MemberAccountId;
-/*!
-
-*/
-	const	Text MemberCountryFlagUrl;
-/*!
-
-*/
-	const	Text MemberDisplayName;
-/*!
-
-*/
-	const	Boolean MemberIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text MemberWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CNotification_SquadMemberRemoved
-*/
-class CNotification_SquadMemberRemoved : public CNotification {
-public :
-/*!
-
-*/
-	const	Text MemberAccountId;
-/*!
-
-*/
-	const	Text MemberCountryFlagUrl;
-/*!
-
-*/
-	const	Text MemberDisplayName;
-/*!
-
-*/
-	const	Boolean MemberIsFirstPartyDisplayName;
-/*!
-
-*/
-	const	Text MemberWebServicesUserId;
-/*!
-
-*/
-	const	Text SquadId;
-/*!
-
-*/
-	const	Text SquadType;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory
-*/
-class CAccountTrophyGainForHistory : public CAccountTrophyGain {
-public :
-/*!
-
-*/
-			CTrophyAchievement TrophyAchievement;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory_CompetitionMatch
-*/
-class CAccountTrophyGainForHistory_CompetitionMatch : public CAccountTrophyGainForHistory {
-public :
-/*!
-
-*/
-	const	Integer Rank;
-/*!
-
-*/
-			CTrophyAchievement_CompetitionMatch TrophyAchievement_CompetitionMatch;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory_CompetitionRanking
-*/
-class CAccountTrophyGainForHistory_CompetitionRanking : public CAccountTrophyGainForHistory {
-public :
-/*!
-
-*/
-	const	Integer Rank;
-/*!
-
-*/
-			CTrophyAchievement_CompetitionRanking TrophyAchievement_CompetitionRanking;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory_LiveMatch
-*/
-class CAccountTrophyGainForHistory_LiveMatch : public CAccountTrophyGainForHistory {
-public :
-/*!
-
-*/
-	const	Integer Rank;
-/*!
-
-*/
-			CTrophyAchievement_LiveMatch TrophyAchievement_LiveMatch;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory_SoloMedal
-*/
-class CAccountTrophyGainForHistory_SoloMedal : public CAccountTrophyGainForHistory {
-public :
-/*!
-
-*/
-	const	Integer Level;
-/*!
-
-*/
-	const	Integer PreviousLevel;
-/*!
-
-*/
-			CTrophyAchievement_SoloMedal TrophyAchievement_SoloMedal;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGainForHistory_SoloRanking
-*/
-class CAccountTrophyGainForHistory_SoloRanking : public CAccountTrophyGainForHistory {
-public :
-/*!
-
-*/
-	const	Integer Rank;
-/*!
-
-*/
-			CTrophyAchievement_SoloRanking TrophyAchievement_SoloRanking;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement_CompetitionMatch
-*/
-class CTrophyAchievement_CompetitionMatch : public CTrophyAchievement {
-public :
-/*!
-
-*/
-	const	Text CompetitionId;
-/*!
-
-*/
-	const	Text CompetitionMatchInfo;
-/*!
-
-*/
-	const	Text CompetitionName;
-/*!
-
-*/
-	const	Text CompetitionStage;
-/*!
-
-*/
-	const	Text CompetitionStageStep;
-/*!
-
-*/
-	const	Text CompetitionType;
-/*!
-
-*/
-	const	Text ServerId;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement_CompetitionRanking
-*/
-class CTrophyAchievement_CompetitionRanking : public CTrophyAchievement {
-public :
-/*!
-
-*/
-	const	Text CompetitionId;
-/*!
-
-*/
-	const	Text CompetitionName;
-/*!
-
-*/
-	const	Text CompetitionStage;
-/*!
-
-*/
-	const	Text CompetitionStageStep;
-/*!
-
-*/
-	const	Text CompetitionType;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement_LiveMatch
-*/
-class CTrophyAchievement_LiveMatch : public CTrophyAchievement {
-public :
-/*!
-
-*/
-	const	Integer Duration;
-/*!
-
-*/
-	const	Text GameMode;
-/*!
-
-*/
-	const	Text GameModeCustomData;
-/*!
-
-*/
-	const	Boolean IsOfficial;
-/*!
-
-*/
-	const	Text ServerId;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement_SoloMedal
-*/
-class CTrophyAchievement_SoloMedal : public CTrophyAchievement {
-public :
-/*!
-
-*/
-	const	Text SoloMedalAchievementType;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement_SoloRanking
-*/
-class CTrophyAchievement_SoloRanking : public CTrophyAchievement {
-public :
-/*!
-
-*/
-	const	Text MapId;
-/*!
-
-*/
-	const	Text SeasonId;
-/*!
-
-*/
-	const	Text SoloRankingAchievementType;
 };
 
 /*!
@@ -2727,7 +2861,7 @@ public :
 /*!
 
 */
-	const	Ident Id;
+	Ident  const Id;
 };
 
 /*!
@@ -2742,27 +2876,27 @@ public :
 /*!
 
 */
-	const	CEditorModule ModuleEditor;
+	CEditorModule * const  ModuleEditor;
 /*!
 
 */
-	const	CEditorMesh MeshEditor;
+	CEditorMesh * const  MeshEditor;
 /*!
 
 */
-	const	CEditorEditor EditorEditor;
+	CEditorEditor * const  EditorEditor;
 /*!
 
 */
-	const	CEditorMediaTracker MediaTracker;
+	CEditorMediaTracker * const  MediaTracker;
 /*!
 
 */
-	const	CEditorSkin SkinEditor;
+	CEditorSkin * const  SkinEditor;
 /*!
 
 */
-			Text Binding_GetShortcut(Text ContextName,Text BindingName);
+	Text Binding_GetShortcut(Text ContextName,Text BindingName);
 };
 
 /*!
@@ -2777,11 +2911,11 @@ public :
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
-	const	CManiaAppTitle ParentApp;
+	CManiaAppTitle * const  ParentApp;
 /*!
 
 */
-	const	CTitleControl TitleControl;
+	CTitleControl * const  TitleControl;
 };
 
 /*!
@@ -2796,7 +2930,7 @@ public :
 /*!
 
 */
-	const	CMapEditorPlugin Editor;
+	CMapEditorPlugin * const  Editor;
 };
 
 /*!
@@ -2811,15 +2945,15 @@ public :
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
-	const	CManiaAppStation ParentApp;
+	CManiaAppStation * const  ParentApp;
 /*!
 
 */
-	const	CStation Station;
+	CStation * const  Station;
 /*!
 
 */
-			Void EnterStation();
+	Void EnterStation();
 };
 
 /*!
@@ -2842,51 +2976,51 @@ public :
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
-	const	CManiaAppBrowser ParentApp;
+	CManiaAppBrowser * const  ParentApp;
 /*!
 
 */
-	const	CMap CurMap;
+	CMap * const  CurMap;
 /*!
 
 */
-			Void ShowCurMapCard();
+	Void ShowCurMapCard();
 /*!
 
 */
-	const	CMlBrowser::EBuddyResult BuddyDoResult;
+	CMlBrowser::EBuddyResult const  BuddyDoResult;
 /*!
 
 */
-	const	Text BuddyDoErrorMessage;
+	Text  const BuddyDoErrorMessage;
 /*!
 
 */
-	const	Boolean IsInBrowser;
+	Boolean  const IsInBrowser;
 /*!
 
 */
-			Void BrowserBack();
+	Void BrowserBack();
 /*!
 
 */
-			Void BrowserQuit();
+	Void BrowserQuit();
 /*!
 
 */
-			Void BrowserHome();
+	Void BrowserHome();
 /*!
 
 */
-			Void BrowserReload();
+	Void BrowserReload();
 /*!
 
 */
-			Text BrowserFocusedFrameId;
+	Text BrowserFocusedFrameId;
 /*!
 
 */
-			Void SetLocalUserClubLink(Text ClubLink);
+	Void SetLocalUserClubLink(Text ClubLink);
 };
 
 /*!
@@ -2901,31 +3035,31 @@ public :
 /*!
 
 */
-	const	CMlFrame MainFrame;
+	CMlFrame * const  MainFrame;
 /*!
 
 */
-			CMlControl GetFirstChild(Text ControlId);
+	CMlControl GetFirstChild(Text ControlId);
 /*!
 
 */
-	const	CMlControl FocusedControl;
+	CMlControl * const  FocusedControl;
 /*!
 
 */
-			Boolean LinksInhibited;
+	Boolean LinksInhibited;
 /*!
 
 */
-			Void GetClassChildren(Text Class,CMlFrame Frame,Boolean Recursive);
+	Void GetClassChildren(Text Class,CMlFrame Frame,Boolean Recursive);
 /*!
 
 */
-	const	Array<CMlControl> GetClassChildren_Result;
+	Array<CMlControl* const > GetClassChildren_Result;
 /*!
 
 */
-			Void ScrollToControl(CMlControl Control);
+	Void ScrollToControl(CMlControl Control);
 };
 
 /*!
@@ -2973,175 +3107,187 @@ public :
 /*!
 
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 
 */
-	const	Text WebServicesUserId;
+	Text  const WebServicesUserId;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 
 */
-	const	Text AvatarUrl;
+	Text  const AvatarUrl;
 /*!
 
 */
-	const	Text ZonePath;
+	Text  const ZonePath;
 /*!
 
 */
-	const	Text ZoneFlagUrl;
+	Text  const ZoneFlagUrl;
 /*!
 
 */
-	const	Text CountryFlagUrl;
+	Text  const CountryFlagUrl;
 /*!
 
 */
-	const	Text Language;
+	Text  const CountryPath;
 /*!
 
 */
-	const	Text Description;
+	Text  const Language;
 /*!
 
 */
-	const	Vec3 Color;
+	Text  const Description;
 /*!
 
 */
-	const	Text ClubLink;
+	Vec3  const Color;
 /*!
 
 */
-	const	Text Trigram;
+	Text  const ClubLink;
 /*!
 
 */
-	const	Text BroadcastTVLogin;
+	Text  const Trigram;
 /*!
 
 */
-	const	Text SteamUserId;
+	Text  const BroadcastTVLogin;
 /*!
 
 */
-	const	Integer FameStars;
+	Text  const SteamUserId;
 /*!
 
 */
-	const	CUser::EEchelon Echelon;
+	Integer  const FameStars;
 /*!
 
 */
-	const	Integer NextEchelonPercent;
+	CUser::EEchelon const  Echelon;
 /*!
 
 */
-	const	Boolean IsBeginner;
+	Integer  const NextEchelonPercent;
 /*!
 
 */
-	const	Integer LadderRank;
+	Boolean  const IsBeginner;
 /*!
 
 */
-	const	Integer LadderTotal;
+	Integer  const LadderRank;
 /*!
 
 */
-	const	Real LadderPoints;
+	Integer  const LadderTotal;
 /*!
 
 */
-	const	Text LadderZoneName;
+	Real  const LadderPoints;
 /*!
 
 */
-	const	Text LadderZoneFlagUrl;
+	Text  const LadderZoneName;
 /*!
 
 */
-	const	Real ReferenceScore;
+	Text  const LadderZoneFlagUrl;
 /*!
 
 */
-	const	Boolean IsFakeUser;
+	Real  const ReferenceScore;
 /*!
 
 */
-	const	Array<Integer> Tags_Favored_Indices;
+	Boolean  const IsFakeUser;
 /*!
 
 */
-	const	Array<Text> Tags_Id;
+	Array<Integer> Tags_Favored_Indices;
 /*!
 
 */
-	const	Array<CUser::ETagType> Tags_Type;
+	Array<Text> Tags_Id;
 /*!
 
 */
-	const	Array<Text> Tags_Comments;
+	Array<CUser::ETagType> Tags_Type;
 /*!
 
 */
-	const	Array<Text> Tags_Deliverer;
+	Array<Text> Tags_Comments;
 /*!
 
 */
-	const	Text ClubTag;
+	Array<Text> Tags_Deliverer;
 /*!
 
 */
-	const	CUser::EStereoDisplayMode StereoDisplayMode;
+	Text  const ClubTag;
 /*!
 
 */
-			Boolean HackCamHmdDisabled;
+	CUser::EStereoDisplayMode const  StereoDisplayMode;
 /*!
 
 */
-	const	Text AvatarDisplayName;
+	Boolean  const ColorblindModeEnabled;
 /*!
 
 */
-	const	Text HornDisplayName;
+	Boolean HackCamHmdDisabled;
 /*!
 
 */
-	const	Text Model_CarSport_SkinName;
+	Text  const AvatarDisplayName;
 /*!
 
 */
-	const	Text Model_CarSport_SkinUrl;
+	Text  const HornDisplayName;
 /*!
 
 */
-	const	Text Model_HelmetPilot_SkinName;
+	Text  const Model_CarSport_SkinName;
 /*!
 
 */
-	const	Text Model_HelmetPilot_SkinUrl;
+	Text  const Model_CarSport_SkinUrl;
 /*!
 
 */
-	const	CGameUserVoiceChat VoiceChat;
+	Text  const Model_CharacterPilot_SkinName;
 /*!
 
 */
-	const	Boolean IsConnectedToMasterServer;
+	Text  const Model_CharacterPilot_SkinUrl;
 /*!
 
 */
-	const	Array<Text> AlliesConnected;
+	Text  const Prestige_SkinOptions;
+/*!
+
+*/
+	CGameUserVoiceChat * const  VoiceChat;
+/*!
+
+*/
+	Boolean  const IsConnectedToMasterServer;
+/*!
+
+*/
+	Array<Text> AlliesConnected;
 };
 
 /*!
@@ -3156,43 +3302,43 @@ public :
 /*!
 
 */
-	const	Text TitleId;
+	Text  const TitleId;
 /*!
 
 */
-	const	Text AuthorLogin;
+	Text  const AuthorLogin;
 /*!
 
 */
-	const	Text AuthorName;
+	Text  const AuthorName;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text Desc;
+	Text  const Desc;
 /*!
 
 */
-	const	Text InfoUrl;
+	Text  const InfoUrl;
 /*!
 
 */
-	const	Text DownloadUrl;
+	Text  const DownloadUrl;
 /*!
 
 */
-	const	Text TitleVersion;
+	Text  const TitleVersion;
 /*!
 
 */
-	const	Text MakerTitleId;
+	Text  const MakerTitleId;
 /*!
 
 */
-	const	Text BaseTitleId;
+	Text  const BaseTitleId;
 };
 
 /*!
@@ -3237,43 +3383,43 @@ public :
 /*!
 
 */
-	const	CMlScriptEvent::Type Type;
+	CMlScriptEvent::Type const  Type;
 /*!
 
 */
-	const	Integer KeyCode;
+	Integer  const KeyCode;
 /*!
 
 */
-	const	Text KeyName;
+	Text  const KeyName;
 /*!
 
 */
-	const	Text CharPressed;
+	Text  const CharPressed;
 /*!
 
 */
-	const	Text ControlId;
+	Text  const ControlId;
 /*!
 
 */
-	const	CMlControl Control;
+	CMlControl * const  Control;
 /*!
 
 */
-	const	CMlScriptEvent::EMenuNavAction MenuNavAction;
+	CMlScriptEvent::EMenuNavAction const  MenuNavAction;
 /*!
 
 */
-	const	Boolean IsActionAutoRepeat;
+	Boolean  const IsActionAutoRepeat;
 /*!
 
 */
-	const	Text CustomEventType;
+	Text  const CustomEventType;
 /*!
 
 */
-	const	Array<Text> CustomEventData;
+	Array<Text> CustomEventData;
 };
 
 /*!
@@ -3306,103 +3452,99 @@ public :
 /*!
 
 */
-	const	CMlFrame Parent;
+	CMlFrame * const  Parent;
 /*!
 
 */
-	const	Text ControlId;
+	Text  const ControlId;
 /*!
 
 */
-	const	Array<Text> ControlClasses;
+	Boolean HasClass(Text Class);
 /*!
 
 */
-			Boolean HasClass(Text Class);
+	Vec2 Size;
 /*!
 
 */
-			Vec2 Size;
+	CMlControl::AlignHorizontal HorizontalAlign;
 /*!
 
 */
-			CMlControl::AlignHorizontal HorizontalAlign;
+	CMlControl::AlignVertical VerticalAlign;
 /*!
 
 */
-			CMlControl::AlignVertical VerticalAlign;
+	Boolean Visible;
 /*!
 
 */
-			Boolean Visible;
+	Vec2 RelativePosition_V3;
 /*!
 
 */
-			Vec2 RelativePosition_V3;
+	Real ZIndex;
 /*!
 
 */
-			Real ZIndex;
+	Real RelativeScale;
 /*!
 
 */
-			Real RelativeScale;
+	Real RelativeRotation;
 /*!
 
 */
-			Real RelativeRotation;
+	Vec2  const AbsolutePosition_V3;
 /*!
 
 */
-	const	Vec2 AbsolutePosition_V3;
+	Real  const AbsoluteScale;
 /*!
 
 */
-	const	Real AbsoluteScale;
+	Real  const AbsoluteRotation;
 /*!
 
 */
-	const	Real AbsoluteRotation;
+	Boolean DataAttributeExists(Text DataName);
 /*!
 
 */
-			Boolean DataAttributeExists(Text DataName);
+	Text DataAttributeGet(Text DataName);
 /*!
 
 */
-			Text DataAttributeGet(Text DataName);
+	Void DataAttributeSet(Text DataName,Text DataValue);
 /*!
 
 */
-			Void DataAttributeSet(Text DataName,Text DataValue);
+	Text ToolTip;
 /*!
 
 */
-			Text ToolTip;
+	Void Show();
 /*!
 
 */
-			Void Show();
+	Void Hide();
 /*!
 
 */
-			Void Hide();
+	Void Focus();
 /*!
 
 */
-			Void Focus();
+	Void ScriptEvents_Disable();
 /*!
 
 */
-			Void ScriptEvents_Disable();
+	Void ScriptEvents_Restore();
 /*!
 
 */
-			Void ScriptEvents_Restore();
-/*!
-
-*/
-	const	Boolean IsFocused;
+	Boolean  const IsFocused;
 };
 
 /*!
@@ -3413,91 +3555,91 @@ public :
 /*!
 
 */
-			CParsingDocument Create(Text Contents);
+	CParsingDocument Create(Text Contents);
 /*!
 
 */
-			CParsingDocument Create(Text Contents,Boolean GenerateText,Boolean GenerateTextRaw,Boolean GenerateTextResursive);
+	CParsingDocument Create(Text Contents,Boolean GenerateText,Boolean GenerateTextRaw,Boolean GenerateTextResursive);
 /*!
 
 */
-			Void Destroy(CParsingDocument Document);
+	Void Destroy(CParsingDocument Document);
 /*!
 Parses an XML document
 */
-			CParsingDocument Parse_Xml(Text Contents);
+	CParsingDocument Parse_Xml(Text Contents);
 /*!
 Parses an XML document
 */
-			CParsingDocument Parse_Xml(Text Contents,Boolean GenerateText,Boolean GenerateTextRaw,Boolean GenerateTextResursive);
+	CParsingDocument Parse_Xml(Text Contents,Boolean GenerateText,Boolean GenerateTextRaw,Boolean GenerateTextResursive);
 /*!
 
 */
-			Void Parse_Destroy(CParsingDocument Document);
+	Void Parse_Destroy(CParsingDocument Document);
 /*!
 
 */
-			Integer DocumentsSlotsLimit;
+	Integer DocumentsSlotsLimit;
 /*!
 
 */
-	const	Array<CParsingDocument> DocumentsXml;
+	Array<CParsingDocument* const > DocumentsXml;
 /*!
 
 */
-			Ident Compose_Start_Xml(Boolean Compact);
+	Ident Compose_Start_Xml(Boolean Compact);
 /*!
 
 */
-			Ident Compose_Start_Json(Boolean Compact);
+	Ident Compose_Start_Json(Boolean Compact);
 /*!
 
 */
-			Void Compose_End(Ident ComposerId);
+	Void Compose_End(Ident ComposerId);
 /*!
 
 */
-			Void Compose_Destroy(Ident ComposerId);
+	Void Compose_Destroy(Ident ComposerId);
 /*!
 
 */
-			Void Compose_Node_Open(Ident ComposerId,Text Name);
+	Void Compose_Node_Open(Ident ComposerId,Text Name);
 /*!
 
 */
-			Void Compose_Node_Close(Ident ComposerId);
+	Void Compose_Node_Close(Ident ComposerId);
 /*!
 
 */
-			Void Compose_Array_Open(Ident ComposerId,Text Name);
+	Void Compose_Array_Open(Ident ComposerId,Text Name);
 /*!
 
 */
-			Void Compose_Array_Close(Ident ComposerId);
+	Void Compose_Array_Close(Ident ComposerId);
 /*!
 
 */
-			Void Compose_Attribute(Ident ComposerId,Text Name,Text Value);
+	Void Compose_Attribute(Ident ComposerId,Text Name,Text Value);
 /*!
 
 */
-			Void Compose_Attribute(Ident ComposerId,Text Name,Integer Value);
+	Void Compose_Attribute(Ident ComposerId,Text Name,Integer Value);
 /*!
 
 */
-			Void Compose_Attribute(Ident ComposerId,Text Name,Real Value);
+	Void Compose_Attribute(Ident ComposerId,Text Name,Real Value);
 /*!
 
 */
-			Void Compose_Attribute(Ident ComposerId,Text Name,Boolean Value);
+	Void Compose_Attribute(Ident ComposerId,Text Name,Boolean Value);
 /*!
 
 */
-			Void Compose_Value(Ident ComposerId,Text Name,Text Value);
+	Void Compose_Value(Ident ComposerId,Text Name,Text Value);
 /*!
 
 */
-			Text Compose_GetResult(Ident ComposerId);
+	Text Compose_GetResult(Ident ComposerId);
 };
 
 /*!
@@ -3508,51 +3650,51 @@ public :
 /*!
 Create a get request, AdditionnalHeaders format is : "Header-name: Value\nOther-name: OtherValue"
 */
-			CHttpRequest CreateGet(Text Url);
+	CHttpRequest CreateGet(Text Url);
 /*!
 
 */
-			CHttpRequest CreateGet(Text Url,Boolean UseCache);
+	CHttpRequest CreateGet(Text Url,Boolean UseCache);
 /*!
 
 */
-			CHttpRequest CreateGet(Text Url,Boolean UseCache,Text AdditionalHeaders);
+	CHttpRequest CreateGet(Text Url,Boolean UseCache,Text AdditionalHeaders);
 /*!
 
 */
-			CHttpRequest CreatePost(Text Url,Text Resource);
+	CHttpRequest CreatePost(Text Url,Text Resource);
 /*!
 
 */
-			CHttpRequest CreatePost(Text Url,Text Resource,Text AdditionalHeaders);
+	CHttpRequest CreatePost(Text Url,Text Resource,Text AdditionalHeaders);
 /*!
 
 */
-			CHttpRequest CreatePostFile(Text Url,Text FileName,Text AdditionalHeaders);
+	CHttpRequest CreatePostFile(Text Url,Text FileName,Text AdditionalHeaders);
 /*!
 
 */
-			Void Destroy(CHttpRequest Request);
+	Void Destroy(CHttpRequest Request);
 /*!
 
 */
-			Boolean IsValidUrl(Text Url);
+	Boolean IsValidUrl(Text Url);
 /*!
 
 */
-	const	Array<CHttpRequest> Requests;
+	Array<CHttpRequest* const > Requests;
 /*!
 
 */
-	const	Integer SlotsAvailable;
+	Integer  const SlotsAvailable;
 /*!
 
 */
-	const	Array<CHttpEvent> PendingEvents;
+	Array<CHttpEvent* const > PendingEvents;
 /*!
 
 */
-			Boolean AutomaticHeaders_Timezone;
+	Boolean AutomaticHeaders_Timezone;
 };
 
 /*!
@@ -3563,15 +3705,15 @@ public :
 /*!
 
 */
-			CVideo CreateVideo(Text Url,Boolean IsLooping,Boolean AutoProcessing);
+	CVideo CreateVideo(Text Url,Boolean IsLooping,Boolean AutoProcessing);
 /*!
 
 */
-			Void DestroyVideo(CVideo Video);
+	Void DestroyVideo(CVideo Video);
 /*!
 
 */
-	const	Array<CVideo> Videos;
+	Array<CVideo* const > Videos;
 };
 
 /*!
@@ -3599,87 +3741,87 @@ public :
 /*!
 
 */
-			CAudioSource CreateSound(Text Url);
+	CAudioSource CreateSound(Text Url);
 /*!
 
 */
-			CAudioSource CreateSound(Text Url,Real VolumedB,Boolean IsMusic,Boolean IsLooping,Boolean IsSpatialized);
+	CAudioSource CreateSound(Text Url,Real VolumedB,Boolean IsMusic,Boolean IsLooping,Boolean IsSpatialized);
 /*!
 
 */
-			Void DestroySound(CAudioSource Sound);
+	Void DestroySound(CAudioSource Sound);
 /*!
 
 */
-	const	Array<CAudioSource> Sounds;
+	Array<CAudioSource* const > Sounds;
 /*!
 
 */
-			CAudioSourceMusic CreateMusic(Text Url);
+	CAudioSourceMusic CreateMusic(Text Url);
 /*!
 
 */
-			Void DestroyMusic(CAudioSourceMusic Music);
+	Void DestroyMusic(CAudioSourceMusic Music);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioSource Sound,Real VolumedB);
+	Void PlaySoundEvent(CAudioSource Sound,Real VolumedB);
 /*!
 
 */
-			Void PlaySoundEvent(Text Url,Real VolumedB);
+	Void PlaySoundEvent(Text Url,Real VolumedB);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioManager::ELibSound Sound,Integer SoundVariant,Real VolumedB);
+	Void PlaySoundEvent(CAudioManager::ELibSound Sound,Integer SoundVariant,Real VolumedB);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Integer Delay);
+	Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Integer Delay);
 /*!
 
 */
-			Void PlaySoundEvent(Text Url,Real VolumedB,Integer Delay);
+	Void PlaySoundEvent(Text Url,Real VolumedB,Integer Delay);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioManager::ELibSound Sound,Integer SoundVariant,Real VolumedB,Integer Delay);
+	Void PlaySoundEvent(CAudioManager::ELibSound Sound,Integer SoundVariant,Real VolumedB,Integer Delay);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Vec3 PanRadiusLfe);
+	Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Vec3 PanRadiusLfe);
 /*!
 
 */
-			Void PlaySoundEvent(Text Url,Real VolumedB,Vec3 PanRadiusLfe);
+	Void PlaySoundEvent(Text Url,Real VolumedB,Vec3 PanRadiusLfe);
 /*!
 
 */
-			Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Vec3 PanRadiusLfe,Integer Delay);
+	Void PlaySoundEvent(CAudioSource Sound,Real VolumedB,Vec3 PanRadiusLfe,Integer Delay);
 /*!
 
 */
-			Void PlaySoundEvent(Text Url,Real VolumedB,Vec3 PanRadiusLfe,Integer Delay);
+	Void PlaySoundEvent(Text Url,Real VolumedB,Vec3 PanRadiusLfe,Integer Delay);
 /*!
 
 */
-			Void ClearAllDelayedSoundsEvents();
+	Void ClearAllDelayedSoundsEvents();
 /*!
 
 */
-			Boolean ForceEnableMusic;
+	Boolean ForceEnableMusic;
 /*!
 
 */
-			Real LimitMusicVolumedB;
+	Real LimitMusicVolumedB;
 /*!
 
 */
-			Real LimitSceneSoundVolumedB;
+	Real LimitSceneSoundVolumedB;
 /*!
 
 */
-			Real LimitUiSoundVolumedB;
+	Real LimitUiSoundVolumedB;
 };
 
 /*!
@@ -3720,91 +3862,91 @@ public :
 /*!
 
 */
-	const	Array<CInputEvent> PendingEvents;
+	Array<CInputEvent* const > PendingEvents;
 /*!
 
 */
-	const	Integer Now;
+	Integer  const Now;
 /*!
 
 */
-	const	Integer Period;
+	Integer  const Period;
 /*!
 
 */
-	const	Array<CInputPad> Pads;
+	Array<CInputPad* const > Pads;
 /*!
 
 */
-	const	Vec2 MousePos;
+	Vec2  const MousePos;
 /*!
 
 */
-	const	Vec2 MouseKineticScrollVel;
+	Vec2  const MouseKineticScrollVel;
 /*!
 
 */
-	const	Boolean MouseLeftButton;
+	Boolean  const MouseLeftButton;
 /*!
 
 */
-	const	Boolean MouseRightButton;
+	Boolean  const MouseRightButton;
 /*!
 
 */
-	const	Boolean MouseMiddleButton;
+	Boolean  const MouseMiddleButton;
 /*!
 
 */
-	const	Array<Vec2> TouchPoints_Cur;
+	Array<Vec2> TouchPoints_Cur;
 /*!
 
 */
-	const	Array<Vec2> TouchPoints_Init;
+	Array<Vec2> TouchPoints_Init;
 /*!
 
 */
-			Text GetPadButtonPlaygroundBinding(CInputPad Pad,CInputManager::EButton Button);
+	Text GetPadButtonPlaygroundBinding(CInputPad Pad,CInputManager::EButton Button);
 /*!
 
 */
-			Text GetPadButtonCurrentBinding(CInputPad Pad,CInputManager::EButton Button);
+	Text GetPadButtonCurrentBinding(CInputPad Pad,CInputManager::EButton Button);
 /*!
 
 */
-			Text GetActionBinding(CInputPad Pad,Text ActionMap,Text ActionId);
+	Text GetActionBinding(CInputPad Pad,Text ActionMap,Text ActionId);
 /*!
 
 */
-			Text GetActionDisplayName(Text ActionMap,Text ActionId);
+	Text GetActionDisplayName(Text ActionMap,Text ActionId);
 /*!
 
 */
-			Boolean ExclusiveMode;
+	Boolean ExclusiveMode;
 /*!
 
 */
-			Boolean IsKeyPressed(Integer KeyCode);
+	Boolean IsKeyPressed(Integer KeyCode);
 /*!
 Duration (ms) elapsed since latest user interraction on any device.
 */
-	const	Integer TimeSinceLatestActivity;
+	Integer  const TimeSinceLatestActivity;
 /*!
 
 */
-	const	Integer TimeSinceLatestMouseActivity;
+	Integer  const TimeSinceLatestMouseActivity;
 /*!
 
 */
-	const	Integer TimeSinceLatestTouchActivity;
+	Integer  const TimeSinceLatestTouchActivity;
 /*!
 
 */
-	const	Integer TimeSinceLatestKeyboardActivity;
+	Integer  const TimeSinceLatestKeyboardActivity;
 /*!
 
 */
-	const	Integer TimeSinceLatestPadActivity;
+	Integer  const TimeSinceLatestPadActivity;
 };
 
 /*!
@@ -3827,231 +3969,235 @@ public :
 /*!
 Array of task results.
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 Release a task result no more used.
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 Array of campaigns.
 */
-	const	Array<CCampaign> Campaigns;
+	Array<CCampaign* const > Campaigns;
 /*!
 Get a campaign from its id.
 */
-			CCampaign Campaign_Get(Text CampaignId);
+	CCampaign Campaign_Get(Text CampaignId);
 /*!
 
 */
-			CTaskResult_NSItemCollection ItemCollection_Create(Ident UserId,Text ClubId,Text DisplayName,Text FileName);
+	CTaskResult_NSItemCollection ItemCollection_Create(Ident UserId,Text ClubId,Text DisplayName,Text FileName);
 /*!
 
 */
-			CTaskResult_NSItemCollection ItemCollection_CreateVersion(Ident UserId,Text ItemCollectionId,Text FileName);
+	CTaskResult_NSItemCollection ItemCollection_CreateVersion(Ident UserId,Text ItemCollectionId,Text FileName);
 /*!
 
 */
-			CTaskResult_NSItemCollection ItemCollection_Get(Ident UserId,Text ItemCollectionId);
+	CTaskResult_NSItemCollection ItemCollection_Get(Ident UserId,Text ItemCollectionId);
 /*!
 
 */
-			CTaskResult_NSItemCollectionList ItemCollection_GetList(Ident UserId,Array<Text> ItemCollectionIdList);
+	CTaskResult_NSItemCollectionList ItemCollection_GetList(Ident UserId,Array<Text> ItemCollectionIdList);
 /*!
 
 */
-			CTaskResult_NSItemCollectionList ItemCollection_GetListByUser(Ident UserId,Text WebServicesUserId);
+	CTaskResult_NSItemCollectionList ItemCollection_GetListByUser(Ident UserId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_NSItemCollection ItemCollection_SetActivityId(Ident UserId,Text ItemCollectionId,Text ActivityId);
+	CTaskResult_NSItemCollection ItemCollection_SetActivityId(Ident UserId,Text ItemCollectionId,Text ActivityId);
 /*!
 
 */
-			CTaskResult_NSItemCollection ItemCollection_Update(Ident UserId,Text ItemCollectionId,Text DisplayName);
+	CTaskResult_NSItemCollection ItemCollection_Update(Ident UserId,Text ItemCollectionId,Text DisplayName);
 /*!
 
 */
-			CTaskResult ItemCollection_AddFavorite(Ident UserId,Text ItemCollectionId);
+	CTaskResult ItemCollection_AddFavorite(Ident UserId,Text ItemCollectionId);
 /*!
 
 */
-			CTaskResult_NSItemCollectionList ItemCollection_GetFavoriteList(Ident UserId);
+	CTaskResult_NSItemCollectionList ItemCollection_GetFavoriteList(Ident UserId);
 /*!
 
 */
-			CTaskResult ItemCollection_RemoveFavorite(Ident UserId,Text ItemCollectionId);
+	CTaskResult ItemCollection_RemoveFavorite(Ident UserId,Text ItemCollectionId);
 /*!
 
 */
-			Void Map_RefreshFromDisk();
+	Void Map_RefreshFromDisk();
 /*!
 Get the list of map stored in the specified path.
 */
-			CTaskResult_MapList Map_GetGameList(Text Path,Boolean Flatten);
+	CTaskResult_MapList Map_GetGameList(Text Path,Boolean Flatten);
 /*!
 Get the list of map stored according to the filters in the specified path.
 */
-			CTaskResult_MapList Map_GetGameList(Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_MapList Map_GetGameList(Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 Get the list of map stored in the specified path. Scope is used to specify if the list is retrieved from game data (1), title data (2) or user data (4), which can be added).
 */
-			CTaskResult_MapList Map_GetFilteredGameList(Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_MapList Map_GetFilteredGameList(Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 
 */
-			CGhost Map_GetAuthorGhost(CMap Map);
+	CGhost Map_GetAuthorGhost(CMap Map);
 /*!
 
 */
-			CTaskResult_NSMap Map_NadeoServices_Get(Ident UserId,Text MapId);
+	CTaskResult_NSMap Map_NadeoServices_Get(Ident UserId,Text MapId);
 /*!
 
 */
-			CTaskResult_NSMap Map_NadeoServices_GetFromUid(Ident UserId,Text MapUid);
+	CTaskResult_NSMap Map_NadeoServices_GetFromUid(Ident UserId,Text MapUid);
 /*!
 
 */
-			CTaskResult_NSMapList Map_NadeoServices_GetList(Ident UserId,Array<Text> MapIdList);
+	CTaskResult_NSMapList Map_NadeoServices_GetList(Ident UserId,Array<Text> MapIdList);
 /*!
 
 */
-			CTaskResult_NSMapList Map_NadeoServices_GetListFromUid(Ident UserId,Array<Text> MapUidList);
+	CTaskResult_NSMapList Map_NadeoServices_GetListFromUid(Ident UserId,Array<Text> MapUidList);
 /*!
 
 */
-			CTaskResult_NSMapList Map_NadeoServices_GetListFromUser(Ident UserId,Text WebServicesUserId);
+	CTaskResult_NSMapList Map_NadeoServices_GetListFromUser(Ident UserId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_NSMap Map_NadeoServices_Register(Ident UserId,Text MapUid);
+	CTaskResult_NSMap Map_NadeoServices_Register(Ident UserId,Text MapUid);
 /*!
 
 */
-			CTaskResult_NSSkin Skin_NadeoServices_Get(Ident UserId,Text SkinId);
+	CTaskResult_NSSkin Skin_NadeoServices_Get(Ident UserId,Text SkinId);
 /*!
 
 */
-			CTaskResult_NSSkin Skin_NadeoServices_GetFromChecksum(Ident UserId,Text SkinChecksum);
+	CTaskResult_NSSkin Skin_NadeoServices_GetFromChecksum(Ident UserId,Text SkinChecksum);
 /*!
 
 */
-			CTaskResult_NSSkinList Skin_NadeoServices_GetList(Ident UserId,Array<Text> SkinIdList);
+	CTaskResult_NSSkinList Skin_NadeoServices_GetList(Ident UserId,Array<Text> SkinIdList);
 /*!
 
 */
-			CTaskResult_NSSkinList Skin_NadeoServices_GetListFromChecksum(Ident UserId,Array<Text> SkinChecksumList);
+	CTaskResult_NSSkinList Skin_NadeoServices_GetListFromChecksum(Ident UserId,Array<Text> SkinChecksumList);
 /*!
 
 */
-			CTaskResult_NSSkinList Skin_NadeoServices_GetListFromUser(Ident UserId,Text WebServicesUserId);
+	CTaskResult_NSSkinList Skin_NadeoServices_GetListFromUser(Ident UserId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_NSSkin Skin_NadeoServices_Register(Ident UserId,Text SkinDisplayName,Text SkinFileName);
+	CTaskResult_NSSkin Skin_NadeoServices_Register(Ident UserId,Text SkinDisplayName,Text SkinFileName);
 /*!
 
 */
-			CTaskResult AccountSkin_NadeoServices_AddFavorite(Ident UserId,Text SkinId);
+	CTaskResult AccountSkin_NadeoServices_AddFavorite(Ident UserId,Text SkinId);
 /*!
 
 */
-			CTaskResult_NSSkinList AccountSkin_NadeoServices_GetFavoriteList(Ident UserId);
+	CTaskResult_NSSkinList AccountSkin_NadeoServices_GetFavoriteList(Ident UserId);
 /*!
 
 */
-			CTaskResult_NSSkinList AccountSkin_NadeoServices_GetList(Ident UserId);
+	CTaskResult_NSSkinList AccountSkin_NadeoServices_GetList(Ident UserId);
 /*!
 
 */
-			CTaskResult AccountSkin_NadeoServices_RemoveFavorite(Ident UserId,Text SkinId);
+	CTaskResult_NSSkinList AccountSkin_NadeoServices_GetListForUser(Ident UserId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_NSSkin AccountSkin_NadeoServices_Set(Ident UserId,Text SkinId);
+	CTaskResult AccountSkin_NadeoServices_RemoveFavorite(Ident UserId,Text SkinId);
 /*!
 
 */
-			CTaskResult AccountSkin_NadeoServices_Unset(Ident UserId,Text SkinType);
+	CTaskResult_NSSkin AccountSkin_NadeoServices_Set(Ident UserId,Text SkinId);
+/*!
+
+*/
+	CTaskResult AccountSkin_NadeoServices_Unset(Ident UserId,Text SkinType);
 /*!
 Array of ghosts.
 */
-	const	Array<CGhost> Ghosts;
+	Array<CGhost* const > Ghosts;
 /*!
 Release a downloaded ghost no longer needed.
 */
-			Void Ghost_Release(Ident GhostId);
+	Void Ghost_Release(Ident GhostId);
 /*!
 
 */
-			CTaskResult_Ghost Ghost_Download(Text FileName,Text Url);
+	CTaskResult_Ghost Ghost_Download(Text FileName,Text Url);
 /*!
 
 */
-			CTaskResult Ghost_Upload(Text Url,CGhost Ghost,Text AdditionalHeaders);
+	CTaskResult Ghost_Upload(Text Url,CGhost Ghost,Text AdditionalHeaders);
 /*!
 
 */
-			Void Replay_RefreshFromDisk();
+	Void Replay_RefreshFromDisk();
 /*!
 Get the list of replay stored in the specified path.
 */
-			CTaskResult_ReplayList Replay_GetGameList(Text Path,Boolean Flatten);
+	CTaskResult_ReplayList Replay_GetGameList(Text Path,Boolean Flatten);
 /*!
 Get the list of replay stored according to the filters in the specified path.
 */
-			CTaskResult_ReplayList Replay_GetGameList(Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_ReplayList Replay_GetGameList(Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 Get the list of replay stored in the specified path. Scope is used to specify if the list is retrieved from game data (1), title data (2) or user data (4), which can be added.
 */
-			CTaskResult_ReplayList Replay_GetFilteredGameList(Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_ReplayList Replay_GetFilteredGameList(Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 Get the list of ghosts from the replay stored at the specified file path.
 */
-			CTaskResult_GhostList Replay_Load(Text Path);
+	CTaskResult_GhostList Replay_Load(Text Path);
 /*!
 Save the map and the ghost into a replay file stored at the specified path.
 */
-			CTaskResult Replay_Save(Text Path,CMap Map,CGhost Ghost);
+	CTaskResult Replay_Save(Text Path,CMap Map,CGhost Ghost);
 /*!
 
 */
-			CTaskResult Replay_Author_Save(CMap Map,CGhost Ghost);
+	CTaskResult Replay_Author_Save(CMap Map,CGhost Ghost);
 /*!
 Get the list of media stored in the specified path.
 */
-			CTaskResult_FileList Media_GetGameList(CDataFileMgr::EMediaType Type,Text Path,Boolean Flatten);
+	CTaskResult_FileList Media_GetGameList(CDataFileMgr::EMediaType Type,Text Path,Boolean Flatten);
 /*!
 Get the list of media stored according to the filters in the specified path.
 */
-			CTaskResult_FileList Media_GetGameList(CDataFileMgr::EMediaType Type,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_FileList Media_GetGameList(CDataFileMgr::EMediaType Type,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 Get the list of media stored in the specified path. Scope is used to specify if the list is retrieved from game data (1), title data (2) or user data (4), which can be added.
 */
-			CTaskResult_FileList Media_GetFilteredGameList(CDataFileMgr::EMediaType Type,Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
+	CTaskResult_FileList Media_GetFilteredGameList(CDataFileMgr::EMediaType Type,Integer Scope,Text Path,Boolean Flatten,Boolean SortByNameElseByDate,Boolean SortOrderAsc);
 /*!
 Refresh the list of media stored in the specified path. Scope is used to specify if the list is retrieved from game data (1), title data (2) or user data (4), which can be added.
 */
-			Void Media_RefreshFromDisk(CDataFileMgr::EMediaType Type,Integer Scope);
+	Void Media_RefreshFromDisk(CDataFileMgr::EMediaType Type,Integer Scope);
 /*!
 
 */
-			CTaskResult_GameModeList GameMode_GetGameList(Integer Scope,Text Path,Boolean Flatten);
+	CTaskResult_GameModeList GameMode_GetGameList(Integer Scope,Text Path,Boolean Flatten);
 /*!
 
 */
-			CTaskResult Pack_DownloadOrUpdate(Text DisplayName,Text Url);
+	CTaskResult Pack_DownloadOrUpdate(Text DisplayName,Text Url);
 /*!
 
 */
-			CTaskResult UserSave_DeleteFile(Text Path);
+	CTaskResult UserSave_DeleteFile(Text Path);
 /*!
 Available space for user files, in kilobytes. (clamped to 1Gb)
 */
-	const	Integer UserSave_AvailableSpace;
+	Integer  const UserSave_AvailableSpace;
 /*!
 Background write to usersave in progress. Do not switch off the console.
 */
-	const	Boolean UserSave_IsWriting;
+	Boolean  const UserSave_IsWriting;
 };
 
 /*!
@@ -4080,187 +4226,187 @@ public :
 /*!
 Array of task results.
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 Release a task result no more used.
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 Returns the local status of user records for the specified context.
 */
-			CScoreMgr::ELocalScoreStatus ScoreStatus_GetLocalStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	CScoreMgr::ELocalScoreStatus ScoreStatus_GetLocalStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 Returns the masterserver status of user records for the specified context.
 */
-			CScoreMgr::EMasterServerScoreStatus ScoreStatus_GetMasterServerStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	CScoreMgr::EMasterServerScoreStatus ScoreStatus_GetMasterServerStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 Returns the ghost currently being recorded for a player on the current playground. (or the latest ghost if the player is not playing.)
 */
-			CGhost Playground_GetPlayerGhost(CPlayer GamePlayer);
+	CGhost Playground_GetPlayerGhost(CPlayer GamePlayer);
 /*!
 Set a new record for a map.
 */
-			CTaskResult Map_SetNewRecord_v2(Ident UserId,Text MapUid,Text GameMode,Text GameModeCustomData,CGhost Ghost);
+	CTaskResult Map_SetNewRecord_v2(Ident UserId,Text MapUid,Text GameMode,Text GameModeCustomData,CGhost Ghost);
 /*!
 Returns the user record time for a map.
 */
-			Integer Map_GetRecord_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	Integer Map_GetRecord_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 Returns the user record ghost for  a map.
 */
-			CTaskResult_Ghost Map_GetRecordGhost_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	CTaskResult_Ghost Map_GetRecordGhost_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 Returns the number of medals for a map.
 */
-			Integer Map_GetMedal(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	Integer Map_GetMedal(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 Returns the record score of the medal for a map.
 */
-			Integer Map_GetMultiAsyncLevelRecord_v2(Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer MultiAsyncLevel);
+	Integer Map_GetMultiAsyncLevelRecord_v2(Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer MultiAsyncLevel);
 /*!
 Returns the record ghost of the medal for a map.
 */
-			CTaskResult_Ghost Map_GetMultiAsyncLevelRecordGhost_v2(Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer MultiAsyncLevel);
+	CTaskResult_Ghost Map_GetMultiAsyncLevelRecordGhost_v2(Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer MultiAsyncLevel);
 /*!
 Returns the skillpoints for a map.
 */
-			Integer Map_GetSkillPoints_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	Integer Map_GetSkillPoints_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 
 */
-			CTaskResult_MapRecordList Map_GetPlayerListRecordList(Ident UserId,Array<Text> WebServicesUserIdList,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
+	CTaskResult_MapRecordList Map_GetPlayerListRecordList(Ident UserId,Array<Text> WebServicesUserIdList,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 
 */
-			CWebServicesTaskResult_Natural MapLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text MapUid,Text Context,Text Zone);
+	CWebServicesTaskResult_Natural MapLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text MapUid,Text Context,Text Zone);
 /*!
 Returns the number of medals for a campaign.
 */
-			Integer Campaign_GetMultiAsyncLevel(Ident UserId,Text CampaignId);
+	Integer Campaign_GetMultiAsyncLevel(Ident UserId,Text CampaignId);
 /*!
 Returns the number of medals of the specified level for a campaign.
 */
-			Integer Campaign_GetMultiAsyncLevelCount(Ident UserId,Text CampaignId,Integer MultiAsyncLevel);
+	Integer Campaign_GetMultiAsyncLevelCount(Ident UserId,Text CampaignId,Integer MultiAsyncLevel);
 /*!
 Returns the skillpoints for a campaign.
 */
-			Integer Campaign_GetSkillPoints(Ident UserId,Text CampaignId);
+	Integer Campaign_GetSkillPoints(Ident UserId,Text CampaignId);
 /*!
 Returns the all the records of an opponent specified by its login for a campaign.
 */
-			CTaskResult_MapRecordList Campaign_GetOpponentRecords(Ident UserId,Text CampaignId,Text OpponentLogin);
+	CTaskResult_MapRecordList Campaign_GetOpponentRecords(Ident UserId,Text CampaignId,Text OpponentLogin);
 /*!
 Returns the buddies records for a map of a campaign.
 */
-			CTaskResult_BuddiesChallengeRecord Campaign_GetBuddiesMapRecord(Ident UserId,Text CampaignId,Text MapUid);
+	CTaskResult_BuddiesChallengeRecord Campaign_GetBuddiesMapRecord(Ident UserId,Text CampaignId,Text MapUid);
 /*!
 Returns if the buddies records for a map of a campaign are dirty.
 */
-			Boolean Campaign_IsBuddiesMapRecordDirty(Ident UserId,Text CampaignId,Text MapUid);
+	Boolean Campaign_IsBuddiesMapRecordDirty(Ident UserId,Text CampaignId,Text MapUid);
 /*!
 Returns the buddies records comparison for a campaign.
 */
-			CTaskResult_BuddiesChallengeRecordsComparison Campaign_GetBuddiesMapRecordsComparison(Ident UserId,Text CampaignId);
+	CTaskResult_BuddiesChallengeRecordsComparison Campaign_GetBuddiesMapRecordsComparison(Ident UserId,Text CampaignId);
 /*!
 Returns the records comparison with a buddy for a campaign.
 */
-			CTaskResult_BuddyChallengeRecordsComparison Campaign_GetBuddyMapRecordsComparison(Ident UserId,Text OpponentLogin,Text CampaignId);
+	CTaskResult_BuddyChallengeRecordsComparison Campaign_GetBuddyMapRecordsComparison(Ident UserId,Text OpponentLogin,Text CampaignId);
 /*!
 Returns the user ranking on a campaign.
 */
-			CWebServicesTaskResult_Natural CampaignLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints);
+	CWebServicesTaskResult_Natural CampaignLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints);
 /*!
 Returns the number of user ranked on a campaign.
 */
-			Integer CampaignLeaderBoard_GetPlayerCount(Text CampaignId,Text Zone,Boolean UseSkillPoints);
+	Integer CampaignLeaderBoard_GetPlayerCount(Text CampaignId,Text Zone,Boolean UseSkillPoints);
 /*!
 Returns a part of the campaign leaderboard.
 */
-			CTaskResult_NaturalLeaderBoardInfoList CampaignLeaderBoard_GetPlayerList(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints,Integer FromIndex,Integer Count);
+	CTaskResult_NaturalLeaderBoardInfoList CampaignLeaderBoard_GetPlayerList(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints,Integer FromIndex,Integer Count);
 /*!
 Creates a new season.
 */
-			CTaskResult_Season Season_Create(Ident UserId,Text SeasonName,Text GameMode,Text GameModeCustomData,Text MapRecordType,Integer StartTimeStamp,Integer EndTimeStamp,Array<Text> MapUidList);
+	CTaskResult_Season Season_Create(Ident UserId,Text SeasonName,Text GameMode,Text GameModeCustomData,Text MapRecordType,Integer StartTimeStamp,Integer EndTimeStamp,Array<Text> MapUidList);
 /*!
 
 */
-			CTaskResult_Season Season_Update(Ident UserId,Text SeasonId,Text SeasonName,Text GameMode,Text GameModeCustomData,Text MapRecordType,Integer StartTimeStamp,Integer EndTimeStamp,Array<Text> MapUidList);
+	CTaskResult_Season Season_Update(Ident UserId,Text SeasonId,Text SeasonName,Text GameMode,Text GameModeCustomData,Text MapRecordType,Integer StartTimeStamp,Integer EndTimeStamp,Array<Text> MapUidList);
 /*!
 
 */
-			CTaskResult_Season Season_AddMapList(Ident UserId,Text SeasonId,Array<Text> MapUidList);
+	CTaskResult_Season Season_AddMapList(Ident UserId,Text SeasonId,Array<Text> MapUidList);
 /*!
 
 */
-			CTaskResult_Season Season_RemoveMapList(Ident UserId,Text SeasonId,Array<Text> MapUidList);
+	CTaskResult_Season Season_RemoveMapList(Ident UserId,Text SeasonId,Array<Text> MapUidList);
 /*!
 Returns the season info from a season id.
 */
-			CTaskResult_Season Season_Get(Ident UserId,Text SeasonId);
+	CTaskResult_Season Season_Get(Ident UserId,Text SeasonId);
 /*!
 Returns a list of season info from a list of season id.
 */
-			CTaskResult_SeasonList Season_GetList(Ident UserId,Array<Text> SeasonIdList);
+	CTaskResult_SeasonList Season_GetList(Ident UserId,Array<Text> SeasonIdList);
 /*!
 Returns the list of created season from a webservices user id.
 */
-			CTaskResult_SeasonList Season_GetListFromUser(Ident UserId,Text WebServicesUserId);
+	CTaskResult_SeasonList Season_GetListFromUser(Ident UserId,Text WebServicesUserId);
 /*!
 Loads and synchronizes season scores.
 */
-			CTaskResult Season_LoadScore(Ident UserId,Text SeasonId);
+	CTaskResult Season_LoadScore(Ident UserId,Text SeasonId);
 /*!
 Loads and synchronizes scores for a list of season.
 */
-			CTaskResult Season_LoadScoreList(Ident UserId,Array<Text> SeasonIdList);
+	CTaskResult Season_LoadScoreList(Ident UserId,Array<Text> SeasonIdList);
 /*!
 
 */
-			CTaskResult_MapRecordList Season_GetOpponentRecordList(Ident UserId,Text SeasonId,Text OpponentWebServicesUserId);
+	CTaskResult_MapRecordList Season_GetOpponentRecordList(Ident UserId,Text SeasonId,Text OpponentWebServicesUserId);
 /*!
 Add points to multiplayer score.
 */
-			Void Multiplayer_AddToScore(Ident UserId,Real ScoreDiff,Integer Timestamp);
+	Void Multiplayer_AddToScore(Ident UserId,Real ScoreDiff,Integer Timestamp);
 /*!
 Returns the multiplayer ranking.
 */
-			Integer MultiplayerLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
+	Integer MultiplayerLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
 /*!
 Returns the number of user ranked in multiplayer leaderboard.
 */
-			Integer MultiplayerLeaderBoard_GetPlayerCount(Text Zone);
+	Integer MultiplayerLeaderBoard_GetPlayerCount(Text Zone);
 /*!
 Returns the user global ranking.
 */
-			Integer GlobalLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
+	Integer GlobalLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
 /*!
 Returns the number of user ranked in global leaderboard.
 */
-			Integer GlobalLeaderBoard_GetPlayerCount(Text Zone);
+	Integer GlobalLeaderBoard_GetPlayerCount(Text Zone);
 /*!
 Returns a part of the global leaderboard.
 */
-			CTaskResult_RealLeaderBoardInfoList GlobalLeaderBoard_GetPlayerList(Ident UserId,Text Zone,Integer FromIndex,Integer Count);
+	CTaskResult_RealLeaderBoardInfoList GlobalLeaderBoard_GetPlayerList(Ident UserId,Text Zone,Integer FromIndex,Integer Count);
 /*!
 Returns the account trophy history.
 */
-			CTaskResult_AccountTrophyGainHistory Trophy_GetGainHistory(Ident UserId,Integer Offset,Integer Count);
+	CTaskResult_AccountTrophyGainHistory Trophy_GetGainHistory(Ident UserId,Integer Offset,Integer Count);
 /*!
 Returns the account trophy history filtered by the specified type.
 */
-			CTaskResult_AccountTrophyGainHistory Trophy_GetGainHistoryByType(Ident UserId,Integer TrophyType,Integer Offset,Integer Count);
+	CTaskResult_AccountTrophyGainHistory Trophy_GetGainHistoryByType(Ident UserId,Integer TrophyType,Integer Offset,Integer Count);
 /*!
 Returns the account trophy summary for the last year.
 */
-			CTaskResult_AccountTrophyLastYearSummary Trophy_GetLastYearSummary(Ident UserId);
+	CTaskResult_AccountTrophyLastYearSummary Trophy_GetLastYearSummary(Ident UserId);
 /*!
 Returns the account trophy summary for the last year for the specified user
 */
-			CTaskResult_AccountTrophyLastYearSummary Trophy_GetLastYearSummaryForUser(Ident UserId,Text WebServicesUserId);
+	CTaskResult_AccountTrophyLastYearSummary Trophy_GetLastYearSummaryForUser(Ident UserId,Text WebServicesUserId);
 /*!
 Returns the trophy solo medal achievement settings
 */
-			CTaskResult_TrophySoloMedalAchievementSettings Trophy_GetSoloMedalAchievementSettings(Ident UserId,Text SoloMedalAchievementType);
+	CTaskResult_TrophySoloMedalAchievementSettings Trophy_GetSoloMedalAchievementSettings(Ident UserId,Text SoloMedalAchievementType);
 };
 
 /*!
@@ -4271,31 +4417,31 @@ public :
 /*!
 
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 
 */
-			Void GetPathAndName(Text ZoneFullPath,Text ZonePath,Text ZoneName);
+	Void GetPathAndName(Text ZoneFullPath,Text ZonePath,Text ZoneName);
 /*!
 
 */
-			CTaskResult_ZoneList GetZoneList(Array<Text> ZoneIdList);
+	CTaskResult_ZoneList GetZoneList(Array<Text> ZoneIdList);
 /*!
 
 */
-			CTaskResult_ZoneList GetChildZoneList(Text ZoneFullPath);
+	CTaskResult_ZoneList GetChildZoneList(Text ZoneFullPath);
 /*!
 
 */
-			CTaskResult_UserZoneList RetrieveUserZoneList(Ident UserId,Array<Text> WebServicesUserIdList);
+	CTaskResult_UserZoneList RetrieveUserZoneList(Ident UserId,Array<Text> WebServicesUserIdList);
 /*!
 
 */
-			CTaskResult SetUserZone(Ident UserId,Text ZoneFullPath);
+	CTaskResult SetUserZone(Ident UserId,Text ZoneFullPath);
 };
 
 /*!
@@ -4303,6 +4449,23 @@ public :
 */
 class CUserV2Manager : public CNod {
 public :
+	/*!
+	
+	*/
+	enum ECrossPlayState {
+		Unknown,
+		Disabled,
+		Enabled,
+	};
+	/*!
+	
+	*/
+	enum EPrestigeMode {
+		Unknown,
+		Ranked,
+		Royal,
+		Season,
+	};
 	/*!
 	
 	*/
@@ -4334,190 +4497,261 @@ public :
 		Rewards,
 		Shop,
 	};
+	/*!
+	
+	*/
+	enum EVoiceChatMuteSetting {
+		Muted,
+		NotMuted,
+	};
 /*!
 
 */
-	const	CUserV2Profile MainUserProfile;
+	CUserV2Profile * const  MainUserProfile;
 /*!
 
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 
 */
-			CTaskResult TaskError_ShowSystemDialog(Ident UserId,Text ErrorCode);
+	CTaskResult TaskError_ShowSystemDialog(Ident UserId,Text ErrorCode);
 /*!
 NullId for the mainuser.
 */
-			CTaskResult_StringIntList GetGroups(Ident UserId);
+	CTaskResult_StringIntList GetGroups(Ident UserId);
 /*!
 
 */
-			Text FindDisplayName(Text WebServicesUserId,Boolean IsFirstPartyDisplayName);
+	Text FindDisplayName(Text WebServicesUserId,Boolean IsFirstPartyDisplayName);
 /*!
 
 */
-	const	CMasterServerUser MainUserWebServicesInfo;
+	CMasterServerUser * const  MainUserWebServicesInfo;
 /*!
 
 */
-			Text ResolveURLShorcut(Text ShortCutId);
+	Text ResolveURLShorcut(Text ShortCutId);
 /*!
 
 */
-			CMasterServerUser FindWebServicesUserInfo(Ident UserId);
+	CMasterServerUser FindWebServicesUserInfo(Ident UserId);
 /*!
 
 */
-			CTaskResult CheckNetworkAvailability(Ident UserId);
+	CTaskResult CheckNetworkAvailability(Ident UserId);
 /*!
 
 */
-			CTaskResult_Connect ConnectUser(Ident UserId);
+	CTaskResult_Connect ConnectUser(Ident UserId);
 /*!
 
 */
-			CTaskResult_Connect ConnectUser(Ident UserId,Boolean ForceUbisoftConnectOverlay);
+	CTaskResult_Connect ConnectUser(Ident UserId,Boolean ForceUbisoftConnectOverlay);
 /*!
 
 */
-			CTaskResult ConnectUser(Ident UserId,Boolean ForceUbisoftConnectOverlay,Boolean OfflineMode);
+	CTaskResult ConnectUser(Ident UserId,Boolean ForceUbisoftConnectOverlay,Boolean OfflineMode);
 /*!
 
 */
-			CTaskResult_Bool CrossPlay_IsEnabled(Ident UserId);
+	CTaskResult_Bool CrossPlay_IsEnabled(Ident UserId);
 /*!
 
 */
-			Boolean CrossPlay_Setting_GetEnabled(Ident UserId);
+	Boolean CrossPlay_Setting_GetEnabled(Ident UserId);
 /*!
 
 */
-			Void CrossPlay_Setting_SetEnabled(Ident UserId,Boolean Value);
+	Void CrossPlay_Setting_SetEnabled(Ident UserId,Boolean Value);
 /*!
 
 */
-			Integer Friend_GetLastChangeIndex(Ident UserId);
+	CUserV2Manager::ECrossPlayState CrossPlay_V2_IsEnabled(Ident UserId);
 /*!
 
 */
-			CTaskResult_FriendList Friend_GetList(Ident UserId);
+	Void CrossPlay_V2_SetEnabled(Ident UserId,Boolean Enabled);
 /*!
 
 */
-			CTaskResult_UserNewsList News_GetProfileNewsList(Ident UserId);
+	Integer Friend_GetLastChangeIndex(Ident UserId);
 /*!
 
 */
-			CTaskResult_UserNewsList News_GetSpaceNewsList(Ident UserId);
+	CTaskResult_FriendList Friend_GetList(Ident UserId);
 /*!
 
 */
-			CTaskResult News_OpenLink(Ident UserId,Text Type,Text Param);
+	CTaskResult_UserNewsList News_GetProfileNewsList(Ident UserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_AcceptInvitation(Ident UserId,Text SquadId);
+	CTaskResult_UserNewsList News_GetSpaceNewsList(Ident UserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_CancelInvitation(Ident UserId,Text SquadId,Text WebServicesUserId);
+	CTaskResult News_OpenLink(Ident UserId,Text Type,Text Param);
 /*!
 
 */
-			CTaskResult_Squad Squad_Create(Ident UserId,Text SquadName,Integer Size);
+	CTaskResult_UserPrestigeList Prestige_GetAccountPrestigeList(Ident UserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_Create(Ident UserId,Text SquadName,Integer Size,Text Type);
+	CTaskResult_UserPrestige Prestige_GetCurrentAccountPrestige(Ident UserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_DeclineInvitation(Ident UserId,Text SquadId);
+	CTaskResult_UserPrestige Prestige_GetCurrentAccountPrestigeForUser(Ident UserId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_Get(Ident UserId,Text SquadId);
+	CTaskResult_PrestigeList Prestige_GetPrestigeList(Ident UserId,CUserV2Manager::EPrestigeMode Mode,Integer Year,Text CategoryType);
 /*!
 
 */
-			CTaskResult_Squad Squad_GetCurrent(Ident UserId);
+	CTaskResult_UserPrestige Prestige_SetCurrentAccountPrestige(Ident UserId,Text PrestigeId);
 /*!
 
 */
-			CTaskResult_Squad Squad_Invite(Ident UserId,Text SquadId,Text WebServicesUserId);
+	CTaskResult_UserPrestige Prestige_ResetCurrentAccountPrestige(Ident UserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_Leave(Ident UserId,Text SquadId);
+	CTaskResult_Squad Squad_AcceptInvitation(Ident UserId,Text SquadId);
 /*!
 
 */
-			CTaskResult_Squad Squad_RemoveMember(Ident UserId,Text SquadId,Text WebServicesUserId);
+	CTaskResult_Squad Squad_CancelInvitation(Ident UserId,Text SquadId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_Squad Squad_SetLeader(Ident UserId,Text SquadId,Text WebServicesUserId);
+	CTaskResult_Squad Squad_Create(Ident UserId,Text SquadName,Integer Size);
 /*!
 
 */
-			Text VoiceChat_Channel;
+	CTaskResult_Squad Squad_Create(Ident UserId,Text SquadName,Integer Size,Text Type);
 /*!
 
 */
-	const	Array<CGameUserVoiceChat> VoiceChat_Users;
+	CTaskResult_Squad Squad_DeclineInvitation(Ident UserId,Text SquadId);
 /*!
 
 */
-			CGameUserVoiceChat VoiceChat_UserAdd(Text WebServicesUserId);
+	CTaskResult_Squad Squad_Get(Ident UserId,Text SquadId);
 /*!
 
 */
-			Void VoiceChat_ClearUsers();
+	CTaskResult_Squad Squad_GetCurrent(Ident UserId);
 /*!
 
 */
-			CGameUserVoiceChat VoiceChat_FindUserFromWebServicesUserId(Text WebServicesUserId);
+	CTaskResult_Squad Squad_Invite(Ident UserId,Text SquadId,Text WebServicesUserId);
 /*!
 
 */
-			Integer Subscription_GetEndTimeStamp(Ident UserId,Text SubscriptionName);
+	CTaskResult_Squad Squad_Leave(Ident UserId,Text SquadId);
 /*!
 
 */
-			CTaskResult_StringInt Tag_GetClubTag(Ident UserId);
+	CTaskResult_Squad Squad_RemoveMember(Ident UserId,Text SquadId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult_ClubTagList Tag_GetClubTagList(Ident UserId,Array<Text> WebServicesUserIdList);
+	CTaskResult_Squad Squad_SetLeader(Ident UserId,Text SquadId,Text WebServicesUserId);
 /*!
 
 */
-			CTaskResult Tag_SetClubTag(Ident UserId,Text ClubTag);
+	Array<CVoiceChatEvent* const > VoiceChat_Events;
 /*!
 
 */
-			CTaskResult_Session_Get LiveSession_GetInfo(Ident UserId,Text SessionId);
+	Text VoiceChat_Channel;
 /*!
 
 */
-			Void LiveSession_ShowInviteUI(Ident UserId);
+	Array<CGameUserVoiceChat* const > VoiceChat_Users;
 /*!
 
 */
-			CTaskResult UbisoftClub_Launch(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId);
+	Array<CGameUserVoiceChat* const > VoiceChat_Users_Local;
 /*!
 
 */
-			CTaskResult UbisoftClub_LaunchAndCompleteActions(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId,Array<Text> ActionIdList);
+	Array<CGameUserVoiceChat* const > VoiceChat_Users_Remote;
+/*!
+List of users currently speaking. Sorted with local users first.
+*/
+	Array<CGameUserVoiceChat* const > VoiceChat_Users_Speaking;
 /*!
 
 */
-			CTaskResult Uplay_OpenOverlay(Ident UserId,CUserV2Manager::EUplayOverlaySection OverlaySection);
+	Array<CGameUserVoiceChat* const > VoiceChat_Users_Muted;
+/*!
+
+*/
+	Boolean VoiceChat_Mute_Myself;
+/*!
+
+*/
+	CUserV2Manager::EVoiceChatMuteSetting VoiceChat_NewRemoteUser_DefaultMuteSetting;
+/*!
+
+*/
+	CGameUserVoiceChat VoiceChat_UserAdd(Text WebServicesUserId);
+/*!
+
+*/
+	Void VoiceChat_ClearUsers();
+/*!
+
+*/
+	CGameUserVoiceChat VoiceChat_FindUserFromWebServicesUserId(Text WebServicesUserId);
+/*!
+
+*/
+	Void VoiceChat_UnmuteAll();
+/*!
+
+*/
+	Integer Subscription_GetEndTimeStamp(Ident UserId,Text SubscriptionName);
+/*!
+
+*/
+	CTaskResult_StringInt Tag_GetClubTag(Ident UserId);
+/*!
+
+*/
+	CTaskResult_ClubTagList Tag_GetClubTagList(Ident UserId,Array<Text> WebServicesUserIdList);
+/*!
+
+*/
+	CTaskResult Tag_SetClubTag(Ident UserId,Text ClubTag);
+/*!
+
+*/
+	CTaskResult_Session_Get LiveSession_GetInfo(Ident UserId,Text SessionId);
+/*!
+
+*/
+	Void LiveSession_ShowInviteUI(Ident UserId);
+/*!
+
+*/
+	CTaskResult UbisoftClub_Launch(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId);
+/*!
+
+*/
+	CTaskResult UbisoftClub_LaunchAndCompleteActions(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId,Array<Text> ActionIdList);
+/*!
+
+*/
+	CTaskResult Uplay_OpenOverlay(Ident UserId,CUserV2Manager::EUplayOverlaySection OverlaySection);
 };
 
 /*!
@@ -4567,94 +4801,125 @@ public :
 /*!
 
 */
-			Void Add(CMlControl Control,Text XmlTarget,Integer StartTime,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
+	Void Add(CMlControl Control,Text XmlTarget,Integer StartTime,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
 /*!
 
 */
-			Void AddChain(CMlControl Control,Text XmlTarget,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
+	Void AddChain(CMlControl Control,Text XmlTarget,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
 /*!
 
 */
-			Void Add(CMlControl Control,Text XmlTarget,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
+	Void Add(CMlControl Control,Text XmlTarget,Integer Duration,CAnimManager::EAnimManagerEasing EasingFunc);
 /*!
 
 */
-			Void Flush(CMlControl Control);
+	Void Flush(CMlControl Control);
 };
 
 /*!
-* \brief Create scenes for use in menus with <Camera> manialink element
+* \brief Create scenes for use in menus with &lt;Camera&gt; manialink element
 */
 class CMenuSceneManager : public CNod {
 public :
 /*!
 LayoutFileName: can be 'Default' (or '') for default painter scene, 'Empty' for a simple empty scene, or a filename to game data.
 */
-			Ident SceneCreate(Text LayoutFileName);
+	Ident SceneCreate(Text LayoutFileName);
 /*!
 
 */
-			Void SceneDestroy(Ident SceneId);
+	Void SceneDestroy(Ident SceneId);
 /*!
 
 */
-			Void CameraSetLocation(Ident SceneId,Vec3 Position,Real AngleDeg);
+	Void CameraSetLocation(Ident SceneId,Vec3 Position,Real AngleDeg);
 /*!
 
 */
-			Void CameraSetLocation(Ident SceneId,Vec3 Position,Real AngleDeg,Real FovY_Deg);
+	Void CameraSetLocation(Ident SceneId,Vec3 Position,Real AngleDeg,Real FovY_Deg);
 /*!
 
 */
-			Void CameraSetFromItem(Ident SceneId,Ident ItemId);
+	Void CameraSetFromItem(Ident SceneId,Ident ItemId);
 /*!
 
 */
-			Void LightDir0Set(Ident SceneId,Vec3 sRGB,Real Intensity);
+	Void LightDir0Set(Ident SceneId,Vec3 sRGB,Real Intensity);
 /*!
 SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for item default skin, 'Profile' for the user choice for the model. ModelName: item filename.
 */
-			Ident ItemCreate(Ident SceneId,Text ModelName,Text SkinName,Text SkinUrl);
+	Ident ItemCreate(Ident SceneId,Text ModelName,Text SkinName,Text SkinUrl);
+/*!
+SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for item default skin, 'Profile' for the user choice for the model. ModelName: item filename.
+*/
+	Ident ItemCreate(Ident SceneId,Text ModelName,Text SkinName,Text SkinUrl,Text SkinOptions);
 /*!
 
 */
-			Void ItemDestroy(Ident SceneId,Ident ItemId);
+	Void ItemDestroy(Ident SceneId,Ident ItemId);
 /*!
 
 */
-			Void ItemSetLocation(Ident SceneId,Ident ItemId,Vec3 Position,Real AngleDeg,Boolean IsTurntable);
+	Void ItemSetLocation(Ident SceneId,Ident ItemId,Vec3 Position,Real AngleDeg,Boolean IsTurntable);
 /*!
 
 */
-			Void ItemAttachTo(Ident SceneId,Ident ItemId,Ident ParentItemId);
+	Void ItemAttachTo(Ident SceneId,Ident ItemId,Ident ParentItemId);
 /*!
 
 */
-			Void ItemSetVehicleState(Ident SceneId,Ident ItemId,Real Steer,Boolean Brakes,Boolean FrontLight,Integer TurboLvl,Integer BoostLvl,Boolean BurnoutSmoke);
+	Void ItemSetVehicleState(Ident SceneId,Ident ItemId,Real Steer,Boolean Brakes,Boolean FrontLight,Integer TurboLvl,Integer BoostLvl,Boolean BurnoutSmoke);
 /*!
 
 */
-			Void ItemSetPlayerState(Ident SceneId,Ident ItemId,Vec3 LightrailColor,Vec3 DossardColor,Text DossardNumber,Text DossardTrigram);
+	Void ItemSetPlayerState(Ident SceneId,Ident ItemId,Vec3 LightrailColor,Vec3 DossardColor,Text DossardNumber,Text DossardTrigram);
 /*!
 
 */
-			Void PlaneReflectEnable(Ident SceneId,Real OutOpacity,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
+	Void ItemTriggerPlayerGesture(Ident SceneId,Ident ItemId);
 /*!
 
 */
-			Void PlaneReflectEnable(Ident SceneId,Real OutOpacity,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3,Real HorizonAngleDeg_InCamera);
+	Void ItemSetPivot(Ident SceneId,Ident ItemId,Vec3 Pivot);
 /*!
 
 */
-			Void PlaneReflectRefresh();
+	Void PlaneReflectEnable(Ident SceneId,Real OutOpacity,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
 /*!
 
 */
-			Void SetBackgroundQuads(Ident SceneId,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
+	Void PlaneReflectEnable(Ident SceneId,Real OutOpacity,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3,Real HorizonAngleDeg_InCamera);
 /*!
 
 */
-			Void CubeMapSetImage2ds(Ident SceneId,Text RelName0,Text RelName1,Text RelName2,Text RelName3);
+	Void PlaneReflectRefresh();
+/*!
+
+*/
+	Void SetBackgroundQuads(Ident SceneId,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
+/*!
+
+*/
+	Void CubeMapSetImage2ds(Ident SceneId,Text RelName0,Text RelName1,Text RelName2,Text RelName3);
+/*!
+
+*/
+	Void ColorGradingSetImage2ds(Ident SceneId,Text RelName0,Text RelName1,Text RelName2,Text RelName3);
+/*!
+iMood: BackgroundQuads
+AltitudeDeg: 0=horizon, 90=Zenith
+AzimutDeg: 0=North(+Z), 90=East(-X), 180=South(-Z), 270=West(+X)
+!! the feature is enabled only when all 4 Moods have been set !!
+*/
+	Void MoodLightDir0Set(Ident SceneId,Integer iMood,Vec3 sRGB,Real Intensity,Real AltitudeDeg,Real AzimutDeg);
+/*!
+All scales are [0,1] range
+*/
+	Void PodiumTweakShadingSet(Ident SceneId,Real BaseColor,Real CubeReflect,Real PlaneReflect);
+/*!
+
+*/
+	Void PostFxSet(Ident SceneId,Real BloomIntensity);
 };
 
 /*!
@@ -4692,51 +4957,51 @@ public :
 /*!
 
 */
-	const	CSystemPlatform::ESystemPlatform Platform;
+	CSystemPlatform::ESystemPlatform const  Platform;
 /*!
 
 */
-	const	CSystemPlatform::ESystemSkuIdentifier SkuIdentifier;
+	CSystemPlatform::ESystemSkuIdentifier const  SkuIdentifier;
 /*!
 
 */
-	const	Text ExeVersion;
+	Text  const ExeVersion;
 /*!
 Beware: altough it is a number of seconds since 'local epoch', this is *not a unix timestamp* as it is the time in the local time zone. It is only useful for localized UI.  Use Timelib::GetCurrent() instead if you need an absolute unix timestamp.
 */
-	const	Integer CurrentLocalDate;
+	Integer  const CurrentLocalDate;
 /*!
 
 */
-	const	Text CurrentLocalDateText;
+	Text  const CurrentLocalDateText;
 /*!
 
 */
-	const	Text CurrentTimezone;
+	Text  const CurrentTimezone;
 /*!
 
 */
-	const	Text CurrentTimezoneTimeOffset;
+	Text  const CurrentTimezoneTimeOffset;
 /*!
 
 */
-	const	Text ExtraTool_Info;
+	Text  const ExtraTool_Info;
 /*!
 
 */
-			Text ExtraTool_Data;
+	Text ExtraTool_Data;
 /*!
 
 */
-			Void ClipboardSet(Text ClipboardText);
+	Void ClipboardSet(Text ClipboardText);
 /*!
 
 */
-			Void FlashWindow();
+	Void FlashWindow();
 /*!
 Background write to usersave in progress. Do not switch off the console.
 */
-	const	Boolean IsWritingUserSave;
+	Boolean  const IsWritingUserSave;
 };
 
 /*!
@@ -4747,19 +5012,19 @@ public :
 /*!
 Array of task results.
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 Release a task result no more used.
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 Check if a notification is available for the specified user.
 */
-			Boolean Notification_IsAvailable(Ident UserId);
+	Boolean Notification_IsAvailable(Ident UserId);
 /*!
 Retrieve the next available notification for the specified user.
 */
-			CTaskResult_WSNotification Notification_PopNext(Ident UserId);
+	CTaskResult_WSNotification Notification_PopNext(Ident UserId);
 };
 
 /*!
@@ -4785,103 +5050,107 @@ public :
 /*!
 
 */
-	const	Array<CManiaAppEvent> PendingEvents;
+	Array<CManiaAppEvent* const > PendingEvents;
 /*!
 
 */
-			Void Menu_Quit();
+	Void Menu_Quit();
 /*!
 
 */
-			Void Menu_Home();
+	Void Menu_Home();
 /*!
 
 */
-			Void Menu_Solo();
+	Void Menu_Solo();
 /*!
 
 */
-			Void Menu_Local();
+	Void Menu_Local();
 /*!
 
 */
-			Void Menu_Internet();
+	Void Menu_Internet();
 /*!
 
 */
-			Void Menu_Editor();
+	Void Menu_Editor();
 /*!
 
 */
-			Void Menu_Profile();
+	Void Menu_Profile();
 /*!
 
 */
-			Boolean LoadingScreenRequireKeyPressed;
+	Boolean LoadingScreenRequireKeyPressed;
 /*!
 
 */
-			Boolean DontScaleMainMenuForHMD;
+	Boolean DontScaleMainMenuForHMD;
+/*!
+Values in range (0.000000-1.000000)
+*/
+	Real FillExtraSpaceWithBluredContents_Opacity;
 /*!
 
 */
-	const	CTitleControl TitleControl;
+	CTitleControl * const  TitleControl;
 /*!
 Only available when editing a title.
 */
-	const	CTitleEdition TitleEdition;
+	CTitleEdition * const  TitleEdition;
 /*!
 
 */
-	const	CNotificationsConsumer Notifications;
+	CNotificationsConsumer * const  Notifications;
 /*!
 
 */
-	const	Text ExternalRequest_Type;
+	Text  const ExternalRequest_Type;
 /*!
 
 */
-	const	Array<Text> ExternalRequest_Data;
+	Array<Text> ExternalRequest_Data;
 /*!
 Call as soon as the request has been consumed and is being processed.
 */
-			Void ExternalRequest_Clear();
+	Void ExternalRequest_Clear();
 /*!
 
 */
-			Void LogToSessionTrace(Text Text);
+	Void LogToSessionTrace(Text Text);
 /*!
 
 */
-	const	CMatchSettingsManager MatchSettingsManager;
+	CMatchSettingsManager * const  MatchSettingsManager;
 /*!
 
 */
-	const	CMenuSceneManager MenuSceneManager;
+	CMenuSceneManager * const  MenuSceneManager;
 /*!
 
 */
-			Void Authentication_GetToken(Ident UserId,Text AppLogin);
+	Void Authentication_GetToken(Ident UserId,Text AppLogin);
 /*!
 
 */
-	const	Boolean Authentication_GetTokenResponseReceived;
+	Boolean  const Authentication_GetTokenResponseReceived;
 /*!
 
 */
-	const	Integer Authentication_ErrorCode;
+	Integer  const Authentication_ErrorCode;
 /*!
 
 */
-	const	Text Authentication_Token;
+	Text  const Authentication_Token;
 /*!
 
 */
-			Boolean Adverts_UsePersonnalData;
+	Boolean Adverts_UsePersonnalData;
 /*!
 
 */
-			Boolean Adverts_Enabled;
+	Boolean Adverts_Enabled;
 };
 
 /*!
@@ -5020,983 +5289,1035 @@ public :
 /*!
 
 */
-	const	Array<CMapEditorPluginEvent> PendingEvents;
+	Array<CMapEditorPluginEvent* const > PendingEvents;
 /*!
 
 */
-	const	CMap Map;
+	CMap * const  Map;
 /*!
 
 */
-	const	Text MapName;
+	Text  const MapName;
 /*!
 
 */
-	const	Text MapFileName;
+	Text  const MapFileName;
 /*!
 
 */
-	const	Boolean IsEditorReadyForRequest;
+	Boolean  const IsEditorReadyForRequest;
 /*!
 
 */
-			Boolean HoldLoadingScreen;
+	Boolean HoldLoadingScreen;
 /*!
 
 */
-			Void HideOtherPlugins();
+	Void HideOtherPlugins();
 /*!
 
 */
-			Void ShowOtherPlugins();
+	Void ShowOtherPlugins();
 /*!
 
 */
-			Void ComputeShadows();
+	Void ComputeShadows();
 /*!
 
 */
-			Void ComputeShadows(CMapEditorPlugin::ShadowsQuality ShadowsQuality);
+	Void ComputeShadows(CMapEditorPlugin::ShadowsQuality ShadowsQuality);
 /*!
 
 */
-	const	CMapEditorPlugin::ShadowsQuality CurrentShadowsQuality;
+	CMapEditorPlugin::ShadowsQuality const  CurrentShadowsQuality;
 /*!
 
 */
-	const	Boolean IsUltraShadowsQualityAvailable;
+	Boolean  const IsUltraShadowsQualityAvailable;
 /*!
 
 */
-			Void DisplayDefaultSetObjectivesDialog();
+	Void DisplayDefaultSetObjectivesDialog();
 /*!
 
 */
-			Boolean Undo();
+	Boolean Undo();
 /*!
 
 */
-			Boolean Redo();
+	Boolean Redo();
 /*!
 
 */
-			Void Help();
+	Void Help();
 /*!
 
 */
-			Void Validate();
+	Void Validate();
 /*!
 
 */
-			Void AutoSave();
+	Void AutoSave();
 /*!
 
 */
-			Void Quit();
+	Void Quit();
 /*!
 
 */
-			Void QuickQuit();
+	Void QuickQuit();
 /*!
 
 */
-			Void QuitAndSetResult(Text Type,Array<Text> Data);
+	Void QuitAndSetResult(Text Type,Array<Text> Data);
 /*!
 
 */
-			Void QuickQuitAndSetResult(Text Type,Array<Text> Data);
+	Void QuickQuitAndSetResult(Text Type,Array<Text> Data);
 /*!
 
 */
-			Void TestMapFromStart();
+	Void TestMapFromStart();
 /*!
 
 */
-			Void TestMapFromCoord(Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Void TestMapFromCoord(Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Void TestMapWithMode(Text RulesModeName);
+	Void TestMapWithMode(Text RulesModeName);
 /*!
 
 */
-			Void TestMapWithMode(Text RulesModeName,Text SettingsXml);
+	Void TestMapWithMode(Text RulesModeName,Text SettingsXml);
 /*!
 
 */
-			Void TestMapWithMode_SplitScreen(Text RulesModeName);
+	Void TestMapWithMode_SplitScreen(Text RulesModeName);
 /*!
 
 */
-			Void TestMapWithMode_SplitScreen(Text RulesModeName,Integer ScreenCount);
+	Void TestMapWithMode_SplitScreen(Text RulesModeName,Integer ScreenCount);
 /*!
 
 */
-			Void TestMapWithMode_SplitScreen(Text RulesModeName,Integer ScreenCount,Integer FakeCount,Text SettingsXml);
+	Void TestMapWithMode_SplitScreen(Text RulesModeName,Integer ScreenCount,Integer FakeCount,Text SettingsXml);
 /*!
 
 */
-			Boolean EnableMapTypeStartTest;
+	Boolean EnableMapTypeStartTest;
 /*!
 
 */
-			Void SaveMap(Text FileName);
+	Void SaveMap(Text FileName);
 /*!
 
 */
-			Void SaveMapGamepadEditor(Text FileName);
+	Void SaveMapGamepadEditor(Text FileName);
 /*!
 
 */
-			Void SaveMap(Text FileName,Text Path);
+	Void SaveMap(Text FileName,Text Path);
 /*!
 
 */
-			CMapEditorPlugin::PlaceMode PlaceMode;
+	CMapEditorPlugin::PlaceMode PlaceMode;
 /*!
 
 */
-			CMapEditorPlugin::EditMode EditMode;
+	CMapEditorPlugin::EditMode EditMode;
 /*!
 
 */
-			CMapEditorPlugin::MapElemColor NextMapElemColor;
+	CMapEditorPlugin::MapElemColor NextMapElemColor;
 /*!
 
 */
-			Boolean ForceMacroblockColor;
+	Boolean ForceMacroblockColor;
 /*!
 
 */
-			CMapEditorPlugin::PhaseOffset NextItemPhaseOffset;
+	CMapEditorPlugin::PhaseOffset NextItemPhaseOffset;
 /*!
 
 */
-			CMapEditorPlugin::PhaseOffset NextMbAdditionalPhaseOffset;
+	CMapEditorPlugin::PhaseOffset NextMbAdditionalPhaseOffset;
 /*!
 
 */
-			CMapEditorPlugin::MapElemLightmapQuality NextMapElemLightmapQuality;
+	CMapEditorPlugin::MapElemLightmapQuality NextMapElemLightmapQuality;
 /*!
 
 */
-			Boolean ForceMacroblockLightmapQuality;
+	Boolean ForceMacroblockLightmapQuality;
 /*!
 
 */
-			Boolean UndergroundMode;
+	Boolean UndergroundMode;
 /*!
 
 */
-			Boolean BlockStockMode;
+	Boolean BlockStockMode;
 /*!
 
 */
-	const	CMapEditorInventory Inventory;
+	CMapEditorInventory * const  Inventory;
 /*!
 
 */
-			Boolean HideInventory;
+	Boolean HideInventory;
 /*!
 
 */
-			Real CameraVAngle;
+	Real CameraVAngle;
 /*!
 
 */
-			Real CameraHAngle;
+	Real CameraHAngle;
 /*!
 
 */
-			Real CameraToTargetDistance;
+	Real CameraToTargetDistance;
 /*!
 
 */
-			Vec3 CameraTargetPosition;
+	Vec3 CameraTargetPosition;
 /*!
 
 */
-	const	Vec3 CameraPosition;
+	Vec3  const CameraPosition;
 /*!
 
 */
-			Real ThumbnailCameraVAngle;
+	Real ThumbnailCameraVAngle;
 /*!
 
 */
-			Real ThumbnailCameraHAngle;
+	Real ThumbnailCameraHAngle;
 /*!
 
 */
-			Real ThumbnailCameraRoll;
+	Real ThumbnailCameraRoll;
 /*!
 
 */
-			Real ThumbnailCameraFovY;
+	Real ThumbnailCameraFovY;
 /*!
 
 */
-			Vec3 ThumbnailCameraPosition;
+	Vec3 ThumbnailCameraPosition;
 /*!
 
 */
-			Boolean GetRaceCamera(Vec3 Position,Real Yaw,Real Pitch,Real Roll,Real FovY);
+	Boolean GetRaceCamera(Vec3 Position,Real Yaw,Real Pitch,Real Roll,Real FovY);
 /*!
 
 */
-			Boolean EnableAirMapping;
+	Boolean EnableAirMapping;
 /*!
 
 */
-			Boolean EnableMixMapping;
+	Boolean EnableMixMapping;
 /*!
 
 */
-			Void RemoveAllBlocks();
+	Void RemoveAllBlocks();
 /*!
 
 */
-			Void RemoveAllTerrain();
+	Void RemoveAllTerrain();
 /*!
 
 */
-			Void RemoveAllOffZone();
+	Void RemoveAllOffZone();
 /*!
 
 */
-			Void RemoveAllObjects();
+	Void RemoveAllObjects();
 /*!
 
 */
-			Void RemoveAll();
+	Void RemoveAll();
 /*!
 
 */
-			Void RemoveAllBlocksAndTerrain();
+	Void RemoveAllBlocksAndTerrain();
 /*!
 
 */
-			Void ShowCustomSelection();
+	Void ShowCustomSelection();
 /*!
 
 */
-			Void HideCustomSelection();
+	Void HideCustomSelection();
 /*!
 
 */
-			Void CopyPaste_Copy();
+	Void CopyPaste_Copy();
 /*!
 
 */
-			Void CopyPaste_Cut();
+	Void CopyPaste_Cut();
 /*!
 
 */
-			Void CopyPaste_Remove();
+	Void CopyPaste_Remove();
 /*!
 
 */
-			Void CopyPaste_SelectAll();
+	Void CopyPaste_SelectAll();
 /*!
 
 */
-			Void CopyPaste_ResetSelection();
+	Void CopyPaste_ResetSelection();
 /*!
 
 */
-			Void OpenToolsMenu();
+	Void OpenToolsMenu();
 /*!
 
 */
-			Void EditMediatrackIngame();
+	Void EditMediatrackIngame();
 /*!
 
 */
-			Void PreloadAllBlocks();
+	Void PreloadAllBlocks();
 /*!
 
 */
-			Void PreloadAllItems();
+	Void PreloadAllItems();
 /*!
 
 */
-			Boolean CanPlaceBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Boolean OnGround,Integer VariantIndex);
+	Boolean CanPlaceBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Boolean OnGround,Integer VariantIndex);
 /*!
 
 */
-			Boolean PlaceBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CanPlaceGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean CanPlaceGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean PlaceGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CanPlaceBlock_NoDestruction(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Boolean OnGround,Integer VariantIndex);
+	Boolean CanPlaceBlock_NoDestruction(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Boolean OnGround,Integer VariantIndex);
 /*!
 
 */
-			Boolean PlaceBlock_NoDestruction(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceBlock_NoDestruction(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CanPlaceRoadBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
+	Boolean CanPlaceRoadBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean PlaceRoadBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
+	Boolean PlaceRoadBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean CanPlaceTerrainBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
+	Boolean CanPlaceTerrainBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean PlaceTerrainBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
+	Boolean PlaceTerrainBlocks(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean PlaceTerrainBlocks_NoDestruction(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
+	Boolean PlaceTerrainBlocks_NoDestruction(CBlockModel BlockModel,Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean CanPlaceMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean CanPlaceMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean PlaceMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean PlaceMacroblock_AirMode(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceMacroblock_AirMode(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CanPlaceMacroblock_NoDestruction(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean CanPlaceMacroblock_NoDestruction(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean PlaceMacroblock_NoDestruction(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceMacroblock_NoDestruction(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CanPlaceMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean CanPlaceMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean PlaceMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean RemoveMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean RemoveMacroblock(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean RemoveMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean RemoveMacroblock_NoTerrain(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			CBlock GetBlock(Int3 Coord);
+	CBlock GetBlock(Int3 Coord);
 /*!
 
 */
-			CBlock GetBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	CBlock GetBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			CBlock GetGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	CBlock GetGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean IsBlockModelSkinnable(CBlockModel BlockModel);
+	Boolean IsBlockModelSkinnable(CBlockModel BlockModel);
 /*!
 
 */
-			Integer GetNbBlockModelSkins(CBlockModel BlockModel);
+	Integer GetNbBlockModelSkins(CBlockModel BlockModel);
 /*!
 
 */
-			Text GetBlockModelSkin(CBlockModel BlockModel,Integer SkinIndex);
+	Text GetBlockModelSkin(CBlockModel BlockModel,Integer SkinIndex);
 /*!
 
 */
-			Text GetSkinDisplayName(Text SkinFileName);
+	Boolean IsItemModelSkinnable(CGameItemModel ItemModel);
 /*!
 
 */
-			Text GetBlockSkin(CBlock Block);
+	Integer GetNbItemModelSkins(CGameItemModel ItemModel);
 /*!
 
 */
-			Void SetBlockSkin(CBlock Block,Text SkinFileName);
+	Text GetItemModelSkin(CGameItemModel ItemModel,Integer SkinIndex);
 /*!
 
 */
-			Boolean IsMacroblockModelSkinnable(CMacroblockModel BlockModel);
+	Text GetSkinDisplayName(Text SkinFileName);
 /*!
 
 */
-			Boolean SetMacroblockSkin(CMacroblockInstance Macroblock,Text SkinFileName);
+	Text GetBlockSkinBg(CBlock Block);
 /*!
 
 */
-			Boolean OpenBlockSkinDialog(CBlock Block);
+	Text GetBlockSkinFg(CBlock Block);
 /*!
 
 */
-			Boolean RemoveBlock(Int3 Coord);
+	Void SetBlockSkin(CBlock Block,Text SkinFileName);
 /*!
 
 */
-			Boolean RemoveBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Void SetBlockSkins(CBlock Block,Text BgSkinFileName,Text FgSkinFileName);
 /*!
 
 */
-			Boolean RemoveGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Text GetItemSkinBg(CItemAnchor AnchoredObject);
 /*!
 
 */
-			Boolean RemoveTerrainBlocks(Int3 StartCoord,Int3 EndCoord);
+	Text GetItemSkinFg(CItemAnchor AnchoredObject);
 /*!
 
 */
-			Integer GetBlockGroundHeight(CBlockModel BlockModel,Integer CoordX,Integer CoordZ,CMapEditorPlugin::CardinalDirections Dir);
+	Void SetItemSkin(CItemAnchor AnchoredObject,Text SkinFileName);
 /*!
 
 */
-			Integer GetGroundHeight(Integer CoordX,Integer CoordZ);
+	Void SetItemSkins(CItemAnchor AnchoredObject,Text BgSkinFileName,Text FgSkinFileName);
 /*!
 
 */
-			Int3 GetMouseCoordOnGround();
+	Boolean IsSkinForeground(CBlockModel BlockModel,Text SkinFileName);
 /*!
 
 */
-			Int3 GetMouseCoordAtHeight(Integer CoordY);
+	Boolean IsSkinForeground(CGameItemModel ItemModel,Text SkinFileName);
 /*!
 
 */
-			CBlock GetStartLineBlock();
+	Boolean IsMacroblockModelSkinnable(CMacroblockModel BlockModel);
 /*!
 
 */
-			Boolean RemoveItem(CAnchorData Item);
+	Boolean SetMacroblockSkin(CMacroblockInstance Macroblock,Text SkinFileName);
 /*!
 
 */
-			Void CopyPaste_AddOrSubSelection(Int3 StartCoord,Int3 EndCoord);
+	Boolean OpenBlockSkinDialog(CBlock Block);
 /*!
 
 */
-			Boolean CopyPaste_Symmetrize();
+	Boolean RemoveBlock(Int3 Coord);
 /*!
 
 */
-			Integer CopyPaste_GetSelectedCoordsCount();
+	Boolean RemoveBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Void SaveMacroblock(CMacroblockModel MacroblockModel);
+	Boolean RemoveGhostBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CopyPaste_ApplyColorToSelection(CMapEditorPlugin::MapElemColor Color);
+	Boolean RemoveTerrainBlocks(Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			Boolean CopyPaste_IncreaseSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
+	Integer GetBlockGroundHeight(CBlockModel BlockModel,Integer CoordX,Integer CoordZ,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean CopyPaste_DecreaseSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
+	Integer GetGroundHeight(Integer CoordX,Integer CoordZ);
 /*!
 
 */
-			Boolean CopyPaste_SetSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
+	Int3 GetMouseCoordOnGround();
 /*!
 
 */
-			Boolean CopyPaste_ApplyLightmapQualityToSelection(CMapEditorPlugin::MapElemLightmapQuality LightmapQuality);
+	Int3 GetMouseCoordAtHeight(Integer CoordY);
 /*!
 
 */
-			Void CopyPaste_GetLightmapQualityInSelection();
+	CBlock GetStartLineBlock();
 /*!
 
 */
-	const	Array<CMapEditorPlugin::MapElemLightmapQuality> CopyPaste_GetLightmapQualityInSelection_Results;
+	Boolean RemoveItem(CAnchorData Item);
 /*!
 
 */
-			CMacroblockModel GetMacroblockModelFromFilePath(Text MacroblockModelFilePath);
+	Void CopyPaste_AddOrSubSelection(Int3 StartCoord,Int3 EndCoord);
 /*!
 
 */
-			CBlockModel GetTerrainBlockModelFromName(Text TerrainBlockModelName);
+	Boolean CopyPaste_Symmetrize();
 /*!
 
 */
-			CBlockModel GetBlockModelFromName(Text BlockModelName);
+	Integer CopyPaste_GetSelectedCoordsCount();
 /*!
 
 */
-			CBlockClipList CreateFrameClipList();
+	Void SaveMacroblock(CMacroblockModel MacroblockModel);
 /*!
 
 */
-			CBlockClipList CreateFixedClipList();
+	Boolean CopyPaste_ApplyColorToSelection(CMapEditorPlugin::MapElemColor Color);
 /*!
 
 */
-			Void UnvalidateMetadata();
+	Boolean CopyPaste_IncreaseSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
 /*!
 
 */
-			Void UnvalidateGameplayInfo();
+	Boolean CopyPaste_DecreaseSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
 /*!
 
 */
-			Void UnvalidatePlayfield();
+	Boolean CopyPaste_SetSelectionPhaseOffset(CMapEditorPlugin::PhaseOffset Offset);
 /*!
 
 */
-			Boolean RemoveMacroblock_NoTerrain_NoUnvalidate(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean CopyPaste_ApplyLightmapQualityToSelection(CMapEditorPlugin::MapElemLightmapQuality LightmapQuality);
 /*!
 
 */
-			Boolean PlaceMacroblock_NoTerrain_NoUnvalidate(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Void CopyPaste_GetLightmapQualityInSelection();
 /*!
 
 */
-			Void GetConnectResults(CBlock ExistingBlock,CBlockModel NewBlock);
+	Array<CMapEditorPlugin::MapElemLightmapQuality> CopyPaste_GetLightmapQualityInSelection_Results;
 /*!
 
 */
-			Void GetConnectResults(CBlock ExistingBlock,CMacroblockModel NewBlock);
+	CMacroblockModel GetMacroblockModelFromFilePath(Text MacroblockModelFilePath);
 /*!
 
 */
-			Void GetConnectResults(CMacroblockInstance ExistingBlock,CBlockModel NewBlock);
+	CBlockModel GetTerrainBlockModelFromName(Text TerrainBlockModelName);
 /*!
 
 */
-			Void GetConnectResults(CMacroblockInstance ExistingBlock,CMacroblockModel NewBlock);
+	CBlockModel GetBlockModelFromName(Text BlockModelName);
 /*!
 
 */
-			Integer GetStartBlockCount(Boolean IncludeMultilaps);
+	CBlockClipList CreateFrameClipList();
 /*!
 
 */
-			Integer GetFinishBlockCount(Boolean IncludeMultilaps);
+	CBlockClipList CreateFixedClipList();
 /*!
 
 */
-			Integer GetMultilapBlockCount();
+	Void UnvalidateMetadata();
 /*!
 
 */
-			Integer GetCheckpointBlockCount();
+	Void UnvalidateGameplayInfo();
 /*!
 
 */
-			Integer GetItemsCountResult();
+	Void UnvalidatePlayfield();
 /*!
 
 */
-			Array<Text> GetItemsCountRequest;
+	Boolean RemoveMacroblock_NoTerrain_NoUnvalidate(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean PlaceMacroblock_NoTerrain_NoUnvalidate(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Integer UserData);
+	Void ComputeItemsForMacroblockInstance(CMacroblockInstance MacroBlockInstance);
 /*!
 
 */
-			CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList);
+	Array<CItemAnchor* const > MacroblockInstanceItemsResults;
 /*!
 
 */
-			CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList,Integer UserData);
+	Void GetConnectResults(CBlock ExistingBlock,CBlockModel NewBlock);
 /*!
 
 */
-			CMacroblockInstance GetMacroblockInstanceFromOrder(Integer Order);
+	Void GetConnectResults(CBlock ExistingBlock,CMacroblockModel NewBlock);
 /*!
 
 */
-			CMacroblockInstance GetMacroblockInstanceFromUnitCoord(Int3 Coord);
+	Void GetConnectResults(CMacroblockInstance ExistingBlock,CBlockModel NewBlock);
 /*!
 
 */
-			CMacroblockInstance GetLatestMacroblockInstance();
+	Void GetConnectResults(CMacroblockInstance ExistingBlock,CMacroblockModel NewBlock);
 /*!
 
 */
-			CMacroblockInstance GetLatestMacroblockInstance(Integer Offset);
+	Integer GetStartBlockCount(Boolean IncludeMultilaps);
 /*!
 
 */
-			CMacroblockInstance GetMacroblockInstanceConnectedToClip(CBlockClip Clip);
+	Integer GetFinishBlockCount(Boolean IncludeMultilaps);
 /*!
 
 */
-			Boolean RemoveMacroblockInstance(CMacroblockInstance MacroblockInstance);
+	Integer GetMultilapBlockCount();
 /*!
 
 */
-			Boolean RemoveMacroblockInstanceFromOrder(Integer Order);
+	Integer GetCheckpointBlockCount();
 /*!
 
 */
-			Boolean RemoveMacroblockInstanceFromUnitCoord(Integer Order);
+	Integer GetItemsCountResult();
 /*!
 
 */
-			Boolean RemoveMacroblockInstancesByUserData(Integer UserData);
+	Array<Text> GetItemsCountRequest;
 /*!
 
 */
-			Void ResetAllMacroblockInstances();
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Integer GetMaxOrder();
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Integer UserData);
 /*!
 
 */
-			Boolean SetMapType(Text MapType);
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList);
 /*!
 
 */
-			Text GetMapType();
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList,Integer UserData);
 /*!
 
 */
-			Void SetMapStyle(Text MapStyle);
+	CMacroblockInstance GetMacroblockInstanceFromOrder(Integer Order);
 /*!
 
 */
-			Text GetMapStyle();
+	CMacroblockInstance GetMacroblockInstanceFromUnitCoord(Int3 Coord);
 /*!
 
 */
-			Text GetAvailableMapName();
+	CMacroblockInstance GetLatestMacroblockInstance();
 /*!
 
 */
-			Boolean IsMapFileNameAvailable(Text MapName);
+	CMacroblockInstance GetLatestMacroblockInstance(Integer Offset);
 /*!
 
 */
-			Vec3 GetVec3FromCoord(Int3 Coord);
+	CMacroblockInstance GetMacroblockInstanceConnectedToClip(CBlockClip Clip);
 /*!
 
 */
-	const	CMapEditorCamera Camera;
+	Boolean RemoveMacroblockInstance(CMacroblockInstance MacroblockInstance);
 /*!
 
 */
-	const	CMapEditorCursor Cursor;
+	Boolean RemoveMacroblockInstanceFromOrder(Integer Order);
 /*!
 
 */
-	const	Array<CItemAnchor> Items;
+	Boolean RemoveMacroblockInstanceFromUnitCoord(Integer Order);
 /*!
 
 */
-	const	Array<Text> MediatrackIngameClips;
+	Boolean RemoveMacroblockInstancesByUserData(Integer UserData);
 /*!
 
 */
-			Integer MediatrackIngameEditedClipIndex;
+	Void ResetAllMacroblockInstances();
 /*!
 
 */
-	const	Array<CBlock> Blocks;
+	Integer GetMaxOrder();
 /*!
 
 */
-	const	Array<CBlockModel> BlockModels;
+	Boolean SetMapType(Text MapType);
 /*!
 
 */
-	const	Array<CBlockModel> TerrainBlockModels;
+	Text GetMapType();
 /*!
 
 */
-	const	Array<CMacroblockModel> MacroblockModels;
+	Void SetMapStyle(Text MapStyle);
 /*!
 
 */
-	const	Array<CBlock> ClassicBlocks;
+	Text GetMapStyle();
 /*!
 
 */
-	const	Array<CBlock> TerrainBlocks;
+	Text GetAvailableMapName();
 /*!
 
 */
-	const	Array<CBlock> GhostBlocks;
+	Boolean IsMapFileNameAvailable(Text MapName);
 /*!
 
 */
-	const	Array<CBlockClipList> FixedClipLists;
+	Vec3 GetVec3FromCoord(Int3 Coord);
 /*!
 
 */
-	const	Array<CBlockClipList> FrameClipLists;
+	CMapEditorCamera * const  Camera;
 /*!
 
 */
-	const	Array<CBlockClipList> MacroblockInstanceClipLists;
+	CMapEditorCursor * const  Cursor;
 /*!
 
 */
-	const	Array<CMacroblockInstance> MacroblockInstances;
+	Array<CItemAnchor* const > Items;
 /*!
 
 */
-	const	Array<CMapEditorConnectResults> ConnectResults;
+	Array<Text> MediatrackIngameClips;
 /*!
 
 */
-	const	Array<CAnchorData> AnchorData;
+	Integer MediatrackIngameEditedClipIndex;
 /*!
 
 */
-			Boolean DoesAnchorHaveSpawn(CAnchorData Anchor);
+	Array<CBlock* const > Blocks;
 /*!
 
 */
-			Array<Int3> CustomSelectionCoords;
+	Array<CBlockModel* const > BlockModels;
 /*!
 
 */
-			Vec3 CustomSelectionRGB;
+	Array<CBlockModel* const > TerrainBlockModels;
 /*!
 
 */
-			Boolean EnableEditorInputsCustomProcessing;
+	Array<CMacroblockModel* const > MacroblockModels;
 /*!
 
 */
-			Boolean EnableCursorShowingWhenInterfaceIsFocused;
+	Array<CBlock* const > ClassicBlocks;
 /*!
 
 */
-			Boolean HideEditorInterface;
+	Array<CBlock* const > TerrainBlocks;
 /*!
 
 */
-			Boolean HideBlockHelpers;
+	Array<CBlock* const > GhostBlocks;
 /*!
 
 */
-			Boolean ShowPlacementGrid;
+	Array<CBlockClipList* const > FixedClipLists;
 /*!
 
 */
-	const	Boolean IsTesting;
+	Array<CBlockClipList* const > FrameClipLists;
 /*!
 
 */
-	const	Boolean IsValidating;
+	Array<CBlockClipList* const > MacroblockInstanceClipLists;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Menu;
+	Array<CMacroblockInstance* const > MacroblockInstances;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_SwitchToRace;
+	Array<CMapEditorConnectResults* const > ConnectResults;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Undo;
+	Array<CAnchorData* const > AnchorData;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Redo;
+	Boolean DoesAnchorHaveSpawn(CAnchorData Anchor);
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorTiltLeft;
+	Array<Int3> CustomSelectionCoords;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorTiltRight;
+	Vec3 CustomSelectionRGB;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorUp;
+	Boolean EnableEditorInputsCustomProcessing;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorRight;
+	Boolean EnableCursorShowingWhenInterfaceIsFocused;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorDown;
+	Boolean HideEditorInterface;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorLeft;
+	Boolean HideBlockHelpers;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorRaise;
+	Boolean ShowPlacementGrid;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorLower;
+	Boolean  const IsTesting;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorTurn;
+	Boolean  const IsValidating;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorPick;
+	Boolean  const EditorInputIsDown_Menu;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorPlace;
+	Boolean  const EditorInputIsDown_SwitchToRace;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorDelete;
+	Boolean  const EditorInputIsDown_Undo;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CameraUp;
+	Boolean  const EditorInputIsDown_Redo;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CameraRight;
+	Boolean  const EditorInputIsDown_CursorTiltLeft;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CameraDown;
+	Boolean  const EditorInputIsDown_CursorTiltRight;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CameraLeft;
+	Boolean  const EditorInputIsDown_CursorUp;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CameraZoomNext;
+	Boolean  const EditorInputIsDown_CursorRight;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Camera0;
+	Boolean  const EditorInputIsDown_CursorDown;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Camera1;
+	Boolean  const EditorInputIsDown_CursorLeft;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Camera3;
+	Boolean  const EditorInputIsDown_CursorRaise;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Camera7;
+	Boolean  const EditorInputIsDown_CursorLower;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Camera9;
+	Boolean  const EditorInputIsDown_CursorTurn;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_PivotChange;
+	Boolean  const EditorInputIsDown_CursorPick;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorTurnSlightly;
+	Boolean  const EditorInputIsDown_CursorPlace;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_CursorTurnSlightlyAntiClockwise;
+	Boolean  const EditorInputIsDown_CursorDelete;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_IconUp;
+	Boolean  const EditorInputIsDown_CameraUp;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_IconRight;
+	Boolean  const EditorInputIsDown_CameraRight;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_IconDown;
+	Boolean  const EditorInputIsDown_CameraDown;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_IconLeft;
+	Boolean  const EditorInputIsDown_CameraLeft;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_RemoveAll;
+	Boolean  const EditorInputIsDown_CameraZoomNext;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Save;
+	Boolean  const EditorInputIsDown_Camera0;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_SelectAll;
+	Boolean  const EditorInputIsDown_Camera1;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Copy;
+	Boolean  const EditorInputIsDown_Camera3;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Cut;
+	Boolean  const EditorInputIsDown_Camera7;
 /*!
 
 */
-	const	Boolean EditorInputIsDown_Paste;
+	Boolean  const EditorInputIsDown_Camera9;
 /*!
 
 */
-	const	Real CollectionSquareSize;
+	Boolean  const EditorInputIsDown_PivotChange;
 /*!
 
 */
-	const	Real CollectionSquareHeight;
+	Boolean  const EditorInputIsDown_CursorTurnSlightly;
 /*!
 
 */
-	const	Integer CollectionGroundY;
+	Boolean  const EditorInputIsDown_CursorTurnSlightlyAntiClockwise;
 /*!
 
 */
-	const	CMapEditorPlugin::ValidationStatus ValidationStatus;
+	Boolean  const EditorInputIsDown_IconUp;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_IconRight;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_IconDown;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_IconLeft;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_RemoveAll;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_Save;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_SelectAll;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_Copy;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_Cut;
+/*!
+
+*/
+	Boolean  const EditorInputIsDown_Paste;
+/*!
+
+*/
+	Real  const CollectionSquareSize;
+/*!
+
+*/
+	Real  const CollectionSquareHeight;
+/*!
+
+*/
+	Integer  const CollectionGroundY;
+/*!
+
+*/
+	CMapEditorPlugin::ValidationStatus const  ValidationStatus;
 /*!
 Preview the 'RoadsideSpectators' on the bleachers. if -1, use the BleacherSpectatorsAbsoluteCount instead.
 */
-			Real BleacherSpectatorsFillRatio;
+	Real BleacherSpectatorsFillRatio;
 /*!
 Preview the 'RoadsideSpectators' on the bleachers. used if BleacherSpectatorsFillRatio < 0.
 */
-			Integer BleacherSpectatorsCount;
+	Integer BleacherSpectatorsCount;
 /*!
 
 */
-			Text ManialinkText;
+	Text ManialinkText;
 /*!
 
 */
-	const	CMlPage ManialinkPage;
+	CMlPage * const  ManialinkPage;
 };
 
 /*!
@@ -6039,43 +6360,43 @@ public :
 /*!
 
 */
-			Boolean IsVisible;
+	Boolean IsVisible;
 /*!
 
 */
-	const	Boolean AnimInProgress;
+	Boolean  const AnimInProgress;
 /*!
 
 */
-			CUILayer::EUILayerType Type;
+	CUILayer::EUILayerType Type;
 /*!
 
 */
-			CUILayer::EUILayerAnimation InAnimation;
+	CUILayer::EUILayerAnimation InAnimation;
 /*!
 
 */
-			CUILayer::EUILayerAnimation OutAnimation;
+	CUILayer::EUILayerAnimation OutAnimation;
 /*!
 
 */
-			CUILayer::EUILayerAnimation InOutAnimation;
+	CUILayer::EUILayerAnimation InOutAnimation;
 /*!
 
 */
-			Text AttachId;
+	Text AttachId;
 /*!
 
 */
-			Text ManialinkPage;
+	Text ManialinkPage;
 /*!
 
 */
-	const	CMlPage LocalPage;
+	CMlPage * const  LocalPage;
 /*!
 
 */
-	const	Boolean IsLocalPageScriptRunning;
+	Boolean  const IsLocalPageScriptRunning;
 };
 
 /*!
@@ -6083,102 +6404,131 @@ public :
 */
 class CTrackingMgr : public CNod {
 public :
+	/*!
+	
+	*/
+	enum EEventColorLevel {
+		White,
+		Green,
+		Blue,
+		Red,
+		Black,
+	};
+	/*!
+	
+	*/
+	enum EEventMedalLevel {
+		Finished,
+		Bronze,
+		Silver,
+		Gold,
+		Author,
+	};
+	/*!
+	
+	*/
+	enum EEventSeason {
+		Winter,
+		Spring,
+		Summer,
+		Fall,
+	};
 /*!
 Array of task results.
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 Release a task result no more used.
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 Track_Context_MenuStart
 */
-			Void Track_Context_MenuStart(Ident UserId,Text MenuName);
+	Void Track_Context_MenuStart(Ident UserId,Text MenuName);
 /*!
 Track_Context_MenuStop
 */
-			Void Track_Context_MenuStop(Ident UserId,Text MenuName);
+	Void Track_Context_MenuStop(Ident UserId,Text MenuName);
 /*!
 Track_Context_GameModeStart
 */
-			Void Track_Context_GameModeStart(Ident UserId,Text GameMode);
+	Void Track_Context_GameModeStart(Ident UserId,Text GameMode);
 /*!
 Track_Context_GameModeStop
 */
-			Void Track_Context_GameModeStop(Ident UserId,Text GameMode);
+	Void Track_Context_GameModeStop(Ident UserId,Text GameMode);
 /*!
 Track_Context_MapStart
 */
-			Void Track_Context_MapStart(Ident UserId,Text MapUid,Text Environment);
+	Void Track_Context_MapStart(Ident UserId,Text MapUid,Text Environment);
 /*!
 Track_Context_MapStop
 */
-			Void Track_Context_MapStop(Ident UserId,Text MapUid);
+	Void Track_Context_MapStop(Ident UserId,Text MapUid);
 /*!
 Track_Context_PlayStart
 */
-			Void Track_Context_PlayStart(Ident UserId,Text Type);
+	Void Track_Context_PlayStart(Ident UserId,Text Type);
 /*!
 Track_Context_PlayStop
 */
-			Void Track_Context_PlayStop(Ident UserId,Text Type,Text Reason,Integer NbRespawns);
+	Void Track_Context_PlayStop(Ident UserId,Text Type,Text Reason,Integer NbRespawns);
 /*!
 Track_Create_NewMapCreated
 */
-			Void Track_Create_NewMapCreated(Ident UserId,Text Environment,Boolean IsRandomlyGenerated);
+	Void Track_Create_NewMapCreated(Ident UserId,Text Environment,Boolean IsRandomlyGenerated);
 /*!
 Track_Live_COTDPlayed
 */
-			Void Track_Live_COTDPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Live_COTDPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
 Track_Live_MultiplayerPlayed
 */
-			Void Track_Live_MultiplayerPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Live_MultiplayerPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
 Track_Live_RankedPlayed
 */
-			Void Track_Live_RankedPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Live_RankedPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
 Track_Live_RoyalPlayed
 */
-			Void Track_Live_RoyalPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Live_RoyalPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-Track_Live_RoyalSectionFinished
+Track_Live_RoyalSectionFinished_V2
 */
-			Void Track_Live_RoyalSectionFinished(Ident UserId,Integer Color);
+	Void Track_Live_RoyalSectionFinished_V2(Ident UserId,CTrackingMgr::EEventColorLevel ColorLevel);
 /*!
-Track_Local_HotseatPlayed
+Track_Local_HotseatPlayed_V2
 */
-			Void Track_Local_HotseatPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Local_HotseatPlayed_V2(Ident UserId);
 /*!
-Track_Local_SplitScreenPlayed
+Track_Local_SplitScreenPlayed_V2
 */
-			Void Track_Local_SplitScreenPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Local_SplitScreenPlayed_V2(Ident UserId);
 /*!
 Track_News_PlayerAction
 */
-			Void Track_News_PlayerAction(Ident UserId,Text NewsId);
+	Void Track_News_PlayerAction(Ident UserId,Text NewsId,Text Placement,Text Action);
 /*!
 Track_News_PlayerImpression
 */
-			Void Track_News_PlayerImpression(Ident UserId,Text NewsId);
+	Void Track_News_PlayerImpression(Ident UserId,Text NewsId,Text Placement,Integer Duration);
 /*!
 Track_Player_MedalEarned
 */
-			Void Track_Player_MedalEarned(Ident UserId,Integer Finished,Integer BronzeMedal,Integer SilverMedal,Integer GoldMedal,Integer AuthorMedal,Boolean IsOfficialCampaign,Boolean IsTOTD);
+	Void Track_Player_MedalEarned(Ident UserId,Integer Finished,Integer BronzeMedal,Integer SilverMedal,Integer GoldMedal,Integer AuthorMedal,Boolean IsOfficialCampaign,Boolean IsTOTD);
 /*!
-Track_Player_OfficialCampaignAllTrackCompleted
+Track_Player_OfficialCampaignAllTrackCompleted_V2
 */
-			Void Track_Player_OfficialCampaignAllTrackCompleted(Ident UserId,Integer Year,Integer Season,Integer MedalLevel);
+	Void Track_Player_OfficialCampaignAllTrackCompleted_V2(Ident UserId,Integer Year,CTrackingMgr::EEventSeason Season,CTrackingMgr::EEventMedalLevel MedalLevel);
 /*!
-Track_Player_TrackOfTheDayWeekAllTrackCompleted
+Track_Player_TrackOfTheDayWeekAllTrackCompleted_V2
 */
-			Void Track_Player_TrackOfTheDayWeekAllTrackCompleted(Ident UserId,Integer Year,Integer Week,Integer MedalLevel);
+	Void Track_Player_TrackOfTheDayWeekAllTrackCompleted_V2(Ident UserId,Integer Year,Integer Week,CTrackingMgr::EEventMedalLevel MedalLevel);
 /*!
 Track_Player_TrophyEarned
 */
-			Void Track_Player_TrophyEarned(Ident UserId,Integer T1CountPtr,Integer T2CountPtr,Integer T3CountPtr,Integer T4CountPtr,Integer T5CountPtr,Integer T6CountPtr,Integer T7CountPtr,Integer T8CountPtr,Integer T9CountPtr);
+	Void Track_Player_TrophyEarned(Ident UserId,Integer T1CountPtr,Integer T2CountPtr,Integer T3CountPtr,Integer T4CountPtr,Integer T5CountPtr,Integer T6CountPtr,Integer T7CountPtr,Integer T8CountPtr,Integer T9CountPtr);
 };
 
 /*!
@@ -6201,31 +6551,31 @@ public :
 /*!
 
 */
-	const	Array<CManiaAppEvent> PendingEvents;
+	Array<CManiaAppEvent* const > PendingEvents;
 /*!
 
 */
-	const	CEditorModule ModuleEditor;
+	CEditorModule * const  ModuleEditor;
 /*!
 
 */
-	const	CEditorMesh MeshEditor;
+	CEditorMesh * const  MeshEditor;
 /*!
 
 */
-	const	CEditorEditor EditorEditor;
+	CEditorEditor * const  EditorEditor;
 /*!
 
 */
-	const	CEditorMediaTracker MediaTracker;
+	CEditorMediaTracker * const  MediaTracker;
 /*!
 
 */
-	const	CEditorSkin SkinEditor;
+	CEditorSkin * const  SkinEditor;
 /*!
 
 */
-	const	CAnyEditorPlugin::EInteractionStatus InteractionStatus;
+	CAnyEditorPlugin::EInteractionStatus const  InteractionStatus;
 };
 
 /*!
@@ -6246,103 +6596,103 @@ public :
 /*!
 
 */
-	const	Text MapUid;
+	Text  const MapUid;
 /*!
 
 */
-	const	Text Comments;
+	Text  const Comments;
 /*!
 
 */
-	const	Integer CopperPrice;
+	Integer  const CopperPrice;
 /*!
 
 */
-	const	Text CollectionName;
+	Text  const CollectionName;
 /*!
 
 */
-	const	Text AuthorLogin;
+	Text  const AuthorLogin;
 /*!
 
 */
-	const	Text AuthorNickName;
+	Text  const AuthorNickName;
 /*!
 
 */
-	const	Text AuthorZonePath;
+	Text  const AuthorZonePath;
 /*!
 
 */
-	const	Text AuthorZoneFlagUrl;
+	Text  const AuthorZoneFlagUrl;
 /*!
 
 */
-	const	Text AuthorCountryFlagUrl;
+	Text  const AuthorCountryFlagUrl;
 /*!
 
 */
-	const	Text MapType;
+	Text  const MapType;
 /*!
 
 */
-	const	Text MapStyle;
+	Text  const MapStyle;
 /*!
 
 */
-	const	Boolean Unlocked;
+	Boolean  const Unlocked;
 /*!
 
 */
-	const	Boolean IsPlayable;
+	Boolean  const IsPlayable;
 /*!
 
 */
-	const	Boolean CreatedWithSimpleEditor;
+	Boolean  const CreatedWithSimpleEditor;
 /*!
 
 */
-	const	Boolean CreatedWithPartyEditor;
+	Boolean  const CreatedWithPartyEditor;
 /*!
 
 */
-	const	Boolean CreatedWithGamepadEditor;
+	Boolean  const CreatedWithGamepadEditor;
 /*!
 
 */
-	const	Integer TMObjective_AuthorTime;
+	Integer  const TMObjective_AuthorTime;
 /*!
 
 */
-	const	Integer TMObjective_GoldTime;
+	Integer  const TMObjective_GoldTime;
 /*!
 
 */
-	const	Integer TMObjective_SilverTime;
+	Integer  const TMObjective_SilverTime;
 /*!
 
 */
-	const	Integer TMObjective_BronzeTime;
+	Integer  const TMObjective_BronzeTime;
 /*!
 
 */
-	const	Integer TMObjective_NbLaps;
+	Integer  const TMObjective_NbLaps;
 /*!
 
 */
-	const	Boolean TMObjective_IsLapRace;
+	Boolean  const TMObjective_IsLapRace;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 };
 
 /*!
@@ -6356,31 +6706,31 @@ public :
 /*!
 
 */
-	const	CUser User;
+	CUser * const  User;
 /*!
 
 */
-	const	CUIConfig UI;
+	CUIConfig * const  UI;
 /*!
 Otherwise, it's a LAN account not currently authentified with the masterserver.
 */
-	const	Boolean IsConnectedToMasterServer;
+	Boolean  const IsConnectedToMasterServer;
 /*!
 
 */
-	const	Text ClientVersion;
+	Text  const ClientVersion;
 /*!
 
 */
-	const	Text ClientTitleVersion;
+	Text  const ClientTitleVersion;
 /*!
 
 */
-	const	Boolean IsSpectator;
+	Boolean  const IsSpectator;
 /*!
 Duration during which the player is not active while they should be (AFK).
 */
-	const	Integer IdleDuration;
+	Integer  const IdleDuration;
 };
 
 /*!
@@ -6533,504 +6883,508 @@ public :
 /*!
 
 */
-			CUIConfig::EUISequence UISequence;
+	CUIConfig::EUISequence UISequence;
 /*!
 
 */
-	const	Boolean UISequenceIsCompleted;
+	Boolean  const UISequenceIsCompleted;
 /*!
 
 */
-			Text UISequence_CustomMTClip;
+	Text UISequence_CustomMTClip;
 /*!
 
 */
-			Integer UISequence_CustomMTRefTime;
+	Integer UISequence_CustomMTRefTime;
 /*!
 
 */
-			Boolean UISequence_CanSkipIntroMT;
+	Boolean UISequence_CanSkipIntroMT;
 /*!
 
 */
-			Text UISequence_PodiumPlayersWin;
+	Text UISequence_PodiumPlayersWin;
 /*!
 
 */
-			Text UISequence_PodiumPlayersLose;
+	Text UISequence_PodiumPlayersLose;
 /*!
 
 */
-			CUIConfig::ECutSceneStyle UISequence_CutSceneStyle;
+	CUIConfig::ECutSceneStyle UISequence_CutSceneStyle;
 /*!
 
 */
-			Boolean DisableZoomTransitions;
+	Boolean DisableZoomTransitions;
 /*!
 
 */
-			Text ManialinkPage;
+	Text ManialinkPage;
 /*!
 
 */
-			Text BigMessage;
+	Text BigMessage;
 /*!
 
 */
-			Text BigMessageAvatarLogin;
+	Text BigMessageAvatarLogin;
 /*!
 
 */
-			CUIConfig::EAvatarVariant BigMessageAvatarVariant;
+	CUIConfig::EAvatarVariant BigMessageAvatarVariant;
 /*!
 
 */
-			CUIConfig::EUISound BigMessageSound;
+	CUIConfig::EUISound BigMessageSound;
 /*!
 
 */
-			Integer BigMessageSoundVariant;
+	Integer BigMessageSoundVariant;
 /*!
 
 */
-			Text StatusMessage;
+	Text StatusMessage;
 /*!
 
 */
-			Text GaugeMessage;
+	Text GaugeMessage;
 /*!
 
 */
-			Real GaugeRatio;
+	Real GaugeRatio;
 /*!
 
 */
-			Integer GaugeClan;
+	Integer GaugeClan;
 /*!
 An XML text describing the map tooltips appearing in the HUD.<br/>It's a set of &lt;marker/&gt; elements which can have the following attributes : <ol><li>label : a text to display</li><li>pos : a vector of 3 world coordinates desribing the position of the marker</li><li>playerlogin : alternatively, instead of using pos, you can use a player login. The marker will smoothly follow the player</li><li>playerid : similar to playerlogin. Fill it with Player.MarkerId. The marker will smoothly follow the player</li><li>box : a vector of 3 dimensions describing the size of the marked object (allows a better placement of the marker on the screen)</li><li>gauge : a Real. If between 0. and 1. a gauge will be shown undeneath the text</li><li>imageurl : a string. URL of an image to use</li><li>distmax : a real. The marker will disappear if the dist to it is greater than distmax</li><li>isturning : a bool. Only for markers attached to players. If the marker appear on a minimap, it will turn around to reflect the player orientation.</li></ol>
 */
-			Text MarkersXML;
+	Text MarkersXML;
 /*!
 If True, the markers of this UI config overrides the markers of more generic UI configs.
 If False they are merged.
 */
-			Boolean OverrideMarkers;
+	Boolean OverrideMarkers;
 /*!
 
 */
-	const	Array<CUIConfigMarker> Markers;
+	Array<CUIConfigMarker* const > Markers;
 /*!
 
 */
-	const	Array<CUILayer> UILayers;
+	Array<CUILayer* const > UILayers;
 /*!
 
 */
-			Boolean OverlayHideNotices;
+	Boolean OverlayHideNotices;
 /*!
 
 */
-			Boolean OverlayHideMapInfo;
+	Boolean OverlayHideMapInfo;
 /*!
 
 */
-			Boolean OverlayHideOpponentsInfo;
+	Boolean OverlayHideOpponentsInfo;
 /*!
 
 */
-			Boolean OverlayHideChat;
+	Boolean OverlayHideChat;
 /*!
 
 */
-			Boolean OverlayHideCheckPointList;
+	Boolean OverlayHideCheckPointList;
 /*!
 
 */
-			Boolean OverlayHideRoundScores;
+	Boolean OverlayHideRoundScores;
 /*!
 
 */
-			Boolean OverlayHideCountdown;
+	Boolean OverlayHideCountdown;
 /*!
 
 */
-			Boolean OverlayHideCrosshair;
+	Boolean OverlayHideCrosshair;
 /*!
 
 */
-			Boolean OverlayHideGauges;
+	Boolean OverlayHideGauges;
 /*!
 
 */
-			Boolean OverlayHideConsumables;
+	Boolean OverlayHideConsumables;
 /*!
 
 */
-			Boolean OverlayHide321Go;
+	Boolean OverlayHide321Go;
 /*!
 
 */
-			Boolean OverlayMute321Go;
+	Boolean OverlayMute321Go;
 /*!
 
 */
-			Boolean OverlayHideBackground;
+	Boolean OverlayHideBackground;
 /*!
 
 */
-			Boolean OverlayHideChrono;
+	Boolean OverlayHideChrono;
 /*!
 
 */
-			Boolean OverlayHideSpeedAndDist;
+	Boolean OverlayHideSpeedAndDist;
 /*!
 
 */
-			Boolean OverlayHidePersonnalBestAndRank;
+	Boolean OverlayHidePersonnalBestAndRank;
 /*!
 
 */
-			Boolean OverlayHidePosition;
+	Boolean OverlayHidePosition;
 /*!
 
 */
-			Boolean OverlayHideCheckPointTime;
+	Boolean OverlayHideCheckPointTime;
 /*!
 
 */
-			Boolean OverlayHideEndMapLadderRecap;
+	Boolean OverlayHideEndMapLadderRecap;
 /*!
 
 */
-			Boolean OverlayHideMultilapInfos;
+	Boolean OverlayHideMultilapInfos;
 /*!
 
 */
-			Boolean OverlayHideSpectatorControllers;
+	Boolean OverlayHideSpectatorControllers;
 /*!
 
 */
-			Boolean OverlayHideSpectatorInfos;
+	Boolean OverlayHideSpectatorInfos;
 /*!
 
 */
-			Boolean OverlayChatHideAvatar;
+	Boolean OverlayChatHideAvatar;
 /*!
 Values in range (0 - 40)
 */
-			Integer OverlayChatLineCount;
+	Integer OverlayChatLineCount;
 /*!
 
 */
-			Vec2 OverlayChatOffset;
+	Vec2 OverlayChatOffset;
+/*!
+Values in range (0.100000-10.000000)
+*/
+	Real OverlayChatWidthCoef;
 /*!
 
 */
-			Vec2 CountdownCoord;
+	Vec2 CountdownCoord;
 /*!
 
 */
-			Boolean NoticesFilter_HidePlayerInfo;
+	Boolean NoticesFilter_HidePlayerInfo;
 /*!
 
 */
-			Boolean NoticesFilter_HidePlayerWarning;
+	Boolean NoticesFilter_HidePlayerWarning;
 /*!
 
 */
-			Boolean NoticesFilter_HidePlayerInfoIfNotMe;
+	Boolean NoticesFilter_HidePlayerInfoIfNotMe;
 /*!
 
 */
-			Boolean NoticesFilter_HidePlayerWarningIfNotMe;
+	Boolean NoticesFilter_HidePlayerWarningIfNotMe;
 /*!
 
 */
-			Boolean NoticesFilter_HideMapInfo;
+	Boolean NoticesFilter_HideMapInfo;
 /*!
 
 */
-			Boolean NoticesFilter_HideMapWarning;
+	Boolean NoticesFilter_HideMapWarning;
 /*!
 
 */
-			Boolean NoticesFilter_HideMatchInfo;
+	Boolean NoticesFilter_HideMatchInfo;
 /*!
 
 */
-			Boolean NoticesFilter_HideMatchWarning;
+	Boolean NoticesFilter_HideMatchWarning;
 /*!
 
 */
-			CUIConfig::ENoticeLevel NoticesFilter_LevelToShowAsBigMessage;
+	CUIConfig::ENoticeLevel NoticesFilter_LevelToShowAsBigMessage;
 /*!
 
 */
-			Text ScoreTable;
+	Text ScoreTable;
 /*!
 
 */
-			CUIConfig::EVisibility ScoreTableVisibility;
+	CUIConfig::EVisibility ScoreTableVisibility;
 /*!
 
 */
-			Text SmallScoreTable;
+	Text SmallScoreTable;
 /*!
 
 */
-			CUIConfig::EVisibility SmallScoreTableVisibility;
+	CUIConfig::EVisibility SmallScoreTableVisibility;
 /*!
 
 */
-			Boolean ScoreTableOnlyManialink;
+	Boolean ScoreTableOnlyManialink;
 /*!
 
 */
-			Boolean AltMenuNoDefaultScores;
+	Boolean AltMenuNoDefaultScores;
 /*!
 
 */
-			Boolean AltMenuNoCustomScores;
+	Boolean AltMenuNoCustomScores;
 /*!
 
 */
-			Boolean OverlayScoreSummary;
+	Boolean OverlayScoreSummary;
 /*!
 
 */
-			Ident ScoreSummary_Player1;
+	Ident ScoreSummary_Player1;
 /*!
 
 */
-			Integer ScoreSummary_Points1;
+	Integer ScoreSummary_Points1;
 /*!
 
 */
-			Integer ScoreSummary_RoundPoints1;
+	Integer ScoreSummary_RoundPoints1;
 /*!
 
 */
-			Integer ScoreSummary_MatchPoints1;
+	Integer ScoreSummary_MatchPoints1;
 /*!
 
 */
-			Real ScoreSummary_Gauge1;
+	Real ScoreSummary_Gauge1;
 /*!
 
 */
-			Ident ScoreSummary_Player2;
+	Ident ScoreSummary_Player2;
 /*!
 
 */
-			Integer ScoreSummary_Points2;
+	Integer ScoreSummary_Points2;
 /*!
 
 */
-			Integer ScoreSummary_RoundPoints2;
+	Integer ScoreSummary_RoundPoints2;
 /*!
 
 */
-			Integer ScoreSummary_MatchPoints2;
+	Integer ScoreSummary_MatchPoints2;
 /*!
 
 */
-			Real ScoreSummary_Gauge2;
+	Real ScoreSummary_Gauge2;
 /*!
 
 */
-			Boolean ScreenIn3dHideScoreSummary;
+	Boolean ScreenIn3dHideScoreSummary;
 /*!
 
 */
-			Boolean ScreenIn3dHideVersus;
+	Boolean ScreenIn3dHideVersus;
 /*!
 
 */
-			Boolean DisplayControl_UseLiveCamera;
+	Boolean DisplayControl_UseLiveCamera;
 /*!
 
 */
-			Boolean DisplayControl_UseEsportsProgrammation;
+	Boolean DisplayControl_UseEsportsProgrammation;
 /*!
 
 */
-			Integer CountdownEndTime;
+	Integer CountdownEndTime;
 /*!
 
 */
-			CUIConfig::EUIStatus UIStatus;
+	CUIConfig::EUIStatus UIStatus;
 /*!
 
 */
-			CUIConfig::EHudVisibility LabelsVisibility;
+	CUIConfig::EHudVisibility LabelsVisibility;
 /*!
 
 */
-			Boolean LabelsVisibility_SkipMarkersOnly;
+	Boolean LabelsVisibility_SkipMarkersOnly;
 /*!
 
 */
-			CUIConfig::ELabelsVisibility AlliesLabelsVisibility;
+	CUIConfig::ELabelsVisibility AlliesLabelsVisibility;
 /*!
 
 */
-			CUIConfig::EVisibility AlliesLabelsShowGauges;
+	CUIConfig::EVisibility AlliesLabelsShowGauges;
 /*!
 
 */
-			CUIConfig::EVisibility AlliesLabelsShowNames;
+	CUIConfig::EVisibility AlliesLabelsShowNames;
 /*!
 Values in range (0 - 250)
 */
-			Integer AlliesLabelsMaxCount;
+	Integer AlliesLabelsMaxCount;
 /*!
 
 */
-			CUIConfig::ELabelsVisibility TeamLabelsVisibility;
+	CUIConfig::ELabelsVisibility TeamLabelsVisibility;
 /*!
 
 */
-			CUIConfig::EVisibility TeamLabelsShowGauges;
+	CUIConfig::EVisibility TeamLabelsShowGauges;
 /*!
 
 */
-			CUIConfig::EVisibility TeamLabelsShowNames;
+	CUIConfig::EVisibility TeamLabelsShowNames;
 /*!
 
 */
-			CUIConfig::ELabelsVisibility OpposingTeamLabelsVisibility;
+	CUIConfig::ELabelsVisibility OpposingTeamLabelsVisibility;
 /*!
 
 */
-			CUIConfig::EVisibility OpposingTeamLabelsShowGauges;
+	CUIConfig::EVisibility OpposingTeamLabelsShowGauges;
 /*!
 
 */
-			CUIConfig::EVisibility OpposingTeamLabelsShowNames;
+	CUIConfig::EVisibility OpposingTeamLabelsShowNames;
 /*!
 
 */
-			Boolean PlayerDisableFreeCam;
+	Boolean PlayerDisableFreeCam;
 /*!
 
 */
-			Boolean ForceSpectator;
+	Boolean ForceSpectator;
 /*!
 
 */
-			Integer SpectatorForceCameraType;
+	Integer SpectatorForceCameraType;
 /*!
 
 */
-			Real SpectatorCamAutoLatitude;
+	Real SpectatorCamAutoLatitude;
 /*!
 
 */
-			Real SpectatorCamAutoLongitude;
+	Real SpectatorCamAutoLongitude;
 /*!
 
 */
-			Real SpectatorCamAutoRadius;
+	Real SpectatorCamAutoRadius;
 /*!
 When not in spectator mode, allow/forbid to change the camera to observe other players. (in Trackmania there's no 'Manual' mode.)
 */
-			CUIConfig::EObserverMode SpectatorObserverMode;
+	CUIConfig::EObserverMode SpectatorObserverMode;
 /*!
 
 */
-			Void Spectator_SetAutoTarget_Clear();
+	Void Spectator_SetAutoTarget_Clear();
 /*!
 
 */
-			Void Spectator_SetAutoTarget_All();
+	Void Spectator_SetAutoTarget_All();
 /*!
 
 */
-			Void Spectator_SetAutoTarget_User(CUser User);
+	Void Spectator_SetAutoTarget_User(CUser User);
 /*!
 
 */
-			Void Spectator_SetForcedTarget_Clear();
+	Void Spectator_SetForcedTarget_Clear();
 /*!
 
 */
-			Void Spectator_SetForcedTarget_AllPlayers();
+	Void Spectator_SetForcedTarget_AllPlayers();
 /*!
 
 */
-			Void Spectator_SetForcedTarget_AllMap();
+	Void Spectator_SetForcedTarget_AllMap();
 /*!
 
 */
-			Void Spectator_SetForcedTarget_Entity(CEntity Entity);
+	Void Spectator_SetForcedTarget_Entity(CEntity Entity);
 /*!
 
 */
-			Void Spectator_SetForcedTarget_Landmark(CMapLandmark Landmark);
+	Void Spectator_SetForcedTarget_Landmark(CMapLandmark Landmark);
 /*!
 Only in local scripts, since ghosts are only known on the client.
 */
-			Void Spectator_SetForcedTarget_Ghost(Ident GhostInstanceId);
+	Void Spectator_SetForcedTarget_Ghost(Ident GhostInstanceId);
 /*!
 
 */
-			Void Spectator_SetForcedTarget_Clan(Integer ClanNumber);
+	Void Spectator_SetForcedTarget_Clan(Integer ClanNumber);
 /*!
 
 */
-			Void SendChat(Text Text);
+	Void SendChat(Text Text);
 /*!
 
 */
-			Void SendNotice(Text Text,CUIConfig::ENoticeLevel Level,CUser Avatar,CUIConfig::EAvatarVariant AvatarVariant,CUIConfig::EUISound Sound,Integer SoundVariant);
+	Void SendNotice(Text Text,CUIConfig::ENoticeLevel Level,CUser Avatar,CUIConfig::EAvatarVariant AvatarVariant,CUIConfig::EUISound Sound,Integer SoundVariant);
 /*!
 
 */
-			Text GetLayerManialinkAction(CUILayer Layer);
+	Text GetLayerManialinkAction(CUILayer Layer);
 /*!
 
 */
-			Void ClearLayerManialinkAction(CUILayer Layer);
+	Void ClearLayerManialinkAction(CUILayer Layer);
 /*!
 
 */
-			CUIConfigMarker AddMarker(Vec3 Position);
+	CUIConfigMarker AddMarker(Vec3 Position);
 /*!
 
 */
-			CUIConfigMarker AddMarker(CEntity Entity);
+	CUIConfigMarker AddMarker(CEntity Entity);
 /*!
 
 */
-			CUIConfigMarker AddMarker(CMapLandmark Landmark);
+	CUIConfigMarker AddMarker(CMapLandmark Landmark);
 /*!
 
 */
-			CUIConfigMarker AddMarker(Ident GhostInstanceId);
+	CUIConfigMarker AddMarker(Ident GhostInstanceId);
 /*!
 
 */
-			Void RemoveMarker(CUIConfigMarker Marker);
+	Void RemoveMarker(CUIConfigMarker Marker);
 /*!
 
 */
-			Void ClearMarkers();
+	Void ClearMarkers();
 /*!
 
 */
-			Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message,CUser Avatar,CUIConfig::EAvatarVariant AvatarVariant,CUIConfig::EUISound Sound,Integer SoundVariant);
+	Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message,CUser Avatar,CUIConfig::EAvatarVariant AvatarVariant,CUIConfig::EUISound Sound,Integer SoundVariant);
 /*!
 
 */
-			Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message,CUIConfig::EUISound Sound,Integer SoundVariant);
+	Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message,CUIConfig::EUISound Sound,Integer SoundVariant);
 /*!
 
 */
-			Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message);
+	Void QueueMessage(Integer Duration,Integer Priority,CUIConfig::EMessageDisplay Level,Text Message);
 /*!
 
 */
-			Void ClearMessages();
+	Void ClearMessages();
 };
 
 /*!
@@ -7046,19 +7400,19 @@ public :
 /*!
 
 */
-	const	CUser User;
+	CUser * const  User;
 /*!
 
 */
-	const	Integer RequestedClan;
+	Integer  const RequestedClan;
 /*!
 
 */
-	const	Boolean RequestsSpectate;
+	Boolean  const RequestsSpectate;
 /*!
 This player will only have Race interactions (CP, finishes...) with landmarks whose Order is equal to the selector. Set to -1 to interact with all landmarks.
 */
-			Integer LandmarkOrderSelector_Race;
+	Integer LandmarkOrderSelector_Race;
 };
 
 /*!
@@ -7074,27 +7428,27 @@ public :
 /*!
 
 */
-	const	CUser User;
+	CUser * const  User;
 /*!
 
 */
-	const	Boolean IsRegisteredForLadderMatch;
+	Boolean  const IsRegisteredForLadderMatch;
 /*!
 
 */
-	const	Real LadderScore;
+	Real  const LadderScore;
 /*!
 
 */
-			Integer LadderRankSortValue;
+	Integer LadderRankSortValue;
 /*!
 
 */
-			Real LadderMatchScoreValue;
+	Real LadderMatchScoreValue;
 /*!
 
 */
-			Integer LadderClan;
+	Integer LadderClan;
 };
 
 /*!
@@ -7110,43 +7464,43 @@ public :
 /*!
 
 */
-			Text Name;
+	Text Name;
 /*!
 
 */
-			Text ZonePath;
+	Text ZonePath;
 /*!
 
 */
-			Text City;
+	Text City;
 /*!
 
 */
-			Text EmblemUrl;
+	Text EmblemUrl;
 /*!
 
 */
-			Text PresentationManialinkUrl;
+	Text PresentationManialinkUrl;
 /*!
 
 */
-			Text ClubLinkUrl;
+	Text ClubLinkUrl;
 /*!
 
 */
-			Vec3 ColorPrimary;
+	Vec3 ColorPrimary;
 /*!
 
 */
-			Vec3 ColorSecondary;
+	Vec3 ColorSecondary;
 /*!
 
 */
-	const	Text ColorText;
+	Text  const ColorText;
 /*!
 
 */
-	const	Text ColorizedName;
+	Text  const ColorizedName;
 };
 
 /*!
@@ -7178,39 +7532,39 @@ public :
 /*!
 Event type.
 */
-	const	CServerPluginEvent::EType Type;
+	CServerPluginEvent::EType const  Type;
 /*!
 
 */
-	const	CClient Client;
+	CClient * const  Client;
 /*!
 
 */
-	const	Text ChatText;
+	Text  const ChatText;
 /*!
 
 */
-	const	Text ChatCommandType;
+	Text  const ChatCommandType;
 /*!
 
 */
-	const	Array<Text> ChatCommandData;
+	Array<Text> ChatCommandData;
 /*!
 
 */
-	const	Text ModeCallbackType;
+	Text  const ModeCallbackType;
 /*!
 
 */
-	const	Array<Text> ModeCallbackData;
+	Array<Text> ModeCallbackData;
 /*!
 
 */
-	const	Array<CScore> EndMatchScores;
+	Array<CScore* const > EndMatchScores;
 /*!
 
 */
-	const	Array<Integer> EndMatchRanks;
+	Array<Integer> EndMatchRanks;
 };
 
 /*!
@@ -7221,59 +7575,59 @@ public :
 /*!
 
 */
-			Void ResetAll();
+	Void ResetAll();
 /*!
 
 */
-	const	CUIConfig UIAll;
+	CUIConfig * const  UIAll;
 /*!
 
 */
-	const	Array<CUIConfig> UI;
+	Array<CUIConfig* const > UI;
 /*!
 
 */
-			CUIConfig GetUI(CPlayer Player);
+	CUIConfig GetUI(CPlayer Player);
 /*!
 
 */
-			CUIConfig GetUI(CUser User);
+	CUIConfig GetUI(CUser User);
 /*!
 
 */
-			CUIConfig GetUI(CClient Client);
+	CUIConfig GetUI(CClient Client);
 /*!
 
 */
-	const	Array<CUILayer> UILayers;
+	Array<CUILayer* const > UILayers;
 /*!
 
 */
-			CUILayer UILayerCreate();
+	CUILayer UILayerCreate();
 /*!
 
 */
-			Void UILayerDestroy(CUILayer Layer);
+	Void UILayerDestroy(CUILayer Layer);
 /*!
 
 */
-			Void UILayerDestroyAll();
+	Void UILayerDestroyAll();
 /*!
 
 */
-	const	Array<CUILayer> UIReplayLayers;
+	Array<CUILayer* const > UIReplayLayers;
 /*!
 
 */
-			Integer UISequenceMaxDuration;
+	Integer UISequenceMaxDuration;
 /*!
 
 */
-			Boolean HoldLoadingScreen;
+	Boolean HoldLoadingScreen;
 /*!
 
 */
-	const	Array<CUIConfigEvent> PendingEvents;
+	Array<CUIConfigEvent* const > PendingEvents;
 };
 
 /*!
@@ -7294,95 +7648,95 @@ public :
 /*!
 ServerInfo
 */
-	const	CServerInfo ServerInfo;
+	CServerInfo * const  ServerInfo;
 /*!
 
 */
-			Void AutoTeamBalance();
+	Void AutoTeamBalance();
 /*!
 
 */
-			Boolean Kick(CUser User,Text Reason);
+	Boolean Kick(CUser User,Text Reason);
 /*!
 
 */
-			Boolean Kick(CClient Client,Text Reason);
+	Boolean Kick(CClient Client,Text Reason);
 /*!
 
 */
-			Boolean Ban(CUser User,Text Reason);
+	Boolean Ban(CUser User,Text Reason);
 /*!
 
 */
-			Boolean Ban(CClient Client,Text Reason);
+	Boolean Ban(CClient Client,Text Reason);
 /*!
 
 */
-			Boolean ForceSpectator(CUser User,CServerAdmin::ESpecMode SpecMode);
+	Boolean ForceSpectator(CUser User,CServerAdmin::ESpecMode SpecMode);
 /*!
 
 */
-			Boolean ForceSpectator(CClient Client,CServerAdmin::ESpecMode SpecMode);
+	Boolean ForceSpectator(CClient Client,CServerAdmin::ESpecMode SpecMode);
 /*!
 
 */
-			Boolean ForcePlayerRequestedTeam(CUser User,Integer Team);
+	Boolean ForcePlayerRequestedTeam(CUser User,Integer Team);
 /*!
 Team is 1 or 2.
 */
-			Boolean ForcePlayerRequestedTeam(CClient Client,Integer Team);
+	Boolean ForcePlayerRequestedTeam(CClient Client,Integer Team);
 /*!
 Disable Team change UI on the clients.
 */
-			Boolean IsDisableChangeTeams;
+	Boolean IsDisableChangeTeams;
 /*!
 
 */
-			Boolean IsDisableProfileSkins;
+	Boolean IsDisableProfileSkins;
 /*!
 Connect a fake player (to help with debugging game modes)
 */
-			Text ConnectFakePlayer();
+	Text ConnectFakePlayer();
 /*!
 
 */
-			Void DisconnectFakePlayer(Text Login);
+	Void DisconnectFakePlayer(Text Login);
 /*!
 
 */
-			Void SetLobbyInfo(Boolean IsLobby,Integer LobbyPlayerCount,Integer LobbyMaxPlayerCount,Real LobbyPlayersLevel);
+	Void SetLobbyInfo(Boolean IsLobby,Integer LobbyPlayerCount,Integer LobbyMaxPlayerCount,Real LobbyPlayersLevel);
 /*!
 
 */
-			Void SendToServerAfterMatch(Text ServerUrl);
+	Void SendToServerAfterMatch(Text ServerUrl);
 /*!
 
 */
-			Void CustomizeQuitDialog(Text ManialinkPage,Text SendToServerUrl,Boolean ProposeAddToFavorites,Integer ForceDelay);
+	Void CustomizeQuitDialog(Text ManialinkPage,Text SendToServerUrl,Boolean ProposeAddToFavorites,Integer ForceDelay);
 /*!
 Always use NullId as UserId.
 */
-			Void Authentication_GetToken(Ident UserId,Text AppLogin);
+	Void Authentication_GetToken(Ident UserId,Text AppLogin);
 /*!
 
 */
-	const	Boolean Authentication_GetTokenResponseReceived;
+	Boolean  const Authentication_GetTokenResponseReceived;
 /*!
 
 */
-	const	Integer Authentication_ErrorCode;
+	Integer  const Authentication_ErrorCode;
 /*!
 
 */
-	const	Text Authentication_Token;
+	Text  const Authentication_Token;
 /*!
 
 */
-			Void SetViewerCount(Integer ViewerCount);
+	Void SetViewerCount(Integer ViewerCount);
 /*!
 
 */
-	const	Text PlatformRestriction;
+	Text  const PlatformRestriction;
 };
 
 /*!
@@ -7398,23 +7752,23 @@ public :
 /*!
 
 */
-	const	Array<CXmlRpcEvent> PendingEvents;
+	Array<CXmlRpcEvent* const > PendingEvents;
 /*!
 
 */
-			Void SendCallback(Text Param1,Text Param2);
+	Void SendCallback(Text Param1,Text Param2);
 /*!
 
 */
-			Void SendCallbackArray(Text Type,Array<Text> Data);
+	Void SendCallbackArray(Text Type,Array<Text> Data);
 /*!
 
 */
-			Void SendCallback_BeginRound();
+	Void SendCallback_BeginRound();
 /*!
 
 */
-			Void SendCallback_EndRound();
+	Void SendCallback_EndRound();
 };
 
 /*!
@@ -7428,35 +7782,35 @@ public :
 /*!
 Returns a boolean indicating if the task is still processing.
 */
-	const	Boolean IsProcessing;
+	Boolean  const IsProcessing;
 /*!
 Returns a boolean indicating if the task has succeeded.
 */
-	const	Boolean HasSucceeded;
+	Boolean  const HasSucceeded;
 /*!
 Returns a boolean indicating if the task has failed or has been canceled.
 */
-	const	Boolean HasFailed;
+	Boolean  const HasFailed;
 /*!
 Returns a boolean indicating if the task has been canceled.
 */
-	const	Boolean IsCanceled;
+	Boolean  const IsCanceled;
 /*!
 Returns the type of the error if the task has failed.
 */
-	const	Text ErrorType;
+	Text  const ErrorType;
 /*!
 Returns the code of the error if the task has failed.
 */
-	const	Text ErrorCode;
+	Text  const ErrorCode;
 /*!
 Returns the description of the error if the task has failed.
 */
-	const	Text ErrorDescription;
+	Text  const ErrorDescription;
 /*!
 
 */
-			Void Cancel();
+	Void Cancel();
 };
 
 /*!
@@ -7467,23 +7821,27 @@ public :
 /*!
 Ghost id
 */
-	const	Ident Id;
+	Ident  const Id;
 /*!
 Result associated to this ghost (score/time/respawncount).
 */
-	const	CTmRaceResultNod Result;
+	CTmRaceResultNod * const  Result;
 /*!
 Nickname of the player.
 */
-			Text Nickname;
+	Text Nickname;
 /*!
 Trigram of the player.
 */
-			Text Trigram;
+	Text Trigram;
 /*!
 
 */
-	const	Text CountryPath;
+	Text CountryPath;
+/*!
+
+*/
+	Void SetProfileInfoFromUser(CUser User);
 };
 
 /*!
@@ -7497,7 +7855,110 @@ public :
 /*!
 Ghost contained by this result.
 */
-	const	CGhost Ghost;
+	CGhost * const  Ghost;
+};
+
+/*!
+* \brief Documentation for class CNotification_Prestige
+*/
+class CNotification_Prestige : public CNotification {
+public :
+};
+
+/*!
+* \brief Documentation for class CNotification_Squad
+*/
+class CNotification_Squad : public CNotification {
+public :
+};
+
+/*!
+* \brief Documentation for class CSkinInfo
+*/
+class CSkinInfo : public CNod {
+public :
+/*!
+
+*/
+	Text  const Name;
+/*!
+
+*/
+	Text  const Type;
+/*!
+
+*/
+	Text  const Url;
+};
+
+/*!
+* \brief Documentation for class CAccountTrophyGain
+*/
+class CAccountTrophyGain : public CNod {
+public :
+/*!
+
+*/
+	Text  const AccountId;
+/*!
+
+*/
+	Text  const WebServicesUserId;
+/*!
+
+*/
+	Integer  const T1Count;
+/*!
+
+*/
+	Integer  const T2Count;
+/*!
+
+*/
+	Integer  const T3Count;
+/*!
+
+*/
+	Integer  const T4Count;
+/*!
+
+*/
+	Integer  const T5Count;
+/*!
+
+*/
+	Integer  const T6Count;
+/*!
+
+*/
+	Integer  const T7Count;
+/*!
+
+*/
+	Integer  const T8Count;
+/*!
+
+*/
+	Integer  const T9Count;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CTrophyAchievement
+*/
+class CTrophyAchievement : public CNod {
+public :
+/*!
+
+*/
+	Text  const TrophyAchievementId;
+/*!
+
+*/
+	Text  const TrophyAchievementType;
 };
 
 /*!
@@ -7523,415 +7984,419 @@ public :
 /*!
 
 */
-	const	Array<CTaskResult> TaskResults;
+	Array<CTaskResult* const > TaskResults;
 /*!
 
 */
-			Void TaskResult_Release(Ident TaskId);
+	Void TaskResult_Release(Ident TaskId);
 /*!
 
 */
-			Text ModeStatusMessage;
+	Text ModeStatusMessage;
 /*!
 
 */
-	const	CTitle LoadedTitle;
+	CTitle * const  LoadedTitle;
 /*!
 
 */
-	const	Text ServerLogin;
+	Text  const ServerLogin;
 /*!
 
 */
-	const	Text ServerName;
+	Text  const ServerName;
 /*!
 
 */
-	const	Text ServerModeName;
+	Text  const ServerModeName;
 /*!
 
 */
-	const	Text MapName;
+	Text  const MapName;
 /*!
 
 */
-	const	CMap Map;
+	CMap * const  Map;
 /*!
 
 */
-	const	Text MapPlayerModelName;
+	Text  const MapPlayerModelName;
 /*!
 
 */
-	const	Array<CUser> Users;
+	Boolean  const HasPodium;
 /*!
 
 */
-	const	Array<CTeam> Teams;
+	Array<CUser* const > Users;
 /*!
 
 */
-			Text NeutralEmblemUrl;
+	Array<CTeam* const > Teams;
 /*!
 
 */
-	const	Text ForcedClubLinkUrl1;
+	Text NeutralEmblemUrl;
 /*!
 
 */
-	const	Text ForcedClubLinkUrl2;
+	Text  const ForcedClubLinkUrl1;
 /*!
 
 */
-			Void TweakTeamColorsToAvoidHueOverlap();
+	Text  const ForcedClubLinkUrl2;
 /*!
 
 */
-			Text ClientManiaAppUrl;
+	Void TweakTeamColorsToAvoidHueOverlap();
 /*!
 
 */
-	const	Integer Now;
+	Text ClientManiaAppUrl;
 /*!
 
 */
-	const	Integer Period;
+	Integer  const Now;
 /*!
 
 */
-			Boolean MatchEndRequested;
+	Integer  const Period;
 /*!
 
 */
-	const	Boolean ServerShutdownRequested;
+	Boolean MatchEndRequested;
 /*!
 
 */
-	const	Boolean MapLoaded;
+	Boolean  const ServerShutdownRequested;
 /*!
 
 */
-			Void RequestLoadMap();
+	Boolean  const MapLoaded;
 /*!
 
 */
-			Void RequestUnloadMap();
+	Void RequestLoadMap();
 /*!
 
 */
-	const	Array<CMapInfo> MapList;
+	Void RequestUnloadMap();
 /*!
 
 */
-			Integer NextMapIndex;
+	Array<CMapInfo* const > MapList;
 /*!
 
 */
-	const	CUIConfigMgr UIManager;
+	Integer NextMapIndex;
 /*!
 
 */
-			Void Hud_Load(Text ModuleName);
+	CUIConfigMgr * const  UIManager;
 /*!
 
 */
-	const	CModulePlaygroundHud Hud;
+	Void Hud_Load(Text ModuleName);
 /*!
 
 */
-			Void PassOn(CUIConfigEvent EventToPassOn);
+	CModulePlaygroundHud * const  Hud;
 /*!
 
 */
-			Void Discard(CUIConfigEvent EventToDiscard);
+	Void PassOn(CUIConfigEvent EventToPassOn);
 /*!
 
 */
-			Void Ladder_OpenMatch_Request();
+	Void Discard(CUIConfigEvent EventToDiscard);
 /*!
 
 */
-			Void Ladder_AddPlayer(CScore PlayerScore);
+	Void Ladder_OpenMatch_Request();
 /*!
 
 */
-			Void Ladder_OpenMatch_BeginRequest();
+	Void Ladder_AddPlayer(CScore PlayerScore);
 /*!
 
 */
-			Void Ladder_OpenMatch_AddPlayer(CScore PlayerScore);
+	Void Ladder_OpenMatch_BeginRequest();
 /*!
 
 */
-			Void Ladder_OpenMatch_EndRequest();
+	Void Ladder_OpenMatch_AddPlayer(CScore PlayerScore);
 /*!
 
 */
-			Void Ladder_CloseMatchRequest();
+	Void Ladder_OpenMatch_EndRequest();
 /*!
 
 */
-			Void Ladder_CancelMatchRequest();
+	Void Ladder_CloseMatchRequest();
 /*!
 
 */
-	const	Boolean Ladder_RequestInProgress;
+	Void Ladder_CancelMatchRequest();
 /*!
 
 */
-			Void Ladder_SetResultsVersion(Integer Version);
+	Boolean  const Ladder_RequestInProgress;
 /*!
 
 */
-			Void Ladder_SetMatchMakingMatchId(Integer MatchId);
+	Void Ladder_SetResultsVersion(Integer Version);
 /*!
 
 */
-			Void Ladder_EnableChallengeMode(Boolean Enable);
+	Void Ladder_SetMatchMakingMatchId(Integer MatchId);
 /*!
 
 */
-			Void Trophy_CompetitionMatch_AddResult(Text WebServicesUserId,Integer MatchRank,Integer TrophyRanking);
+	Void Ladder_EnableChallengeMode(Boolean Enable);
 /*!
 
 */
-			Void Trophy_CompetitionMatch_ClearResultList();
+	Void Trophy_CompetitionMatch_AddResult(Text WebServicesUserId,Integer MatchRank,Integer TrophyRanking);
 /*!
 
 */
-			CTaskResult_AccountTrophyGainList Trophy_CompetitionMatch_SendResultList(Text CompetitionName,Text CompetitionStage,Text CompetitionStageStep,Text CompetitionMatchInfo);
+	Void Trophy_CompetitionMatch_ClearResultList();
 /*!
 
 */
-			Void Trophy_LiveTimeAttackAchievement_AddResult(Text WebServicesUserId,Integer MatchRank,Integer TrophyRanking);
+	CTaskResult_AccountTrophyGainList Trophy_CompetitionMatch_SendResultList(Text CompetitionName,Text CompetitionStage,Text CompetitionStageStep,Text CompetitionMatchInfo);
 /*!
 
 */
-			Void Trophy_LiveTimeAttackAchievement_ClearResultList();
+	Void Trophy_LiveTimeAttackAchievement_AddResult(Text WebServicesUserId,Integer MatchRank,Integer TrophyRanking);
 /*!
 
 */
-			CTaskResult_AccountTrophyGainList Trophy_LiveTimeAttackAchievement_SendResultList(Integer Duration);
+	Void Trophy_LiveTimeAttackAchievement_ClearResultList();
 /*!
 
 */
-	const	CServerAdmin ServerAdmin;
+	CTaskResult_AccountTrophyGainList Trophy_LiveTimeAttackAchievement_SendResultList(Integer Duration);
 /*!
 
 */
-			Void AutoTeamBalance();
+	CServerAdmin * const  ServerAdmin;
 /*!
 
 */
-			Void Solo_SetNewRecord(CScore PlayerScore,CMode::EMedal PlayerScore);
+	Void AutoTeamBalance();
 /*!
 
 */
-	const	Boolean Solo_NewRecordSequenceInProgress;
+	Void Solo_SetNewRecord(CScore PlayerScore,CMode::EMedal PlayerScore);
 /*!
 
 */
-	const	CXmlRpc XmlRpc;
+	Boolean  const Solo_NewRecordSequenceInProgress;
 /*!
 
 */
-	const	CParsingManager Xml;
+	CXmlRpc * const  XmlRpc;
 /*!
 
 */
-	const	CHttpManager Http;
+	CParsingManager * const  Xml;
+/*!
+
+*/
+	CHttpManager * const  Http;
 /*!
 Only available for local solo modes.
 */
-	const	CInputManager Input;
+	CInputManager * const  Input;
 /*!
 Only available for local solo modes.
 */
-	const	CDataFileMgr DataFileMgr;
+	CDataFileMgr * const  DataFileMgr;
 /*!
 
 */
-	const	CScoreMgr ScoreMgr;
+	CScoreMgr * const  ScoreMgr;
 /*!
 
 */
-	const	CSystemPlatform System;
+	CSystemPlatform * const  System;
 /*!
 
 */
-	const	CUserV2Manager UserMgr;
+	CUserV2Manager * const  UserMgr;
 /*!
 
 */
-			Integer Synchro_AddBarrier();
+	Integer Synchro_AddBarrier();
 /*!
 
 */
-			Boolean Synchro_BarrierReached(Integer Barrier);
+	Boolean Synchro_BarrierReached(Integer Barrier);
 /*!
 
 */
-			Boolean Users_AreAllies(CUser User1,CUser User2);
+	Boolean Users_AreAllies(CUser User1,CUser User2);
 /*!
 
 */
-			Void Users_RequestSwitchToSpectator(CUser User);
+	Void Users_RequestSwitchToSpectator(CUser User);
 /*!
 
 */
-			CUser Users_CreateFake(Text NickName,Integer RequestedTeam);
+	CUser Users_CreateFake(Text NickName,Integer RequestedTeam);
 /*!
 
 */
-			Void Users_DestroyFake(CUser User);
+	Void Users_DestroyFake(CUser User);
 /*!
 
 */
-			Void Users_SetNbFakeUsers(Integer NbTeam1,Integer NbTeam2);
+	Void Users_SetNbFakeUsers(Integer NbTeam1,Integer NbTeam2);
 /*!
 
 */
-			Void Users_DestroyAllFakes();
+	Void Users_DestroyAllFakes();
 /*!
 
 */
-			Void ItemList_Begin();
+	Void ItemList_Begin();
 /*!
 
 */
-			Boolean ItemList_Begin();
+	Boolean ItemList_Begin();
 /*!
 
 */
-			Ident ItemList_Add(Text ModelName);
+	Ident ItemList_Add(Text ModelName);
 /*!
 SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for item default skin, 'Profile' for the user choice for the model. ModelName: 'DefaultPlayerModel' for the default map model, or the item filename.
 */
-			Ident ItemList_AddWithSkin(Text ModelName,Text SkinNameOrUrl);
+	Ident ItemList_AddWithSkin(Text ModelName,Text SkinNameOrUrl);
 /*!
 
 */
-			Void ItemList_End();
+	Void ItemList_End();
 /*!
 
 */
-			Void DemoToken_StartUsingToken();
+	Void DemoToken_StartUsingToken();
 /*!
 
 */
-			Void DemoToken_StopUsingToken();
+	Void DemoToken_StopUsingToken();
 /*!
 
 */
-			Void DemoToken_GetAndUseToken(CUser User);
+	Void DemoToken_GetAndUseToken(CUser User);
 /*!
 
 */
-			Void ActionList_Begin();
+	Void ActionList_Begin();
 /*!
 
 */
-			Boolean ActionList_Begin();
+	Boolean ActionList_Begin();
 /*!
 
 */
-			Ident ActionList_Add(Text ActionName);
+	Ident ActionList_Add(Text ActionName);
 /*!
 
 */
-			Void ActionList_End();
+	Void ActionList_End();
 /*!
 
 */
-			Boolean UseMinimap;
+	Boolean UseMinimap;
 /*!
 
 */
-			Boolean Replay_AutoStart;
+	Boolean Replay_AutoStart;
 /*!
 
 */
-			Void Replay_Start();
+	Void Replay_Start();
 /*!
 
 */
-			Void Replay_Stop();
+	Void Replay_Stop();
 /*!
 
 */
-	const	CModeTurretManager TurretsManager;
+	CModeTurretManager * const  TurretsManager;
 /*!
 
 */
-	const	CModeVehicleManager VehiclesManager;
+	CModeVehicleManager * const  VehiclesManager;
 /*!
 
 */
-	const	CActionManager ActionsManager;
+	CActionManager * const  ActionsManager;
 /*!
 
 */
-			Boolean EnableGhostRecording;
+	Boolean EnableGhostRecording;
 /*!
 
 */
-	const	Array<CGhost> Ghosts;
+	Array<CGhost* const > Ghosts;
 /*!
 
 */
-			Void Ghost_Release(Ident GhostId);
+	Void Ghost_Release(Ident GhostId);
 /*!
 
 */
-			Void GhostDriver_Playlist_Clear(CPlayer Player);
+	Void GhostDriver_Playlist_Clear(CPlayer Player);
 /*!
 
 */
-			Void GhostDriver_Playlist_Add(CPlayer Player,CGhost Ghost);
+	Void GhostDriver_Playlist_Add(CPlayer Player,CGhost Ghost);
 /*!
 
 */
-			Void GhostDriver_Upload_Begin(Integer TeamLevel);
+	Void GhostDriver_Upload_Begin(Integer TeamLevel);
 /*!
 
 */
-			Void GhostDriver_Upload_TeamMember_Begin();
+	Void GhostDriver_Upload_TeamMember_Begin();
 /*!
 
 */
-			Void GhostDriver_Upload_AddGhost(CGhost Ghost);
+	Void GhostDriver_Upload_AddGhost(CGhost Ghost);
 /*!
 
 */
-			Void GhostDriver_Upload_TeamMember_End();
+	Void GhostDriver_Upload_TeamMember_End();
 /*!
 
 */
-			CTaskResult GhostDriver_Upload_End();
+	CTaskResult GhostDriver_Upload_End();
 /*!
 
 */
-			Void GhostDriver_Download_Begin();
+	Void GhostDriver_Download_Begin();
 /*!
 
 */
-			Void GhostDriver_Download_AddRange(Integer TeamLevelMin,Integer TeamLevelMax,Integer Count);
+	Void GhostDriver_Download_AddRange(Integer TeamLevelMin,Integer TeamLevelMax,Integer Count);
 /*!
 
 */
-			CWebServicesTaskResult_GhostDriver_Download GhostDriver_Download_End();
+	CWebServicesTaskResult_GhostDriver_Download GhostDriver_Download_End();
 /*!
 
 */
-			Void GameScene_ResetAll();
+	Void GameScene_ResetAll();
 /*!
 
 */
-			Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+	Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
 /*!
 
 */
-	const	Integer UiUpdatePeriod;
+	Integer  const UiUpdatePeriod;
 };
 
 /*!
@@ -7955,423 +8420,423 @@ public :
 /*!
 
 */
-	const	CSmScore Score;
+	CSmScore * const  Score;
 /*!
 
 */
-	const	CSmPlayer::ESpawnStatus SpawnStatus;
+	CSmPlayer::ESpawnStatus const  SpawnStatus;
 /*!
 
 */
-	const	Integer StartTime;
+	Integer  const StartTime;
 /*!
 
 */
-			Integer EndTime;
+	Integer EndTime;
 /*!
 
 */
-	const	Array<Integer> RaceWaypointTimes;
+	Array<Integer> RaceWaypointTimes;
 /*!
 Equals CurrentLapWaypointTimes when not empty. If it is empty (i.e. before the 1st CP of a new lap), equals PreviousLapWaypointTimes.
 */
-	const	Array<Integer> LapWaypointTimes;
+	Array<Integer> LapWaypointTimes;
 /*!
 
 */
-	const	Array<Integer> CurrentLapWaypointTimes;
+	Array<Integer> CurrentLapWaypointTimes;
 /*!
 
 */
-	const	Array<Integer> PreviousLapWaypointTimes;
+	Array<Integer> PreviousLapWaypointTimes;
 /*!
 
 */
-	const	Integer CurrentLapNumber;
+	Integer  const CurrentLapNumber;
 /*!
 
 */
-	const	Integer CurrentRaceTime;
+	Integer  const CurrentRaceTime;
 /*!
 
 */
-	const	Integer CurrentLapTime;
+	Integer  const CurrentLapTime;
 /*!
 Values in range (0.000000-10.000000)
 */
-			Real AmmoGain;
+	Real AmmoGain;
 /*!
 
 */
-			Integer ActionWheelSelectedSlotIndex;
+	Integer ActionWheelSelectedSlotIndex;
 /*!
 
 */
-			Integer Armor;
+	Integer Armor;
 /*!
 
 */
-			Integer ArmorMax;
+	Integer ArmorMax;
 /*!
 
 */
-			Integer ArmorGain;
+	Integer ArmorGain;
 /*!
 
 */
-			Integer ArmorReplenishGain;
+	Integer ArmorReplenishGain;
 /*!
 Values in range (0.100000-10.000000)
 */
-			Real ArmorPower;
+	Real ArmorPower;
 /*!
 
 */
-			Integer Stamina;
+	Integer Stamina;
 /*!
 
 */
-	const	Integer StaminaMaxValue;
+	Integer  const StaminaMaxValue;
 /*!
 Values in range (0.100000-3.000000)
 */
-			Real StaminaMax;
+	Real StaminaMax;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real StaminaGain;
+	Real StaminaGain;
 /*!
 Values in range (0.100000-1.000000)
 */
-			Real StaminaPower;
+	Real StaminaPower;
 /*!
 Values in range (0.100000-1.000000)
 */
-			Real SpeedPower;
+	Real SpeedPower;
 /*!
 Values in range (0.100000-1.000000)
 */
-			Real JumpPower;
+	Real JumpPower;
 /*!
 
 */
-			Boolean AllowWallJump;
+	Boolean AllowWallJump;
 /*!
 
 */
-			Boolean AllowProgressiveJump;
+	Boolean AllowProgressiveJump;
 /*!
 
 */
-			Boolean UseAlternateWeaponVisual;
+	Boolean UseAlternateWeaponVisual;
 /*!
 
 */
-			Boolean IsHighlighted;
+	Boolean IsHighlighted;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real EnergyLevel;
+	Real EnergyLevel;
 /*!
 
 */
-			Vec3 ForceColor;
+	Vec3 ForceColor;
 /*!
 5 ascii chars (ex: '01TMN') or empty for default value 
 */
-			Text Dossard;
+	Text Dossard;
 /*!
 
 */
-			Text Dossard_Number;
+	Text Dossard_Number;
 /*!
 
 */
-			Text Dossard_Trigram;
+	Text Dossard_Trigram;
 /*!
 
 */
-			Vec3 Dossard_Color;
+	Vec3 Dossard_Color;
 /*!
 Values in range (0.000000-1.000000)
 */
-	const	Real GetLinearHue;
+	Real  const GetLinearHue;
 /*!
 
 */
-			Real ForceLinearHue;
+	Real ForceLinearHue;
 /*!
 
 */
-			Ident ForceModelId;
+	Ident ForceModelId;
 /*!
 
 */
-			Boolean HasShield;
+	Boolean HasShield;
 /*!
 
 */
-	const	Boolean IsInVehicle;
+	Boolean  const IsInVehicle;
 /*!
 
 */
-			Boolean IsStuck;
+	Boolean IsStuck;
 /*!
 Values in range (0.000000-500.000000)
 */
-			Real ThrowSpeed;
+	Real ThrowSpeed;
 /*!
 
 */
-	const	Integer CurrentClan;
+	Integer  const CurrentClan;
 /*!
 
 */
-	const	Integer IdleDuration;
+	Integer  const IdleDuration;
 /*!
 
 */
-	const	Boolean IsEntityStateAvailable;
+	Boolean  const IsEntityStateAvailable;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 /*!
 
 */
-	const	Real AimYaw;
+	Real  const AimYaw;
 /*!
 
 */
-	const	Real AimPitch;
+	Real  const AimPitch;
 /*!
 
 */
-	const	Real AimRoll;
+	Real  const AimRoll;
 /*!
 
 */
-	const	Vec3 AimDirection;
+	Vec3  const AimDirection;
 /*!
 
 */
-	const	Vec3 UpDirection;
+	Vec3  const UpDirection;
 /*!
 
 */
-	const	Vec3 LeftDirection;
+	Vec3  const LeftDirection;
 /*!
 
 */
-	const	Vec3 Velocity;
+	Vec3  const Velocity;
 /*!
 
 */
-	const	Real Speed;
+	Real  const Speed;
 /*!
 
 */
-	const	Boolean IsUnderground;
+	Boolean  const IsUnderground;
 /*!
 
 */
-	const	Boolean IsTouchingGround;
+	Boolean  const IsTouchingGround;
 /*!
 
 */
-	const	Boolean IsInAir;
+	Boolean  const IsInAir;
 /*!
 
 */
-	const	Boolean IsInWater;
+	Boolean  const IsInWater;
 /*!
 
 */
-	const	Boolean IsInOffZone;
+	Boolean  const IsInOffZone;
 /*!
 
 */
-	const	Boolean IsOnTech;
+	Boolean  const IsOnTech;
 /*!
 
 */
-	const	Boolean IsOnTechGround;
+	Boolean  const IsOnTechGround;
 /*!
 
 */
-	const	Boolean IsOnTechLaser;
+	Boolean  const IsOnTechLaser;
 /*!
 
 */
-	const	Boolean IsOnTechArrow;
+	Boolean  const IsOnTechArrow;
 /*!
 
 */
-	const	Boolean IsOnTechNucleus;
+	Boolean  const IsOnTechNucleus;
 /*!
 
 */
-	const	Boolean IsOnTechArmor;
+	Boolean  const IsOnTechArmor;
 /*!
 
 */
-	const	Boolean IsOnTechSafeZone;
+	Boolean  const IsOnTechSafeZone;
 /*!
 
 */
-	const	Boolean IsOnTechTeleport;
+	Boolean  const IsOnTechTeleport;
 /*!
 
 */
-	const	Boolean IsOnTechNoWeapon;
+	Boolean  const IsOnTechNoWeapon;
 /*!
 
 */
-	const	Boolean IsPowerJumpActivable;
+	Boolean  const IsPowerJumpActivable;
 /*!
 
 */
-	const	Boolean IsTeleportActivable;
+	Boolean  const IsTeleportActivable;
 /*!
 
 */
-	const	Boolean IsAttractorActivable;
+	Boolean  const IsAttractorActivable;
 /*!
 
 */
-	const	Integer NbActiveAttractors;
+	Integer  const NbActiveAttractors;
 /*!
 
 */
-	const	Boolean IsCapturing;
+	Boolean  const IsCapturing;
 /*!
 
 */
-	const	CSmMapLandmark CapturedLandmark;
+	CSmMapLandmark * const  CapturedLandmark;
 /*!
 
 */
-	const	Array<CSmObject> Objects;
+	Array<CSmObject* const > Objects;
 /*!
 
 */
-	const	CModeVehicle Vehicle;
+	CModeVehicle * const  Vehicle;
 /*!
 
 */
-	const	Boolean IsFakePlayer;
+	Boolean  const IsFakePlayer;
 /*!
 
 */
-	const	Boolean IsBot;
+	Boolean  const IsBot;
 /*!
 Use a low-fi extrapolation to display the player. This extrapolation mode does not take interactions into account. Only use it when this player does not interact with other player (e.g. TM TimeAttack, SM Obstacle).
 */
-			Boolean UseCrudeExtrapolation;
+	Boolean UseCrudeExtrapolation;
 /*!
 
 */
-			Boolean TrustClientSimu;
+	Boolean TrustClientSimu;
 /*!
 
 */
-	const	CSmPlayerDriver Driver;
+	CSmPlayerDriver * const  Driver;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real AccelCoef;
+	Real AccelCoef;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real ControlCoef;
+	Real ControlCoef;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real GravityCoef;
+	Real GravityCoef;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real AdherenceCoef;
+	Real AdherenceCoef;
 /*!
 
 */
-	const	Real Upwardness;
+	Real  const Upwardness;
 /*!
 
 */
-	const	Real Distance;
+	Real  const Distance;
 /*!
 
 */
-	const	Integer DisplaySpeed;
+	Integer  const DisplaySpeed;
 /*!
 
 */
-	const	Real InputSteer;
+	Real  const InputSteer;
 /*!
 
 */
-	const	Real InputGasPedal;
+	Real  const InputGasPedal;
 /*!
 
 */
-	const	Boolean InputIsBraking;
+	Boolean  const InputIsBraking;
 /*!
 
 */
-	const	Real EngineRpm;
+	Real  const EngineRpm;
 /*!
 
 */
-	const	Integer EngineCurGear;
+	Integer  const EngineCurGear;
 /*!
 
 */
-	const	Real EngineTurboRatio;
+	Real  const EngineTurboRatio;
 /*!
 
 */
-	const	Integer WheelsContactCount;
+	Integer  const WheelsContactCount;
 /*!
 
 */
-	const	Integer WheelsSkiddingCount;
+	Integer  const WheelsSkiddingCount;
 /*!
 
 */
-	const	Integer FlyingDuration;
+	Integer  const FlyingDuration;
 /*!
 
 */
-	const	Integer SkiddingDuration;
+	Integer  const SkiddingDuration;
 /*!
 
 */
-	const	Real SkiddingDistance;
+	Real  const SkiddingDistance;
 /*!
 
 */
-	const	Real FlyingDistance;
+	Real  const FlyingDistance;
 /*!
 
 */
-	const	Integer HandicapNoGasDuration;
+	Integer  const HandicapNoGasDuration;
 /*!
 
 */
-	const	Integer HandicapForceGasDuration;
+	Integer  const HandicapForceGasDuration;
 /*!
 
 */
-	const	Integer HandicapNoBrakesDuration;
+	Integer  const HandicapNoBrakesDuration;
 /*!
 
 */
-	const	Integer HandicapNoSteeringDuration;
+	Integer  const HandicapNoSteeringDuration;
 /*!
 
 */
-	const	Integer HandicapNoGripDuration;
+	Integer  const HandicapNoGripDuration;
 };
 
 /*!
@@ -8447,203 +8912,203 @@ public :
 /*!
 
 */
-	const	CSmModeEvent::EType Type;
+	CSmModeEvent::EType const  Type;
 /*!
 
 */
-	const	CSmPlayer Player;
+	CSmPlayer * const  Player;
 /*!
 
 */
-			Integer Damage;
+	Integer Damage;
 /*!
 
 */
-	const	Integer VictimShield;
+	Integer  const VictimShield;
 /*!
 
 */
-	const	CEntity VictimEntity;
+	CEntity * const  VictimEntity;
 /*!
 
 */
-			Integer ShooterPoints;
+	Integer ShooterPoints;
 /*!
 
 */
-	const	CEntity ShooterEntity;
+	CEntity * const  ShooterEntity;
 /*!
 
 */
-	const	Integer ShooterClan;
+	Integer  const ShooterClan;
 /*!
 
 */
-	const	Real Height;
+	Real  const Height;
 /*!
 
 */
-	const	Integer UserData;
+	Integer  const UserData;
 /*!
 
 */
-	const	Vec3 ItemPosition;
+	Vec3  const ItemPosition;
 /*!
 
 */
-	const	Real MissDist;
+	Real  const MissDist;
 /*!
 
 */
-	const	Integer WeaponNum;
+	Integer  const WeaponNum;
 /*!
 
 */
-	const	Boolean ShooterUsedAction;
+	Boolean  const ShooterUsedAction;
 /*!
 
 */
-	const	Integer ShooterWeaponNum;
+	Integer  const ShooterWeaponNum;
 /*!
 
 */
-	const	CSmModeEvent::EActionSlot ShooterActionSlot;
+	CSmModeEvent::EActionSlot const  ShooterActionSlot;
 /*!
 
 */
-	const	Text ShooterActionId;
+	Text  const ShooterActionId;
 /*!
 
 */
-	const	Boolean VictimUsedAction;
+	Boolean  const VictimUsedAction;
 /*!
 
 */
-	const	Integer VictimWeaponNum;
+	Integer  const VictimWeaponNum;
 /*!
 
 */
-	const	CSmModeEvent::EActionSlot VictimActionSlot;
+	CSmModeEvent::EActionSlot const  VictimActionSlot;
 /*!
 
 */
-	const	Text VictimActionId;
+	Text  const VictimActionId;
 /*!
 
 */
-	const	CSmModeEvent::EActionSlot ActionSlot;
+	CSmModeEvent::EActionSlot const  ActionSlot;
 /*!
 
 */
-	const	CSmModeEvent::EActionInput ActionInput;
+	CSmModeEvent::EActionInput const  ActionInput;
 /*!
 
 */
-	const	Text ActionId;
+	Text  const ActionId;
 /*!
 
 */
-	const	Text Param1;
+	Text  const Param1;
 /*!
 
 */
-	const	Array<Text> Param2;
+	Array<Text> Param2;
 /*!
 
 */
-	const	CSmObject Object;
+	CSmObject * const  Object;
 /*!
 
 */
-	const	Integer WaypointTime;
+	Integer  const WaypointTime;
 /*!
 
 */
-	const	Integer WaypointLapTime;
+	Integer  const WaypointLapTime;
 /*!
 
 */
-	const	Boolean IsFinish;
+	Boolean  const IsFinish;
 /*!
 
 */
-	const	Boolean IsNewLap;
+	Boolean  const IsNewLap;
 /*!
 
 */
-	const	CSmMapLandmark Landmark;
+	CSmMapLandmark * const  Landmark;
 /*!
 
 */
-	const	CUser User;
+	CUser * const  User;
 /*!
 
 */
-	const	Boolean PlayerWasSpawned;
+	Boolean  const PlayerWasSpawned;
 /*!
 
 */
-	const	Boolean PlayerWasDisconnected;
+	Boolean  const PlayerWasDisconnected;
 /*!
 
 */
-	const	Boolean PlayerWasInLadderMatch;
+	Boolean  const PlayerWasInLadderMatch;
 /*!
 
 */
-	const	Vec3 PlayerLastPosition;
+	Vec3  const PlayerLastPosition;
 /*!
 
 */
-	const	Vec3 PlayerLastAimDirection;
+	Vec3  const PlayerLastAimDirection;
 /*!
 
 */
-	const	Boolean GiveUp;
+	Boolean  const GiveUp;
 /*!
 
 */
-	const	Boolean RegressRespawn;
+	Boolean  const RegressRespawn;
 /*!
 
 */
-	const	Text CommandName;
+	Text  const CommandName;
 /*!
 
 */
-	const	Boolean CommandValueBoolean;
+	Boolean  const CommandValueBoolean;
 /*!
 
 */
-	const	Integer CommandValueInteger;
+	Integer  const CommandValueInteger;
 /*!
 
 */
-	const	Real CommandValueReal;
+	Real  const CommandValueReal;
 /*!
 
 */
-	const	Text CommandValueText;
+	Text  const CommandValueText;
 /*!
 
 */
-	const	Vec2 CommandValueVec2;
+	Vec2  const CommandValueVec2;
 /*!
 
 */
-	const	Vec3 CommandValueVec3;
+	Vec3  const CommandValueVec3;
 /*!
 
 */
-	const	Int2 CommandValueInt2;
+	Int2  const CommandValueInt2;
 /*!
 
 */
-	const	Int3 CommandValueInt3;
+	Int3  const CommandValueInt3;
 /*!
 
 */
-	const	Integer ActionChange;
+	Integer  const ActionChange;
 };
 
 /*!
@@ -8654,15 +9119,15 @@ public :
 /*!
 
 */
-			Integer Clan;
+	Integer Clan;
 /*!
 
 */
-			Boolean IsActive;
+	Boolean IsActive;
 /*!
 
 */
-	const	Integer NumberOfCollectors;
+	Integer  const NumberOfCollectors;
 };
 
 /*!
@@ -8677,15 +9142,15 @@ public :
 /*!
 
 */
-	const	CSmMapBase Base;
+	CSmMapBase * const  Base;
 /*!
 
 */
-	const	CSmMapGate Gate;
+	CSmMapGate * const  Gate;
 /*!
 
 */
-	const	CSmMapGauge Gauge;
+	CSmMapGauge * const  Gauge;
 };
 
 /*!
@@ -8701,51 +9166,51 @@ public :
 /*!
 
 */
-	const	Integer TeamNum;
+	Integer  const TeamNum;
 /*!
 
 */
-			Integer Points;
+	Integer Points;
 /*!
 
 */
-			Integer RoundPoints;
+	Integer RoundPoints;
 /*!
 
 */
-			Integer NbRespawnsRequested;
+	Integer NbRespawnsRequested;
 /*!
 
 */
-	const	Integer NbEliminationsInflicted;
+	Integer  const NbEliminationsInflicted;
 /*!
 
 */
-	const	Integer NbEliminationsTaken;
+	Integer  const NbEliminationsTaken;
 /*!
 
 */
-	const	Integer DamageInflicted;
+	Integer  const DamageInflicted;
 /*!
 
 */
-	const	Integer DamageTaken;
+	Integer  const DamageTaken;
 /*!
 
 */
-	const	Array<Integer> BestRaceTimes;
+	Array<Integer> BestRaceTimes;
 /*!
 
 */
-	const	Array<Integer> PrevRaceTimes;
+	Array<Integer> PrevRaceTimes;
 /*!
 
 */
-	const	Array<Integer> BestLapTimes;
+	Array<Integer> BestLapTimes;
 /*!
 
 */
-	const	Array<Integer> PrevLapTimes;
+	Array<Integer> PrevLapTimes;
 };
 
 /*!
@@ -8766,15 +9231,15 @@ public :
 /*!
 
 */
-			Integer Armor;
+	Integer Armor;
 /*!
 
 */
-			Integer ArmorMax;
+	Integer ArmorMax;
 /*!
 
 */
-	const	CPlayer Owner;
+	CPlayer * const  Owner;
 };
 
 /*!
@@ -8788,55 +9253,55 @@ public :
 /*!
 
 */
-			Integer Armor;
+	Integer Armor;
 /*!
 
 */
-			Integer ArmorMax;
+	Integer ArmorMax;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 /*!
 
 */
-	const	Real Pitch;
+	Real  const Pitch;
 /*!
 
 */
-	const	Real Roll;
+	Real  const Roll;
 /*!
 
 */
-	const	Vec3 Left;
+	Vec3  const Left;
 /*!
 
 */
-	const	Vec3 Up;
+	Vec3  const Up;
 /*!
 
 */
-	const	Vec3 Dir;
+	Vec3  const Dir;
 /*!
 
 */
-	const	Vec3 Velocity;
+	Vec3  const Velocity;
 /*!
 
 */
-			Integer Clan;
+	Integer Clan;
 /*!
 
 */
-			Real AccelCoef;
+	Real AccelCoef;
 /*!
 
 */
-	const	Real AccelInput;
+	Real  const AccelInput;
 /*!
 
 */
-			Void SetEngineActivated(Boolean IsActivated);
+	Void SetEngineActivated(Boolean IsActivated);
 };
 
 /*!
@@ -8847,19 +9312,19 @@ public :
 /*!
 
 */
-	const	Integer Clan;
+	Integer  const Clan;
 /*!
 
 */
-	const	Array<Vec3> Path;
+	Array<Vec3> Path;
 /*!
 
 */
-	const	Boolean IsFlying;
+	Boolean  const IsFlying;
 /*!
 
 */
-	const	Ident BotModelId;
+	Ident  const BotModelId;
 };
 
 /*!
@@ -8870,11 +9335,11 @@ public :
 /*!
 
 */
-	const	Boolean IsFlying;
+	Boolean  const IsFlying;
 /*!
 
 */
-	const	Ident BotModelId;
+	Ident  const BotModelId;
 };
 
 /*!
@@ -8885,7 +9350,7 @@ public :
 /*!
 Use this instead of Id when filling CUIConfig.MarkersXML
 */
-	const	Ident MarkerId;
+	Ident  const MarkerId;
 };
 
 /*!
@@ -8896,11 +9361,11 @@ public :
 /*!
 
 */
-	const	Boolean IsFinish;
+	Boolean  const IsFinish;
 /*!
 
 */
-	const	Boolean IsMultiLap;
+	Boolean  const IsMultiLap;
 };
 
 /*!
@@ -8923,59 +9388,59 @@ public :
 /*!
 
 */
-	const	CSmObject::EStatus Status;
+	CSmObject::EStatus const  Status;
 /*!
 
 */
-	const	Ident ModelId;
+	Ident  const ModelId;
 /*!
 
 */
-			Void SetAnchor(CMapObjectAnchor ObjectAnchor);
+	Void SetAnchor(CMapObjectAnchor ObjectAnchor);
 /*!
 
 */
-			Void SetPlayer(CSmPlayer Player);
+	Void SetPlayer(CSmPlayer Player);
 /*!
 
 */
-			Void SetPosition(Vec3 Position);
+	Void SetPosition(Vec3 Position);
 /*!
 
 */
-			Void SetPositionAndVel(Vec3 Position,Vec3 Vel);
+	Void SetPositionAndVel(Vec3 Position,Vec3 Vel);
 /*!
 
 */
-			Void SetUnspawned();
+	Void SetUnspawned();
 /*!
 Player holding the object, or Null if the object isn't held by a player.
 */
-	const	CSmPlayer Player;
+	CSmPlayer * const  Player;
 /*!
 
 */
-	const	CSmMapLandmark AnchorLandmark;
+	CSmMapLandmark * const  AnchorLandmark;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 /*!
 
 */
-	const	Vec3 Vel;
+	Vec3  const Vel;
 /*!
 
 */
-			Integer MachineState;
+	Integer MachineState;
 /*!
 
 */
-			Boolean Throwable;
+	Boolean Throwable;
 /*!
 
 */
-	const	Ident ThrowLatestPlayerId;
+	Ident  const ThrowLatestPlayerId;
 };
 
 /*!
@@ -8986,43 +9451,106 @@ public :
 /*!
 
 */
-			Ident Ghost_Add(CGhost Ghost);
+	Ident Ghost_Add(CGhost Ghost);
 /*!
 
 */
-			Ident Ghost_Add(CGhost Ghost,Boolean IsGhostLayer);
+	Ident Ghost_Add(CGhost Ghost,Boolean IsGhostLayer);
 /*!
 
 */
-			Ident Ghost_Add(CGhost Ghost,Boolean IsGhostLayer,Integer TimeOffset);
+	Ident Ghost_Add(CGhost Ghost,Boolean IsGhostLayer,Integer TimeOffset);
 /*!
 
 */
-			Ident Ghost_AddWaypointSynced(CGhost Ghost,Boolean IsGhostLayer);
+	Ident Ghost_AddWaypointSynced(CGhost Ghost,Boolean IsGhostLayer);
 /*!
 
 */
-			Boolean Ghost_IsReplayOver(Ident GhostInstanceId);
+	Boolean Ghost_IsReplayOver(Ident GhostInstanceId);
 /*!
 
 */
-			Boolean Ghost_IsVisible(Ident GhostInstanceId);
+	Boolean Ghost_IsVisible(Ident GhostInstanceId);
 /*!
 
 */
-			Void Ghost_Remove(Ident GhostInstanceId);
+	Void Ghost_Remove(Ident GhostInstanceId);
 /*!
 
 */
-			Void Ghost_RemoveAll();
+	Void Ghost_RemoveAll();
 /*!
 5 ascii chars (ex: '01TMN') or empty for default value 
 */
-			Void Ghost_SetDossard(Ident GhostInstanceId,Text Dossard);
+	Void Ghost_SetDossard(Ident GhostInstanceId,Text Dossard);
 /*!
 5 ascii chars (ex: '01TMN') or empty for default value + color
 */
-			Void Ghost_SetDossard(Ident GhostInstanceId,Text Dossard,Vec3 Color);
+	Void Ghost_SetDossard(Ident GhostInstanceId,Text Dossard,Vec3 Color);
+};
+
+/*!
+* \brief API for the plugins of the map editor.
+*
+* Supported declare modes :
+* - Local
+* - Persistent
+*/
+class CMapType : public CMapEditorPlugin {
+public :
+	/*!
+	
+	*/
+	enum ValidationStatus {
+		NotValidable,
+		Validable,
+		Validated,
+	};
+/*!
+
+*/
+	Boolean CustomEditAnchorData;
+/*!
+
+*/
+	Void ClearMapMetadata();
+/*!
+
+*/
+	CMapType::ValidationStatus ValidationStatus;
+/*!
+
+*/
+	Text ValidabilityRequirementsMessage;
+/*!
+
+*/
+	Boolean ValidationEndRequested;
+/*!
+
+*/
+	Boolean ValidationEndNoConfirm;
+/*!
+
+*/
+	Void RequestEnterPlayground();
+/*!
+
+*/
+	Void RequestLeavePlayground();
+/*!
+
+*/
+	Boolean  const IsSwitchedToPlayground;
+/*!
+
+*/
+	CUIConfigMgr * const  UIManager;
+/*!
+
+*/
+	Array<CUser* const > Users;
 };
 
 /*!
@@ -9078,114 +9606,51 @@ public :
 /*!
 Type.
 */
-	const	CSmActionEvent::EType Type;
+	CSmActionEvent::EType const  Type;
 /*!
 
 */
-	const	Ident ProjectileModelId;
+	Ident  const ProjectileModelId;
 /*!
 
 */
-	const	Integer ProjectileStartDate;
+	Integer  const ProjectileStartDate;
 /*!
 
 */
-	const	Integer Damage;
+	Integer  const Damage;
 /*!
 
 */
-	const	Integer ContextId;
+	Integer  const ContextId;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 /*!
 
 */
-	const	Vec3 Direction;
+	Vec3  const Direction;
 /*!
 
 */
-	const	Vec3 Normal;
+	Vec3  const Normal;
 /*!
 
 */
-	const	CEntity Victim;
+	CEntity * const  Victim;
 /*!
 
 */
-	const	Integer Shield;
+	Integer  const Shield;
 /*!
 
 */
-	const	CSmActionEvent::EInputChange Input;
+	CSmActionEvent::EInputChange const  Input;
 /*!
 
 */
-	const	Integer ScrollDelta;
-};
-
-/*!
-* \brief API for the plugins of the map editor.
-*
-* Supported declare modes :
-* - Local
-* - Persistent
-*/
-class CMapType : public CMapEditorPlugin {
-public :
-	/*!
-	
-	*/
-	enum ValidationStatus {
-		NotValidable,
-		Validable,
-		Validated,
-	};
-/*!
-
-*/
-			Boolean CustomEditAnchorData;
-/*!
-
-*/
-			Void ClearMapMetadata();
-/*!
-
-*/
-			CMapType::ValidationStatus ValidationStatus;
-/*!
-
-*/
-			Text ValidabilityRequirementsMessage;
-/*!
-
-*/
-			Boolean ValidationEndRequested;
-/*!
-
-*/
-			Boolean ValidationEndNoConfirm;
-/*!
-
-*/
-			Void RequestEnterPlayground();
-/*!
-
-*/
-			Void RequestLeavePlayground();
-/*!
-
-*/
-	const	Boolean IsSwitchedToPlayground;
-/*!
-
-*/
-	const	CUIConfigMgr UIManager;
-/*!
-
-*/
-	const	Array<CUser> Users;
+	Integer  const ScrollDelta;
 };
 
 /*!
@@ -9244,131 +9709,131 @@ public :
 /*!
 
 */
-			Integer GameTime;
+	Integer GameTime;
 /*!
 
 */
-	const	CPlaygroundClient Playground;
+	CPlaygroundClient * const  Playground;
 /*!
 (read-only) UI actually displayed, as defined by the server.
 */
-	const	CUIConfig UI;
+	CUIConfig const  * const  UI;
 /*!
 Locally accessible by the client script to locally override settings from the server.
 */
-	const	CUIConfig ClientUI;
+	CUIConfig * const  ClientUI;
 /*!
 Is in spectator mode - may be only for a short time between rounds.
 */
-			Boolean IsSpectator;
+	Boolean IsSpectator;
 /*!
 Client actually desires to spectate instead of playing.
 */
-			Boolean IsSpectatorClient;
+	Boolean IsSpectatorClient;
 /*!
 
 */
-			Boolean UseClans;
+	Boolean UseClans;
 /*!
 
 */
-			Boolean UseForcedClans;
+	Boolean UseForcedClans;
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
-	const	CManiaAppPlaygroundCommon ParentApp;
+	CManiaAppPlaygroundCommon * const  ParentApp;
 /*!
 
 */
-	const	CMap Map;
+	CMap * const  Map;
 /*!
 
 */
-			Void ShowCurChallengeCard();
+	Void ShowCurChallengeCard();
 /*!
 
 */
-			Void ShowModeHelp();
+	Void ShowModeHelp();
 /*!
 
 */
-			Void CopyServerLinkToClipBoard();
+	Void CopyServerLinkToClipBoard();
 /*!
 
 */
-			Void JoinTeam1();
+	Void JoinTeam1();
 /*!
 
 */
-			Void JoinTeam2();
+	Void JoinTeam2();
 /*!
 
 */
-	const	Array<CTeam> Teams;
+	Array<CTeam const * const > Teams;
 /*!
 Request change of IsSpectatorClient (not immediate, and it may be refused).
 */
-			Void RequestSpectatorClient(Boolean Spectator);
+	Void RequestSpectatorClient(Boolean Spectator);
 /*!
 Set the spectated player, but do not switch to spectator mode automatically. Equivalent to numpad1/2/3/4
 */
-			Void SetSpectateTarget(Text Player);
+	Void SetSpectateTarget(Text Player);
 /*!
 
 */
-			Void ShowProfile(Text Player);
+	Void ShowProfile(Text Player);
 /*!
 
 */
-			Void ShowInGameMenu();
+	Void ShowInGameMenu();
 /*!
 
 */
-			Void CloseInGameMenu(CMlScriptIngame::EInGameMenuResult Result);
+	Void CloseInGameMenu(CMlScriptIngame::EInGameMenuResult Result);
 /*!
 
 */
-			Void CloseScoresTable();
+	Void CloseScoresTable();
 /*!
 
 */
-			Boolean IsInGameMenuDisplayed;
+	Boolean IsInGameMenuDisplayed;
 /*!
 
 */
-			Text CurrentServerLogin;
+	Text CurrentServerLogin;
 /*!
 
 */
-			Text CurrentServerName;
+	Text CurrentServerName;
 /*!
 
 */
-			Text CurrentServerDesc;
+	Text CurrentServerDesc;
 /*!
 
 */
-			Text CurrentServerJoinLink;
+	Text CurrentServerJoinLink;
 /*!
 
 */
-			Text CurrentServerModeName;
+	Text CurrentServerModeName;
 /*!
 
 */
-			Integer SplitScreenNum;
+	Integer SplitScreenNum;
 /*!
 
 */
-			Integer SplitScreenCount;
+	Integer SplitScreenCount;
 /*!
 
 */
-			Boolean SplitScreenIsHorizontal;
+	Boolean SplitScreenIsHorizontal;
 /*!
 
 */
-			Void PlayUiSound(CMlScriptIngame::EUISound Sound,Integer SoundVariant,Real Volume);
+	Void PlayUiSound(CMlScriptIngame::EUISound Sound,Integer SoundVariant,Real Volume);
 };
 
 /*!
@@ -9379,171 +9844,117 @@ public :
 /*!
 
 */
-			Integer GameTime;
+	Integer GameTime;
 /*!
 Read-only
 */
-	const	CPlaygroundClient Playground;
+	CPlaygroundClient const  * const  Playground;
 /*!
 Is in spectator mode - may be only for a short time between rounds.
 */
-			Boolean IsSpectator;
+	Boolean IsSpectator;
 /*!
 Client actually desires to spectate instead of playing.
 */
-			Boolean IsSpectatorClient;
+	Boolean IsSpectatorClient;
 /*!
 
 */
-			Boolean UseClans;
+	Boolean UseClans;
 /*!
 
 */
-			Boolean UseForcedClans;
+	Boolean UseForcedClans;
 /*!
 
 */
-	const	CMap Map;
+	CMap const  * const  Map;
 /*!
 
 */
-	const	Array<CTeam> Teams;
+	Array<CTeam const * const > Teams;
 /*!
 
 */
-			Boolean IsInGameMenuDisplayed;
+	Boolean IsInGameMenuDisplayed;
 /*!
 
 */
-			Text CurrentServerLogin;
+	Text CurrentServerLogin;
 /*!
 
 */
-			Text CurrentServerName;
+	Text CurrentServerName;
 /*!
 
 */
-			Text CurrentServerDesc;
+	Text CurrentServerDesc;
 /*!
 
 */
-			Text CurrentServerJoinLink;
+	Text CurrentServerJoinLink;
 /*!
 
 */
-			Text CurrentServerModeName;
+	Text CurrentServerModeName;
 /*!
 
 */
-			Integer SplitScreenNum;
+	Integer SplitScreenNum;
 /*!
 
 */
-			Integer SplitScreenCount;
+	Integer SplitScreenCount;
 /*!
 
 */
-			Boolean SplitScreenIsHorizontal;
+	Boolean SplitScreenIsHorizontal;
 };
 
 /*!
-* \brief Documentation for class CNotification
+* \brief Documentation for class CGameUserVoiceChat
 */
-class CNotification : public CNod {
+class CGameUserVoiceChat : public CNod {
 public :
+	/*!
+	
+	*/
+	enum EMuteSetting {
+		Muted,
+		NotMuted,
+	};
 /*!
 
 */
-	const	Text Type;
-};
-
-/*!
-* \brief Documentation for class CSkinInfo
-*/
-class CSkinInfo : public CNod {
-public :
+	CGameUserVoiceChat::EMuteSetting MuteSetting;
 /*!
 
 */
-	const	Text Name;
+	Boolean  const IsLocal;
 /*!
 
 */
-	const	Text Type;
+	Boolean  const IsMuted;
 /*!
 
 */
-	const	Text Url;
-};
-
-/*!
-* \brief Documentation for class CAccountTrophyGain
-*/
-class CAccountTrophyGain : public CNod {
-public :
+	Boolean  const MuteChangePending;
 /*!
 
 */
-	const	Text AccountId;
+	Boolean  const IsSpeaking;
 /*!
 
 */
-	const	Text WebServicesUserId;
+	Boolean  const IsConnected;
 /*!
 
 */
-	const	Integer T1Count;
+	Boolean  const Supported;
 /*!
 
 */
-	const	Integer T2Count;
-/*!
-
-*/
-	const	Integer T3Count;
-/*!
-
-*/
-	const	Integer T4Count;
-/*!
-
-*/
-	const	Integer T5Count;
-/*!
-
-*/
-	const	Integer T6Count;
-/*!
-
-*/
-	const	Integer T7Count;
-/*!
-
-*/
-	const	Integer T8Count;
-/*!
-
-*/
-	const	Integer T9Count;
-/*!
-
-*/
-	const	Integer TimeStamp;
-};
-
-/*!
-* \brief Documentation for class CTrophyAchievement
-*/
-class CTrophyAchievement : public CNod {
-public :
-/*!
-
-*/
-	const	Text TrophyAchievementId;
-/*!
-
-*/
-	const	Text TrophyAchievementType;
+	CUser * const  MatchingPlayerInfo;
 };
 
 /*!
@@ -9554,51 +9965,59 @@ public :
 /*!
 
 */
-			Integer DirtyCounter;
+	Integer DirtyCounter;
 /*!
 
 */
-			Array<Text> Devices;
+	Array<Text> Devices;
 /*!
 
 */
-			Text Device_Current;
+	Text Device_Current;
 /*!
 
 */
-			Text Device_NextApply;
+	Text Device_NextApply;
 /*!
 
 */
-	const	Integer VoiceChat_Devices_DirtyCounter;
+	Integer  const VoiceChat_Devices_DirtyCounter;
 /*!
 
 */
-	const	Array<Text> VoiceChat_Devices_In;
+	Array<Text> VoiceChat_Devices_In;
 /*!
 
 */
-	const	Array<Text> VoiceChat_Devices_Out;
+	Array<Text> VoiceChat_Devices_Out;
 /*!
 
 */
-	const	Text VoiceChat_Device_In_Current;
+	Text  const VoiceChat_Device_In_Current;
 /*!
 
 */
-	const	Text VoiceChat_Device_Out_Current;
+	Text  const VoiceChat_Device_Out_Current;
 /*!
 
 */
-			Text VoiceChat_Device_In_NextApply;
+	Text VoiceChat_Device_In_NextApply;
 /*!
 
 */
-			Text VoiceChat_Device_Out_NextApply;
+	Text VoiceChat_Device_Out_NextApply;
 /*!
 
 */
-			Real VoiceChat_SpeakerVolume;
+	Real VoiceChat_SpeakerVolume;
+/*!
+
+*/
+	NSystemConfig::EVoiceDetectionMode VoiceChat_VoiceDetection_Mode;
+/*!
+VoiceChat_VoiceDetection_Sensitivity is a value between 0 and 1.
+*/
+	Real VoiceChat_VoiceDetection_Sensitivity;
 };
 
 /*!
@@ -9609,15 +10028,15 @@ public :
 /*!
 
 */
-	const	CUILayer ComponentLayer;
+	CUILayer * const  ComponentLayer;
 /*!
 
 */
-			Void Hide();
+	Void Hide();
 /*!
 
 */
-			Void Show();
+	Void Show();
 };
 
 /*!
@@ -9628,23 +10047,23 @@ public :
 /*!
 
 */
-			Void Hide();
+	Void Hide();
 /*!
 
 */
-			Void Hide(CUIConfig UIConfig);
+	Void Hide(CUIConfig UIConfig);
 /*!
 
 */
-			Void Show();
+	Void Show();
 /*!
 
 */
-			Void Show(CUIConfig UIConfig);
+	Void Show(CUIConfig UIConfig);
 /*!
 
 */
-			Boolean IsVisible(CUIConfig UIConfig);
+	Boolean IsVisible(CUIConfig UIConfig);
 };
 
 /*!
@@ -9655,11 +10074,11 @@ public :
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Array<CModuleMenuComponent> Components;
+	Array<CModuleMenuComponent* const > Components;
 };
 
 /*!
@@ -9690,75 +10109,75 @@ public :
 /*!
 
 */
-			Void NewModule(CEditorModule::EModuleType ModuleType);
+	Void NewModule(CEditorModule::EModuleType ModuleType);
 /*!
 
 */
-			Void OpenModule(Text Path);
+	Void OpenModule(Text Path);
 /*!
 
 */
-			Void Save();
+	Void Save();
 /*!
 
 */
-			Void SaveAs(Text Path);
+	Void SaveAs(Text Path);
 /*!
 
 */
-			Void SaveCopyAs(Text Path);
+	Void SaveCopyAs(Text Path);
 /*!
 
 */
-			Void ForceExit();
+	Void ForceExit();
 /*!
 
 */
-			Void SetPreviewBackground(Text Url);
+	Void SetPreviewBackground(Text Url);
 /*!
 
 */
-			Void ReloadPreview();
+	Void ReloadPreview();
 /*!
 
 */
-	const	CModuleMenuModel EditedMenu;
+	CModuleMenuModel * const  EditedMenu;
 /*!
 
 */
-	const	CModuleMenuPageModel EditedMenuPage;
+	CModuleMenuPageModel * const  EditedMenuPage;
 /*!
 
 */
-	const	CModulePlaygroundHudModel EditedPlaygroundHud;
+	CModulePlaygroundHudModel * const  EditedPlaygroundHud;
 /*!
 
 */
-			Void EditedPlaygroundHud_SetPreviewContext(Ident ContextId);
+	Void EditedPlaygroundHud_SetPreviewContext(Ident ContextId);
 /*!
 
 */
-			Void FileBrowser_Open();
+	Void FileBrowser_Open();
 /*!
 
 */
-			Void FileBrowser_Save();
+	Void FileBrowser_Save();
 /*!
 
 */
-	const	Boolean FileBrowser_IsRunning;
+	Boolean  const FileBrowser_IsRunning;
 /*!
 
 */
-	const	Text FileBrowser_FilePath;
+	Text  const FileBrowser_FilePath;
 /*!
 
 */
-	const	Array<CEditorPluginModuleEvent> PendingEvents;
+	Array<CEditorPluginModuleEvent* const > PendingEvents;
 /*!
 
 */
-			Boolean IsPreviewMode;
+	Boolean IsPreviewMode;
 };
 
 /*!
@@ -9904,1167 +10323,1167 @@ public :
 /*!
 
 */
-			Boolean GoToMaterialEditor;
+	Boolean GoToMaterialEditor;
 /*!
 
 */
-			Boolean IsCreateMaterial;
+	Boolean IsCreateMaterial;
 /*!
 
 */
-			Integer Layers_GetCount();
+	Integer Layers_GetCount();
 /*!
 
 */
-			Ident Layers_GetLayerIdFromIndex(Integer LayerIndex);
+	Ident Layers_GetLayerIdFromIndex(Integer LayerIndex);
 /*!
 
 */
-			Text Layers_GetLayerNameFromIndex(Integer LayerIndex);
+	Text Layers_GetLayerNameFromIndex(Integer LayerIndex);
 /*!
 
 */
-			CEditorMesh::ELayerType Layers_GetLayerTypeFromIndex(Integer LayerIndex);
+	CEditorMesh::ELayerType Layers_GetLayerTypeFromIndex(Integer LayerIndex);
 /*!
 
 */
-			Boolean Layers_GetLayerGeneratableFromIndex(Integer LayerIndex);
+	Boolean Layers_GetLayerGeneratableFromIndex(Integer LayerIndex);
 /*!
 
 */
-			Void Layers_SetLayerGeneratableFromIndex(Integer LayerIndex,Boolean LayerGeneratability);
+	Void Layers_SetLayerGeneratableFromIndex(Integer LayerIndex,Boolean LayerGeneratability);
 /*!
 
 */
-			Void Layers_AddLayer(CEditorMesh::ELayerType LayerType);
+	Void Layers_AddLayer(CEditorMesh::ELayerType LayerType);
 /*!
 
 */
-			Ident Layers_GetLayerIdSelected();
+	Ident Layers_GetLayerIdSelected();
 /*!
 
 */
-			Void Layers_SetLayerIdSelected(Ident LayerId);
+	Void Layers_SetLayerIdSelected(Ident LayerId);
 /*!
 
 */
-			CEditorMesh::ELayerType Layers_GetLayerSelectedType();
+	CEditorMesh::ELayerType Layers_GetLayerSelectedType();
 /*!
 
 */
-			Integer Layers_GetLayerSelectedIndex();
+	Integer Layers_GetLayerSelectedIndex();
 /*!
 
 */
-			CEditorMesh::ELayerType Layers_GetEditedLayerType();
+	CEditorMesh::ELayerType Layers_GetEditedLayerType();
 /*!
 
 */
-			Text Layers_GetLayerSelectedName();
+	Text Layers_GetLayerSelectedName();
 /*!
 
 */
-			Void Layers_EditMask(Integer LayerIndex);
+	Void Layers_EditMask(Integer LayerIndex);
 /*!
 
 */
-			Void Layers_EditMaskValidate(Integer LayerIndex);
+	Void Layers_EditMaskValidate(Integer LayerIndex);
 /*!
 
 */
-			Void Layers_MoveSelectedLayerUp();
+	Void Layers_MoveSelectedLayerUp();
 /*!
 
 */
-			Void Layers_MoveSelectedLayerDown();
+	Void Layers_MoveSelectedLayerDown();
 /*!
 
 */
-			Void Layers_EditSelectedLayer(Boolean RegenerateSolid);
+	Void Layers_EditSelectedLayer(Boolean RegenerateSolid);
 /*!
 
 */
-			Void Layers_CloseEditSelectedLayer();
+	Void Layers_CloseEditSelectedLayer();
 /*!
 
 */
-			Void Layers_DeleteSelectedLayer();
+	Void Layers_DeleteSelectedLayer();
 /*!
 
 */
-			Integer Transitions_GetCount();
+	Integer Transitions_GetCount();
 /*!
 
 */
-			Void Transitions_AddTransition(Text TransitionName,Integer TransitionPosition,Real TransitionSize);
+	Void Transitions_AddTransition(Text TransitionName,Integer TransitionPosition,Real TransitionSize);
 /*!
 
 */
-			Void Transitions_DeleteCurrentTransition();
+	Void Transitions_DeleteCurrentTransition();
 /*!
 
 */
-			Integer Transitions_GetTransitionSelectedIndex();
+	Integer Transitions_GetTransitionSelectedIndex();
 /*!
 
 */
-			Void Transitions_SetTransitionSelectedIndex(Integer TransitionIndex);
+	Void Transitions_SetTransitionSelectedIndex(Integer TransitionIndex);
 /*!
 
 */
-			Integer Transitions_GetTransitionCurrentPage();
+	Integer Transitions_GetTransitionCurrentPage();
 /*!
 
 */
-			Void Transitions_SetTransitionCurrentPage(Integer TransitionCurrentPage);
+	Void Transitions_SetTransitionCurrentPage(Integer TransitionCurrentPage);
 /*!
 
 */
-			Text Transitions_GetTransitionNameFromIndex(Integer TransitionIndex);
+	Text Transitions_GetTransitionNameFromIndex(Integer TransitionIndex);
 /*!
 
 */
-			Void Transitions_SetTransitionNameFromIndex(Integer TransitionIndex,Real TransitionName);
+	Void Transitions_SetTransitionNameFromIndex(Integer TransitionIndex,Real TransitionName);
 /*!
 
 */
-			Boolean Transitions_GetTransitionVisibilityFromIndex(Integer TransitionIndex);
+	Boolean Transitions_GetTransitionVisibilityFromIndex(Integer TransitionIndex);
 /*!
 
 */
-			Void Transitions_SetTransitionVisibilityFromIndex(Integer TransitionIndex,Boolean TransitionVisibility);
+	Void Transitions_SetTransitionVisibilityFromIndex(Integer TransitionIndex,Boolean TransitionVisibility);
 /*!
 
 */
-			Real Transitions_GetTransitionSizeFromIndex(Integer TransitionIndex);
+	Real Transitions_GetTransitionSizeFromIndex(Integer TransitionIndex);
 /*!
 
 */
-			Void Transitions_SetTransitionSizeFromIndex(Integer TransitionIndex,Real TransitionSize);
+	Void Transitions_SetTransitionSizeFromIndex(Integer TransitionIndex,Real TransitionSize);
 /*!
 
 */
-			Integer Transitions_GetTransitionPositionFromIndex(Integer TransitionIndex);
+	Integer Transitions_GetTransitionPositionFromIndex(Integer TransitionIndex);
 /*!
 
 */
-			Void Transitions_SetTransitionPositionFromIndex(Integer TransitionIndex,Integer TransitionPosition);
+	Void Transitions_SetTransitionPositionFromIndex(Integer TransitionIndex,Integer TransitionPosition);
 /*!
 
 */
-			Boolean IsEditingLayer;
+	Boolean IsEditingLayer;
 /*!
 
 */
-			Integer SubdivideSmooth_NbSteps;
+	Integer SubdivideSmooth_NbSteps;
 /*!
 
 */
-			Real LayerValueAxisX;
+	Real LayerValueAxisX;
 /*!
 
 */
-			Real LayerValueAxisY;
+	Real LayerValueAxisY;
 /*!
 
 */
-			Real LayerValueAxisZ;
+	Real LayerValueAxisZ;
 /*!
 
 */
-			Boolean LayerIndep;
+	Boolean LayerIndep;
 /*!
 
 */
-			Real LayerValueParam1;
+	Real LayerValueParam1;
 /*!
 
 */
-			Real LayerValueParam2;
+	Real LayerValueParam2;
 /*!
 
 */
-			Real LayerValueParam3;
+	Real LayerValueParam3;
 /*!
 
 */
-			Real LayerValueParam4;
+	Real LayerValueParam4;
 /*!
 
 */
-			Boolean LayerIndexAxisX;
+	Boolean LayerIndexAxisX;
 /*!
 
 */
-			Boolean LayerIndexAxisY;
+	Boolean LayerIndexAxisY;
 /*!
 
 */
-			Boolean LayerIndexAxisZ;
+	Boolean LayerIndexAxisZ;
 /*!
 
 */
-			Boolean Layer_IsVisible;
+	Boolean Layer_IsVisible;
 /*!
 
 */
-			Boolean Layer_IsCollidable;
+	Boolean Layer_IsCollidable;
 /*!
 
 */
-			Text LayerName;
+	Text LayerName;
 /*!
 
 */
-			Boolean LayerGeneratable;
+	Boolean LayerGeneratable;
 /*!
 
 */
-			Boolean AddTransitionInProgress;
+	Boolean AddTransitionInProgress;
 /*!
 
 */
-			Text NewTransitionName;
+	Text NewTransitionName;
 /*!
 
 */
-			Integer NewTransitionPosition;
+	Integer NewTransitionPosition;
 /*!
 
 */
-			Real NewTransitionSize;
+	Real NewTransitionSize;
 /*!
 
 */
-			Integer RotateAxis;
+	Integer RotateAxis;
 /*!
 
 */
-	const	Boolean Tmp_UseParts;
+	Boolean  const Tmp_UseParts;
 /*!
 
 */
-	const	Boolean IsDebug;
+	Boolean  const IsDebug;
 /*!
 
 */
-			Boolean CameraEatingInputsScript;
+	Boolean CameraEatingInputsScript;
 /*!
 
 */
-	const	Integer VertexCount;
+	Integer  const VertexCount;
 /*!
 
 */
-	const	Integer EdgeCount;
+	Integer  const EdgeCount;
 /*!
 
 */
-	const	Integer FaceCount;
+	Integer  const FaceCount;
 /*!
 
 */
-			Void EditionBox_SetStep(Real Step);
+	Void EditionBox_SetStep(Real Step);
 /*!
 
 */
-	const	Boolean EditionBox_IsPlaneOriented;
+	Boolean  const EditionBox_IsPlaneOriented;
 /*!
 
 */
-	const	Real Scale;
+	Real  const Scale;
 /*!
 
 */
-	const	Real Step;
+	Real  const Step;
 /*!
 
 */
-	const	Real Size;
+	Real  const Size;
 /*!
 
 */
-	const	Integer RotationStep;
+	Integer  const RotationStep;
 /*!
 
 */
-	const	Real RotationValue;
+	Real  const RotationValue;
 /*!
 
 */
-	const	Real ScalingStep;
+	Real  const ScalingStep;
 /*!
 
 */
-	const	Real ScalingRatio;
+	Real  const ScalingRatio;
 /*!
 
 */
-			Boolean DisplayVertices;
+	Boolean DisplayVertices;
 /*!
 
 */
-			Boolean DisplayFaces;
+	Boolean DisplayFaces;
 /*!
 
 */
-			Boolean DisplayJoints;
+	Boolean DisplayJoints;
 /*!
 
 */
-			CEditorMesh::EEdgesDisplay DisplayEdges;
+	CEditorMesh::EEdgesDisplay DisplayEdges;
 /*!
 
 */
-			Void EditedMesh_Clear();
+	Void EditedMesh_Clear();
 /*!
 
 */
-			Void EditedMesh_Simplify();
+	Void EditedMesh_Simplify();
 /*!
 
 */
-			Void EditedMesh_SimplifySelection();
+	Void EditedMesh_SimplifySelection();
 /*!
 
 */
-			Void EditedMesh_Lod(Real FacesRatio);
+	Void EditedMesh_Lod(Real FacesRatio);
 /*!
 
 */
-			Void UVUnwrap(Ident SetHandle,CEditorMesh::ETexCoordLayer ETexCoordLayer);
+	Void UVUnwrap(Ident SetHandle,CEditorMesh::ETexCoordLayer ETexCoordLayer);
 /*!
 
 */
-			Void Undo();
+	Void Undo();
 /*!
 
 */
-			Void Redo();
+	Void Redo();
 /*!
 
 */
-			Void SwitchPlane();
+	Void SwitchPlane();
 /*!
 
 */
-			Void GridSnap_SetActive(Boolean IsActive);
+	Void GridSnap_SetActive(Boolean IsActive);
 /*!
 
 */
-	const	Boolean GridSnap_IsActive;
+	Boolean  const GridSnap_IsActive;
 /*!
 
 */
-			Vec3 PickInfo_GetNormal();
+	Vec3 PickInfo_GetNormal();
 /*!
 
 */
-			Vec3 PickInfo_GetPosition();
+	Vec3 PickInfo_GetPosition();
 /*!
 
 */
-			Ident PickInfo_GetAnchorId();
+	Ident PickInfo_GetAnchorId();
 /*!
 
 */
-			Real PickInfo_GetEdgeLength();
+	Real PickInfo_GetEdgeLength();
 /*!
 
 */
-			Vec3 PickInfo_GetNextVertexPosition();
+	Vec3 PickInfo_GetNextVertexPosition();
 /*!
 
 */
-			Ident PickInfo_GetMaterial();
+	Ident PickInfo_GetMaterial();
 /*!
 
 */
-			Text PickInfo_GetError();
+	Text PickInfo_GetError();
 /*!
 
 */
-			Void Part_SetAnchorPos(Vec3 Position);
+	Void Part_SetAnchorPos(Vec3 Position);
 /*!
 
 */
-			Void Part_SetIsJoint(Boolean IsJoint);
+	Void Part_SetIsJoint(Boolean IsJoint);
 /*!
 
 */
-			Void Part_ClearAnchor();
+	Void Part_ClearAnchor();
 /*!
 
 */
-			Void Joint_Add(Vec3 Position);
+	Void Joint_Add(Vec3 Position);
 /*!
 
 */
-			Void Joint_Link(Ident IdChild,Ident IdParent);
+	Void Joint_Link(Ident IdChild,Ident IdParent);
 /*!
 
 */
-			Void Anchor_Remove(Ident Id);
+	Void Anchor_Remove(Ident Id);
 /*!
 
 */
-			Boolean IsUsingPhysicMatLib;
+	Boolean IsUsingPhysicMatLib;
 /*!
 
 */
-	const	Integer MaterialGameplayIdNumber;
+	Integer  const MaterialGameplayIdNumber;
 /*!
 
 */
-	const	Integer MaterialsUpdateId;
+	Integer  const MaterialsUpdateId;
 /*!
 
 */
-	const	Array<Ident> MaterialIds;
+	Array<Ident> MaterialIds;
 /*!
 
 */
-	const	Array<Ident> MaterialPhysicsIds;
+	Array<Ident> MaterialPhysicsIds;
 /*!
 
 */
-	const	Array<Ident> MaterialDynaIds;
+	Array<Ident> MaterialDynaIds;
 /*!
 
 */
-	const	Array<Text> MaterialNames;
+	Array<Text> MaterialNames;
 /*!
 
 */
-	const	Array<Text> MaterialPhysicsNames;
+	Array<Text> MaterialPhysicsNames;
 /*!
 
 */
-	const	Array<Integer> MaterialPhysics_GameplayRemap;
+	Array<Integer> MaterialPhysics_GameplayRemap;
 /*!
 
 */
-	const	Array<Text> MaterialDynaNames;
+	Array<Text> MaterialDynaNames;
 /*!
 
 */
-			Array<Vec3> MaterialLastUsedColors;
+	Array<Vec3> MaterialLastUsedColors;
 /*!
 
 */
-	const	Array<Vec3> MaterialBaseColors;
+	Array<Vec3> MaterialBaseColors;
 /*!
 
 */
-			Vec3 CurrentColorForSpecialMaterials;
+	Vec3 CurrentColorForSpecialMaterials;
 /*!
 
 */
-			Ident Material_GetMaterialIdSelected();
+	Ident Material_GetMaterialIdSelected();
 /*!
 
 */
-			Void Material_SetMaterialIdSelected(Ident MaterialEditorId);
+	Void Material_SetMaterialIdSelected(Ident MaterialEditorId);
 /*!
 
 */
-			Ident MaterialDyna_GetMaterialIdSelected();
+	Ident MaterialDyna_GetMaterialIdSelected();
 /*!
 
 */
-			Void MaterialDyna_SetMaterialIdSelected(Ident DynaMaterialType);
+	Void MaterialDyna_SetMaterialIdSelected(Ident DynaMaterialType);
 /*!
 
 */
-			Integer Material_GetSubTexIndexSelected();
+	Integer Material_GetSubTexIndexSelected();
 /*!
 
 */
-			Integer Material_MaterialLibGetCount();
+	Integer Material_MaterialLibGetCount();
 /*!
 
 */
-			Void Material_SetDefault(Ident MaterialId);
+	Void Material_SetDefault(Ident MaterialId);
 /*!
 
 */
-			Ident Material_GetDefault();
+	Ident Material_GetDefault();
 /*!
 
 */
-			Ident MaterialPhysic_GetDefault();
+	Ident MaterialPhysic_GetDefault();
 /*!
 
 */
-			Integer MaterialPhysic_GetIndex();
+	Integer MaterialPhysic_GetIndex();
 /*!
 
 */
-			Integer MaterialPhysic_GetGameplayId(Ident MaterialId);
+	Integer MaterialPhysic_GetGameplayId(Ident MaterialId);
 /*!
 
 */
-			CImage MaterialPhysic_GetNextBitmap();
+	CImage MaterialPhysic_GetNextBitmap();
 /*!
 
 */
-			Ident MaterialDyna_GetDefault();
+	Ident MaterialDyna_GetDefault();
 /*!
 
 */
-			Void MaterialDyna_SetDefault(Ident MaterialId);
+	Void MaterialDyna_SetDefault(Ident MaterialId);
 /*!
 
 */
-			CImage Material_GetBitmapBase(Ident MaterialId);
+	CImage Material_GetBitmapBase(Ident MaterialId);
 /*!
 
 */
-			CImage Material_GetBitmap(Ident MaterialId);
+	CImage Material_GetBitmap(Ident MaterialId);
 /*!
 
 */
-			CImage MaterialDyna_GetBitmap(Ident MaterialId);
+	CImage MaterialDyna_GetBitmap(Ident MaterialId);
 /*!
 
 */
-			Boolean Material_IsSpecialColored(Ident MaterialId);
+	Boolean Material_IsSpecialColored(Ident MaterialId);
 /*!
 
 */
-			Boolean Material_MatchesCriterion(Ident MaterialId,CEditorMesh::EMaterialFilterCriterion ResultSetHandle);
+	Boolean Material_MatchesCriterion(Ident MaterialId,CEditorMesh::EMaterialFilterCriterion ResultSetHandle);
 /*!
 
 */
-			Void Material_SetFilter(CEditorMesh::EMaterialFilterCriterion Criterion,CEditorMesh::EFilterKind FilterKind);
+	Void Material_SetFilter(CEditorMesh::EMaterialFilterCriterion Criterion,CEditorMesh::EFilterKind FilterKind);
 /*!
 
 */
-			CEditorMesh::EFilterKind Material_GetFilter(CEditorMesh::EMaterialFilterCriterion Criterion);
+	CEditorMesh::EFilterKind Material_GetFilter(CEditorMesh::EMaterialFilterCriterion Criterion);
 /*!
 
 */
-			Void Material_ClearFilters();
+	Void Material_ClearFilters();
 /*!
 
 */
-			Void Material_UVEditor_SetIsRotation(Boolean IsRotation);
+	Void Material_UVEditor_SetIsRotation(Boolean IsRotation);
 /*!
 
 */
-			Void Material_UVEditor_SetIsScale(Boolean IsScale);
+	Void Material_UVEditor_SetIsScale(Boolean IsScale);
 /*!
 
 */
-			Void Material_UVEditor_SetIsScale1D(Boolean IsScale);
+	Void Material_UVEditor_SetIsScale1D(Boolean IsScale);
 /*!
 
 */
-			Void Material_UVEditor_Open(Ident MaterialId,CMlQuad LocationQuad);
+	Void Material_UVEditor_Open(Ident MaterialId,CMlQuad LocationQuad);
 /*!
 
 */
-			Void Material_UVEditor_Close();
+	Void Material_UVEditor_Close();
 /*!
 
 */
-			Boolean Material_UVEditor_IsRunning();
+	Boolean Material_UVEditor_IsRunning();
 /*!
 
 */
-			Void Material_UVEditor_SetMode(CEditorMesh::EUVEditorMode Mode);
+	Void Material_UVEditor_SetMode(CEditorMesh::EUVEditorMode Mode);
 /*!
 
 */
-			CEditorMesh::EUVEditorMode Material_UVEditor_GetMode();
+	CEditorMesh::EUVEditorMode Material_UVEditor_GetMode();
 /*!
 
 */
-			Void Material_UVEditor_SetProjectionType(CEditorMesh::EUVEditorProjectionType ProjectionType);
+	Void Material_UVEditor_SetProjectionType(CEditorMesh::EUVEditorProjectionType ProjectionType);
 /*!
 
 */
-			Boolean Material_IsGameMaterial();
+	Boolean Material_IsGameMaterial();
 /*!
 
 */
-			Boolean Material_IsCustomLinkFull(Ident MaterialId);
+	Boolean Material_IsCustomLinkFull(Ident MaterialId);
 /*!
 
 */
-			Void Material_UVEditor_Apply();
+	Void Material_UVEditor_Apply();
 /*!
 
 */
-			Void Material_CopyMaterial(Ident SetHandle);
+	Void Material_CopyMaterial(Ident SetHandle);
 /*!
 
 */
-			Void Material_PasteMaterial(Ident SetHandle);
+	Void Material_PasteMaterial(Ident SetHandle);
 /*!
 
 */
-	const	Integer Material_Atlas_SelectedSubTexIndex;
+	Integer  const Material_Atlas_SelectedSubTexIndex;
 /*!
 
 */
-	const	CEditorMesh::EInteraction CurrentInteraction;
+	CEditorMesh::EInteraction const  CurrentInteraction;
 /*!
 
 */
-			Void Interaction_Close();
+	Void Interaction_Close();
 /*!
 
 */
-			Void Interaction_SetPreview(Ident SetToPreview);
+	Void Interaction_SetPreview(Ident SetToPreview);
 /*!
 
 */
-	const	Integer CreationElemsCount;
+	Integer  const CreationElemsCount;
 /*!
 
 */
-			Boolean Interaction_StartCreation(Ident CreationSetHandle,CEditorMesh::EElemType ElemType,Ident SetToPickFromHandle);
+	Boolean Interaction_StartCreation(Ident CreationSetHandle,CEditorMesh::EElemType ElemType,Ident SetToPickFromHandle);
 /*!
 
 */
-			Void Interaction_Creation_GetElems(Ident ResultSetHandle);
+	Void Interaction_Creation_GetElems(Ident ResultSetHandle);
 /*!
 
 */
-			Void Interaction_Creation_ClearParams();
+	Void Interaction_Creation_ClearParams();
 /*!
 
 */
-			Void Interaction_Creation_SetEdgesConstraint(CEditorMesh::EEdgesConstraint EdgesConstraint);
+	Void Interaction_Creation_SetEdgesConstraint(CEditorMesh::EEdgesConstraint EdgesConstraint);
 /*!
 
 */
-			Void Interaction_Creation_SetAutoMerge(Boolean AutoMerge);
+	Void Interaction_Creation_SetAutoMerge(Boolean AutoMerge);
 /*!
 
 */
-			Boolean Interaction_StartPaste();
+	Boolean Interaction_StartPaste();
 /*!
 
 */
-			Boolean Interaction_StartBlocTransformation(Ident TransformationSetHandle);
+	Boolean Interaction_StartBlocTransformation(Ident TransformationSetHandle);
 /*!
 
 */
-			Boolean Interaction_StartCurve2D(Ident BordersSetHandle);
+	Boolean Interaction_StartCurve2D(Ident BordersSetHandle);
 /*!
 
 */
-			Void Interaction_CloseCurve2D(Boolean CanDoCurve2D);
+	Void Interaction_CloseCurve2D(Boolean CanDoCurve2D);
 /*!
 
 */
-			Boolean Interaction_StartPick(CEditorMesh::EElemType ElemType,Ident SetToPickFrom);
+	Boolean Interaction_StartPick(CEditorMesh::EElemType ElemType,Ident SetToPickFrom);
 /*!
 
 */
-			Boolean Interaction_StartPickJoint();
+	Boolean Interaction_StartPickJoint();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Base(CEditorMesh::EElemType ElemType);
+	Boolean Interaction_StartVoxelPickDrag_Base(CEditorMesh::EElemType ElemType);
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Creation();
+	Boolean Interaction_StartVoxelPickDrag_Creation();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Delete();
+	Boolean Interaction_StartVoxelPickDrag_Delete();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Select(Ident SelectionSetHandle);
+	Boolean Interaction_StartVoxelPickDrag_Select(Ident SelectionSetHandle);
 /*!
 
 */
-			Void Interaction_CloseVoxelPickDrag_Select();
+	Void Interaction_CloseVoxelPickDrag_Select();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Pick();
+	Boolean Interaction_StartVoxelPickDrag_Pick();
 /*!
 
 */
-			Void Interaction_CloseVoxelPickDrag_Pick();
+	Void Interaction_CloseVoxelPickDrag_Pick();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_SelectTranslation();
+	Boolean Interaction_StartVoxelPickDrag_SelectTranslation();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_SelectRotation();
+	Boolean Interaction_StartVoxelPickDrag_SelectRotation();
 /*!
 
 */
-			Boolean Interaction_StartVoxelPickDrag_Paste();
+	Boolean Interaction_StartVoxelPickDrag_Paste();
 /*!
 
 */
-			Void CutVoxels();
+	Void CutVoxels();
 /*!
 
 */
-			Void CopyVoxels();
+	Void CopyVoxels();
 /*!
 
 */
-			Boolean Interaction_StartMerge(Ident MergeSetHandle);
+	Boolean Interaction_StartMerge(Ident MergeSetHandle);
 /*!
 
 */
-			Boolean Interaction_StartMirror(Ident SetHandle);
+	Boolean Interaction_StartMirror(Ident SetHandle);
 /*!
 
 */
-			Void Interaction_Selection_ClearParams();
+	Void Interaction_Selection_ClearParams();
 /*!
 
 */
-			Void Interaction_Selection_SetUseParts(Boolean UseParts);
+	Void Interaction_Selection_SetUseParts(Boolean UseParts);
 /*!
 
 */
-			Void Interaction_Selection_SetCanEnterLeaf(Boolean CanEnterLeaf);
+	Void Interaction_Selection_SetCanEnterLeaf(Boolean CanEnterLeaf);
 /*!
 
 */
-			Boolean Interaction_StartSelection(Ident SelectionSetHandle,CEditorMesh::EElemType ElemType,Ident SelectionSetToPickFrom,Boolean IsFromALayer,Boolean AllowDoubleClick);
+	Boolean Interaction_StartSelection(Ident SelectionSetHandle,CEditorMesh::EElemType ElemType,Ident SelectionSetToPickFrom,Boolean IsFromALayer,Boolean AllowDoubleClick);
 /*!
 
 */
-			Void Interaction_CloseSelection();
+	Void Interaction_CloseSelection();
 /*!
 
 */
-			Boolean Interaction_StartTranslation(Ident TranslationSetHandle);
+	Boolean Interaction_StartTranslation(Ident TranslationSetHandle);
 /*!
 
 */
-			Boolean Interaction_StartPickTranslation(Ident TranslationSetHandle);
+	Boolean Interaction_StartPickTranslation(Ident TranslationSetHandle);
 /*!
 
 */
-			Boolean Interaction_StartRotation(Ident RotationSetHandle);
+	Boolean Interaction_StartRotation(Ident RotationSetHandle);
 /*!
 
 */
-			Boolean Interaction_StartPickRotation(Ident RotationSetHandle);
+	Boolean Interaction_StartPickRotation(Ident RotationSetHandle);
 /*!
 
 */
-			Void Interaction_Rotation_SetStep(Real RotationStep);
+	Void Interaction_Rotation_SetStep(Real RotationStep);
 /*!
 
 */
-			Boolean Interaction_StartPickScale(Ident ScalingSetHandle);
+	Boolean Interaction_StartPickScale(Ident ScalingSetHandle);
 /*!
 
 */
-			Void Interaction_Scale_SetStep(Real ScalingStep);
+	Void Interaction_Scale_SetStep(Real ScalingStep);
 /*!
 
 */
-			Boolean Interaction_StartSplit();
+	Boolean Interaction_StartSplit();
 /*!
 
 */
-			Void Display_HighlightSet(Ident SetHandle);
+	Void Display_HighlightSet(Ident SetHandle);
 /*!
 
 */
-			Void Display_ClearHighlighting();
+	Void Display_ClearHighlighting();
 /*!
 
 */
-	const	Boolean Display_HideElemsByDistance_IsActive;
+	Boolean  const Display_HideElemsByDistance_IsActive;
 /*!
 
 */
-			Integer Display_HideElemsByDistance_Distance;
+	Integer Display_HideElemsByDistance_Distance;
 /*!
 
 */
-			Real Display_HideElemsByDistance_Opacity;
+	Real Display_HideElemsByDistance_Opacity;
 /*!
 
 */
-			Void Display_HideElemsByDistance_Start(Ident SetHandle);
+	Void Display_HideElemsByDistance_Start(Ident SetHandle);
 /*!
 
 */
-			Void Display_HideElemsByDistance_Stop();
+	Void Display_HideElemsByDistance_Stop();
 /*!
 
 */
-			Void Display_HideMap();
+	Void Display_HideMap();
 /*!
 
 */
-			Void Display_ShowMap();
+	Void Display_ShowMap();
 /*!
 
 */
-			Void MergeAllSuperposedElements(Ident SetHandle);
+	Void MergeAllSuperposedElements(Ident SetHandle);
 /*!
 
 */
-	const	Ident SelectionSet;
+	Ident  const SelectionSet;
 /*!
 
 */
-			Void Selection_Undo();
+	Void Selection_Undo();
 /*!
 
 */
-			Void Selection_Redo();
+	Void Selection_Redo();
 /*!
 
 */
-			Void Selection_Invert();
+	Void Selection_Invert();
 /*!
 
 */
-			Void Selection_SelectAllByMaterial();
+	Void Selection_SelectAllByMaterial();
 /*!
 
 */
-			Ident SetOfElements_Create();
+	Ident SetOfElements_Create();
 /*!
 
 */
-			Void SetOfElements_CopyFrom(Ident DestinationSet,Ident SourceSet);
+	Void SetOfElements_CopyFrom(Ident DestinationSet,Ident SourceSet);
 /*!
 
 */
-			Void SetOfElements_Append(Ident DestinationSet,Ident SourceSet);
+	Void SetOfElements_Append(Ident DestinationSet,Ident SourceSet);
 /*!
 
 */
-			Void SetOfElements_Destroy(Ident SetHandle);
+	Void SetOfElements_Destroy(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_Empty(Ident SetHandle);
+	Void SetOfElements_Empty(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_SetAllElements(Ident SetHandle);
+	Void SetOfElements_SetAllElements(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_SetAllFaces(Ident SetHandle);
+	Void SetOfElements_SetAllFaces(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_DeleteElements(Ident SetHandle);
+	Void SetOfElements_DeleteElements(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_DeleteElements(Ident SetHandle,Boolean Spread);
+	Void SetOfElements_DeleteElements(Ident SetHandle,Boolean Spread);
 /*!
 
 */
-			Boolean SetOfElements_HasHorizontalFaces(Ident SetHandle);
+	Boolean SetOfElements_HasHorizontalFaces(Ident SetHandle);
 /*!
 
 */
-			Boolean SetOfElements_HasVerticalFaces(Ident SetHandle);
+	Boolean SetOfElements_HasVerticalFaces(Ident SetHandle);
 /*!
 
 */
-			Integer SetOfElements_GetElemsCount(Ident SetHandle);
+	Integer SetOfElements_GetElemsCount(Ident SetHandle);
 /*!
 
 */
-			Integer SetOfElements_GetVerticesCount(Ident SetHandle);
+	Integer SetOfElements_GetVerticesCount(Ident SetHandle);
 /*!
 
 */
-			Integer SetOfElements_GetEdgesCount(Ident SetHandle);
+	Integer SetOfElements_GetEdgesCount(Ident SetHandle);
 /*!
 
 */
-			Integer SetOfElements_GetFacesCount(Ident SetHandle);
+	Integer SetOfElements_GetFacesCount(Ident SetHandle);
 /*!
 
 */
-			Void ExtendSelectedSet(Ident SetHandle);
+	Void ExtendSelectedSet(Ident SetHandle);
 /*!
 
 */
-			Boolean GetBordersSet(Ident SetHandle,Ident SetBordersHandle);
+	Boolean GetBordersSet(Ident SetHandle,Ident SetBordersHandle);
 /*!
 
 */
-			Void GetBordersVertexs(Ident SetHandle,Ident SetVertexHandle);
+	Void GetBordersVertexs(Ident SetHandle,Ident SetVertexHandle);
 /*!
 
 */
-			Void SelectionSet_SelectAll();
+	Void SelectionSet_SelectAll();
 /*!
 
 */
-			Void Curve2DPolygon(Ident FourVertexSetHandle,Ident Sethandle,Integer SubTexIndex);
+	Void Curve2DPolygon(Ident FourVertexSetHandle,Ident Sethandle,Integer SubTexIndex);
 /*!
 
 */
-			Void Preview_Clear();
+	Void Preview_Clear();
 /*!
 
 */
-			Void VoxelSpace_SetVec3(Vec3 Pos);
+	Void VoxelSpace_SetVec3(Vec3 Pos);
 /*!
 
 */
-			Integer VoxelSpace_GetVoxelsCount();
+	Integer VoxelSpace_GetVoxelsCount();
 /*!
 
 */
-			Void VoxelSpace_SelectAll();
+	Void VoxelSpace_SelectAll();
 /*!
 
 */
-			Void VoxelSpace_DeleteOneVoxel();
+	Void VoxelSpace_DeleteOneVoxel();
 /*!
 
 */
-			Void VoxelSpace_DeleteSelection();
+	Void VoxelSpace_DeleteSelection();
 /*!
 
 */
-			Void VoxelSpace_ApplyMaterialToVoxel();
+	Void VoxelSpace_ApplyMaterialToVoxel();
 /*!
 
 */
-			Void VoxelSpace_GenerateMesh();
+	Void VoxelSpace_GenerateMesh();
 /*!
 
 */
-			Vec3 VoxelSpaceCenter;
+	Vec3 VoxelSpaceCenter;
 /*!
 
 */
-			Vec3 VoxelSpaceAngle;
+	Vec3 VoxelSpaceAngle;
 /*!
 
 */
-			Real VoxelSpaceStep;
+	Real VoxelSpaceStep;
 /*!
 
 */
-			Boolean VoxelSpaceIsInteractive;
+	Boolean VoxelSpaceIsInteractive;
 /*!
 
 */
-			Void SetOfElements_ProjectOnPlane(Ident SetHandle);
+	Void SetOfElements_ProjectOnPlane(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_ProjectOnGround(Ident SetHandle,Real Height);
+	Void SetOfElements_ProjectOnGround(Ident SetHandle,Real Height);
 /*!
 
 */
-			Void SetOfElements_SplitEdgeWithVertex(Ident SetHandle);
+	Void SetOfElements_SplitEdgeWithVertex(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_CollapseEdgeWithVertex(Ident SetHandle);
+	Void SetOfElements_CollapseEdgeWithVertex(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_Subdivide(Ident SetHandle);
+	Void SetOfElements_Subdivide(Ident SetHandle);
 /*!
 
 */
-			Void SetOfElements_Subdivide_Interpolation(Ident SetHandle);
+	Void SetOfElements_Subdivide_Interpolation(Ident SetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawCircle(Ident InputSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawCircle(Ident InputSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawDisc(Ident InputSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawDisc(Ident InputSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawCircle(Ident CenterSetHandle,Vec3 PointOnCircle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawCircle(Ident CenterSetHandle,Vec3 PointOnCircle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawIcosahedron(Ident InputSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawIcosahedron(Ident InputSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawIcosahedron(Ident CenterSetHandle,Vec3 PointOnCircle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawIcosahedron(Ident CenterSetHandle,Vec3 PointOnCircle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawIcosahedricSphere(Ident InputSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawIcosahedricSphere(Ident InputSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawPoly(Ident InputSetHandle,Ident ResultSetHandle,Integer VerticesCount);
+	Void SetOfVertices_DrawPoly(Ident InputSetHandle,Ident ResultSetHandle,Integer VerticesCount);
 /*!
 
 */
-			Void SetOfVertices_DrawPoly(Ident CenterSetHandle,Vec3 PointOnPoly,Ident ResultSetHandle,Integer VerticesCount);
+	Void SetOfVertices_DrawPoly(Ident CenterSetHandle,Vec3 PointOnPoly,Ident ResultSetHandle,Integer VerticesCount);
 /*!
 
 */
-			Void SetOfVertices_DrawSpline(Ident ControlSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawSpline(Ident ControlSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfVertices_Weld(Ident VerticesSetHandle);
+	Void SetOfVertices_Weld(Ident VerticesSetHandle);
 /*!
 
 */
-			Void SetOfVertices_DrawBox(Ident ControlSetHandle,Ident ResultSetHandle);
+	Void SetOfVertices_DrawBox(Ident ControlSetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfEdges_Fill(Ident SetHandle);
+	Void SetOfEdges_Fill(Ident SetHandle);
 /*!
 
 */
-			Void SetOfEdges_Flip(Ident SetHandle,Ident ResultSetHandle);
+	Void SetOfEdges_Flip(Ident SetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfEdges_BorderExpand(Ident SetHandle);
+	Void SetOfEdges_BorderExpand(Ident SetHandle);
 /*!
 
 */
-			Void SetOfOneEdge_FaceLoopExpand(Ident SetHandle);
+	Void SetOfOneEdge_FaceLoopExpand(Ident SetHandle);
 /*!
 
 */
-			Void SetOfOneEdge_EdgeLoopExpand(Ident SetHandle);
+	Void SetOfOneEdge_EdgeLoopExpand(Ident SetHandle);
 /*!
 
 */
-			Void SetOfOneFace_CutHole(Ident FaceSetHandle,Ident EdgesSetHandle);
+	Void SetOfOneFace_CutHole(Ident FaceSetHandle,Ident EdgesSetHandle);
 /*!
 
 */
-			Void SetOfFaces_Extrude(Ident SetHandle,Ident ResultSetHandle);
+	Void SetOfFaces_Extrude(Ident SetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfFaces_QuadsToTriangles(Ident SetHandle,Ident ResultSetHandle);
+	Void SetOfFaces_QuadsToTriangles(Ident SetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfFaces_TrianglesToQuads(Ident SetHandle,Ident ResultSetHandle);
+	Void SetOfFaces_TrianglesToQuads(Ident SetHandle,Ident ResultSetHandle);
 /*!
 
 */
-			Void SetOfFaces_ApplyMaterial(Ident SetHandle,Ident MaterialId);
+	Void SetOfFaces_ApplyMaterial(Ident SetHandle,Ident MaterialId);
 /*!
 
 */
-			Void SetOfFaces_PlanarExpand(Ident FacesSetHandle);
+	Void SetOfFaces_PlanarExpand(Ident FacesSetHandle);
 /*!
 
 */
-			Void SetOfFaces_ChangeOrientation(Ident FacesSetHandle);
+	Void SetOfFaces_ChangeOrientation(Ident FacesSetHandle);
 /*!
 
 */
-	const	Array<Text> PrefabNames;
+	Array<Text> PrefabNames;
 /*!
 
 */
-	const	Integer PrefabNamesUpdateId;
+	Integer  const PrefabNamesUpdateId;
 /*!
 
 */
-			Integer PrefabListCurrentPage;
+	Integer PrefabListCurrentPage;
 /*!
 
 */
-			Integer Prefab_TotalNb;
+	Integer Prefab_TotalNb;
 /*!
 
 */
-			Void Prefabs_Reload();
+	Void Prefabs_Reload();
 /*!
 
 */
-			Void Prefab_Export();
+	Void Prefab_Export();
 /*!
 
 */
-			Void Prefab_Import(Integer PrefabIndex);
+	Void Prefab_Import(Integer PrefabIndex);
 /*!
 
 */
-			Boolean Parts_CanMergeParts();
+	Boolean Parts_CanMergeParts();
 /*!
 
 */
-			Boolean Parts_CanGroupParts();
+	Boolean Parts_CanGroupParts();
 /*!
 
 */
-			Boolean Parts_CanUngroupParts();
+	Boolean Parts_CanUngroupParts();
 /*!
 
 */
-			Int3 Parts_GetOpsState();
+	Int3 Parts_GetOpsState();
 /*!
 
 */
-			Void Parts_MergeSelectedParts();
+	Void Parts_MergeSelectedParts();
 /*!
 
 */
-			Void Parts_Group();
+	Void Parts_Group();
 /*!
 
 */
-			Void Parts_UngroupSelectedParts();
+	Void Parts_UngroupSelectedParts();
 /*!
 
 */
-			Void Cut();
+	Void Cut();
 /*!
 
 */
-			Void Copy();
+	Void Copy();
 /*!
 
 */
-			Void AddUndoState();
+	Void AddUndoState();
 /*!
 
 */
-			Boolean AutoSave(Text FileName);
+	Boolean AutoSave(Text FileName);
 /*!
 
 */
-	const	Array<CEditorEvent> PendingEvents;
+	Array<CEditorEvent* const > PendingEvents;
 /*!
 
 */
-			Boolean MustClearLastSaveBuffer;
+	Boolean MustClearLastSaveBuffer;
 /*!
 
 */
-	const	Boolean IsExperimental;
+	Boolean  const IsExperimental;
 /*!
 
 */
-			CEditorMesh::ETitleCoreType GetTitleCoreType();
+	CEditorMesh::ETitleCoreType GetTitleCoreType();
 };
 
 /*!
@@ -11078,63 +11497,63 @@ public :
 /*!
 
 */
-			Void Bindings_AddContext(Text ContextName);
+	Void Bindings_AddContext(Text ContextName);
 /*!
 
 */
-			Void Bindings_AddBinding(Text ContextName,Text BindingScriptId,Text BindingDisplayName);
+	Void Bindings_AddBinding(Text ContextName,Text BindingScriptId,Text BindingDisplayName);
 /*!
 
 */
-			Void Bindings_RemoveContext(Text ContextName);
+	Void Bindings_RemoveContext(Text ContextName);
 /*!
 
 */
-			Void Bindings_RemoveBinding(Text ContextName,Text BindingName);
+	Void Bindings_RemoveBinding(Text ContextName,Text BindingName);
 /*!
 
 */
-			Void Bindings_RequestInput(Text ContextName,Text BindingName);
+	Void Bindings_RequestInput(Text ContextName,Text BindingName);
 /*!
 
 */
-	const	Boolean Bindings_RequestInput_Done;
+	Boolean  const Bindings_RequestInput_Done;
 /*!
 
 */
-			Void Bindings_SetBindingScriptId(Text ContextName,Text BindingScriptId,Text NewBindingScriptId);
+	Void Bindings_SetBindingScriptId(Text ContextName,Text BindingScriptId,Text NewBindingScriptId);
 /*!
 
 */
-			Void Bindings_SetBindingDisplayName(Text ContextName,Text BindingScriptId,Text BindingDisplayName);
+	Void Bindings_SetBindingDisplayName(Text ContextName,Text BindingScriptId,Text BindingDisplayName);
 /*!
 
 */
-			Void Bindings_SetContextName(Text ContextName,Text NewContextName);
+	Void Bindings_SetContextName(Text ContextName,Text NewContextName);
 /*!
 
 */
-	const	Array<Text> BindingContexts;
+	Array<Text> BindingContexts;
 /*!
 
 */
-			Void Bindings_GetContextBindings(Text ContextName);
+	Void Bindings_GetContextBindings(Text ContextName);
 /*!
 
 */
-	const	Array<Text> RequestedContextBindings;
+	Array<Text> RequestedContextBindings;
 /*!
 
 */
-			Text Bindings_GetBindingActionName(Text ContextName,Text BindingName);
+	Text Bindings_GetBindingActionName(Text ContextName,Text BindingName);
 /*!
 
 */
-			Text Bindings_GetBindingDisplayName(Text ContextName,Text BindingName);
+	Text Bindings_GetBindingDisplayName(Text ContextName,Text BindingName);
 /*!
 
 */
-	const	Array<CEditorEvent> PendingEvents;
+	Array<CEditorEvent* const > PendingEvents;
 };
 
 /*!
@@ -11212,415 +11631,415 @@ public :
 /*!
 
 */
-			Real CurrentTimer;
+	Real CurrentTimer;
 /*!
 
 */
-			Boolean UseOrbitalInsteadOfFreeCam;
+	Boolean UseOrbitalInsteadOfFreeCam;
 /*!
 
 */
-			Boolean UseClipCamWhenAvailable;
+	Boolean UseClipCamWhenAvailable;
 /*!
 
 */
-			Boolean CanUseClipCam;
+	Boolean CanUseClipCam;
 /*!
 
 */
-			Real PlaySpeed;
+	Real PlaySpeed;
 /*!
 
 */
-			Real CameraSpeed;
+	Real CameraSpeed;
 /*!
 
 */
-			Real ClipConditionValue;
+	Real ClipConditionValue;
 /*!
 
 */
-			Void TimePlay();
+	Void TimePlay();
 /*!
 
 */
-			Void TimeStop();
+	Void TimeStop();
 /*!
 
 */
-			Void TimeToggle();
+	Void TimeToggle();
 /*!
 
 */
-			Void Rewind();
+	Void Rewind();
 /*!
 
 */
-			Void Quit();
+	Void Quit();
 /*!
 
 */
-			Void UpdatePropertyListReadOnly();
+	Void UpdatePropertyListReadOnly();
 /*!
 
 */
-			Void CreateBlock();
+	Void CreateBlock();
 /*!
 
 */
-			Void CreateKey();
+	Void CreateKey();
 /*!
 
 */
-			Void ToggleTriggersMode();
+	Void ToggleTriggersMode();
 /*!
 
 */
-			Void CreateClip();
+	Void CreateClip();
 /*!
 
 */
-			Void RemoveClip();
+	Void RemoveClip();
 /*!
 
 */
-			Void Undo();
+	Void Undo();
 /*!
 
 */
-			Void Redo();
+	Void Redo();
 /*!
 
 */
-			Void ImportClip();
+	Void ImportClip();
 /*!
 
 */
-			Void ExportClip();
+	Void ExportClip();
 /*!
 
 */
-			Void ImportGhosts();
+	Void ImportGhosts();
 /*!
 
 */
-			Void ToggleRecordGhostMode();
+	Void ToggleRecordGhostMode();
 /*!
 
 */
-			Void ShootVideo();
+	Void ShootVideo();
 /*!
 
 */
-			Void ShootScreen();
+	Void ShootScreen();
 /*!
 
 */
-			Void ComputeShadows();
+	Void ComputeShadows();
 /*!
 
 */
-			Void ToggleDisplayPlayerNames();
+	Void ToggleDisplayPlayerNames();
 /*!
 
 */
-			Void InformInterfaceIsHidden();
+	Void InformInterfaceIsHidden();
 /*!
 
 */
-			Void ToggleGhostRef();
+	Void ToggleGhostRef();
 /*!
 
 */
-			Void StopGhostRefPreview();
+	Void StopGhostRefPreview();
 /*!
 
 */
-			Void ToggleClipCondition();
+	Void ToggleClipCondition();
 /*!
 
 */
-			Void Copy();
+	Void Copy();
 /*!
 
 */
-			Void Paste();
+	Void Paste();
 /*!
 
 */
-			Void Cut();
+	Void Cut();
 /*!
 
 */
-			Void DuplicateTrack();
+	Void DuplicateTrack();
 /*!
 
 */
-			Void SplitBlock();
+	Void SplitBlock();
 /*!
 
 */
-			Void MergeTracks();
+	Void MergeTracks();
 /*!
 
 */
-			Void ToggleAlwaysShowTriggerZone();
+	Void ToggleAlwaysShowTriggerZone();
 /*!
 
 */
-			Void ResetTriggerZone();
+	Void ResetTriggerZone();
 /*!
 
 */
-			Void RemoveAllTracks();
+	Void RemoveAllTracks();
 /*!
 
 */
-	const	CMediaTrackerClip Clip;
+	CMediaTrackerClip * const  Clip;
 /*!
 
 */
-	const	CMediaTrackerClipGroup ClipGroup;
+	CMediaTrackerClipGroup * const  ClipGroup;
 /*!
 
 */
-	const	Array<CEditorEvent> PendingEvents;
+	Array<CEditorEvent* const > PendingEvents;
 /*!
 
 */
-	const	Text PopUpMessage;
+	Text  const PopUpMessage;
 /*!
 
 */
-	const	CEditorMediaTracker::EMediaTrackerBlockType EditMode;
+	CEditorMediaTracker::EMediaTrackerBlockType const  EditMode;
 /*!
 
 */
-			Void SetClip(CMediaTrackerClip Clip);
+	Void SetClip(CMediaTrackerClip Clip);
 /*!
 
 */
-			Boolean IsPlaying();
+	Boolean IsPlaying();
 /*!
 
 */
-			Boolean IsDevMode();
+	Boolean IsDevMode();
 /*!
 
 */
-			Void SetCameraDrawRect(Vec2 Pos,Vec2 Size);
+	Void SetCameraDrawRect(Vec2 Pos,Vec2 Size);
 /*!
 
 */
-			Integer GetSelectedClip();
+	Integer GetSelectedClip();
 /*!
 
 */
-			Integer GetSelectedTrack();
+	Integer GetSelectedTrack();
 /*!
 
 */
-			Integer GetSelectedBlock();
+	Integer GetSelectedBlock();
 /*!
 
 */
-			Integer GetSelectedKey();
+	Integer GetSelectedKey();
 /*!
 
 */
-			Void SelectItem(Integer Track,Integer Block,Integer Key);
+	Void SelectItem(Integer Track,Integer Block,Integer Key);
 /*!
 
 */
-			Void CreateTrack(CEditorMediaTracker::EMediaTrackerBlockType Type);
+	Void CreateTrack(CEditorMediaTracker::EMediaTrackerBlockType Type);
 /*!
 
 */
-			Boolean CanCreateTrack(CEditorMediaTracker::EMediaTrackerBlockType Type);
+	Boolean CanCreateTrack(CEditorMediaTracker::EMediaTrackerBlockType Type);
 /*!
 
 */
-			Boolean IsKeyStartEnd(Integer Track,Integer Block,Integer Key);
+	Boolean IsKeyStartEnd(Integer Track,Integer Block,Integer Key);
 /*!
 
 */
-			Void RemoveTrack(Integer Track);
+	Void RemoveTrack(Integer Track);
 /*!
 
 */
-			Void RemoveBlock(Integer Track,Integer Block);
+	Void RemoveBlock(Integer Track,Integer Block);
 /*!
 
 */
-			Void RemoveKey(Integer Track,Integer Block,Integer Key);
+	Void RemoveKey(Integer Track,Integer Block,Integer Key);
 /*!
 
 */
-			Boolean CanRemoveAllKeys(Integer Track,Integer Block);
+	Boolean CanRemoveAllKeys(Integer Track,Integer Block);
 /*!
 
 */
-			Void RemoveAllKeys(Integer Track,Integer Block);
+	Void RemoveAllKeys(Integer Track,Integer Block);
 /*!
 
 */
-			Void SetProcessCamInputs(Boolean ProcessCamInputs);
+	Void SetProcessCamInputs(Boolean ProcessCamInputs);
 /*!
 
 */
-			Void ToolBarSetVisible(Boolean Visible);
+	Void ToolBarSetVisible(Boolean Visible);
 /*!
 
 */
-			Boolean IsTriggersModeOn();
+	Boolean IsTriggersModeOn();
 /*!
 
 */
-			Boolean IsRecordGhostModeOn();
+	Boolean IsRecordGhostModeOn();
 /*!
 
 */
-			Void SetTempHidePropertyList(Boolean TempHide);
+	Void SetTempHidePropertyList(Boolean TempHide);
 /*!
 
 */
-			Void SetClipName(Integer Index,Text Name);
+	Void SetClipName(Integer Index,Text Name);
 /*!
 
 */
-			Void SetTrackName(Integer Index,Text Name);
+	Void SetTrackName(Integer Index,Text Name);
 /*!
 
 */
-			Void SetTrackIsCycling(CMediaTrackerTrack Track,Boolean IsCycling);
+	Void SetTrackIsCycling(CMediaTrackerTrack Track,Boolean IsCycling);
 /*!
 
 */
-			Void SetTrackIsKeepPlaying(CMediaTrackerTrack Track,Boolean IsKeepPlaying);
+	Void SetTrackIsKeepPlaying(CMediaTrackerTrack Track,Boolean IsKeepPlaying);
 /*!
 
 */
-			Boolean GetTrackIsCycling(CMediaTrackerTrack Track);
+	Boolean GetTrackIsCycling(CMediaTrackerTrack Track);
 /*!
 
 */
-			Boolean GetTrackIsKeepPlaying(CMediaTrackerTrack Track);
+	Boolean GetTrackIsKeepPlaying(CMediaTrackerTrack Track);
 /*!
 
 */
-			Void SetStartIsCycling(CMediaTrackerTrack Track);
+	Void SetStartIsCycling(CMediaTrackerTrack Track);
 /*!
 
 */
-			Void SetStopIsCycling(CMediaTrackerTrack Track);
+	Void SetStopIsCycling(CMediaTrackerTrack Track);
 /*!
 
 */
-			Real GetStartIsCycling(CMediaTrackerTrack Track);
+	Real GetStartIsCycling(CMediaTrackerTrack Track);
 /*!
 
 */
-			Real GetStopIsCycling(CMediaTrackerTrack Track);
+	Real GetStopIsCycling(CMediaTrackerTrack Track);
 /*!
 
 */
-			Text GetGhostRefName();
+	Text GetGhostRefName();
 /*!
 
 */
-			Text GetClipConditionName();
+	Text GetClipConditionName();
 /*!
 
 */
-			Boolean HasClipCondition();
+	Boolean HasClipCondition();
 /*!
 
 */
-			Real GetTimeLimit();
+	Real GetTimeLimit();
 /*!
 
 */
-			Void SetTimer(Text Time);
+	Void SetTimer(Text Time);
 /*!
 
 */
-			Void SetCurrentBlockStart(Text Start);
+	Void SetCurrentBlockStart(Text Start);
 /*!
 
 */
-			Void SetCurrentBlockEnd(Text End);
+	Void SetCurrentBlockEnd(Text End);
 /*!
 
 */
-			CEditorMediaTracker::EMediaTrackerCopyType CanCopy();
+	CEditorMediaTracker::EMediaTrackerCopyType CanCopy();
 /*!
 
 */
-			CEditorMediaTracker::EMediaTrackerCopyType CanCut();
+	CEditorMediaTracker::EMediaTrackerCopyType CanCut();
 /*!
 
 */
-			CEditorMediaTracker::EMediaTrackerPasteType CanPaste();
+	CEditorMediaTracker::EMediaTrackerPasteType CanPaste();
 /*!
 
 */
-			Boolean HasCopiedItem();
+	Boolean HasCopiedItem();
 /*!
 
 */
-			Boolean IsPropertyListReadOnlyAndVisible();
+	Boolean IsPropertyListReadOnlyAndVisible();
 /*!
 
 */
-			Void SelectGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
+	Void SelectGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
 /*!
 
 */
-			Void DeleteGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
+	Void DeleteGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
 /*!
 
 */
-			Void RecordGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
+	Void RecordGhostRef(CEditorMediaTracker::EMediaTrackerGhostRef Type);
 /*!
 
 */
-			Boolean GhostRefExists(CEditorMediaTracker::EMediaTrackerGhostRef Type);
+	Boolean GhostRefExists(CEditorMediaTracker::EMediaTrackerGhostRef Type);
 /*!
 
 */
-			CEditorMediaTracker::EMediaTrackerGhostRef GetSelectedGhostRef();
+	CEditorMediaTracker::EMediaTrackerGhostRef GetSelectedGhostRef();
 /*!
 
 */
-			Void StartGhostRefPreview(CEditorMediaTracker::EMediaTrackerGhostRef Type);
+	Void StartGhostRefPreview(CEditorMediaTracker::EMediaTrackerGhostRef Type);
 /*!
 
 */
-			Void RemoveAllGhostTracksExcept(Integer Track);
+	Void RemoveAllGhostTracksExcept(Integer Track);
 /*!
 
 */
-			Void RemoveAllCameraTracksExcept(Integer Track);
+	Void RemoveAllCameraTracksExcept(Integer Track);
 /*!
 
 */
-			Boolean CanRemoveAllGhostTracks();
+	Boolean CanRemoveAllGhostTracks();
 /*!
 
 */
-			Boolean CanRemoveAllCameraTracks();
+	Boolean CanRemoveAllCameraTracks();
 /*!
 
 */
-			Boolean IsGhostRefPreview();
+	Boolean IsGhostRefPreview();
 /*!
 
 */
-			Void SetProfileTheme(Integer Theme);
+	Void SetProfileTheme(Integer Theme);
 /*!
 
 */
-			Integer GetProfileTheme();
+	Integer GetProfileTheme();
 };
 
 /*!
@@ -11662,315 +12081,315 @@ public :
 /*!
 
 */
-			Array<CImage> AllIcons;
+	Array<CImage*> AllIcons;
 /*!
 
 */
-			Array<CEditorEvent> PendingEvents;
+	Array<CEditorEvent*> PendingEvents;
 /*!
 
 */
-			Array<Vec3> CustomColors;
+	Array<Vec3> CustomColors;
 /*!
 
 */
-			CEditorSkin::EPainterMode PainterMode;
+	CEditorSkin::EPainterMode PainterMode;
 /*!
 
 */
-			CEditorSkin::EPainterSolidType PainterSolidType;
+	CEditorSkin::EPainterSolidType PainterSolidType;
 /*!
 
 */
-			Boolean IsTextEnabled;
+	Boolean IsTextEnabled;
 /*!
 
 */
-			Boolean IsPickingColor;
+	Boolean IsPickingColor;
 /*!
 
 */
-			Boolean IsErasing;
+	Boolean IsErasing;
 /*!
 
 */
-			Boolean IsUsingShininessOnly;
+	Boolean IsUsingShininessOnly;
 /*!
 
 */
-			Boolean IsBrushNormal;
+	Boolean IsBrushNormal;
 /*!
 
 */
-			Boolean IsTextSymmetry;
+	Boolean IsTextSymmetry;
 /*!
 
 */
-			Array<Integer> SubObjectsSelected;
+	Array<Integer> SubObjectsSelected;
 /*!
 
 */
-			Integer SubObjectsCount;
+	Integer SubObjectsCount;
 /*!
 
 */
-			Array<Integer> LayersSelected;
+	Array<Integer> LayersSelected;
 /*!
 
 */
-			Integer LayersCount;
+	Integer LayersCount;
 /*!
 
 */
-			Array<Integer> StickersSelected;
+	Array<Integer> StickersSelected;
 /*!
 
 */
-			Integer StickersCount;
+	Integer StickersCount;
 /*!
 
 */
-			Array<Integer> BrushsSelected;
+	Array<Integer> BrushsSelected;
 /*!
 
 */
-			Integer BrushsCount;
+	Integer BrushsCount;
 /*!
 
 */
-			Array<Integer> SubFolderElemSelected;
+	Array<Integer> SubFolderElemSelected;
 /*!
 
 */
-			Integer CurSubFolderElemCount;
+	Integer CurSubFolderElemCount;
 /*!
 
 */
-			Real Transparency;
+	Real Transparency;
 /*!
 
 */
-			Real Scale;
+	Real Scale;
 /*!
 
 */
-			Real Rough;
+	Real Rough;
 /*!
 
 */
-			Real Metal;
+	Real Metal;
 /*!
 
 */
-			Vec3 Color;
+	Vec3 Color;
 /*!
 
 */
-			Integer EditionLayersCount;
+	Integer EditionLayersCount;
 /*!
 
 */
-			Boolean IsEditingLayer;
+	Boolean IsEditingLayer;
 /*!
 
 */
-			Integer EditionLayerSelected;
+	Integer EditionLayerSelected;
 /*!
 
 */
-			Integer SubObjectHovered;
+	Integer SubObjectHovered;
 /*!
 
 */
-			Array<Integer> CurrentLayerSubObjectsSelected;
+	Array<Integer> CurrentLayerSubObjectsSelected;
 /*!
 
 */
-			Boolean CanUndo;
+	Boolean CanUndo;
 /*!
 
 */
-			Boolean CanRedo;
+	Boolean CanRedo;
 /*!
 
 */
-			Text TextToCreateBitmap;
+	Text TextToCreateBitmap;
 /*!
 
 */
-			Boolean IsFillWithReplacement;
+	Boolean IsFillWithReplacement;
 /*!
 
 */
-			Text SkinName;
+	Text SkinName;
 /*!
 
 */
-			Boolean IsSkinHelmetOk;
+	Boolean IsSkinHelmetOk;
 /*!
 
 */
-			Boolean IsCameraButtonOn;
+	Boolean IsCameraButtonOn;
 /*!
 
 */
-			Void ToggleIsTextEnabled();
+	Void ToggleIsTextEnabled();
 /*!
 
 */
-			Void ToggleIsPickingColor();
+	Void ToggleIsPickingColor();
 /*!
 
 */
-			Void TogglePaintSymMode();
+	Void TogglePaintSymMode();
 /*!
 
 */
-			Void EditCurrentLayerSelected();
+	Void EditCurrentLayerSelected();
 /*!
 
 */
-			Void AddAndEditLayer();
+	Void AddAndEditLayer();
 /*!
 
 */
-			Void CloseEditSelectedLayer();
+	Void CloseEditSelectedLayer();
 /*!
 
 */
-			Void MoveSelectedLayerUp();
+	Void MoveSelectedLayerUp();
 /*!
 
 */
-			Void MoveSelectedLayerDown();
+	Void MoveSelectedLayerDown();
 /*!
 
 */
-			Void DeleteSelectedLayer();
+	Void DeleteSelectedLayer();
 /*!
 
 */
-			Void Undo();
+	Void Undo();
 /*!
 
 */
-			Void Redo();
+	Void Redo();
 /*!
 
 */
-			Void ExportSkin();
+	Void ExportSkin();
 /*!
 
 */
-			Void AlignBrushSticker();
+	Void AlignBrushSticker();
 /*!
 
 */
-			Void AskSwitchEditedNodType();
+	Void AskSwitchEditedNodType();
 /*!
 
 */
-			Void ToggleHelper();
+	Void ToggleHelper();
 /*!
 
 */
-			Void ToggleLight();
+	Void ToggleLight();
 /*!
 
 */
-			Void ExportLayerEdition();
+	Void ExportLayerEdition();
 /*!
 
 */
-			Void ImportLayerEdition();
+	Void ImportLayerEdition();
 /*!
 
 */
-			CImage GetAllIconFromId(Integer Index,CEditorSkin::EEditorSkin_IconType IconType);
+	CImage GetAllIconFromId(Integer Index,CEditorSkin::EEditorSkin_IconType IconType);
 /*!
 
 */
-			CImage GetSubFolderIconFromId(Integer FolderIndex,Integer ElemIndex,CEditorSkin::EEditorSkin_IconType IconType);
+	CImage GetSubFolderIconFromId(Integer FolderIndex,Integer ElemIndex,CEditorSkin::EEditorSkin_IconType IconType);
 /*!
 
 */
-			Text GetLayerNameFromIndex(Integer Index);
+	Text GetLayerNameFromIndex(Integer Index);
 /*!
 
 */
-			Boolean GetLayerVisibleFromIndex(Integer Index);
+	Boolean GetLayerVisibleFromIndex(Integer Index);
 /*!
 
 */
-			Void SetLayerVisibleFromIndex(Boolean IsVisible,Integer Index);
+	Void SetLayerVisibleFromIndex(Boolean IsVisible,Integer Index);
 /*!
 
 */
-			Boolean SetPainterMode(CEditorSkin::EPainterMode Mode);
+	Boolean SetPainterMode(CEditorSkin::EPainterMode Mode);
 /*!
 
 */
-			Integer GetSubObjectMaxPage(Integer NbPerPage);
+	Integer GetSubObjectMaxPage(Integer NbPerPage);
 /*!
 
 */
-			Integer GetMainFrameMaxPage(Integer NbPerPage);
+	Integer GetMainFrameMaxPage(Integer NbPerPage);
 /*!
 
 */
-			Void OnLayerSelected(Integer CurrentPage,Integer Index);
+	Void OnLayerSelected(Integer CurrentPage,Integer Index);
 /*!
 
 */
-			Void OnStickerSelected(Integer CurrentPage,Integer Index);
+	Void OnStickerSelected(Integer CurrentPage,Integer Index);
 /*!
 
 */
-			Void OnBrushSelected(Integer CurrentPage,Integer Index);
+	Void OnBrushSelected(Integer CurrentPage,Integer Index);
 /*!
 
 */
-			Void OnSubFolderElemSelected(Integer SubFolderCurrentPage,Integer ElemIndex);
+	Void OnSubFolderElemSelected(Integer SubFolderCurrentPage,Integer ElemIndex);
 /*!
 
 */
-			Void SetCurrentLayerSelectedName(Text Name);
+	Void SetCurrentLayerSelectedName(Text Name);
 /*!
 
 */
-			Void AddScale(Real Delta);
+	Void AddScale(Real Delta);
 /*!
 
 */
-			Void AddAngle(Real DeltaRad);
+	Void AddAngle(Real DeltaRad);
 /*!
 
 */
-			Void SetSubObjectIndexForLayer(Integer SubObjectIndex,Integer LayerIndex,Boolean ResetFirst);
+	Void SetSubObjectIndexForLayer(Integer SubObjectIndex,Integer LayerIndex,Boolean ResetFirst);
 /*!
 
 */
-			Boolean IsElemAtScriptIndexFolder(Integer ScriptIndex,CEditorSkin::EEditorSkin_IconType IconType);
+	Boolean IsElemAtScriptIndexFolder(Integer ScriptIndex,CEditorSkin::EEditorSkin_IconType IconType);
 /*!
 
 */
-			Text GetFolderNameFromScriptIndex(Integer ScriptIndex,CEditorSkin::EEditorSkin_IconType IconType);
+	Text GetFolderNameFromScriptIndex(Integer ScriptIndex,CEditorSkin::EEditorSkin_IconType IconType);
 /*!
 
 */
-			Boolean IsCtrlDown();
+	Boolean IsCtrlDown();
 /*!
 
 */
-			Text GetSubObjectNameFromIndex(Integer ScriptIndex);
+	Text GetSubObjectNameFromIndex(Integer ScriptIndex);
 /*!
 
 */
-			Void OpenMediaFolder(Text SubFolderPath);
+	Void OpenMediaFolder(Text SubFolderPath);
 /*!
 
 */
-			Void ReloadResources(Boolean forSubObjects);
+	Void ReloadResources(Boolean forSubObjects);
 };
 
 /*!
@@ -11985,11 +12404,11 @@ public :
 /*!
 
 */
-	const	Array<CModuleMenuComponent> Components;
+	Array<CModuleMenuComponent* const > Components;
 /*!
 
 */
-			CModuleMenuComponent GetFirstComponent(Text Name);
+	CModuleMenuComponent GetFirstComponent(Text Name);
 };
 
 /*!
@@ -12048,203 +12467,203 @@ public :
 /*!
 Can a command be issued.
 */
-	const	Boolean IsReady;
+	Boolean  const IsReady;
 /*!
 Result of the latest command issued.
 */
-	const	CTitleControl::EResult LatestResult;
+	CTitleControl::EResult const  LatestResult;
 /*!
 
 */
-	const	Text CustomResultType;
+	Text  const CustomResultType;
 /*!
 
 */
-	const	Array<Text> CustomResultData;
+	Array<Text> CustomResultData;
 /*!
 
 */
-			Void PlayMap(Text Map,Text Mode,Text SettingsXml);
+	Void PlayMap(Text Map,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlayCampaign(CCampaign Campaign,CMapInfo MapInfo,Text Mode,Text SettingsXml);
+	Void PlayCampaign(CCampaign Campaign,CMapInfo MapInfo,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlayMapList(Array<Text> MapList,Text Mode,Text SettingsXml);
+	Void PlayMapList(Array<Text> MapList,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlayMatchSettings(CMatchSettings MatchSettings,Text OverrideMode,Text OverrideSettingsXml);
+	Void PlayMatchSettings(CMatchSettings MatchSettings,Text OverrideMode,Text OverrideSettingsXml);
 /*!
 
 */
-			Void PlayAgainstReplay(Text Replay,Text Mode,Text SettingsXml);
+	Void PlayAgainstReplay(Text Replay,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlaySplitScreen(CTitleControl::ESplitScreenLayout LayoutType,Array<Text> MapList,Text Mode,Text SettingsXml);
+	Void PlaySplitScreen(CTitleControl::ESplitScreenLayout LayoutType,Array<Text> MapList,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlayMultiOnSameScreen(Array<Text> MapList,Text Mode,Text SettingsXml);
+	Void PlayMultiOnSameScreen(Array<Text> MapList,Text Mode,Text SettingsXml);
 /*!
 
 */
-			Void PlaySplitScreen(CTitleControl::ESplitScreenLayout LayoutType,CMatchSettings MatchSettings);
+	Void PlaySplitScreen(CTitleControl::ESplitScreenLayout LayoutType,CMatchSettings MatchSettings);
 /*!
 
 */
-			Void PlayMultiOnSameScreen(CMatchSettings MatchSettings);
+	Void PlayMultiOnSameScreen(CMatchSettings MatchSettings);
 /*!
 
 */
-			Void ViewReplay(Text Replay);
+	Void ViewReplay(Text Replay);
 /*!
 
 */
-			Void OpenEditor(Text EditorName,Text MainPluginSettings);
+	Void OpenEditor(Text EditorName,Text MainPluginSettings);
 /*!
 
 */
-			Void OpenEditor(CTitleControl::EEditorType EditorType);
+	Void OpenEditor(CTitleControl::EEditorType EditorType);
 /*!
 
 */
-			Void EditSkins();
+	Void EditSkins();
 /*!
 
 */
-			Void EditSkinsFromFileName(Text SkinFilePath);
+	Void EditSkinsFromFileName(Text SkinFilePath);
 /*!
 
 */
-			Void EditReplay(Array<Text> ReplayList);
+	Void EditReplay(Array<Text> ReplayList);
 /*!
 
 */
-			Void EditReplay(Array<Text> ReplayList,CTitleControl::EReplayEditType EditType);
+	Void EditReplay(Array<Text> ReplayList,CTitleControl::EReplayEditType EditType);
 /*!
 
 */
-			Void EditGhosts(Text Map);
+	Void EditGhosts(Text Map);
 /*!
 
 */
-			Void EditAsset(Text EditorName,Text MainPluginSettingsXml,Text RelativeFileName);
+	Void EditAsset(Text EditorName,Text MainPluginSettingsXml,Text RelativeFileName);
 /*!
 
 */
-			Void EditMap(Text Map,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditMap(Text Map,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text EditorPluginScript,Text EditorPluginArgument,Boolean UpgradeToAdvancedEditor);
+	Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text EditorPluginScript,Text EditorPluginArgument,Boolean UpgradeToAdvancedEditor);
 /*!
 
 */
-			Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean UpgradeToAdvancedEditor);
+	Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean UpgradeToAdvancedEditor);
 /*!
 
 */
-			Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean UpgradeToAdvancedEditor,Boolean OnlyUseForcedPlugins);
+	Void EditMap(Text Map,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean UpgradeToAdvancedEditor,Boolean OnlyUseForcedPlugins);
 /*!
 
 */
-			Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments);
+	Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments);
 /*!
 
 */
-			Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean OnlyUseForcedPlugins);
+	Void EditNewMap(Text Environment,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Boolean UseSimpleEditor,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean OnlyUseForcedPlugins);
 /*!
 
 */
-			Void EditNewMapFromBaseMap(Text BaseMapName,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditNewMapFromBaseMap(Text BaseMapName,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditNewMapFromBaseMap(Text BaseMapName,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
+	Void EditNewMapFromBaseMap(Text BaseMapName,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Text EditorPluginScript,Text EditorPluginArgument);
 /*!
 
 */
-			Void EditNewMapFromBaseMap(Text BaseMapName,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean OnlyUseForcedPlugins);
+	Void EditNewMapFromBaseMap(Text BaseMapName,Text Decoration,Text ModNameOrUrl,Text PlayerModel,Text MapType,Array<Text> EditorPluginsScripts,Array<Text> EditorPluginsArguments,Boolean OnlyUseForcedPlugins);
 /*!
 
 */
-	const	Boolean CanPublishFiles;
+	Boolean  const CanPublishFiles;
 /*!
 Set FileName='' to open a file select dialog.
 */
-			Void PublishFile(Text FileName);
+	Void PublishFile(Text FileName);
 /*!
 
 */
-			Void ProcessManiaCodeXml(Text ManiaCodeXml);
+	Void ProcessManiaCodeXml(Text ManiaCodeXml);
 /*!
 
 */
-	const	Array<CServerInfo> LocalServers;
+	Array<CServerInfo* const > LocalServers;
 /*!
 
 */
-	const	Array<CServerInfo> LocalServers_CurrentTitle;
+	Array<CServerInfo* const > LocalServers_CurrentTitle;
 /*!
 
 */
-			Void DiscoverLocalServers();
+	Void DiscoverLocalServers();
 /*!
 
 */
-			Void CreateServer(Text ServerName,Text ServerComment,Integer MaxPlayerCount,Text Password,Text PasswordSpectators,CMatchSettings MatchSettings);
+	Void CreateServer(Text ServerName,Text ServerComment,Integer MaxPlayerCount,Text Password,Text PasswordSpectators,CMatchSettings MatchSettings);
 /*!
 
 */
-			Void CreateServer(Text ServerName,Text ServerComment,Integer MaxPlayerCount,Text Password,Text PasswordSpectators,CMatchSettings MatchSettings,Boolean LocalOnly);
+	Void CreateServer(Text ServerName,Text ServerComment,Integer MaxPlayerCount,Text Password,Text PasswordSpectators,CMatchSettings MatchSettings,Boolean LocalOnly);
 /*!
 Fetch the server info, from the account id, or 'IP:xxx.xxx.xxx.xxx' with LAN ip
 */
-			Void GetServerInfo(Text ServerLogin);
+	Void GetServerInfo(Text ServerLogin);
 /*!
 
 */
-			Void GetServerInfo(CServerInfo LocalServer);
+	Void GetServerInfo(CServerInfo LocalServer);
 /*!
 
 */
-			Void GetServerInfo_Abort();
+	Void GetServerInfo_Abort();
 /*!
 
 */
-	const	CServerInfo GetServerInfo_Result;
+	CServerInfo * const  GetServerInfo_Result;
 /*!
 
 */
-			Void Join_GetServerInfo_Result(Boolean AsSpectator,Text Password);
+	Void Join_GetServerInfo_Result(Boolean AsSpectator,Text Password);
 /*!
 Join a server
 */
-			Void JoinServer(Text ServerLogin,Boolean AsSpectator,Text Password);
+	Void JoinServer(Text ServerLogin,Boolean AsSpectator,Text Password);
 /*!
 
 */
-			Boolean JoinServer_DisableSystemDialogs;
+	Boolean JoinServer_DisableSystemDialogs;
 /*!
 
 */
-			Void Quit();
+	Void Quit();
 };
 
 /*!
@@ -12259,23 +12678,23 @@ public :
 /*!
 
 */
-	const	CStation Station;
+	CStation * const  Station;
 /*!
 
 */
-			Void EnterStation();
+	Void EnterStation();
 /*!
 
 */
-			Void Maker_EditTitle(Text EditedTitleId);
+	Void Maker_EditTitle(Text EditedTitleId);
 /*!
 A new title id will be derived from the EditedTitleName.
 */
-			Void Maker_EditNewTitle(Text EditedTitleName);
+	Void Maker_EditNewTitle(Text EditedTitleName);
 /*!
 
 */
-	const	Array<CPackCreatorTitleInfo> Maker_EditedTitles;
+	Array<CPackCreatorTitleInfo* const > Maker_EditedTitles;
 };
 
 /*!
@@ -12301,63 +12720,63 @@ public :
 /*!
 
 */
-	const	CTitle Title;
+	CTitle * const  Title;
 /*!
 
 */
-	const	Integer AudienceRegisteredUsers;
+	Integer  const AudienceRegisteredUsers;
 /*!
 
 */
-	const	Integer CampaignMedalsMax;
+	Integer  const CampaignMedalsMax;
 /*!
 
 */
-	const	Integer CampaignMedalsCurrent;
+	Integer  const CampaignMedalsCurrent;
 /*!
 
 */
-	const	Integer CampaignMedalsRanking;
+	Integer  const CampaignMedalsRanking;
 /*!
 
 */
-	const	Real LadderPoints;
+	Real  const LadderPoints;
 /*!
 
 */
-	const	Integer LadderRank;
+	Integer  const LadderRank;
 /*!
 
 */
-	const	CStation::EEchelon Echelon;
+	CStation::EEchelon const  Echelon;
 /*!
 
 */
-	const	Integer NextEchelonPercent;
+	Integer  const NextEchelonPercent;
 /*!
 
 */
-			Boolean DisableQuickEnter;
+	Boolean DisableQuickEnter;
 /*!
 
 */
-			Boolean IsLogoVisible;
+	Boolean IsLogoVisible;
 /*!
 
 */
-			Real GhostAlpha;
+	Real GhostAlpha;
 /*!
 
 */
-			Vec3 FocusLightColor;
+	Vec3 FocusLightColor;
 /*!
 
 */
-			Vec3 NormalLightColor;
+	Vec3 NormalLightColor;
 /*!
 Is title present in WorkTitles folder?
 */
-	const	Boolean IsEditable;
+	Boolean  const IsEditable;
 };
 
 /*!
@@ -12372,27 +12791,27 @@ public :
 /*!
 
 */
-	const	Array<CManiaAppEvent> PendingEvents;
+	Array<CManiaAppEvent* const > PendingEvents;
 /*!
 
 */
-			Void BrowserBack();
+	Void BrowserBack();
 /*!
 
 */
-			Void BrowserQuit();
+	Void BrowserQuit();
 /*!
 
 */
-			Void BrowserHome();
+	Void BrowserHome();
 /*!
 
 */
-			Void BrowserReload();
+	Void BrowserReload();
 /*!
 
 */
-			Text BrowserFocusedFrameId;
+	Text BrowserFocusedFrameId;
 };
 
 /*!
@@ -12408,103 +12827,103 @@ public :
 /*!
 
 */
-	const	CMapInfo MapInfo;
+	CMapInfo * const  MapInfo;
 /*!
 
 */
-			Text MapName;
+	Text MapName;
 /*!
 
 */
-			Text Comments;
+	Text Comments;
 /*!
 
 */
-	const	Text AuthorZoneIconUrl;
+	Text  const AuthorZoneIconUrl;
 /*!
 
 */
-	const	Text CollectionName;
+	Text  const CollectionName;
 /*!
 
 */
-	const	Text DecorationName;
+	Text  const DecorationName;
 /*!
 
 */
-	const	Text AuthorLogin;
+	Text  const AuthorLogin;
 /*!
 
 */
-	const	Text AuthorNickName;
+	Text  const AuthorNickName;
 /*!
 
 */
-	const	Text AuthorZonePath;
+	Text  const AuthorZonePath;
 /*!
 
 */
-	const	Text MapType;
+	Text  const MapType;
 /*!
 
 */
-	const	Text MapStyle;
+	Text  const MapStyle;
 /*!
 
 */
-			Integer TMObjective_AuthorTime;
+	Integer TMObjective_AuthorTime;
 /*!
 
 */
-			Integer TMObjective_GoldTime;
+	Integer TMObjective_GoldTime;
 /*!
 
 */
-			Integer TMObjective_SilverTime;
+	Integer TMObjective_SilverTime;
 /*!
 
 */
-			Integer TMObjective_BronzeTime;
+	Integer TMObjective_BronzeTime;
 /*!
 
 */
-			Integer TMObjective_NbLaps;
+	Integer TMObjective_NbLaps;
 /*!
 
 */
-			Boolean TMObjective_IsLapRace;
+	Boolean TMObjective_IsLapRace;
 /*!
 
 */
-			Text ObjectiveTextAuthor;
+	Text ObjectiveTextAuthor;
 /*!
 
 */
-			Text ObjectiveTextGold;
+	Text ObjectiveTextGold;
 /*!
 
 */
-			Text ObjectiveTextSilver;
+	Text ObjectiveTextSilver;
 /*!
 
 */
-			Text ObjectiveTextBronze;
+	Text ObjectiveTextBronze;
 /*!
 
 */
-	const	Integer CopperPrice;
+	Integer  const CopperPrice;
 /*!
 
 */
-	const	Int3 Size;
+	Int3  const Size;
 /*!
 
 */
-	const	Boolean HasCustomIntro;
+	Boolean  const HasCustomIntro;
 /*!
 
 */
-	const	Boolean HasCustomMusic;
+	Boolean  const HasCustomMusic;
 };
 
 /*!
@@ -12518,98 +12937,63 @@ public :
 /*!
 
 */
-	const	Array<CMlControl> Controls;
+	Array<CMlControl* const > Controls;
 /*!
 
 */
-			CMlControl GetFirstChild(Text ControlId);
+	CMlControl GetFirstChild(Text ControlId);
 /*!
 
 */
-			Boolean ScrollActive;
+	Boolean ScrollActive;
 /*!
 
 */
-			Vec2 ScrollOffset;
+	Vec2 ScrollOffset;
 /*!
 
 */
-	const	Vec2 ScrollAnimOffset;
+	Vec2  const ScrollAnimOffset;
 /*!
 
 */
-			Vec2 ScrollMax;
+	Vec2 ScrollMax;
 /*!
 
 */
-			Vec2 ScrollMin;
+	Vec2 ScrollMin;
 /*!
 
 */
-			Boolean ScrollGridSnap;
+	Boolean ScrollGridSnap;
 /*!
 
 */
-			Vec2 ScrollGrid;
+	Vec2 ScrollGrid;
 /*!
 
 */
-			Void Scroll(Vec2 DeltaInGridUnits);
+	Void Scroll(Vec2 DeltaInGridUnits);
 /*!
 
 */
-			Void ScrollBumpTop();
+	Void ScrollBumpTop();
 /*!
 
 */
-			Void ScrollBumpBottom();
+	Void ScrollBumpBottom();
 /*!
 
 */
-			Void ScrollBumpLeft();
+	Void ScrollBumpLeft();
 /*!
 
 */
-			Void ScrollBumpRight();
+	Void ScrollBumpRight();
 /*!
 
 */
-			Boolean DisablePreload;
-};
-
-/*!
-* \brief Documentation for class CGameUserVoiceChat
-*/
-class CGameUserVoiceChat : public CNod {
-public :
-	/*!
-	
-	*/
-	enum EMuteSetting {
-		Auto,
-		Muted,
-		NotMuted,
-	};
-/*!
-
-*/
-			CGameUserVoiceChat::EMuteSetting MuteSetting;
-/*!
-
-*/
-	const	Boolean IsLocal;
-/*!
-
-*/
-	const	Boolean IsMuted;
-/*!
-
-*/
-	const	Boolean IsSpeaking;
-/*!
-
-*/
-	const	Boolean Supported;
+	Boolean DisablePreload;
 };
 
 /*!
@@ -12623,7 +13007,7 @@ public :
 /*!
 Use this flag to solve issues where some events are interpreted twice by different script librairies.<br/>Discard events if the flag is set. Set the flag after handling the event.
 */
-			Boolean HasBeenProcessed;
+	Boolean HasBeenProcessed;
 };
 
 /*!
@@ -12637,7 +13021,7 @@ public :
 /*!
 
 */
-			Vec3 Color;
+	Vec3 Color;
 };
 
 /*!
@@ -12651,95 +13035,95 @@ public :
 /*!
 
 */
-			Real Time;
+	Real Time;
 /*!
 
 */
-			Real TimeMin;
+	Real TimeMin;
 /*!
 
 */
-			Real TimeMax;
+	Real TimeMax;
 /*!
 
 */
-			Integer Page;
+	Integer Page;
 /*!
 
 */
-			Integer TracksPerPage;
+	Integer TracksPerPage;
 /*!
 
 */
-	const	Boolean IsDraggingCursor;
+	Boolean  const IsDraggingCursor;
 /*!
 
 */
-	const	Boolean IsDraggingBlock;
+	Boolean  const IsDraggingBlock;
 /*!
 
 */
-	const	Boolean IsDraggingKey;
+	Boolean  const IsDraggingKey;
 /*!
 
 */
-	const	Boolean IsScaling;
+	Boolean  const IsScaling;
 /*!
 
 */
-	const	Boolean IsPanning;
+	Boolean  const IsPanning;
 /*!
 
 */
-			Void ShowFullTimeLine();
+	Void ShowFullTimeLine();
 /*!
 
 */
-			Void ResetCycling();
+	Void ResetCycling();
 /*!
 
 */
-			Void SetSimpleMediaTrackerPilot(CEditorMediaTracker MediaTracker);
+	Void SetSimpleMediaTrackerPilot(CEditorMediaTracker MediaTracker);
 /*!
 
 */
-			Void SetSelection(Integer Track,Integer Block,Integer Key);
+	Void SetSelection(Integer Track,Integer Block,Integer Key);
 /*!
 
 */
-			Void SetSeparatorColor(Text HexColor);
+	Void SetSeparatorColor(Text HexColor);
 /*!
 
 */
-			Void SetBgColor(Text HexColor);
+	Void SetBgColor(Text HexColor);
 /*!
 
 */
-			Void SetCursorColor(Text HexColor);
+	Void SetCursorColor(Text HexColor);
 /*!
 
 */
-			Void SetRulerColor(Text HexColor);
+	Void SetRulerColor(Text HexColor);
 /*!
 
 */
-			Void SetRulerLineColor(Text HexColor);
+	Void SetRulerLineColor(Text HexColor);
 /*!
 
 */
-			Void SetKeyColor(Text HexColor);
+	Void SetKeyColor(Text HexColor);
 /*!
 
 */
-			Void SetStartIsCycling(Real Time);
+	Void SetStartIsCycling(Real Time);
 /*!
 
 */
-			Void SetStopIsCycling(Real Time);
+	Void SetStopIsCycling(Real Time);
 /*!
 
 */
-			Void SetTimeLimit(Real TimeLimit);
+	Void SetTimeLimit(Real TimeLimit);
 };
 
 /*!
@@ -12753,15 +13137,15 @@ public :
 /*!
 
 */
-			Real Value;
+	Real Value;
 /*!
 
 */
-			Real MinRange;
+	Real MinRange;
 /*!
 
 */
-			Real MaxRange;
+	Real MaxRange;
 };
 
 /*!
@@ -12775,35 +13159,35 @@ public :
 /*!
 
 */
-			Boolean IsInitPlay;
+	Boolean IsInitPlay;
 /*!
 
 */
-			Boolean Music;
+	Boolean Music;
 /*!
 
 */
-			Boolean IsLooping;
+	Boolean IsLooping;
 /*!
 
 */
-			Real Volume;
+	Real Volume;
 /*!
 
 */
-			Text Url;
+	Text Url;
 /*!
 
 */
-			Void Play();
+	Void Play();
 /*!
 
 */
-			Void Stop();
+	Void Stop();
 /*!
 
 */
-			Void StopAndRewind();
+	Void StopAndRewind();
 };
 
 /*!
@@ -12817,23 +13201,23 @@ public :
 /*!
 
 */
-			Vec2 CoordsMin;
+	Vec2 CoordsMin;
 /*!
 
 */
-			Vec2 CoordsMax;
+	Vec2 CoordsMax;
 /*!
 
 */
-			CMlGraphCurve AddCurve();
+	CMlGraphCurve AddCurve();
 /*!
 
 */
-			Void RemoveCurve(CMlGraphCurve Curve);
+	Void RemoveCurve(CMlGraphCurve Curve);
 /*!
 
 */
-			Array<CMlGraphCurve> Curves;
+	Array<CMlGraphCurve*> Curves;
 };
 
 /*!
@@ -12847,43 +13231,43 @@ public :
 /*!
 
 */
-			Text Style;
+	Text Style;
 /*!
 
 */
-			Void SetRatio(Real NewRatio);
+	Void SetRatio(Real NewRatio);
 /*!
 
 */
-			Void SetClan(Integer NewClan);
+	Void SetClan(Integer NewClan);
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Ratio;
+	Real Ratio;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real GradingRatio;
+	Real GradingRatio;
 /*!
 
 */
-			Integer Clan;
+	Integer Clan;
 /*!
 
 */
-			Vec3 Color;
+	Vec3 Color;
 /*!
 
 */
-			Boolean DrawBackground;
+	Boolean DrawBackground;
 /*!
 
 */
-			Boolean DrawBlockBackground;
+	Boolean DrawBlockBackground;
 /*!
 
 */
-			Boolean CenteredBar;
+	Boolean CenteredBar;
 };
 
 /*!
@@ -12897,7 +13281,7 @@ public :
 /*!
 
 */
-			Boolean Fullscreen;
+	Boolean Fullscreen;
 };
 
 /*!
@@ -12920,47 +13304,47 @@ public :
 /*!
 
 */
-			Text Value;
+	Text Value;
 /*!
 
 */
-			Void StartEdition();
+	Void StartEdition();
 /*!
 
 */
-			Integer MaxLine;
+	Integer MaxLine;
 /*!
 
 */
-			Boolean AutoNewLine;
+	Boolean AutoNewLine;
 /*!
 
 */
-			Boolean ShowLineNumbers;
+	Boolean ShowLineNumbers;
 /*!
 
 */
-			Real LineSpacing;
+	Real LineSpacing;
 /*!
 
 */
-	const	Integer ValueLineCount;
+	Integer  const ValueLineCount;
 /*!
 
 */
-			Real Opacity;
+	Real Opacity;
 /*!
 
 */
-			Vec3 TextColor;
+	Vec3 TextColor;
 /*!
 
 */
-			Real TextSizeReal;
+	Real TextSizeReal;
 /*!
 
 */
-			CMlTextEdit::EControlScriptEditorTextFormat TextFormat;
+	CMlTextEdit::EControlScriptEditorTextFormat TextFormat;
 };
 
 /*!
@@ -13006,47 +13390,47 @@ public :
 /*!
 
 */
-			Text Value;
+	Text Value;
 /*!
 
 */
-			Void StartEdition();
+	Void StartEdition();
 /*!
 
 */
-			Void SetText(Text NewText,Boolean SendSubmitEvent);
+	Void SetText(Text NewText,Boolean SendSubmitEvent);
 /*!
 
 */
-			CMlEntry::ETextFormat TextFormat;
+	CMlEntry::ETextFormat TextFormat;
 /*!
 
 */
-			Real Opacity;
+	Real Opacity;
 /*!
 
 */
-			Vec3 TextColor;
+	Vec3 TextColor;
 /*!
 
 */
-			Real TextSizeReal;
+	Real TextSizeReal;
 /*!
 
 */
-			Integer MaxLine;
+	Integer MaxLine;
 /*!
 
 */
-			Boolean AutoNewLine;
+	Boolean AutoNewLine;
 /*!
 
 */
-			CMlEntry::ValueType GetValueType();
+	CMlEntry::ValueType GetValueType();
 /*!
 
 */
-			Void SetValueType(CMlEntry::ValueType ValueType);
+	Void SetValueType(CMlEntry::ValueType ValueType);
 };
 
 /*!
@@ -13067,91 +13451,95 @@ public :
 /*!
 
 */
-			Text Style;
+	Text Style;
 /*!
 
 */
-			Text Substyle;
+	Text Substyle;
 /*!
 
 */
-			Text TextFont;
+	Text TextFont;
 /*!
 
 */
-			Void SetText(Text NewText);
+	Void SetText(Text NewText);
 /*!
 
 */
-			Text Value;
+	Text Value;
 /*!
 
 */
-	const	Integer ValueLineCount;
+	Integer  const ValueLineCount;
 /*!
 
 */
-			Integer MaxLine;
+	Integer MaxLine;
 /*!
 
 */
-			Real LineSpacing;
+	Real LineSpacing;
 /*!
 
 */
-			Real ItalicSlope;
+	Real ItalicSlope;
 /*!
 
 */
-			Boolean AppendEllipsis;
+	Boolean AppendEllipsis;
 /*!
 
 */
-			Boolean AutoNewLine;
+	Boolean AutoNewLine;
 /*!
 
 */
-			Real Opacity;
+	Real Opacity;
 /*!
 Used to include styling attributes like $s,$o...
 */
-			Text TextPrefix;
+	Text TextPrefix;
 /*!
 
 */
-			Vec3 TextColor;
+	Vec3 TextColor;
 /*!
 
 */
-			Real TextSizeReal;
+	Real TextSizeReal;
 /*!
 
 */
-			CMlLabel::EBlendMode Blend;
+	CMlLabel::EBlendMode Blend;
 /*!
 
 */
-			Real ComputeWidth(Text Text);
+	Real ComputeWidth(Text Text);
 /*!
 
 */
-			Real ComputeWidth(Text Text,Boolean Translated);
+	Real ComputeWidth(Text Text,Boolean Translated);
 /*!
 
 */
-			Real ComputeHeight(Text Text);
+	Real ComputeHeight(Text Text);
 /*!
 
 */
-			Void TTS_Focused();
+	Text TTS_AltText;
 /*!
 
 */
-			Text TTS_AltText;
+	Boolean TTS_AltText_Translate;
 /*!
 
 */
-			Void TTS_Focused(Boolean IsLowPrio);
+	Void TTS_Focus();
+/*!
+
+*/
+	Void TTS_Unfocus();
 };
 
 /*!
@@ -13165,35 +13553,35 @@ public :
 /*!
 
 */
-			Vec3 WorldPosition;
+	Vec3 WorldPosition;
 /*!
 
 */
-			Vec2 MapPosition;
+	Vec2 MapPosition;
 /*!
 
 */
-			Real MapYaw;
+	Real MapYaw;
 /*!
 Values in range (0.500000-10.000000)
 */
-			Real ZoomFactor;
+	Real ZoomFactor;
 /*!
 
 */
-			Boolean Underground;
+	Boolean Underground;
 /*!
 
 */
-			Boolean DisableAutoUnderground;
+	Boolean DisableAutoUnderground;
 /*!
 
 */
-			Void Fog_SetAll(Real Value);
+	Void Fog_SetAll(Real Value);
 /*!
 
 */
-			Void Fog_ClearDisk(Vec3 WorldCenter,Real Radius,Real FadeSize);
+	Void Fog_ClearDisk(Vec3 WorldCenter,Real Radius,Real FadeSize);
 };
 
 /*!
@@ -13222,83 +13610,91 @@ public :
 /*!
 
 */
-			Void ChangeImageUrl(Text fieldName);
+	Void ChangeImageUrl(Text fieldName);
 /*!
 
 */
-			CImage Image;
+	CImage * Image;
 /*!
 
 */
-			Text ImageUrl;
+	Text ImageUrl;
 /*!
 
 */
-			Text ImageUrlFocus;
+	Text ImageUrlFocus;
 /*!
 
 */
-			Text AlphaMaskUrl;
+	Text AlphaMaskUrl;
 /*!
 
 */
-			Text Style;
+	Text Style;
 /*!
 
 */
-			Text Substyle;
+	Text Substyle;
 /*!
 
 */
-			Boolean StyleSelected;
+	Boolean StyleSelected;
 /*!
 
 */
-	const	Boolean DownloadInProgress;
+	Boolean  const DownloadInProgress;
 /*!
 
 */
-			Boolean SuperSample;
+	Boolean SuperSample;
 /*!
 
 */
-			Vec3 Colorize;
+	Vec3 Colorize;
 /*!
 
 */
-			Vec3 ModulateColor;
+	Vec3 ModulateColor;
 /*!
 
 */
-			Vec3 BgColor;
+	Vec3 BgColor;
 /*!
 
 */
-			Vec3 BgColorFocus;
+	Vec3 BgColorFocus;
 /*!
 
 */
-			Real Opacity;
+	Real Opacity;
 /*!
 
 */
-			CMlQuad::EKeepRatioMode KeepRatio;
+	CMlQuad::EKeepRatioMode KeepRatio;
 /*!
 
 */
-			CMlQuad::EBlendMode Blend;
+	CMlQuad::EBlendMode Blend;
 /*!
 
 */
-			Void RefreshImages();
+	Void RefreshImages();
 /*!
 
 */
-			Text TTS_AltText;
+	Void TTS_Focus();
 /*!
 
 */
-			Boolean TTS_AltText_Translate;
+	Void TTS_Unfocus();
+/*!
+
+*/
+	Text TTS_AltText;
+/*!
+
+*/
+	Boolean TTS_AltText_Translate;
 };
 
 /*!
@@ -13309,19 +13705,19 @@ public :
 /*!
 
 */
-	const	Text TextContents;
+	Text  const TextContents;
 /*!
 
 */
-	const	CParsingNode Root;
+	CParsingNode * const  Root;
 /*!
 
 */
-	const	Array<CParsingNode> Nodes;
+	Array<CParsingNode* const > Nodes;
 /*!
 
 */
-			CParsingNode GetFirstChild(Text Name);
+	CParsingNode GetFirstChild(Text Name);
 };
 
 /*!
@@ -13335,19 +13731,19 @@ public :
 /*!
 Url of the request
 */
-	const	Text Url;
+	Text  const Url;
 /*!
 Result available once IsCompleted and StatusCode = 200
 */
-	const	Text Result;
+	Text  const Result;
 /*!
 HTTP status code
 */
-	const	Integer StatusCode;
+	Integer  const StatusCode;
 /*!
 
 */
-	const	Boolean IsCompleted;
+	Boolean  const IsCompleted;
 };
 
 /*!
@@ -13364,11 +13760,11 @@ public :
 /*!
 
 */
-	const	CHttpEvent::EType Type;
+	CHttpEvent::EType const  Type;
 /*!
 Request triggering the event
 */
-	const	CHttpRequest Request;
+	CHttpRequest * const  Request;
 };
 
 /*!
@@ -13386,59 +13782,59 @@ public :
 /*!
 
 */
-	const	CImage Image;
+	CImage * const  Image;
 /*!
 
 */
-			Boolean IsLooping;
+	Boolean IsLooping;
 /*!
 
 */
-	const	Boolean DownloadInProgress;
+	Boolean  const DownloadInProgress;
 /*!
 
 */
-	const	Real PlayLength;
+	Real  const PlayLength;
 /*!
 
 */
-			Void BeginProcessing();
+	Void BeginProcessing();
 /*!
 
 */
-			Void EndProcessing();
+	Void EndProcessing();
 /*!
 
 */
-	const	Boolean IsProcessing;
+	Boolean  const IsProcessing;
 /*!
 Automatically begin processing when the layer becomes visible and end when hidden.
 */
-			Boolean AutoProcessing;
+	Boolean AutoProcessing;
 /*!
 
 */
-			Void Play();
+	Void Play();
 /*!
 
 */
-			Void Pause();
+	Void Pause();
 /*!
 
 */
-			Void Stop();
+	Void Stop();
 /*!
 
 */
-	const	Boolean IsPlaying;
+	Boolean  const IsPlaying;
 /*!
 
 */
-			Real PlayCursor;
+	Real PlayCursor;
 /*!
 
 */
-			CVideo::ETextureFilter TextureFilter;
+	CVideo::ETextureFilter TextureFilter;
 };
 
 /*!
@@ -13449,51 +13845,51 @@ public :
 /*!
 
 */
-			Void Play();
+	Void Play();
 /*!
 
 */
-			Void Stop();
+	Void Stop();
 /*!
 
 */
-	const	Boolean IsPlaying;
+	Boolean  const IsPlaying;
 /*!
 
 */
-	const	Boolean DownloadInProgress;
+	Boolean  const DownloadInProgress;
 /*!
 
 */
-			Real Volume;
+	Real Volume;
 /*!
 
 */
-			Real FadeDuration;
+	Real FadeDuration;
 /*!
 
 */
-			Real VolumedB;
+	Real VolumedB;
 /*!
 
 */
-			Real Pitch;
+	Real Pitch;
 /*!
 
 */
-			Vec3 RelativePosition;
+	Vec3 RelativePosition;
 /*!
 
 */
-			Vec3 PanRadiusLfe;
+	Vec3 PanRadiusLfe;
 /*!
 
 */
-			Real PlayCursor;
+	Real PlayCursor;
 /*!
 
 */
-	const	Real PlayLength;
+	Real  const PlayLength;
 };
 
 /*!
@@ -13513,99 +13909,99 @@ public :
 /*!
 
 */
-			Array<Real> Tracks_Volume;
+	Array<Real> Tracks_Volume;
 /*!
 
 */
-			Array<Real> Tracks_VolumedB;
+	Array<Real> Tracks_VolumedB;
 /*!
 
 */
-	const	Array<Text> Tracks_Name;
+	Array<Text> Tracks_Name;
 /*!
 
 */
-	const	Array<Real> Tracks_Length;
+	Array<Real> Tracks_Length;
 /*!
 
 */
-	const	Integer Tracks_Count;
+	Integer  const Tracks_Count;
 /*!
 
 */
-	const	Real BeatsPerMinute;
+	Real  const BeatsPerMinute;
 /*!
 
 */
-	const	Real BeatDuration;
+	Real  const BeatDuration;
 /*!
 
 */
-	const	Integer BeatsPerBar;
+	Integer  const BeatsPerBar;
 /*!
 
 */
-			CAudioSourceMusic::EUpdateMode UpdateMode;
+	CAudioSourceMusic::EUpdateMode UpdateMode;
 /*!
 
 */
-			Boolean Dbg_ForceIntensity;
+	Boolean Dbg_ForceIntensity;
 /*!
 
 */
-			Boolean Dbg_ForceSequential;
+	Boolean Dbg_ForceSequential;
 /*!
 
 */
-			Boolean Dbg_ForceRandom;
+	Boolean Dbg_ForceRandom;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real LPF_CutoffRatio;
+	Real LPF_CutoffRatio;
 /*!
 Values in range (0.100000-20.000000)
 */
-			Real LPF_Q;
+	Real LPF_Q;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real HPF_CutoffRatio;
+	Real HPF_CutoffRatio;
 /*!
 Values in range (0.100000-20.000000)
 */
-			Real HPF_Q;
+	Real HPF_Q;
 /*!
 
 */
-			Real FadeTracksDuration;
+	Real FadeTracksDuration;
 /*!
 
 */
-			Real FadeFiltersDuration;
+	Real FadeFiltersDuration;
 /*!
 
 */
-			Void MuteAllTracks();
+	Void MuteAllTracks();
 /*!
 
 */
-			Void UnmuteAllTracks();
+	Void UnmuteAllTracks();
 /*!
 
 */
-			Void NextVariant();
+	Void NextVariant();
 /*!
 
 */
-			Void NextVariant(Boolean IsIntensityDecreasing);
+	Void NextVariant(Boolean IsIntensityDecreasing);
 /*!
 
 */
-			Void EnableSegment(Text SegmentName);
+	Void EnableSegment(Text SegmentName);
 /*!
 
 */
-			Boolean UseNewImplem;
+	Boolean UseNewImplem;
 };
 
 /*!
@@ -13652,27 +14048,27 @@ public :
 /*!
 
 */
-	const	CInputEvent::EType Type;
+	CInputEvent::EType const  Type;
 /*!
 
 */
-	const	CInputPad Pad;
+	CInputPad * const  Pad;
 /*!
 
 */
-	const	CInputEvent::EButton Button;
+	CInputEvent::EButton const  Button;
 /*!
 
 */
-	const	Boolean IsAutoRepeat;
+	Boolean  const IsAutoRepeat;
 /*!
 
 */
-	const	Integer KeyCode;
+	Integer  const KeyCode;
 /*!
 
 */
-	const	Text KeyName;
+	Text  const KeyName;
 };
 
 /*!
@@ -13724,119 +14120,119 @@ public :
 /*!
 
 */
-	const	Integer ControllerId;
+	Integer  const ControllerId;
 /*!
 
 */
-	const	Ident UserId;
+	Ident  const UserId;
 /*!
 
 */
-	const	CInputPad::EPadType Type;
+	CInputPad::EPadType const  Type;
 /*!
 
 */
-	const	Text ModelName;
+	Text  const ModelName;
 /*!
 
 */
-	const	Integer IdleDuration;
+	Integer  const IdleDuration;
 /*!
 
 */
-	const	Integer Left;
+	Integer  const Left;
 /*!
 
 */
-	const	Integer Right;
+	Integer  const Right;
 /*!
 
 */
-	const	Integer Up;
+	Integer  const Up;
 /*!
 
 */
-	const	Integer Down;
+	Integer  const Down;
 /*!
 
 */
-	const	Integer A;
+	Integer  const A;
 /*!
 
 */
-	const	Integer B;
+	Integer  const B;
 /*!
 
 */
-	const	Integer X;
+	Integer  const X;
 /*!
 
 */
-	const	Integer Y;
+	Integer  const Y;
 /*!
 
 */
-	const	Integer L1;
+	Integer  const L1;
 /*!
 
 */
-	const	Integer R1;
+	Integer  const R1;
 /*!
 
 */
-	const	Integer LeftStickBut;
+	Integer  const LeftStickBut;
 /*!
 
 */
-	const	Integer RightStickBut;
+	Integer  const RightStickBut;
 /*!
 
 */
-	const	Integer Menu;
+	Integer  const Menu;
 /*!
 
 */
-	const	Integer View;
+	Integer  const View;
 /*!
 Values in range (-1.000000-1.000000)
 */
-	const	Real LeftStickX;
+	Real  const LeftStickX;
 /*!
 Values in range (-1.000000-1.000000)
 */
-	const	Real LeftStickY;
+	Real  const LeftStickY;
 /*!
 Values in range (-1.000000-1.000000)
 */
-	const	Real RightStickX;
+	Real  const RightStickX;
 /*!
 Values in range (-1.000000-1.000000)
 */
-	const	Real RightStickY;
+	Real  const RightStickY;
 /*!
 Values in range (0.000000-1.000000)
 */
-	const	Real L2;
+	Real  const L2;
 /*!
 Values in range (0.000000-1.000000)
 */
-	const	Real R2;
+	Real  const R2;
 /*!
 
 */
-	const	Array<CInputPad::EButton> ButtonEvents;
+	Array<CInputPad::EButton> ButtonEvents;
 /*!
 
 */
-			Void ClearRumble();
+	Void ClearRumble();
 /*!
 Duration = 0 --> forever.
 */
-			Void AddRumble(Integer Duration,Real LargeMotor,Real SmallMotor);
+	Void AddRumble(Integer Duration,Real LargeMotor,Real SmallMotor);
 /*!
 (only works on PS4.)  set to (0,0,0) to reset back to default color.
 */
-			Void SetColor(Vec3 Color);
+	Void SetColor(Vec3 Color);
 };
 
 /*!
@@ -13847,31 +14243,31 @@ public :
 /*!
 
 */
-	const	Text CampaignId;
+	Text  const CampaignId;
 /*!
 
 */
-			Array<CMapGroup> MapGroups;
+	Array<CMapGroup*> MapGroups;
 /*!
 
 */
-			Integer GetMapGroupCount();
+	Integer GetMapGroupCount();
 /*!
 
 */
-			CMapGroup GetMapGroup(Integer Index);
+	CMapGroup GetMapGroup(Integer Index);
 /*!
 
 */
-			CMapInfo GetNextMap(CMapInfo CurrentMapInfo);
+	CMapInfo GetNextMap(CMapInfo CurrentMapInfo);
 /*!
 
 */
-			Text ScoreContext;
+	Text ScoreContext;
 /*!
 
 */
-			Boolean OfficialRecordEnabled;
+	Boolean OfficialRecordEnabled;
 };
 
 /*!
@@ -13885,7 +14281,7 @@ public :
 /*!
 ItemCollection info retrieve from NadeoServices contained by this result.
 */
-	const	CNadeoServicesItemCollection ItemCollection;
+	CNadeoServicesItemCollection * const  ItemCollection;
 };
 
 /*!
@@ -13899,7 +14295,7 @@ public :
 /*!
 List of ItemCollection info retrieve from NadeoServices contained by this result.
 */
-	const	Array<CNadeoServicesItemCollection> ItemCollectionList;
+	Array<CNadeoServicesItemCollection* const > ItemCollectionList;
 };
 
 /*!
@@ -13913,19 +14309,19 @@ public :
 /*!
 Path of the parent zone.
 */
-	const	Text ParentPath;
+	Text  const ParentPath;
 /*!
 Path of the current zone.
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 List of the map info. Array of CMapInfo objects.
 */
-	const	Array<CMapInfo> MapInfos;
+	Array<CMapInfo* const > MapInfos;
 /*!
 List of the sub folders. Array of string.
 */
-	const	Array<Text> SubFolders;
+	Array<Text> SubFolders;
 };
 
 /*!
@@ -13939,7 +14335,7 @@ public :
 /*!
 Map info retrieve from NadeoServices contained by this result.
 */
-	const	CNadeoServicesMap Map;
+	CNadeoServicesMap * const  Map;
 };
 
 /*!
@@ -13953,7 +14349,7 @@ public :
 /*!
 List of map info retrieve from NadeoServices contained by this result.
 */
-	const	Array<CNadeoServicesMap> MapList;
+	Array<CNadeoServicesMap* const > MapList;
 };
 
 /*!
@@ -13967,7 +14363,7 @@ public :
 /*!
 Skin info retrieve from NadeoServices contained by this result.
 */
-	const	CNadeoServicesSkin Skin;
+	CNadeoServicesSkin * const  Skin;
 };
 
 /*!
@@ -13981,7 +14377,7 @@ public :
 /*!
 List of Skin info retrieve from NadeoServices contained by this result.
 */
-	const	Array<CNadeoServicesSkin> SkinList;
+	Array<CNadeoServicesSkin* const > SkinList;
 };
 
 /*!
@@ -13995,19 +14391,19 @@ public :
 /*!
 Path of the parent zone.
 */
-	const	Text ParentPath;
+	Text  const ParentPath;
 /*!
 Path of the current zone.
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 List of the replay info. Array of CReplayInfo objects.
 */
-	const	Array<CReplayInfo> ReplayInfos;
+	Array<CReplayInfo* const > ReplayInfos;
 /*!
 List of the sub folders. Array of string.
 */
-	const	Array<Text> SubFolders;
+	Array<Text> SubFolders;
 };
 
 /*!
@@ -14021,7 +14417,7 @@ public :
 /*!
 List of ghost. Array of CGhost.
 */
-	const	Array<CGhost> Ghosts;
+	Array<CGhost* const > Ghosts;
 };
 
 /*!
@@ -14035,19 +14431,19 @@ public :
 /*!
 Path of the parent zone.
 */
-	const	Text ParentPath;
+	Text  const ParentPath;
 /*!
 Path of the current zone.
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 List of files. Array of string.
 */
-	const	Array<Text> Files;
+	Array<Text> Files;
 /*!
 List of the sub folders. Array of string.
 */
-	const	Array<Text> SubFolders;
+	Array<Text> SubFolders;
 };
 
 /*!
@@ -14061,7 +14457,7 @@ public :
 /*!
 Description of the GameMode
 */
-	const	Array<CTaskResult_ModeInfo> GameModes;
+	Array<CTaskResult_ModeInfo* const > GameModes;
 };
 
 /*!
@@ -14075,7 +14471,7 @@ public :
 /*!
 List of map record info retrieve from NadeoServices contained by this result.
 */
-	const	Array<CMapRecord> MapRecordList;
+	Array<CMapRecord* const > MapRecordList;
 };
 
 /*!
@@ -14089,7 +14485,7 @@ public :
 /*!
 
 */
-	const	Integer Value;
+	Integer  const Value;
 };
 
 /*!
@@ -14103,31 +14499,31 @@ public :
 /*!
 Login of the user who has launched the task.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 
 */
-	const	Array<CHighScoreComparison> BuddiesChallengeRecord;
+	Array<CHighScoreComparison* const > BuddiesChallengeRecord;
 /*!
 Sort the results by opponent record count.
 */
-			Void SortByOpponentCount();
+	Void SortByOpponentCount();
 /*!
 Sort the results by opponent display name.
 */
-			Void SortByOpponentDisplayName();
+	Void SortByOpponentDisplayName();
 /*!
 Sort the results by opponent login.
 */
-			Void SortByOpponentLogin();
+	Void SortByOpponentLogin();
 /*!
 Sort the results by opponent record date.
 */
-			Void SortByOpponentRecordDate();
+	Void SortByOpponentRecordDate();
 /*!
 Sort the results by opponent record time.
 */
-			Void SortByOpponentRecordTime();
+	Void SortByOpponentRecordTime();
 };
 
 /*!
@@ -14141,31 +14537,31 @@ public :
 /*!
 Login of the user who has launched the task.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 List of comparison summary between user records and buddy records. Array of CHighScoreComparisonSummary objects.
 */
-	const	Array<CHighScoreComparisonSummary> BuddiesComparison;
+	Array<CHighScoreComparisonSummary* const > BuddiesComparison;
 /*!
 Sort the results by user best record count.
 */
-			Void SortByPlayerCount();
+	Void SortByPlayerCount();
 /*!
 Sort the results by opponent login.
 */
-			Void SortByOpponentLogin();
+	Void SortByOpponentLogin();
 /*!
 Sort the results by opponent best record count.
 */
-			Void SortByOpponentCount();
+	Void SortByOpponentCount();
 /*!
 Sort the results by opponent last record date.
 */
-			Void SortByOpponentDate();
+	Void SortByOpponentDate();
 /*!
 Sort the results by opponent display name.
 */
-			Void SortByOpponentDisplayName();
+	Void SortByOpponentDisplayName();
 };
 
 /*!
@@ -14179,35 +14575,35 @@ public :
 /*!
 Login of the user who has launched the task.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 Buddy login.
 */
-	const	Text BuddyLogin;
+	Text  const BuddyLogin;
 /*!
 List of best challenge records for user. Array of CHighScoreComparison objects.
 */
-	const	Array<CHighScoreComparison> PlayerBestRecordsComparison;
+	Array<CHighScoreComparison* const > PlayerBestRecordsComparison;
 /*!
 List of best challenge records for buddy. Array of CHighScoreComparison objects.
 */
-	const	Array<CHighScoreComparison> BuddyBestRecordsComparison;
+	Array<CHighScoreComparison* const > BuddyBestRecordsComparison;
 /*!
 Sort the results by map name.
 */
-			Void SortByMapName();
+	Void SortByMapName();
 /*!
 Sort the results by record time.
 */
-			Void SortByRecordTime();
+	Void SortByRecordTime();
 /*!
 Sort the results by record time diff.
 */
-			Void SortByRecordTimeDiff();
+	Void SortByRecordTimeDiff();
 /*!
 Sort the results by record date.
 */
-			Void SortByRecordDate();
+	Void SortByRecordDate();
 };
 
 /*!
@@ -14221,15 +14617,15 @@ public :
 /*!
 Starting index.
 */
-	const	Integer FromIndex;
+	Integer  const FromIndex;
 /*!
 Number of item contained.
 */
-	const	Integer Count;
+	Integer  const Count;
 /*!
 List of the ranking info. Array of CNaturalLeaderBoardInfo objects.
 */
-	const	Array<CNaturalLeaderBoardInfo> LeaderBoardInfo;
+	Array<CNaturalLeaderBoardInfo* const > LeaderBoardInfo;
 };
 
 /*!
@@ -14243,7 +14639,7 @@ public :
 /*!
 Season info contained by this result.
 */
-	const	CSeason Season;
+	CSeason * const  Season;
 };
 
 /*!
@@ -14257,7 +14653,7 @@ public :
 /*!
 List of season contained by this result.
 */
-	const	Array<CSeason> SeasonList;
+	Array<CSeason* const > SeasonList;
 };
 
 /*!
@@ -14271,15 +14667,15 @@ public :
 /*!
 Starting index.
 */
-	const	Integer FromIndex;
+	Integer  const FromIndex;
 /*!
 Number of item contained.
 */
-	const	Integer Count;
+	Integer  const Count;
 /*!
 List of the ranking info. Array of CRealLeaderBoardInfo objects.
 */
-	const	Array<CRealLeaderBoardInfo> LeaderBoardInfo;
+	Array<CRealLeaderBoardInfo* const > LeaderBoardInfo;
 };
 
 /*!
@@ -14293,11 +14689,11 @@ public :
 /*!
 List of account trophy gain contained in this result.
 */
-	const	Array<CAccountTrophyGainForHistory> AccountTrophyGainList;
+	Array<CAccountTrophyGainForHistory* const > AccountTrophyGainList;
 /*!
 
 */
-	const	Integer AccountTrophyGainTotalCount;
+	Integer  const AccountTrophyGainTotalCount;
 };
 
 /*!
@@ -14311,7 +14707,7 @@ public :
 /*!
 Last year summary of account trophy contained by this result.
 */
-	const	CAccountTrophyLastYearSummary Summary;
+	CAccountTrophyLastYearSummary * const  Summary;
 };
 
 /*!
@@ -14325,7 +14721,7 @@ public :
 /*!
 Settings of a solo medal trophy achievement contained by this result.
 */
-	const	CTrophySoloMedalAchievementSettings Settings;
+	CTrophySoloMedalAchievementSettings * const  Settings;
 };
 
 /*!
@@ -14339,11 +14735,11 @@ public :
 /*!
 List of zones. Array of CRankingsZone objects.
 */
-	const	Array<CZone> ZoneList;
+	Array<CZone* const > ZoneList;
 /*!
 Get a zone into the list from a zone id. Must be called after the task has succeeded.
 */
-			CZone GetZone(Text ZoneId);
+	CZone GetZone(Text ZoneId);
 };
 
 /*!
@@ -14357,11 +14753,11 @@ public :
 /*!
 
 */
-	const	Array<CZone> ZoneList;
+	Array<CZone* const > ZoneList;
 /*!
 Get a zone for a user. Must be called after the task has succeeded.
 */
-			CZone GetUserZone(Text WebServicesUserId);
+	CZone GetUserZone(Text WebServicesUserId);
 };
 
 /*!
@@ -14384,6 +14780,14 @@ public :
 		Day,
 		Sunset,
 		Night,
+	};
+	/*!
+	
+	*/
+	enum EMapEditorDifficulty {
+		Simple,
+		Advanced,
+		Expert,
 	};
 	/*!
 	
@@ -14421,287 +14825,291 @@ public :
 /*!
 
 */
-	const	Boolean CanChangePassword;
+	Boolean  const CanChangePassword;
 /*!
 
 */
-	const	Boolean CanChangeNickName;
+	Boolean  const CanChangeNickName;
 /*!
 avatar, horn and podium pose
 */
-	const	Boolean CanChangeAvatar;
+	Boolean  const CanChangeAvatar;
 /*!
 
 */
-	const	Boolean CanChangeSkin;
+	Boolean  const CanChangeSkin;
 /*!
 
 */
-	const	Boolean CanChangeZone;
+	Boolean  const CanChangeZone;
 /*!
 
 */
-	const	Boolean CanChangeGroups;
+	Boolean  const CanChangeGroups;
 /*!
 
 */
-			Void Account_ResetChanges();
+	Void Account_ResetChanges();
 /*!
 
 */
-			Text Account_Name;
+	Text Account_Name;
 /*!
 
 */
-			Text Account_EMail;
+	Text Account_EMail;
 /*!
 
 */
-			Boolean Account_AcceptNews;
+	Boolean Account_AcceptNews;
 /*!
 
 */
-			Boolean Account_EnableAutoConnect;
+	Boolean Account_EnableAutoConnect;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real User_LightTrailHue;
+	Real User_LightTrailHue;
 /*!
 Values in range (0.500000-2.000000)
 */
-			Real User_HornPitch;
+	Real User_HornPitch;
 /*!
 
 */
-			Text User_Description;
+	Text User_Description;
 /*!
 
 */
-			Text User_ClubLinkUrl;
+	Text User_ClubLinkUrl;
 /*!
 
 */
-			Text User_Trigram;
+	Text User_Trigram;
 /*!
 
 */
-			Boolean Custom_EnableAvatars;
+	Boolean User_ForceEmptyPilotSkin;
 /*!
 
 */
-			Boolean Custom_EnableChat;
+	Boolean Custom_EnableAvatars;
 /*!
 
 */
-			CUserV2Profile::ECustomPlayerModels Custom_PlayerModels;
+	Boolean Custom_EnableChat;
 /*!
 
 */
-			Boolean Custom_EnableUnlimitedHorns;
+	CUserV2Profile::ECustomPlayerModels Custom_PlayerModels;
+/*!
+
+*/
+	Boolean Custom_EnableUnlimitedHorns;
 /*!
 Favoured way to open the Map Editor
 */
-			CUserV2Profile::EMapEditorMode Editors_MapEditorMode;
+	CUserV2Profile::EMapEditorMode Editors_MapEditorMode;
 /*!
 
 */
-			Boolean Editors_MapEditorUseQuickstart;
+	Boolean Editors_MapEditorUseQuickstart;
 /*!
 
 */
-			Boolean Editors_MapEditorQuickstartUseGamepad;
+	Boolean Editors_MapEditorQuickstartUseGamepad;
 /*!
 
 */
-			Boolean Editors_MapEditorQuickstartIsAdvanced;
+	CUserV2Profile::EMapEditorDifficulty Editors_MapEditorQuickstartDifficulty;
 /*!
 
 */
-			CUserV2Profile::EMapEditorMood Editors_MapEditorQuickstartMood;
+	CUserV2Profile::EMapEditorMood Editors_MapEditorQuickstartMood;
 /*!
 
 */
-			Boolean Online_AutoSaveReplay;
+	Boolean Online_AutoSaveReplay;
 /*!
 
 */
-			Boolean Online_SaveRoundReplaysSeparately;
+	Boolean Online_SaveRoundReplaysSeparately;
 /*!
 
 */
-			CUserV2Profile::EPlayerVisibility Online_DefaultOpponentVisibility;
+	CUserV2Profile::EPlayerVisibility Online_DefaultOpponentVisibility;
 /*!
 
 */
-			CUserV2Profile::ERoadsideSpectatorVisibility Online_RoadsideSpectatorVisibility;
+	CUserV2Profile::ERoadsideSpectatorVisibility Online_RoadsideSpectatorVisibility;
 /*!
 
 */
-			Boolean Title_IsForbiddenWithParentalLock;
+	Boolean Title_IsForbiddenWithParentalLock;
 /*!
 
 */
-			Integer AddictionLimiter_DailyQuotaMinutes;
+	Integer AddictionLimiter_DailyQuotaMinutes;
 /*!
 
 */
-			Boolean Steam_OpenLinksInSteam;
+	Boolean Steam_OpenLinksInSteam;
 /*!
 
 */
-			Boolean Steam_SynchonizeWorkshopFiles;
+	Boolean Steam_SynchonizeWorkshopFiles;
 /*!
 
 */
-			Boolean Interface_CrosshairEnableCustomColor;
+	Boolean Interface_CrosshairEnableCustomColor;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Interface_CrosshairSaturation;
+	Real Interface_CrosshairSaturation;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Interface_CrosshairLinearHue;
+	Real Interface_CrosshairLinearHue;
 /*!
 Values in range (0.100000-2.000000)
 */
-			Real Interface_CrosshairSize;
+	Real Interface_CrosshairSize;
 /*!
 Values in range (0.100000-1.000000)
 */
-			Real Interface_CrosshairOpacity;
+	Real Interface_CrosshairOpacity;
 /*!
 
 */
-			Text Interface_CrosshairName;
+	Text Interface_CrosshairName;
 /*!
 Values in range (0.100000-2.000000)
 */
-			Real Interface_PlayerShieldScale;
+	Real Interface_PlayerShieldScale;
 /*!
 
 */
-			Boolean Interface_AllyEnableCustomColor;
+	Boolean Interface_AllyEnableCustomColor;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Interface_AllyLinearHue;
+	Real Interface_AllyLinearHue;
 /*!
 
 */
-			Boolean Interface_OppoEnableCustomColor;
+	Boolean Interface_OppoEnableCustomColor;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Interface_OppoLinearHue;
+	Real Interface_OppoLinearHue;
 /*!
 
 */
-			Boolean Interface_BeaconUseProfileColor;
+	Boolean Interface_BeaconUseProfileColor;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real Interface_BeaconOpacity;
+	Real Interface_BeaconOpacity;
 /*!
 Values in range (0.100000-5.000000)
 */
-			Real Interface_BeaconSize;
+	Real Interface_BeaconSize;
 /*!
 Values in range (0.500000-15.000000)
 */
-			Real Interface_BeaconDuration;
+	Real Interface_BeaconDuration;
 /*!
 
 */
-			CUserV2Profile::EPlayerVisibility Interface_InternalCamLocalPlayerVisibility;
+	CUserV2Profile::EPlayerVisibility Interface_InternalCamLocalPlayerVisibility;
 /*!
 
 */
-			Boolean Interface_UseOldInternalCam;
+	Boolean Interface_UseOldInternalCam;
 /*!
 
 */
-			Boolean Interface_UseAlternateCam1;
+	Boolean Interface_UseAlternateCam1;
 /*!
 
 */
-			Boolean Interface_UseAlternateCam2;
+	Boolean Interface_UseAlternateCam2;
 /*!
 
 */
-			Boolean Interface_ShowSpecialsFeedback;
+	Boolean Interface_ShowSpecialsFeedback;
 /*!
 
 */
-			Boolean Interface_AlwaysDisplayRecords;
+	Boolean Interface_AlwaysDisplayRecords;
 /*!
 
 */
-			Boolean Interface_AllowChatHiding;
+	Boolean Interface_AllowChatHiding;
 /*!
 
 */
-			Boolean Inputs_MouseLookInvertY;
+	Boolean Interface_ColorblindMode;
 /*!
 
 */
-			CUserV2Profile::EInputMouseReleaseKey Inputs_MouseReleaseKey;
+	Boolean Inputs_MouseLookInvertY;
+/*!
+
+*/
+	CUserV2Profile::EInputMouseReleaseKey Inputs_MouseReleaseKey;
 /*!
 Values in range (0.100000-3.000000)
 */
-			Real Inputs_MouseScaleY;
+	Real Inputs_MouseScaleY;
 /*!
 Values in range (0.100000-3.000000)
 */
-			Real Inputs_MouseScaleFreeLook;
+	Real Inputs_MouseScaleFreeLook;
 /*!
 Values in range (0.000000-3.000000)
 */
-			Real Inputs_MouseAccel;
+	Real Inputs_MouseAccel;
 /*!
 Values in range (-1.000000-1.000000)
 */
-			Real Inputs_MouseSensitivityDefault;
+	Real Inputs_MouseSensitivityDefault;
 /*!
 Values in range (-1.000000-1.000000)
 */
-			Real Inputs_MouseSensitivityLaser;
+	Real Inputs_MouseSensitivityLaser;
 /*!
 
 */
-			Real Inputs_MouseSensitivityDefault_Raw;
+	Real Inputs_MouseSensitivityDefault_Raw;
 /*!
 
 */
-			Real Inputs_MouseSensitivityLaser_Raw;
+	Real Inputs_MouseSensitivityLaser_Raw;
 /*!
 
 */
-			Array<CVehicleSettings> Inputs_Vehicles;
+	Array<CVehicleSettings*> Inputs_Vehicles;
 /*!
 
 */
-			Boolean Adverts_Enabled;
+	Boolean Adverts_Enabled;
 /*!
 
 */
-			Boolean Adverts_UsePersonnalData;
+	Boolean Adverts_UsePersonnalData;
 /*!
 
 */
-			Boolean TTS_Enabled;
+	Boolean TTS_Enabled;
 /*!
 
 */
-			Boolean VoiceChat_Loopback;
+	Boolean VoiceChat_Loopback;
 /*!
 
 */
-			Boolean VoiceChat_Enabled;
-/*!
-
-*/
-			Boolean VoiceChat_PTT_Enabled;
+	Boolean VoiceChat_Enabled;
 };
 
 /*!
@@ -14715,7 +15123,7 @@ public :
 /*!
 
 */
-	const	Array<Text> Values;
+	Array<Text> Values;
 };
 
 /*!
@@ -14726,19 +15134,19 @@ public :
 /*!
 
 */
-	const	Boolean NeedToChangeZone;
+	Boolean  const NeedToChangeZone;
 /*!
 Number of level in the full path of the user zone.
 */
-	const	Integer ZoneLevelCount;
+	Integer  const ZoneLevelCount;
 /*!
 Returns the zone path of the indicated level.
 */
-			Text GetZone(Integer ZoneLevel);
+	Text GetZone(Integer ZoneLevel);
 /*!
 
 */
-	const	Integer MultiInternetPlayTimeLeft;
+	Integer  const MultiInternetPlayTimeLeft;
 	/*!
 	
 	*/
@@ -14751,27 +15159,27 @@ Returns the zone path of the indicated level.
 /*!
 Login.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 Display name.
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 Connection status: NotConnected, Connecting, Connected or Disconnecting.
 */
-	const	CMasterServerUser::EMasterServerConnectionStatus ConnectionStatus;
+	CMasterServerUser::EMasterServerConnectionStatus const  ConnectionStatus;
 /*!
 
 */
-	const	Text LastConnectionErrorType;
+	Text  const LastConnectionErrorType;
 /*!
 
 */
-	const	Text LastConnectionErrorCode;
+	Text  const LastConnectionErrorCode;
 /*!
 
 */
-	const	Text LastConnectionErrorDescription;
+	Text  const LastConnectionErrorDescription;
 };
 
 /*!
@@ -14795,7 +15203,7 @@ public :
 /*!
 
 */
-	const	Boolean Value;
+	Boolean  const Value;
 };
 
 /*!
@@ -14804,12 +15212,12 @@ public :
 * Supported declare modes :
 * - Local
 */
-class CTaskResult_FriendList : public CWebServicesTaskResult_FriendList {
+class CTaskResult_FriendList : public CWebServicesTaskResult_WSFriendList {
 public :
 /*!
 List of friend info contained by this result.
 */
-	const	Array<CFriend> FriendList;
+	Array<CFriend* const > FriendList;
 };
 
 /*!
@@ -14823,7 +15231,53 @@ public :
 /*!
 
 */
-	const	Array<CNews> NewsList;
+	Array<CNews* const > NewsList;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CTaskResult_UserPrestigeList : public CWebServicesTaskResult_WSUserPrestigeList {
+public :
+/*!
+
+*/
+	Array<CUserPrestige* const > UserPrestigeList;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CTaskResult_UserPrestige : public CWebServicesTaskResult_WSUserPrestige {
+public :
+/*!
+
+*/
+	CUserPrestige * const  UserPrestige;
+/*!
+
+*/
+	Boolean  const HasUserPrestige;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CTaskResult_PrestigeList : public CWebServicesTaskResult_WSPrestigeList {
+public :
+/*!
+
+*/
+	Array<CPrestige* const > PrestigeList;
 };
 
 /*!
@@ -14837,7 +15291,7 @@ public :
 /*!
 Squad info contained by this result.
 */
-	const	CSquad Squad;
+	CSquad * const  Squad;
 };
 
 /*!
@@ -14851,7 +15305,7 @@ public :
 /*!
 
 */
-	const	Text Value;
+	Text  const Value;
 };
 
 /*!
@@ -14865,7 +15319,7 @@ public :
 /*!
 Get a club name for a webservices user id. Must be called after the task has succeeded.
 */
-			Text GetClubTag(Text WebServicesUserId);
+	Text GetClubTag(Text WebServicesUserId);
 };
 
 /*!
@@ -14879,15 +15333,15 @@ public :
 /*!
 
 */
-	const	Text SessionId;
+	Text  const SessionId;
 /*!
 
 */
-	const	Text ServerLogin;
+	Text  const ServerLogin;
 /*!
 
 */
-	const	Text ServerPassword;
+	Text  const ServerPassword;
 };
 
 /*!
@@ -14901,7 +15355,7 @@ public :
 /*!
 Notification info contained by this result.
 */
-	const	CNotification Notification;
+	CNotification * const  Notification;
 };
 
 /*!
@@ -14916,19 +15370,19 @@ public :
 /*!
 
 */
-			Void Menu_Goto(Text PageId);
+	Void Menu_Goto(Text PageId);
 /*!
 
 */
-			Void Menu_Back();
+	Void Menu_Back();
 /*!
 
 */
-			Void Menu_Previous();
+	Void Menu_Previous();
 /*!
 
 */
-			Void Menu_Quit();
+	Void Menu_Quit();
 };
 
 /*!
@@ -14969,43 +15423,43 @@ public :
 /*!
 
 */
-	const	CManiaAppEvent::EType Type;
+	CManiaAppEvent::EType const  Type;
 /*!
 
 */
-	const	CUILayer CustomEventLayer;
+	CUILayer * const  CustomEventLayer;
 /*!
 
 */
-	const	Text CustomEventType;
+	Text  const CustomEventType;
 /*!
 
 */
-	const	Array<Text> CustomEventData;
+	Array<Text> CustomEventData;
 /*!
 
 */
-	const	Text ExternalEventType;
+	Text  const ExternalEventType;
 /*!
 
 */
-	const	Array<Text> ExternalEventData;
+	Array<Text> ExternalEventData;
 /*!
 
 */
-	const	CManiaAppEvent::EMenuNavAction MenuNavAction;
+	CManiaAppEvent::EMenuNavAction const  MenuNavAction;
 /*!
 
 */
-	const	Boolean IsActionAutoRepeat;
+	Boolean  const IsActionAutoRepeat;
 /*!
 
 */
-	const	Integer KeyCode;
+	Integer  const KeyCode;
 /*!
 
 */
-	const	Text KeyName;
+	Text  const KeyName;
 };
 
 /*!
@@ -15024,79 +15478,79 @@ public :
 /*!
 
 */
-	const	CTitle TitleMaker;
+	CTitle * const  TitleMaker;
 /*!
 PackCreator - only available when the title author is the current logged user.
 */
-	const	CPackCreator PackCreator;
+	CPackCreator * const  PackCreator;
 /*!
 
 */
-	const	Text EditedTitleId;
+	Text  const EditedTitleId;
 /*!
 
 */
-	const	CPackCreatorTitleInfo EditedTitleInfo;
+	CPackCreatorTitleInfo * const  EditedTitleInfo;
 /*!
 Will copy file 'FileName' from the UserDir to the TitleDir, including its dependencies.
 */
-			Void File_ImportFromUser(Text FileName);
+	Void File_ImportFromUser(Text FileName);
 /*!
 Will move or copy file 'OrigName' to 'DestName'. If DestName is a '\' terminated folder path, keeps the orginial short name.
 */
-			Void File_Move(Text OrigName,Text DestNameOrFolder,Boolean KeepOriginalCopy);
+	Void File_Move(Text OrigName,Text DestNameOrFolder,Boolean KeepOriginalCopy);
 /*!
 
 */
-			Boolean File_Exists(Text FileName,CTitleEdition::EDrive InDrive);
+	Boolean File_Exists(Text FileName,CTitleEdition::EDrive InDrive);
 /*!
 
 */
-			Void File_Delete(Text Name);
+	Void File_Delete(Text Name);
 /*!
 
 */
-			Void File_WriteText(Text FileName,Text Text);
+	Void File_WriteText(Text FileName,Text Text);
 /*!
 
 */
-			Text File_ReadText(Text FileName);
+	Text File_ReadText(Text FileName);
 /*!
 
 */
-			Void Dialog_ImportFiles();
+	Void Dialog_ImportFiles();
 /*!
 
 */
-	const	Boolean Dialog_IsFinished;
+	Boolean  const Dialog_IsFinished;
 /*!
 
 */
-	const	Boolean Dialog_Success;
+	Boolean  const Dialog_Success;
 /*!
 
 */
-	const	Boolean Dialog_Aborted;
+	Boolean  const Dialog_Aborted;
 /*!
 
 */
-			Void OpenTitleFolderInExplorer();
+	Void OpenTitleFolderInExplorer();
 /*!
 
 */
-			Void ReloadTitleDesc();
+	Void ReloadTitleDesc();
 /*!
 
 */
-			Void SaveTitleDesc();
+	Void SaveTitleDesc();
 /*!
 nb: The maps from the campaign are automatically added to the pack, no need to Build_AddFile().
 */
-			Void SetTitleCampaign(Integer CampaignNum,Text ScoreContext,Text MapsFolderNameOrPlayListName,Boolean OfficialRecordEnabled);
+	Void SetTitleCampaign(Integer CampaignNum,Text ScoreContext,Text MapsFolderNameOrPlayListName,Boolean OfficialRecordEnabled);
 /*!
 
 */
-			Void SetTitleCampaign(Integer CampaignNum,Text ScoreContext,Text MapsFolderNameOrPlayListName,Boolean OfficialRecordEnabled,Boolean DisableUnlockSystem);
+	Void SetTitleCampaign(Integer CampaignNum,Text ScoreContext,Text MapsFolderNameOrPlayListName,Boolean OfficialRecordEnabled,Boolean DisableUnlockSystem);
 };
 
 /*!
@@ -15115,19 +15569,19 @@ public :
 /*!
 Events
 */
-	const	Array<CNotificationsConsumerEvent> Events;
+	Array<CNotificationsConsumerEvent* const > Events;
 /*!
 List of the Notifications.
 */
-	const	Array<CNotificationsConsumerNotification> Notifications;
+	Array<CNotificationsConsumerNotification* const > Notifications;
 /*!
 
 */
-	const	Array<CNotificationsConsumerNotification> FilteredNotifications;
+	Array<CNotificationsConsumerNotification* const > FilteredNotifications;
 /*!
 
 */
-			CNotificationsConsumer::EFilterPriority Filter_Priority;
+	CNotificationsConsumer::EFilterPriority Filter_Priority;
 };
 
 /*!
@@ -15138,55 +15592,55 @@ public :
 /*!
 Clear all matchsettings files and reload them from disk. Be aware that any non-saved changes will be lost. Temporary matchsettings are not changed.
 */
-			Void MatchSettings_RefreshFiles();
+	Void MatchSettings_RefreshFiles();
 /*!
 
 */
-			CMatchSettings MatchSettings_FindFile(Text FilePath);
+	CMatchSettings MatchSettings_FindFile(Text FilePath);
 /*!
 Create a new matchsettings file.
 */
-			CMatchSettings MatchSettings_CreateFile(Text FilePath);
+	CMatchSettings MatchSettings_CreateFile(Text FilePath);
 /*!
 Create a new temporary matchsettings. Those will be lost when the game is closed.
 */
-			CMatchSettings MatchSettings_CreateTemp();
+	CMatchSettings MatchSettings_CreateTemp();
 /*!
 Save a matchsettings file.
 */
-			Void MatchSettings_Save(CMatchSettings MatchSettings);
+	Void MatchSettings_Save(CMatchSettings MatchSettings);
 /*!
 
 */
-			Void MatchSettings_ReloadFromFile(CMatchSettings MatchSettings);
+	Void MatchSettings_ReloadFromFile(CMatchSettings MatchSettings);
 /*!
 Save a matchsettings to a new file.
 */
-			CMatchSettings MatchSettings_SaveAs(Text FilePath,CMatchSettings MatchSettings);
+	CMatchSettings MatchSettings_SaveAs(Text FilePath,CMatchSettings MatchSettings);
 /*!
 
 */
-			Void MatchSettings_EditScriptSettings(CMatchSettings MatchSettings);
+	Void MatchSettings_EditScriptSettings(CMatchSettings MatchSettings);
 /*!
 
 */
-	const	Boolean MatchSettings_EditScriptSettings_Ongoing;
+	Boolean  const MatchSettings_EditScriptSettings_Ongoing;
 /*!
 Remove a matchsetting file (or only the matchsetting for temp ones).
 */
-			Void MatchSettings_Remove(CMatchSettings MatchSettings);
+	Void MatchSettings_Remove(CMatchSettings MatchSettings);
 /*!
 Array of the matchsettings
 */
-	const	Array<CMatchSettings> MatchSettings;
+	Array<CMatchSettings* const > MatchSettings;
 /*!
 
 */
-	const	Array<CMatchSettings> MatchSettings_File;
+	Array<CMatchSettings* const > MatchSettings_File;
 /*!
 
 */
-	const	Array<CMatchSettings> MatchSettings_Temp;
+	Array<CMatchSettings* const > MatchSettings_Temp;
 };
 
 /*!
@@ -15264,35 +15718,35 @@ public :
 /*!
 
 */
-	const	CMapEditorPluginEvent::Type Type;
+	CMapEditorPluginEvent::Type const  Type;
 /*!
 
 */
-	const	CMapEditorPluginEvent::EInput Input;
+	CMapEditorPluginEvent::EInput const  Input;
 /*!
 
 */
-	const	Ident EditedAnchorDataId;
+	Ident  const EditedAnchorDataId;
 /*!
 
 */
-	const	Boolean IsFromPad;
+	Boolean  const IsFromPad;
 /*!
 
 */
-	const	Boolean IsFromMouse;
+	Boolean  const IsFromMouse;
 /*!
 
 */
-	const	Boolean IsFromKeyboard;
+	Boolean  const IsFromKeyboard;
 /*!
 
 */
-	const	Boolean OnlyScriptMetadataModified;
+	Boolean  const OnlyScriptMetadataModified;
 /*!
 
 */
-	const	Boolean MapSavedOrSaveCancelled;
+	Boolean  const MapSavedOrSaveCancelled;
 };
 
 /*!
@@ -15303,67 +15757,67 @@ public :
 /*!
 
 */
-	const	CMapEditorInventoryDirectory CurrentRootNode;
+	CMapEditorInventoryDirectory * const  CurrentRootNode;
 /*!
 
 */
-	const	CMapEditorInventoryDirectory CurrentDirectory;
+	CMapEditorInventoryDirectory * const  CurrentDirectory;
 /*!
 
 */
-	const	CMapEditorInventoryNode CurrentSelectedNode;
+	CMapEditorInventoryNode * const  CurrentSelectedNode;
 /*!
 
 */
-			Array<CMapEditorInventoryNode> RootNodes;
+	Array<CMapEditorInventoryNode*> RootNodes;
 /*!
 
 */
-			Void EnterDirectory();
+	Void EnterDirectory();
 /*!
 
 */
-			Void LeaveDirectory();
+	Void LeaveDirectory();
 /*!
 
 */
-			Void SelectArticle(CMapEditorInventoryArticle NodeArticle);
+	Void SelectArticle(CMapEditorInventoryArticle NodeArticle);
 /*!
 
 */
-			Void OpenDirectory(CMapEditorInventoryDirectory NodeDirectory);
+	Void OpenDirectory(CMapEditorInventoryDirectory NodeDirectory);
 /*!
 
 */
-			Void SelectNode(CMapEditorInventoryNode Node);
+	Void SelectNode(CMapEditorInventoryNode Node);
 /*!
 
 */
-			Void OpenBrotherDirectory(Boolean NextOrElsePrevious);
+	Void OpenBrotherDirectory(Boolean NextOrElsePrevious);
 /*!
 
 */
-			Void SelectBrotherArticle(Boolean NextOrElsePrevious);
+	Void SelectBrotherArticle(Boolean NextOrElsePrevious);
 /*!
 
 */
-			Void SelectBrotherNode(Boolean NextOrElsePrevious);
+	Void SelectBrotherNode(Boolean NextOrElsePrevious);
 /*!
 
 */
-			CMapEditorInventoryDirectory GetDirectoryAfter(CMapEditorInventoryNode Node);
+	CMapEditorInventoryDirectory GetDirectoryAfter(CMapEditorInventoryNode Node);
 /*!
 
 */
-			CMapEditorInventoryDirectory GetDirectoryBefore(CMapEditorInventoryNode Node);
+	CMapEditorInventoryDirectory GetDirectoryBefore(CMapEditorInventoryNode Node);
 /*!
 
 */
-			CMapEditorInventoryArticle GetArticleAfter(CMapEditorInventoryNode Node);
+	CMapEditorInventoryArticle GetArticleAfter(CMapEditorInventoryNode Node);
 /*!
 
 */
-			CMapEditorInventoryArticle GetArticleBefore(CMapEditorInventoryNode Node);
+	CMapEditorInventoryArticle GetArticleBefore(CMapEditorInventoryNode Node);
 };
 
 /*!
@@ -15385,39 +15839,39 @@ public :
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Boolean IsRoad;
+	Boolean  const IsRoad;
 /*!
 
 */
-	const	Boolean IsTerrain;
+	Boolean  const IsTerrain;
 /*!
 
 */
-	const	Boolean IsPodium;
+	Boolean  const IsPodium;
 /*!
 
 */
-	const	CBlockModel::EWayPointType WaypointType;
+	CBlockModel::EWayPointType const  WaypointType;
 /*!
 
 */
-	const	Boolean NoRespawn;
+	Boolean  const NoRespawn;
 /*!
 
 */
-	const	Boolean IsClip;
+	Boolean  const IsClip;
 /*!
 
 */
-	const	CBlockModelVariantGround VariantGround;
+	CBlockModelVariantGround * const  VariantGround;
 /*!
 
 */
-	const	CBlockModelVariantAir VariantAir;
+	CBlockModelVariantAir * const  VariantAir;
 };
 
 /*!
@@ -15432,35 +15886,35 @@ public :
 /*!
 
 */
-	const	Boolean IsGround;
+	Boolean  const IsGround;
 /*!
 
 */
-	const	Boolean HasStart;
+	Boolean  const HasStart;
 /*!
 
 */
-	const	Boolean HasFinish;
+	Boolean  const HasFinish;
 /*!
 
 */
-	const	Boolean HasCheckpoint;
+	Boolean  const HasCheckpoint;
 /*!
 
 */
-	const	Boolean HasMultilap;
+	Boolean  const HasMultilap;
 /*!
 
 */
-	const	CBlockModel GeneratedBlockModel;
+	CBlockModel * const  GeneratedBlockModel;
 /*!
 
 */
-			Void ClearScriptMetadata();
+	Void ClearScriptMetadata();
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 };
 
 /*!
@@ -15480,39 +15934,61 @@ public :
 /*!
 
 */
-	const	Boolean CanHaveAnchor;
+	Boolean  const CanHaveAnchor;
 /*!
 
 */
-			Void UseDefaultAnchor();
+	Void UseDefaultAnchor();
 /*!
 
 */
-			Void UseCustomAnchor();
+	Void UseCustomAnchor();
 /*!
 
 */
-	const	Int3 Coord;
+	Int3  const Coord;
 /*!
 
 */
-	const	CMapEditorPlugin::CardinalDirections Dir;
+	CMapEditorPlugin::CardinalDirections const  Dir;
 /*!
 
 */
-	const	CBlock::CardinalDirections Direction;
+	CBlock::CardinalDirections const  Direction;
 /*!
 
 */
-	const	Array<CBlockUnit> BlockUnits;
+	Array<CBlockUnit* const > BlockUnits;
 /*!
 
 */
-	const	CBlockModel BlockModel;
+	CBlockModel * const  BlockModel;
 /*!
 
 */
-			Boolean IsGhostBlock();
+	Boolean IsGhostBlock();
+};
+
+/*!
+* \brief Documentation for class CGameItemModel
+*/
+class CGameItemModel : public CCollector {
+public :
+};
+
+/*!
+* \brief Documentation for class CItemAnchor
+*/
+class CItemAnchor : public CNod {
+public :
+/*!
+
+*/
+	Vec3  const Position;
+/*!
+
+*/
+	CGameItemModel * const  ItemModel;
 };
 
 /*!
@@ -15523,35 +15999,35 @@ public :
 /*!
 
 */
-	const	CMacroblockModel MacroblockModel;
+	CMacroblockModel * const  MacroblockModel;
 /*!
 
 */
-	const	CBlockClipList ClipList;
+	CBlockClipList * const  ClipList;
 /*!
 
 */
-			CMapEditorPlugin::CardinalDirections Dir;
+	CMapEditorPlugin::CardinalDirections Dir;
 /*!
 
 */
-	const	Int3 Coord;
+	Int3  const Coord;
 /*!
 
 */
-			Integer Order;
+	Integer Order;
 /*!
 
 */
-			Integer UserData;
+	Integer UserData;
 /*!
 
 */
-	const	Array<Int3> UnitCoords;
+	Array<Int3> UnitCoords;
 /*!
 
 */
-			Int3 GetSize();
+	Int3 GetSize();
 };
 
 /*!
@@ -15576,27 +16052,27 @@ public :
 /*!
 
 */
-	const	Text DefaultTag;
+	Text  const DefaultTag;
 /*!
 
 */
-	const	Integer DefaultOrder;
+	Integer  const DefaultOrder;
 /*!
 
 */
-			Text Tag;
+	Text Tag;
 /*!
 
 */
-			Integer Order;
+	Integer Order;
 /*!
 
 */
-	const	CAnchorData::EWaypointType WaypointType;
+	CAnchorData::EWaypointType const  WaypointType;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 };
 
 /*!
@@ -15607,47 +16083,47 @@ public :
 /*!
 
 */
-	const	Array<CBlockClip> Clips;
+	Array<CBlockClip* const > Clips;
 /*!
 
 */
-	const	Int3 Size;
+	Int3  const Size;
 /*!
 
 */
-			Boolean SetClipListFromMacroblock(CMacroblockModel MacroBlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean SetClipListFromMacroblock(CMacroblockModel MacroBlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean SetClipListFromMacroblock(CMacroblockModel MacroBlockModel);
+	Boolean SetClipListFromMacroblock(CMacroblockModel MacroBlockModel);
 /*!
 
 */
-			Boolean SetClipListFromBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean SetClipListFromBlock(CBlockModel BlockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Boolean SetClipListFromBlock(CBlockModel BlockModel);
+	Boolean SetClipListFromBlock(CBlockModel BlockModel);
 /*!
 
 */
-			Void CreateAndAddClip(Text Name,Int3 Coord,Int3 Offset,CMapEditorPlugin::CardinalDirections Dir,Integer ClipId);
+	Void CreateAndAddClip(Text Name,Int3 Coord,Int3 Offset,CMapEditorPlugin::CardinalDirections Dir,Integer ClipId);
 /*!
 
 */
-			Boolean SetFromClipList(CBlockClipList ClipList,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	Boolean SetFromClipList(CBlockClipList ClipList,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
 /*!
 
 */
-			Void RemoveClip(CBlockClip Clip);
+	Void RemoveClip(CBlockClip Clip);
 /*!
 
 */
-			Void ClearClips();
+	Void ClearClips();
 /*!
 
 */
-			Void Destroy();
+	Void Destroy();
 };
 
 /*!
@@ -15658,27 +16134,27 @@ public :
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-			CMapEditorPlugin::CardinalDirections Dir;
+	CMapEditorPlugin::CardinalDirections Dir;
 /*!
 
 */
-	const	Int3 Coord;
+	Int3  const Coord;
 /*!
 
 */
-	const	Int3 Offset;
+	Int3  const Offset;
 /*!
 
 */
-			Integer ClipId;
+	Integer ClipId;
 /*!
 
 */
-			Int3 GetConnectableCoord();
+	Int3 GetConnectableCoord();
 };
 
 /*!
@@ -15707,179 +16183,183 @@ public :
 /*!
 
 */
-			Void ReleaseLock();
+	Void ReleaseLock();
 /*!
 
 */
-			Void CenterOnCursor();
+	Void CenterOnCursor();
 /*!
 
 */
-			Void WatchStart();
+	Void WatchStart();
 /*!
 
 */
-			Void WatchClosestFinishLine();
+	Void WatchClosestFinishLine();
 /*!
 
 */
-			Void WatchClosestCheckpoint();
+	Void WatchClosestCheckpoint();
 /*!
 
 */
-			Void WatchWholeMap();
+	Void WatchWholeMap();
 /*!
 
 */
-			Void WatchCustomSelection();
+	Void WatchCustomSelection();
 /*!
 
 */
-			Void MoveToMapCenter();
+	Void MoveToMapCenter();
 /*!
 
 */
-			Boolean GetLock();
+	Boolean GetLock();
 /*!
 
 */
-			Boolean CanUse();
+	Boolean CanUse();
 /*!
 
 */
-			Void TurnH(Boolean Clockwise);
+	Void IgnoreCameraCollisions(Boolean IgnoreCameraCollisions);
 /*!
 
 */
-			Void TurnH(Boolean Clockwise,Boolean HalfSteps);
+	Void TurnH(Boolean Clockwise);
 /*!
 
 */
-			Void TurnH(Boolean Clockwise,Boolean HalfSteps,Boolean Smooth);
+	Void TurnH(Boolean Clockwise,Boolean HalfSteps);
 /*!
 
 */
-			Void TurnV(Boolean UpOrElseDown);
+	Void TurnH(Boolean Clockwise,Boolean HalfSteps,Boolean Smooth);
 /*!
 
 */
-			Void TurnV(Boolean UpOrElseDown,Boolean Smooth);
+	Void TurnV(Boolean UpOrElseDown);
 /*!
 
 */
-			Void Move(CMapEditorPlugin::RelativeDirections RelativeDir);
+	Void TurnV(Boolean UpOrElseDown,Boolean Smooth);
 /*!
 
 */
-			Void FollowCursor(Boolean Follow);
+	Void Move(CMapEditorPlugin::RelativeDirections RelativeDir);
 /*!
 
 */
-			Void CenterOnCursor(Boolean Smooth);
+	Void FollowCursor(Boolean Follow);
 /*!
 
 */
-			Void MoveToMapCenter(Boolean Smooth);
+	Void CenterOnCursor(Boolean Smooth);
 /*!
 
 */
-			Void Watch(CBlock Block);
+	Void MoveToMapCenter(Boolean Smooth);
 /*!
 
 */
-			Void Watch(CBlock Block,Boolean Smooth);
+	Void Watch(CBlock Block);
 /*!
 
 */
-			Void Watch(CMacroblockInstance Macroblock);
+	Void Watch(CBlock Block,Boolean Smooth);
 /*!
 
 */
-			Void Watch(CMacroblockInstance Macroblock,Boolean Smooth);
+	Void Watch(CMacroblockInstance Macroblock);
 /*!
 
 */
-			Void Watch(CBlockClip Clip);
+	Void Watch(CMacroblockInstance Macroblock,Boolean Smooth);
 /*!
 
 */
-			Void Watch(CBlockClip Clip,Boolean Smooth);
+	Void Watch(CBlockClip Clip);
 /*!
 
 */
-			Void WatchStart(Boolean Smooth);
+	Void Watch(CBlockClip Clip,Boolean Smooth);
 /*!
 
 */
-			Void WatchClosestFinishLine(Boolean Smooth);
+	Void WatchStart(Boolean Smooth);
 /*!
 
 */
-			Void WatchClosestCheckpoint(Boolean Smooth);
+	Void WatchClosestFinishLine(Boolean Smooth);
 /*!
 
 */
-			Void WatchWholeMap(Boolean Smooth);
+	Void WatchClosestCheckpoint(Boolean Smooth);
 /*!
 
 */
-			Void WatchMacroblocks(Integer UserData);
+	Void WatchWholeMap(Boolean Smooth);
 /*!
 
 */
-			Void WatchMacroblocks(Integer UserData,Boolean Smooth);
+	Void WatchMacroblocks(Integer UserData);
 /*!
 
 */
-			Void ZoomIn(Boolean Loop);
+	Void WatchMacroblocks(Integer UserData,Boolean Smooth);
 /*!
 
 */
-			Void ZoomIn(Boolean Loop,Boolean Smooth);
+	Void ZoomIn(Boolean Loop);
 /*!
 
 */
-			Void ZoomOut(Boolean Loop);
+	Void ZoomIn(Boolean Loop,Boolean Smooth);
 /*!
 
 */
-			Void ZoomOut(Boolean Loop,Boolean Smooth);
+	Void ZoomOut(Boolean Loop);
 /*!
 
 */
-			Void Zoom(CMapEditorCamera::EZoomLevel Level);
+	Void ZoomOut(Boolean Loop,Boolean Smooth);
 /*!
 
 */
-			Void Zoom(CMapEditorCamera::EZoomLevel Level,Boolean Smooth);
+	Void Zoom(CMapEditorCamera::EZoomLevel Level);
 /*!
 
 */
-			Void Look(CMapEditorPlugin::CardinalDirections8 Direction);
+	Void Zoom(CMapEditorCamera::EZoomLevel Level,Boolean Smooth);
 /*!
 
 */
-			Void Look(CMapEditorPlugin::CardinalDirections8 Direction,Boolean Smooth);
+	Void Look(CMapEditorPlugin::CardinalDirections8 Direction);
 /*!
 
 */
-			Void Look(CMapEditorPlugin::CardinalDirections Direction);
+	Void Look(CMapEditorPlugin::CardinalDirections8 Direction,Boolean Smooth);
 /*!
 
 */
-			Void Look(CMapEditorPlugin::CardinalDirections Direction,Boolean Smooth);
+	Void Look(CMapEditorPlugin::CardinalDirections Direction);
 /*!
 
 */
-			Void SetVStep(CMapEditorCamera::ECameraVStep Step);
+	Void Look(CMapEditorPlugin::CardinalDirections Direction,Boolean Smooth);
 /*!
 
 */
-			Void WatchCustomSelection(Boolean WatchCustomSelection);
+	Void SetVStep(CMapEditorCamera::ECameraVStep Step);
 /*!
 
 */
-			Void ActivateScrollRotateMode(Boolean ActivateScrollRotateMode);
+	Void WatchCustomSelection(Boolean WatchCustomSelection);
+/*!
+
+*/
+	Void ActivateScrollRotateMode(Boolean ActivateScrollRotateMode);
 };
 
 /*!
@@ -15890,118 +16370,107 @@ public :
 /*!
 
 */
-			Void ReleaseLock();
+	Void ReleaseLock();
 /*!
 
 */
-			Int3 Coord;
+	Int3 Coord;
 /*!
 
 */
-			CMapEditorPlugin::CardinalDirections Dir;
+	CMapEditorPlugin::CardinalDirections Dir;
 /*!
 
 */
-			CBlockModel BlockModel;
+	CBlockModel * BlockModel;
 /*!
 
 */
-			CBlockModel TerrainBlockModel;
+	CBlockModel * TerrainBlockModel;
 /*!
 
 */
-			CMacroblockModel MacroblockModel;
+	CMacroblockModel * MacroblockModel;
 /*!
 
 */
-			Real Brightness;
+	Real Brightness;
 /*!
 
 */
-			Boolean HideDirectionalArrow;
+	Boolean HideDirectionalArrow;
 /*!
 
 */
-			Void MoveToCameraTarget();
+	Void MoveToCameraTarget();
 /*!
 
 */
-			Void ResetCustomRGB();
+	Void ResetCustomRGB();
 /*!
 
 */
-			Boolean GetLock();
+	Boolean GetLock();
 /*!
 
 */
-			Boolean CanUse();
+	Boolean CanUse();
 /*!
 
 */
-			Boolean Raise();
+	Boolean Raise();
 /*!
 
 */
-			Boolean Lower();
+	Boolean Lower();
 /*!
 
 */
-			Void FollowCameraTarget(Boolean Follow);
+	Void FollowCameraTarget(Boolean Follow);
 /*!
 
 */
-			Void Rotate(Boolean CWOrCCW);
+	Void Rotate(Boolean CWOrCCW);
 /*!
 
 */
-			Void Move(CMapEditorPlugin::CardinalDirections CardinalDir);
+	Void Move(CMapEditorPlugin::CardinalDirections CardinalDir);
 /*!
 
 */
-			Void Move(CMapEditorPlugin::CardinalDirections8 CardinalDir8);
+	Void Move(CMapEditorPlugin::CardinalDirections8 CardinalDir8);
 /*!
 
 */
-			Void Move(CMapEditorPlugin::RelativeDirections RelativeDir);
+	Void Move(CMapEditorPlugin::RelativeDirections RelativeDir);
 /*!
 
 */
-			Void DisableMouseDetection(Boolean Disable);
+	Void DisableMouseDetection(Boolean Disable);
 /*!
 
 */
-			Boolean CanPlace();
+	Boolean CanPlace();
 /*!
 
 */
-			Boolean IsCustomRGBActivated();
+	Boolean IsCustomRGBActivated();
 /*!
 
 */
-			Boolean IsCurrentItemAnimated();
+	Boolean IsCurrentItemAnimated();
 /*!
 
 */
-			Boolean CurrentMacroblockHasAnimatedItem();
+	Boolean CurrentMacroblockHasAnimatedItem();
 /*!
 
 */
-			Boolean CurrentSelectionHasAnimatedItem();
+	Boolean CurrentSelectionHasAnimatedItem();
 /*!
 
 */
-			Void SetCustomRGB(Vec3 Color);
-};
-
-/*!
-* \brief Documentation for class CItemAnchor
-*/
-class CItemAnchor : public CNod {
-public :
-/*!
-
-*/
-	const	Vec3 Position;
+	Void SetCustomRGB(Vec3 Color);
 };
 
 /*!
@@ -16012,15 +16481,15 @@ public :
 /*!
 
 */
-			Boolean CanPlace;
+	Boolean CanPlace;
 /*!
 
 */
-			Int3 Coord;
+	Int3 Coord;
 /*!
 
 */
-			CMapEditorPlugin::CardinalDirections Dir;
+	CMapEditorPlugin::CardinalDirections Dir;
 };
 
 /*!
@@ -16060,64 +16529,64 @@ public :
 /*!
 
 */
-	const	CUIConfigMarker::EAnchorType Type;
+	CUIConfigMarker::EAnchorType const  Type;
 /*!
 
 */
-			Boolean IsTurning;
+	Boolean IsTurning;
 /*!
 
 */
-			Boolean ShowArmor;
+	Boolean ShowArmor;
 /*!
 
 */
-			Text Label;
+	Text Label;
 /*!
 
 */
-			Vec3 Box;
+	Vec3 Box;
 /*!
 
 */
-			Text Icon;
+	Text Icon;
 /*!
 
 */
-			Vec3 Color;
+	Vec3 Color;
 /*!
 
 */
-			Text ImageUrl;
+	Text ImageUrl;
 /*!
 
 */
-			Text ManialinkFrameId;
+	Text ManialinkFrameId;
 /*!
 
 */
-			Real DistMin;
+	Real DistMin;
 /*!
 DistMax is not used to fade out the marker when spectating
 */
-			Real DistMax;
+	Real DistMax;
 /*!
 
 */
-			CUIConfigMarker::EMiniMapVisibility MiniMapVisibility;
+	CUIConfigMarker::EMiniMapVisibility MiniMapVisibility;
 /*!
 
 */
-			CUIConfigMarker::EHudVisibility HudVisibility;
+	CUIConfigMarker::EHudVisibility HudVisibility;
 /*!
 Hide the marker if it is on the current player.
 Only if Type is EAnchorType::Player .
 */
-			Boolean HideOnSelf;
+	Boolean HideOnSelf;
 /*!
 
 */
-			Real Gauge;
+	Real Gauge;
 };
 
 /*!
@@ -16132,43 +16601,43 @@ public :
 /*!
 Use this instead of Id when filling CUIConfig.MarkersXML
 */
-	const	Ident MarkerId;
+	Ident  const MarkerId;
 /*!
 
 */
-	const	Text Tag;
+	Text  const Tag;
 /*!
 
 */
-	const	Integer Order;
+	Integer  const Order;
 /*!
 
 */
-	const	Vec3 Position;
+	Vec3  const Position;
 /*!
 
 */
-	const	CMapSector Sector;
+	CMapSector * const  Sector;
 /*!
 
 */
-	const	CMapWaypoint Waypoint;
+	CMapWaypoint * const  Waypoint;
 /*!
 
 */
-	const	CMapSpawn PlayerSpawn;
+	CMapSpawn * const  PlayerSpawn;
 /*!
 
 */
-	const	CMapBotPath BotPath;
+	CMapBotPath * const  BotPath;
 /*!
 
 */
-	const	CMapBotSpawn BotSpawn;
+	CMapBotSpawn * const  BotSpawn;
 /*!
 
 */
-	const	CMapObjectAnchor ObjectAnchor;
+	CMapObjectAnchor * const  ObjectAnchor;
 };
 
 /*!
@@ -16212,43 +16681,43 @@ public :
 /*!
 
 */
-	const	CUIConfigEvent::EType Type;
+	CUIConfigEvent::EType const  Type;
 /*!
 
 */
-	const	CUIConfig UI;
+	CUIConfig * const  UI;
 /*!
 
 */
-	const	CUIConfigEvent::EModuleType ModuleType;
+	CUIConfigEvent::EModuleType const  ModuleType;
 /*!
 
 */
-	const	Text Param1;
+	Text  const Param1;
 /*!
 
 */
-	const	Array<Text> Param2;
+	Array<Text> Param2;
 /*!
 
 */
-	const	CUILayer CustomEventLayer;
+	CUILayer * const  CustomEventLayer;
 /*!
 
 */
-	const	Text CustomEventType;
+	Text  const CustomEventType;
 /*!
 
 */
-	const	Array<Text> CustomEventData;
+	Array<Text> CustomEventData;
 /*!
 
 */
-	const	Text ItemUrl;
+	Text  const ItemUrl;
 /*!
 
 */
-	const	Integer Quantity;
+	Integer  const Quantity;
 };
 
 /*!
@@ -16259,119 +16728,119 @@ public :
 /*!
 
 */
-	const	Text ServerName;
+	Text  const ServerName;
 /*!
 
 */
-	const	Text ServerLogin;
+	Text  const ServerLogin;
 /*!
 
 */
-	const	Text JoinLink;
+	Text  const JoinLink;
 /*!
 
 */
-	const	Text Comment;
+	Text  const Comment;
 /*!
 
 */
-	const	Text ServerVersionBuild;
+	Text  const ServerVersionBuild;
 /*!
 
 */
-	const	Integer PlayerCount;
+	Integer  const PlayerCount;
 /*!
 
 */
-	const	Integer MaxPlayerCount;
+	Integer  const MaxPlayerCount;
 /*!
 
 */
-	const	Integer SpectatorCount;
+	Integer  const SpectatorCount;
 /*!
 
 */
-	const	Integer MaxSpectatorCount;
+	Integer  const MaxSpectatorCount;
 /*!
 
 */
-	const	Real PlayersLevelMin;
+	Real  const PlayersLevelMin;
 /*!
 
 */
-	const	Real PlayersLevelAvg;
+	Real  const PlayersLevelAvg;
 /*!
 
 */
-	const	Real PlayersLevelMax;
+	Real  const PlayersLevelMax;
 /*!
 
 */
-	const	Text ModeName;
+	Text  const ModeName;
 /*!
 
 */
-	const	Real LadderServerLimitMax;
+	Real  const LadderServerLimitMax;
 /*!
 
 */
-	const	Real LadderServerLimitMin;
+	Real  const LadderServerLimitMin;
 /*!
 
 */
-	const	Array<Text> PlayerNames;
+	Array<Text> PlayerNames;
 /*!
 
 */
-	const	Array<Text> ChallengeNames;
+	Array<Text> ChallengeNames;
 /*!
 
 */
-	const	Array<Text> ChallengeIds;
+	Array<Text> ChallengeIds;
 /*!
 
 */
-	const	Integer NbChallenges;
+	Integer  const NbChallenges;
 /*!
 
 */
-	const	Boolean HasBuddies;
+	Boolean  const HasBuddies;
 /*!
 
 */
-	const	Boolean IsFavourite;
+	Boolean  const IsFavourite;
 /*!
 
 */
-	const	Boolean IsLobbyServer;
+	Boolean  const IsLobbyServer;
 /*!
 
 */
-	const	Boolean IsPrivate;
+	Boolean  const IsPrivate;
 /*!
 
 */
-	const	Boolean IsPrivateForSpectator;
+	Boolean  const IsPrivateForSpectator;
 /*!
 
 */
-	const	Boolean IsMapDownloadAllowed;
+	Boolean  const IsMapDownloadAllowed;
 /*!
 
 */
-	const	Boolean IsTeamMode;
+	Boolean  const IsTeamMode;
 /*!
 
 */
-	const	Boolean IsDisableChangeTeams;
+	Boolean  const IsDisableChangeTeams;
 /*!
 
 */
-	const	Text SendToServerAfterMatchUrl;
+	Text  const SendToServerAfterMatchUrl;
 /*!
 
 */
-	const	Integer ViewerCount;
+	Integer  const ViewerCount;
 };
 
 /*!
@@ -16393,23 +16862,23 @@ public :
 /*!
 
 */
-	const	CXmlRpcEvent::EType Type;
+	CXmlRpcEvent::EType const  Type;
 /*!
 
 */
-	const	Text Param1;
+	Text  const Param1;
 /*!
 
 */
-	const	Text Param2;
+	Text  const Param2;
 /*!
 
 */
-	const	Text ParamArray1;
+	Text  const ParamArray1;
 /*!
 
 */
-	const	Array<Text> ParamArray2;
+	Array<Text> ParamArray2;
 };
 
 /*!
@@ -16430,31 +16899,42 @@ public :
 /*!
 
 */
-			Integer Time;
+	Integer Time;
 /*!
 
 */
-			Integer Score;
+	Integer Score;
 /*!
 
 */
-			Integer NbRespawns;
+	Integer NbRespawns;
 /*!
 
 */
-			Ident SpawnLandmarkId;
+	Ident SpawnLandmarkId;
 /*!
 
 */
-			Array<Integer> Checkpoints;
+	Array<Integer> Checkpoints;
 /*!
 
 */
-			Array<Ident> CheckpointLandmarkIds;
+	Array<Ident> CheckpointLandmarkIds;
 /*!
 
 */
-			Integer Compare(CTmRaceResultNod Other,CTmRaceResultNod::ETmRaceResultCriteria Criteria);
+	Integer Compare(CTmRaceResultNod Other,CTmRaceResultNod::ETmRaceResultCriteria Criteria);
+};
+
+/*!
+* \brief Documentation for class CNotification
+*/
+class CNotification : public CNod {
+public :
+/*!
+
+*/
+	Text  const Type;
 };
 
 /*!
@@ -16465,47 +16945,47 @@ public :
 /*!
 
 */
-			CModulePlaygroundInventory Inventory;
+	CModulePlaygroundInventory * Inventory;
 /*!
 
 */
-			CModulePlaygroundStore Store;
+	CModulePlaygroundStore * Store;
 /*!
 
 */
-			CModulePlaygroundScoresTable ScoresTable;
+	CModulePlaygroundScoresTable * ScoresTable;
 /*!
 
 */
-			CModulePlaygroundChrono Chrono;
+	CModulePlaygroundChrono * Chrono;
 /*!
 
 */
-			CModulePlaygroundSpeedMeter SpeedMeter;
+	CModulePlaygroundSpeedMeter * SpeedMeter;
 /*!
 
 */
-			CModulePlaygroundPlayerState PlayerState;
+	CModulePlaygroundPlayerState * PlayerState;
 /*!
 
 */
-			CModulePlaygroundTeamState TeamState;
+	CModulePlaygroundTeamState * TeamState;
 /*!
 
 */
-	const	Array<CModulePlayground> Modules;
+	Array<CModulePlayground* const > Modules;
 /*!
 
 */
-			Void SwitchContext(CPlayer Player,Text ContextName);
+	Void SwitchContext(CPlayer Player,Text ContextName);
 /*!
 
 */
-			Void SetDefaultContext(CPlayer Player);
+	Void SetDefaultContext(CPlayer Player);
 /*!
 
 */
-			Ident RetrieveModuleId(Text ModuleName);
+	Ident RetrieveModuleId(Text ModuleName);
 };
 
 /*!
@@ -16519,7 +16999,7 @@ public :
 /*!
 List of account trophy gain contained in this result.
 */
-	const	Array<CAccountTrophyGain> AccountTrophyGainList;
+	Array<CAccountTrophyGain* const > AccountTrophyGainList;
 };
 
 /*!
@@ -16530,71 +17010,71 @@ public :
 /*!
 
 */
-			Void MapTurrets_Reset();
+	Void MapTurrets_Reset();
 /*!
 
 */
-			CModeTurret Turret_Create(Ident ModelId,Vec3 Position,Vec3 Direction,Integer Clan,CPlayer OwnerPlayer);
+	CModeTurret Turret_Create(Ident ModelId,Vec3 Position,Vec3 Direction,Integer Clan,CPlayer OwnerPlayer);
 /*!
 
 */
-			CModeTurret Turret_CreateWithOwner(Ident ModelId,Vec3 Position,Vec3 Direction,Vec3 Up,Integer Clan,Ident OwnerId);
+	CModeTurret Turret_CreateWithOwner(Ident ModelId,Vec3 Position,Vec3 Direction,Vec3 Up,Integer Clan,Ident OwnerId);
 /*!
 
 */
-			CModeTurret Turret_CreateWithOwner(Ident ModelId,Vec3 Position,Vec3 Direction,Vec3 Up,Integer Clan,Ident OwnerId,Boolean AutoAimOn,Boolean AutoTriggerOn);
+	CModeTurret Turret_CreateWithOwner(Ident ModelId,Vec3 Position,Vec3 Direction,Vec3 Up,Integer Clan,Ident OwnerId,Boolean AutoAimOn,Boolean AutoTriggerOn);
 /*!
 
 */
-			Vec3 Turret_GetPosition(CModeTurret Turret);
+	Vec3 Turret_GetPosition(CModeTurret Turret);
 /*!
 
 */
-			Void Turret_Destroy(CModeTurret Turret);
+	Void Turret_Destroy(CModeTurret Turret);
 /*!
 
 */
-			Void Turret_DestroyAll();
+	Void Turret_DestroyAll();
 /*!
 
 */
-			Void Turret_Activate(CModeTurret Turret);
+	Void Turret_Activate(CModeTurret Turret);
 /*!
 
 */
-			Void Turret_Deactivate(CModeTurret Turret);
+	Void Turret_Deactivate(CModeTurret Turret);
 /*!
 
 */
-			Void Turret_SetIsAutomatic(CModeTurret Turret,Boolean IsAuto);
+	Void Turret_SetIsAutomatic(CModeTurret Turret,Boolean IsAuto);
 /*!
 
 */
-			Void Turret_Auto_SetAimAnticipation(CModeTurret Turret,Real AimAnticipationMs);
+	Void Turret_Auto_SetAimAnticipation(CModeTurret Turret,Real AimAnticipationMs);
 /*!
 
 */
-			Void Turret_Auto_SetFirePeriod(CModeTurret Turret,Integer FirePeriodMs);
+	Void Turret_Auto_SetFirePeriod(CModeTurret Turret,Integer FirePeriodMs);
 /*!
 
 */
-			Void Turret_Auto_SetTargetDetectionFov(CModeTurret Turret,Real DectectionFOVDeg);
+	Void Turret_Auto_SetTargetDetectionFov(CModeTurret Turret,Real DectectionFOVDeg);
 /*!
 
 */
-			Void Turret_Auto_SetTargetDetectionRadius(CModeTurret Turret,Real DetectionRadius);
+	Void Turret_Auto_SetTargetDetectionRadius(CModeTurret Turret,Real DetectionRadius);
 /*!
 
 */
-			Void Turret_Manual_SetTargetPos(CModeTurret Turret,Vec3 TargetPos);
+	Void Turret_Manual_SetTargetPos(CModeTurret Turret,Vec3 TargetPos);
 /*!
 
 */
-			Void Turret_Manual_Fire(CModeTurret Turret);
+	Void Turret_Manual_Fire(CModeTurret Turret);
 /*!
 
 */
-			Array<CModeTurret> Turrets;
+	Array<CModeTurret*> Turrets;
 };
 
 /*!
@@ -16622,47 +17102,47 @@ public :
 /*!
 
 */
-			Void MapVehicles_Reset();
+	Void MapVehicles_Reset();
 /*!
 
 */
-			Void DestroyAllVehicles();
+	Void DestroyAllVehicles();
 /*!
 
 */
-			CModeVehicle Vehicle_Create(Ident ModelId,Integer Clan,Integer Armor,CModeVehicleManager::EArmorUse ArmorUse,CMapSpawn Spawn);
+	CModeVehicle Vehicle_Create(Ident ModelId,Integer Clan,Integer Armor,CModeVehicleManager::EArmorUse ArmorUse,CMapSpawn Spawn);
 /*!
 
 */
-			CModeVehicle Vehicle_Create(Ident ModelId,Vec3 Offset,Integer Armor,CModeVehicleManager::EArmorUse ArmorUse,CModeVehicle Owner);
+	CModeVehicle Vehicle_Create(Ident ModelId,Vec3 Offset,Integer Armor,CModeVehicleManager::EArmorUse ArmorUse,CModeVehicle Owner);
 /*!
 
 */
-			Void Vehicle_Destroy(CModeVehicle Vehicle);
+	Void Vehicle_Destroy(CModeVehicle Vehicle);
 /*!
 
 */
-			Void Vehicle_Assign_AutoPilot(CModeVehicle Vehicle,Text ModelName);
+	Void Vehicle_Assign_AutoPilot(CModeVehicle Vehicle,Text ModelName);
 /*!
 
 */
-			Void Vehicle_Assign_AutoPilot(CModeVehicle Vehicle,Text ModelName,Boolean LoopPath);
+	Void Vehicle_Assign_AutoPilot(CModeVehicle Vehicle,Text ModelName,Boolean LoopPath);
 /*!
 
 */
-			Void Vehicle_SetTrailVisible(CModeVehicle Vehicle,Boolean IsVisible);
+	Void Vehicle_SetTrailVisible(CModeVehicle Vehicle,Boolean IsVisible);
 /*!
 
 */
-			Void Vehicle_SetShieldVisible(CModeVehicle Vehicle,Boolean IsVisible);
+	Void Vehicle_SetShieldVisible(CModeVehicle Vehicle,Boolean IsVisible);
 /*!
 
 */
-			Integer VehicleModel_GetSlotsCount(Ident ModelId,CModeVehicleManager::ESlotType SlotType);
+	Integer VehicleModel_GetSlotsCount(Ident ModelId,CModeVehicleManager::ESlotType SlotType);
 /*!
 
 */
-			Array<CModeVehicle> Vehicles;
+	Array<CModeVehicle*> Vehicles;
 };
 
 /*!
@@ -16686,19 +17166,19 @@ public :
 /*!
 
 */
-			CActionInterface Action_GetState(CPlayer Player,CActionManager::EActionSlot Slot);
+	CActionInterface Action_GetState(CPlayer Player,CActionManager::EActionSlot Slot);
 /*!
 
 */
-			CActionInterface Action_GetState(CModeVehicle Vehicle,Integer VehicleSlotIndex,CActionManager::EActionSlot Slot);
+	CActionInterface Action_GetState(CModeVehicle Vehicle,Integer VehicleSlotIndex,CActionManager::EActionSlot Slot);
 /*!
 
 */
-			CActionInterface Action_GetState(CModeTurret Turret,CActionManager::EActionSlot Slot);
+	CActionInterface Action_GetState(CModeTurret Turret,CActionManager::EActionSlot Slot);
 /*!
 
 */
-			Array<CActionInterface> Actions;
+	Array<CActionInterface*> Actions;
 };
 
 /*!
@@ -16712,7 +17192,7 @@ public :
 /*!
 
 */
-			Array<SWebServicesTaskResult_GhostDriver_Download_Team> Teams;
+	Array<SWebServicesTaskResult_GhostDriver_Download_Team*> Teams;
 };
 
 /*!
@@ -16769,253 +17249,253 @@ public :
 /*!
 
 */
-			CSmPlayerDriver::ESmDriverBehaviour Behaviour;
+	CSmPlayerDriver::ESmDriverBehaviour Behaviour;
 /*!
 
 */
-			Boolean PursueTarget;
+	Boolean PursueTarget;
 /*!
 
 */
-			Real AggroRadius;
+	Real AggroRadius;
 /*!
 
 */
-			Real ShootRadius;
+	Real ShootRadius;
 /*!
 
 */
-			Real TargetMinDistance;
+	Real TargetMinDistance;
 /*!
 
 */
-			Real DisengageDistance;
+	Real DisengageDistance;
 /*!
 
 */
-			Real PathSpeedCoef;
+	Real PathSpeedCoef;
 /*!
 
 */
-			Real Accuracy;
+	Real Accuracy;
 /*!
 
 */
-			Integer ReactionTime;
+	Integer ReactionTime;
 /*!
 
 */
-			Integer ShootPeriodMin;
+	Integer ShootPeriodMin;
 /*!
 
 */
-			Integer ShootPeriodMax;
+	Integer ShootPeriodMax;
 /*!
 
 */
-			Boolean RocketAnticipation;
+	Boolean RocketAnticipation;
 /*!
 The field of view angle the driver uses to search for targets. Value in degrees.Values in range (0.000000-360.000000)
 */
-			Real TargetDetectionFov;
+	Real TargetDetectionFov;
 /*!
 
 */
-			CSmPlayerDriver::ESmAttackFilter AttackFilter;
+	CSmPlayerDriver::ESmAttackFilter AttackFilter;
 /*!
 
 */
-	const	CSmPlayer Target;
+	CSmPlayer * const  Target;
 /*!
 
 */
-	const	Boolean IsStuck;
+	Boolean  const IsStuck;
 /*!
 PathFinding takes some time to compute and doesn't always reach the intended goal. The player will most probably reach the goal in the case CSmPlayerDriver::ESmDriverPathState::Full.
 */
-	const	CSmPlayerDriver::ESmDriverPathState PathState;
+	CSmPlayerDriver::ESmDriverPathState const  PathState;
 /*!
 
 */
-	const	CSmPlayer Owner;
+	CSmPlayer * const  Owner;
 /*!
 
 */
-			Void Scripted_Move(Vec3 Goal);
+	Void Scripted_Move(Vec3 Goal);
 /*!
 
 */
-			Void Scripted_MoveDelta(Vec3 Delta);
+	Void Scripted_MoveDelta(Vec3 Delta);
 /*!
 
 */
-			Void Scripted_MoveAndAim(Vec3 Goal);
+	Void Scripted_MoveAndAim(Vec3 Goal);
 /*!
 
 */
-			Void Scripted_MoveDeltaAndAim(Vec3 Delta);
+	Void Scripted_MoveDeltaAndAim(Vec3 Delta);
 /*!
 
 */
-			Void Scripted_Aim(Vec3 Goal);
+	Void Scripted_Aim(Vec3 Goal);
 /*!
 
 */
-			Void Scripted_AimDelta(Real DeltaYaw,Real DeltaPitch);
+	Void Scripted_AimDelta(Real DeltaYaw,Real DeltaPitch);
 /*!
 Same as Scripted_RequestInput(CSmMode::EActionInput::Movement).
 */
-			Void Scripted_RequestAction();
+	Void Scripted_RequestAction();
 /*!
 Same as Scripted_RequestInput(CSmMode::EActionInput::Weapon). This has no effect when ForcedTarget is not Null.
 */
-			Void Scripted_RequestGunTrigger();
+	Void Scripted_RequestGunTrigger();
 /*!
 
 */
-			Void Scripted_RequestInput(CSmMode::EActionInput Input);
+	Void Scripted_RequestInput(CSmMode::EActionInput Input);
 /*!
 
 */
-			CSmPlayerDriver::ESmDriverPatrolMode Patrol_Mode;
+	CSmPlayerDriver::ESmDriverPatrolMode Patrol_Mode;
 /*!
 
 */
-			CMapBotPath Patrol_Path;
+	CMapBotPath * Patrol_Path;
 /*!
 Note that CSmMode::SpawnPlayer and CSmMode::SpawnBotPlayer may reset this value to the spawn position.
 */
-			Vec3 Escape_AnchorPoint;
+	Vec3 Escape_AnchorPoint;
 /*!
 
 */
-			Real Escape_DistanceSafe;
+	Real Escape_DistanceSafe;
 /*!
 
 */
-			Real Escape_DistanceMinEscape;
+	Real Escape_DistanceMinEscape;
 /*!
 
 */
-			Real Escape_DistanceMaxEscape;
+	Real Escape_DistanceMaxEscape;
 /*!
 Note that CSmMode::SpawnPlayer and CSmMode::SpawnBotPlayer may reset this value to the spawn position.
 */
-			Vec3 Saunter_AnchorPoint;
+	Vec3 Saunter_AnchorPoint;
 /*!
 
 */
-			Integer Saunter_BaseChillingTime;
+	Integer Saunter_BaseChillingTime;
 /*!
 
 */
-			Integer Saunter_ChillingTimeDelta;
+	Integer Saunter_ChillingTimeDelta;
 /*!
 
 */
-			Real Saunter_Radius;
+	Real Saunter_Radius;
 /*!
 Note that CSmMode::SpawnPlayer and CSmMode::SpawnBotPlayer may reset this value to the spawn position.
 */
-			Vec3 Orbit_AnchorPoint;
+	Vec3 Orbit_AnchorPoint;
 /*!
 
 */
-			Real Orbit_Radius;
+	Real Orbit_Radius;
 /*!
 
 */
-			Boolean Orbit_IsClockWise;
+	Boolean Orbit_IsClockWise;
 /*!
 
 */
-			Boolean Scripted_ForceAimInMoveDir;
+	Boolean Scripted_ForceAimInMoveDir;
 /*!
 
 */
-			Vec3 Follow_Offset;
+	Vec3 Follow_Offset;
 /*!
 
 */
-			Boolean Follow_ForceAimInLeaderDir;
+	Boolean Follow_ForceAimInLeaderDir;
 /*!
 
 */
-			Boolean Follow_HasLeader;
+	Boolean Follow_HasLeader;
 /*!
 
 */
-			CSmPlayer Follow_Leader;
+	CSmPlayer * Follow_Leader;
 /*!
 
 */
-			Vec3 Follow_AnchorPoint;
+	Vec3 Follow_AnchorPoint;
 /*!
 
 */
-			CSmPlayer ForcedTarget;
+	CSmPlayer * ForcedTarget;
 /*!
 
 */
-			Array<CSmPlayer> TargetsToAvoid;
+	Array<CSmPlayer*> TargetsToAvoid;
 /*!
 
 */
-			Boolean PredictJump;
+	Boolean PredictJump;
 /*!
 
 */
-			Boolean UsePathFinding;
+	Boolean UsePathFinding;
 /*!
 
 */
-			CSmMode::EActionInput OnStuckInput;
+	CSmMode::EActionInput OnStuckInput;
 /*!
 
 */
-			Real MaxPathDivergence;
+	Real MaxPathDivergence;
 /*!
 If larger than 0.0, this bot can attack destructible parts of the world.
 */
-			Real TargetWorldRadius;
+	Real TargetWorldRadius;
 /*!
 How much the driver value attacking the world rather than players. 0.0 for players only, 1.0 for world only, 0.5 for no preference.Values in range (0.000000-1.000000)
 */
-			Real TargetWorldPriority;
+	Real TargetWorldPriority;
 /*!
 How long the driver will try to chase its target after it can't see it, 0 to disable.
 */
-			Integer LostTargetChaseDuration;
+	Integer LostTargetChaseDuration;
 /*!
 Flocking is a work in progress.
 You need to fill this array and define a default behaviour for each member of the flock.
 */
-			Array<CSmPlayerDriver> FlockPartners;
+	Array<CSmPlayerDriver*> FlockPartners;
 /*!
 Flocking is a work in progress.
 How far the driver see its neighbours.
 */
-			Real FlockRadius;
+	Real FlockRadius;
 /*!
 Flocking is a work in progress.
 The field of view angle the driver uses to see its neighbours. Value in degrees.Values in range (0.000000-360.000000)
 */
-			Real FlockFov;
+	Real FlockFov;
 /*!
 Flocking is a work in progress.
 How much the driver values going towards its neighbours.
 */
-			Real FlockCohesionWeight;
+	Real FlockCohesionWeight;
 /*!
 Flocking is a work in progress.
 How much the driver values going the same direction as its neighbours.
 */
-			Real FlockAlignmentWeight;
+	Real FlockAlignmentWeight;
 /*!
 Flocking is a work in progress.
 How much the driver values not hitting its neighbours.
 */
-			Real FlockSeparationWeight;
+	Real FlockSeparationWeight;
 };
 
 /*!
@@ -17029,11 +17509,11 @@ public :
 /*!
 
 */
-	const	Boolean HasBeenPassed;
+	Boolean  const HasBeenPassed;
 /*!
 
 */
-	const	Boolean HasBeenDiscarded;
+	Boolean  const HasBeenDiscarded;
 };
 
 /*!
@@ -17044,31 +17524,31 @@ public :
 /*!
 
 */
-			Integer Clan;
+	Integer Clan;
 /*!
 
 */
-			Boolean Automatic;
+	Boolean Automatic;
 /*!
 
 */
-			Boolean ManualClosed;
+	Boolean ManualClosed;
 /*!
 
 */
-	const	Boolean AutoClosed;
+	Boolean  const AutoClosed;
 /*!
 
 */
-			Boolean AutoIsActive;
+	Boolean AutoIsActive;
 /*!
 
 */
-			Integer AutoCloseDelay;
+	Integer AutoCloseDelay;
 /*!
 
 */
-			Integer AutoOpenSpeed;
+	Integer AutoOpenSpeed;
 };
 
 /*!
@@ -17079,27 +17559,27 @@ public :
 /*!
 
 */
-			Integer Clan;
+	Integer Clan;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real ValueReal;
+	Real ValueReal;
 /*!
 
 */
-			Integer Value;
+	Integer Value;
 /*!
 
 */
-			Integer Max;
+	Integer Max;
 /*!
 
 */
-			Integer Speed;
+	Integer Speed;
 /*!
 
 */
-			Boolean Captured;
+	Boolean Captured;
 };
 
 /*!
@@ -17110,11 +17590,11 @@ public :
 /*!
 
 */
-	const	Text ItemName;
+	Text  const ItemName;
 /*!
 
 */
-	const	Ident ItemModelId;
+	Ident  const ItemModelId;
 };
 
 /*!
@@ -17159,172 +17639,176 @@ public :
 /*!
 Null when no map loaded.
 */
-	const	CMap Map;
+	CMap * const  Map;
 /*!
 
 */
-	const	Integer GameTime;
+	Integer  const GameTime;
 /*!
 
 */
-	const	CUser LocalUser;
+	CUser * const  LocalUser;
 /*!
 
 */
-	const	CUIConfig UI;
+	CUIConfig * const  UI;
 /*!
 
 */
-	const	CServerInfo ServerInfo;
+	CServerInfo * const  ServerInfo;
 /*!
 
 */
-	const	Ident SettingsPlayerModelId;
+	Ident  const SettingsPlayerModelId;
+/*!
+
+*/
+	Boolean  const HasPodium;
 /*!
 Is in spectator mode - may be only for a short time between rounds.
 */
-	const	Boolean IsSpectator;
+	Boolean  const IsSpectator;
 /*!
 Client actually desires to spectate instead of playing.
 */
-	const	Boolean IsSpectatorClient;
+	Boolean  const IsSpectatorClient;
 /*!
 
 */
-	const	Boolean UseClans;
+	Boolean  const UseClans;
 /*!
 
 */
-	const	Boolean UseForcedClans;
+	Boolean  const UseForcedClans;
 /*!
 
 */
-	const	Boolean IsLoadingScreen;
+	Boolean  const IsLoadingScreen;
 /*!
 
 */
-	const	Boolean IsServerOrSolo;
+	Boolean  const IsServerOrSolo;
 /*!
 
 */
-			Void QuitServer(Boolean Silent);
+	Void QuitServer(Boolean Silent);
 /*!
 
 */
-			Void QuitServerAndSetResult(Boolean Silent,Text Type,Array<Text> Data);
+	Void QuitServerAndSetResult(Boolean Silent,Text Type,Array<Text> Data);
 /*!
 
 */
-	const	Boolean IsInGameMenuDisplayed;
+	Boolean  const IsInGameMenuDisplayed;
 /*!
 
 */
-			Void JoinTeam1();
+	Void JoinTeam1();
 /*!
 
 */
-			Void JoinTeam2();
+	Void JoinTeam2();
 /*!
 
 */
-	const	Array<CTeam> Teams;
+	Array<CTeam* const > Teams;
 /*!
 Request change of IsSpectatorClient (not immediate, and it may be refused). Caveat: will not set Request_Success
 */
-			Void RequestSpectatorClient(Boolean Spectator);
+	Void RequestSpectatorClient(Boolean Spectator);
 /*!
 
 */
-			Void SetSpectateTarget(Text Player);
+	Void SetSpectateTarget(Text Player);
 /*!
 
 */
-			Void ShowProfile(Text Player);
+	Void ShowProfile(Text Player);
 /*!
 Save the current replay to a file. Filename is optional.
 */
-			Boolean SaveReplay(Text FileName);
+	Boolean SaveReplay(Text FileName);
 /*!
 
 */
-			Boolean SavePrevReplay(Text FileName);
+	Boolean SavePrevReplay(Text FileName);
 /*!
 Save the current map to a file (if the server IsMapDownloadAllowed). Filename is optional.
 */
-			Boolean SaveMap(Text FileName);
+	Boolean SaveMap(Text FileName);
 /*!
 
 */
-			Void MapList_Request();
+	Void MapList_Request();
 /*!
 
 */
-			CPlaygroundClient::ESpectatorCameraType GetSpectatorCameraType();
+	CPlaygroundClient::ESpectatorCameraType GetSpectatorCameraType();
 /*!
 
 */
-			CPlaygroundClient::ESpectatorTargetType GetSpectatorTargetType();
+	CPlaygroundClient::ESpectatorTargetType GetSpectatorTargetType();
 /*!
 
 */
-			Void SetWantedSpectatorCameraType(CPlaygroundClient::ESpectatorCameraType CameraType);
+	Void SetWantedSpectatorCameraType(CPlaygroundClient::ESpectatorCameraType CameraType);
 /*!
 
 */
-	const	Boolean MapList_IsInProgress;
+	Boolean  const MapList_IsInProgress;
 /*!
 
 */
-	const	Array<Text> MapList_Names;
+	Array<Text> MapList_Names;
 /*!
 
 */
-	const	Array<Text> MapList_MapUids;
+	Array<Text> MapList_MapUids;
 /*!
 
 */
-	const	Boolean Request_IsInProgress;
+	Boolean  const Request_IsInProgress;
 /*!
 
 */
-	const	Boolean Request_Success;
+	Boolean  const Request_Success;
 /*!
 
 */
-			Void RequestRestartMap();
+	Void RequestRestartMap();
 /*!
 
 */
-			Void RequestNextMap();
+	Void RequestNextMap();
 /*!
 
 */
-			Void RequestGotoMap(Text MapUid);
+	Void RequestGotoMap(Text MapUid);
 /*!
 
 */
-			Void RequestSetNextMap(Text MapUid);
+	Void RequestSetNextMap(Text MapUid);
 /*!
 
 */
-			Void RequestAutoTeamBalance();
+	Void RequestAutoTeamBalance();
 /*!
-Change some settings from the mode with new values. No need to include unchanged settings.  ex: '<script_settings><setting name="S_TimeLimit" type="integer" value="300"/><script_settings/>'
+Change some settings from the mode with new values. No need to include unchanged settings.  ex: '&lt;script_settings&gt;&lt;setting name="S_TimeLimit" type="integer" value="300"/&gt;&lt;script_settings/&gt;'
 nb: you can use TriggerPageAction('maniaplanet:editsettings'); to use the legacy UI.
 */
-			Void RequestChangeModeScriptSettings(Text SettingsXml);
+	Void RequestChangeModeScriptSettings(Text SettingsXml);
 /*!
 
 */
-	const	Text Vote_Question;
+	Text  const Vote_Question;
 /*!
 
 */
-	const	Boolean Vote_CanVote;
+	Boolean  const Vote_CanVote;
 /*!
 
 */
-			Void Vote_Cast(Boolean Answer);
+	Void Vote_Cast(Boolean Answer);
 };
 
 /*!
@@ -17339,35 +17823,35 @@ public :
 /*!
 
 */
-	const	Array<CManiaAppPlaygroundEvent> PendingEvents;
+	Array<CManiaAppPlaygroundEvent* const > PendingEvents;
 /*!
 
 */
-	const	CPlaygroundClient Playground;
+	CPlaygroundClient * const  Playground;
 /*!
 
 */
-	const	CMap Map;
+	CMap * const  Map;
 /*!
 
 */
-	const	CGhostManager GhostMgr;
+	CGhostManager * const  GhostMgr;
 /*!
 (read-only) UI actually displayed, as defined by the server.
 */
-			CUIConfig UI;
+	CUIConfig * UI;
 /*!
 Locally accessible by the client script to locally override settings from the server.
 */
-			CUIConfig ClientUI;
+	CUIConfig * ClientUI;
 /*!
 
 */
-	const	Integer SplitScreenCount;
+	Integer  const SplitScreenCount;
 /*!
 Set a layer to be displayed on a subscreen. ScreenNum: 0=global, 1,2.... = screen index.  Limitation: a local layer can only be one screen at a time.
 */
-			Void SplitScreenAssignLayer(CUILayer UILayer,Integer ScreenNum);
+	Void SplitScreenAssignLayer(CUILayer UILayer,Integer ScreenNum);
 };
 
 /*!
@@ -17402,71 +17886,71 @@ public :
 /*!
 
 */
-			CMlPage Page;
+	CMlPage * Page;
 /*!
 
 */
-			Boolean PageIsVisible;
+	Boolean PageIsVisible;
 /*!
 
 */
-			Boolean PageAlwaysUpdateScript;
+	Boolean PageAlwaysUpdateScript;
 /*!
 
 */
-			Integer Now;
+	Integer Now;
 /*!
 
 */
-			Integer Period;
+	Integer Period;
 /*!
 
 */
-			Integer CurrentTime;
+	Integer CurrentTime;
 /*!
 
 */
-			Text CurrentTimeText;
+	Text CurrentTimeText;
 /*!
 
 */
-			Text CurrentLocalDateText;
+	Text CurrentLocalDateText;
 /*!
 
 */
-			Text CurrentTimezone;
+	Text CurrentTimezone;
 /*!
 
 */
-	const	CUser LocalUser;
+	CUser const  * const  LocalUser;
 /*!
 
 */
-	const	CTitle LoadedTitle;
+	CTitle const  * const  LoadedTitle;
 /*!
 
 */
-			CMlScript_ReadOnly::ESystemPlatform SystemPlatform;
+	CMlScript_ReadOnly::ESystemPlatform SystemPlatform;
 /*!
 
 */
-			CMlScript_ReadOnly::ESystemSkuIdentifier SystemSkuIdentifier;
+	CMlScript_ReadOnly::ESystemSkuIdentifier SystemSkuIdentifier;
 /*!
 
 */
-			CParsingManager Xml;
+	CParsingManager * Xml;
 /*!
 
 */
-			CVideoManager Video;
+	CVideoManager * Video;
 /*!
 
 */
-			CInputManager Input;
+	CInputManager * Input;
 /*!
 
 */
-			CAnimManager AnimMgr;
+	CAnimManager * AnimMgr;
 };
 
 /*!
@@ -17502,19 +17986,19 @@ public :
 /*!
 
 */
-	const	Boolean HasFinished;
+	Boolean  const HasFinished;
 /*!
 
 */
-	const	Array<Text> Selection;
+	Array<Text> Selection;
 /*!
 
 */
-			Void SetFileType(CModuleMenuFileBrowser::EFileType FileType);
+	Void SetFileType(CModuleMenuFileBrowser::EFileType FileType);
 /*!
 
 */
-			Void SetFileAction(CModuleMenuFileBrowser::EFileAction FileAction);
+	Void SetFileAction(CModuleMenuFileBrowser::EFileAction FileAction);
 };
 
 /*!
@@ -17525,7 +18009,7 @@ public :
 /*!
 
 */
-			Void Reset(CPlayer Player);
+	Void Reset(CPlayer Player);
 };
 
 /*!
@@ -17536,7 +18020,7 @@ public :
 /*!
 
 */
-			Void Reset(CPlayer Player);
+	Void Reset(CPlayer Player);
 };
 
 /*!
@@ -17547,55 +18031,55 @@ public :
 /*!
 
 */
-			Void Reset(CPlayer Player);
+	Void Reset(CPlayer Player);
 /*!
 
 */
-			Void SetGlobalScale(Real Scale);
+	Void SetGlobalScale(Real Scale);
 /*!
 
 */
-			Void SetGaugeNumber(Integer Number);
+	Void SetGaugeNumber(Integer Number);
 /*!
 
 */
-			Void SetGaugeAngle(Real Angle);
+	Void SetGaugeAngle(Real Angle);
 /*!
 
 */
-			Void SetGaugeBGVisible(Boolean Visibility);
+	Void SetGaugeBGVisible(Boolean Visibility);
 /*!
 
 */
-			Void SetSpeedLineVisible(Boolean Visibility);
+	Void SetSpeedLineVisible(Boolean Visibility);
 /*!
 
 */
-			Void SetGaugeSpeedMax(Real Maximum);
+	Void SetGaugeSpeedMax(Real Maximum);
 /*!
 
 */
-			Void SetSpeedValueScale(Real Scale);
+	Void SetSpeedValueScale(Real Scale);
 /*!
 
 */
-			Void SetSpeedUnitScale(Real Scale);
+	Void SetSpeedUnitScale(Real Scale);
 /*!
 
 */
-			Void SetFooterUnitVisible(Boolean Visibility);
+	Void SetFooterUnitVisible(Boolean Visibility);
 /*!
 
 */
-			Void SetFooterLineVisible(Boolean Visibility);
+	Void SetFooterLineVisible(Boolean Visibility);
 /*!
 
 */
-			Void SetDistanceVisible(Boolean Visibility);
+	Void SetDistanceVisible(Boolean Visibility);
 /*!
 
 */
-			Void SetDistanceFooterLineVisible(Boolean Visibility);
+	Void SetDistanceFooterLineVisible(Boolean Visibility);
 };
 
 /*!
@@ -17606,19 +18090,19 @@ public :
 /*!
 
 */
-			Void StopChrono();
+	Void StopChrono();
 /*!
 
 */
-			Void StartChrono();
+	Void StartChrono();
 /*!
 
 */
-			Void Reset();
+	Void Reset();
 /*!
 
 */
-			Void Reset(CPlayer Player);
+	Void Reset(CPlayer Player);
 };
 
 /*!
@@ -17671,47 +18155,47 @@ public :
 /*!
 
 */
-			Void SetFooterText(Text FooterText);
+	Void SetFooterText(Text FooterText);
 /*!
 
 */
-			Void ResetCustomColumns(CScore Score);
+	Void ResetCustomColumns(CScore Score);
 /*!
 
 */
-			Void ResetCustomColumns();
+	Void ResetCustomColumns();
 /*!
 
 */
-			Void Scores_Sort(CModulePlaygroundScoresTable::EScoreSortOrder SortOrder);
+	Void Scores_Sort(CModulePlaygroundScoresTable::EScoreSortOrder SortOrder);
 /*!
 
 */
-			Void SetColumnValue(CScore Score,Text ColumnId,Text ColumnValue);
+	Void SetColumnValue(CScore Score,Text ColumnId,Text ColumnValue);
 /*!
 
 */
-			Void SetColumnValue(CScore Score,Text ColumnId,Integer ColumnValue);
+	Void SetColumnValue(CScore Score,Text ColumnId,Integer ColumnValue);
 /*!
 
 */
-			Void SetColumnValue(CScore Score,Text ColumnId,Real ColumnValue);
+	Void SetColumnValue(CScore Score,Text ColumnId,Real ColumnValue);
 /*!
 
 */
-			Void SetColumnVisibility(CModulePlaygroundScoresTable::EColumnType Type,Boolean Visibility);
+	Void SetColumnVisibility(CModulePlaygroundScoresTable::EColumnType Type,Boolean Visibility);
 /*!
 
 */
-			Void SetColumnVisibility(Text ColumnId,Boolean Visibility);
+	Void SetColumnVisibility(Text ColumnId,Boolean Visibility);
 /*!
 
 */
-			Void SetColor(CScore Score,Vec3 Color);
+	Void SetColor(CScore Score,Vec3 Color);
 /*!
 
 */
-			Void ResetColor(CScore Score);
+	Void ResetColor(CScore Score);
 };
 
 /*!
@@ -17722,31 +18206,31 @@ public :
 /*!
 
 */
-			Integer AddItem(CPlayer Player,Text Url,Integer Quantity);
+	Integer AddItem(CPlayer Player,Text Url,Integer Quantity);
 /*!
 
 */
-			Boolean AddAction(CPlayer Player,Text Url);
+	Boolean AddAction(CPlayer Player,Text Url);
 /*!
 
 */
-			Integer RemoveInventoryItem(CPlayer Player,Text Url,Integer Quantity);
+	Integer RemoveInventoryItem(CPlayer Player,Text Url,Integer Quantity);
 /*!
 
 */
-			Integer GetInventoryItemQuantity(CPlayer Player,Text Url);
+	Integer GetInventoryItemQuantity(CPlayer Player,Text Url);
 /*!
 
 */
-			Boolean IsInventoryItemStored(CPlayer Player,Text Url);
+	Boolean IsInventoryItemStored(CPlayer Player,Text Url);
 /*!
 
 */
-			Array<Text> GetStoredItemsList(CPlayer Player);
+	Array<Text> GetStoredItemsList(CPlayer Player);
 /*!
 
 */
-			Array<Text> GetStoredActionsList(CPlayer Player);
+	Array<Text> GetStoredActionsList(CPlayer Player);
 };
 
 /*!
@@ -17757,43 +18241,43 @@ public :
 /*!
 
 */
-			Void Reset();
+	Void Reset();
 /*!
 
 */
-			Void Reset(CPlayer Player);
+	Void Reset(CPlayer Player);
 /*!
 
 */
-			Void SetMoney(CPlayer Player,Integer Amount);
+	Void SetMoney(CPlayer Player,Integer Amount);
 /*!
 
 */
-			Integer GetMoney(CPlayer Player);
+	Integer GetMoney(CPlayer Player);
 /*!
 
 */
-			Boolean AddMoney(CPlayer Player,Integer Amount);
+	Boolean AddMoney(CPlayer Player,Integer Amount);
 /*!
 
 */
-			Boolean SubMoney(CPlayer Player,Integer Amount);
+	Boolean SubMoney(CPlayer Player,Integer Amount);
 /*!
 
 */
-			Void SetActionLevel(CPlayer Player,Text ActionUrl,Integer ActionLevel);
+	Void SetActionLevel(CPlayer Player,Text ActionUrl,Integer ActionLevel);
 /*!
 
 */
-			Integer GetActionLevel(CPlayer Player,Text ActionUrl);
+	Integer GetActionLevel(CPlayer Player,Text ActionUrl);
 /*!
 
 */
-			Void SetItemCanBeBought(CPlayer Player,Text ActionUrl,Boolean CanBeBought);
+	Void SetItemCanBeBought(CPlayer Player,Text ActionUrl,Boolean CanBeBought);
 /*!
 
 */
-			Boolean GetItemCanBeBought(CPlayer Player,Text ActionUrl);
+	Boolean GetItemCanBeBought(CPlayer Player,Text ActionUrl);
 };
 
 /*!
@@ -17814,19 +18298,19 @@ public :
 /*!
 
 */
-			Array<CModuleMenuPageModel> Pages;
+	Array<CModuleMenuPageModel*> Pages;
 /*!
 
 */
-			CModuleMenuPageModel AddPage(Text PageUrl);
+	CModuleMenuPageModel AddPage(Text PageUrl);
 /*!
 
 */
-			Void AddLink(CModuleMenuPageModel ParentPage,CModuleMenuPageModel ChildPage);
+	Void AddLink(CModuleMenuPageModel ParentPage,CModuleMenuPageModel ChildPage);
 /*!
 
 */
-			Text MenuScript;
+	Text MenuScript;
 };
 
 /*!
@@ -17837,7 +18321,7 @@ public :
 /*!
 
 */
-			Text ManialinkText;
+	Text ManialinkText;
 };
 
 /*!
@@ -17848,43 +18332,43 @@ public :
 /*!
 
 */
-			Ident ContextAdd(Text ContextName);
+	Ident ContextAdd(Text ContextName);
 /*!
 
 */
-			Ident ContextSetId(Ident ContextId,Text NewContextName);
+	Ident ContextSetId(Ident ContextId,Text NewContextName);
 /*!
 
 */
-			Void ContextRemove(Ident ContextId);
+	Void ContextRemove(Ident ContextId);
 /*!
 
 */
-	const	Array<Ident> ContextsIds;
+	Array<Ident> ContextsIds;
 /*!
 
 */
-	const	Array<CHudModule> SubModules;
+	Array<CHudModule* const > SubModules;
 /*!
 
 */
-			CHudModule NewSubModule(Text ModulePath);
+	CHudModule NewSubModule(Text ModulePath);
 /*!
 
 */
-			Void DeleteSubModule(CHudModule SubModule);
+	Void DeleteSubModule(CHudModule SubModule);
 /*!
 
 */
-			Boolean SubModuleIsContextActive(CHudModule SubModule,Ident ContextId);
+	Boolean SubModuleIsContextActive(CHudModule SubModule,Ident ContextId);
 /*!
 
 */
-			Void SubModuleSetContextIsActive(CHudModule SubModule,Ident ContextId,Boolean IsActive);
+	Void SubModuleSetContextIsActive(CHudModule SubModule,Ident ContextId,Boolean IsActive);
 /*!
 
 */
-	const	Integer EditorContextIndex;
+	Integer  const EditorContextIndex;
 };
 
 /*!
@@ -17912,11 +18396,11 @@ public :
 /*!
 
 */
-	const	CEditorPluginModuleEvent::Type Type;
+	CEditorPluginModuleEvent::Type const  Type;
 /*!
 
 */
-			Void Eat();
+	Void Eat();
 };
 
 /*!
@@ -17980,7 +18464,7 @@ public :
 /*!
 
 */
-	const	CEditorEvent::Type Type;
+	CEditorEvent::Type const  Type;
 };
 
 /*!
@@ -18005,23 +18489,23 @@ public :
 /*!
 
 */
-			Void NewFile();
+	Void NewFile();
 /*!
 
 */
-			Void Undo();
+	Void Undo();
 /*!
 
 */
-			Void Redo();
+	Void Redo();
 /*!
 
 */
-			Void FileToolBarSendCmd(Text CmdName);
+	Void FileToolBarSendCmd(Text CmdName);
 /*!
 
 */
-			Boolean SetToolBarButtonVisible(CEditorPluginAPI::EEditorFileToolBar_QuadType Type);
+	Boolean SetToolBarButtonVisible(CEditorPluginAPI::EEditorFileToolBar_QuadType Type);
 };
 
 /*!
@@ -18032,19 +18516,23 @@ public :
 /*!
 
 */
-			Text Name;
+	Text Name;
 /*!
 
 */
-	const	Array<CMediaTrackerTrack> Tracks;
+	Array<CMediaTrackerTrack* const > Tracks;
 /*!
 
 */
-			Boolean StopWhenRespawn;
+	Boolean StopWhenRespawn;
 /*!
 
 */
-			Boolean StopWhenLeave;
+	Boolean StopWhenLeave;
+/*!
+
+*/
+	Boolean TriggersBeforeRaceStart;
 };
 
 /*!
@@ -18055,7 +18543,7 @@ public :
 /*!
 
 */
-	const	Array<CMediaTrackerClip> Clips;
+	Array<CMediaTrackerClip* const > Clips;
 };
 
 /*!
@@ -18066,11 +18554,11 @@ public :
 /*!
 
 */
-			Text Name;
+	Text Name;
 /*!
 
 */
-	const	Array<CMediaTrackerBlock> Blocks;
+	Array<CMediaTrackerBlock* const > Blocks;
 };
 
 /*!
@@ -18081,55 +18569,55 @@ public :
 /*!
 Name of the file
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 
 */
-			Text ScriptModeName;
+	Text ScriptModeName;
 /*!
 
 */
-			Boolean ScriptModeName_Check(Text ScriptModeName);
+	Boolean ScriptModeName_Check(Text ScriptModeName);
 /*!
 
 */
-			Void ScriptModeName_Set(Text ScriptModeName);
+	Void ScriptModeName_Set(Text ScriptModeName);
 /*!
 
 */
-			Void ScriptSettings_SetToDefault();
+	Void ScriptSettings_SetToDefault();
 /*!
 
 */
-	const	Array<CMatchSettingsPlaylistItem> Playlist;
+	Array<CMatchSettingsPlaylistItem* const > Playlist;
 /*!
 
 */
-			Boolean Playlist_FileExists(Text File);
+	Boolean Playlist_FileExists(Text File);
 /*!
 
 */
-			Boolean Playlist_FileMatchesMode(Text File);
+	Boolean Playlist_FileMatchesMode(Text File);
 /*!
 
 */
-			Void Playlist_Add(Text File);
+	Void Playlist_Add(Text File);
 /*!
 
 */
-			Void Playlist_Remove(Integer Index);
+	Void Playlist_Remove(Integer Index);
 /*!
 
 */
-			Void Playlist_SwapUp(Integer Index);
+	Void Playlist_SwapUp(Integer Index);
 /*!
 
 */
-			Void Playlist_SwapDown(Integer Index);
+	Void Playlist_SwapDown(Integer Index);
 };
 
 /*!
@@ -18144,7 +18632,7 @@ public :
 /*!
 
 */
-	const	Array<CManiaAppEvent> PendingEvents;
+	Array<CManiaAppEvent* const > PendingEvents;
 };
 
 /*!
@@ -18155,95 +18643,95 @@ public :
 /*!
 
 */
-	const	Ident TitleId;
+	Ident  const TitleId;
 /*!
 
 */
-	const	Ident MakerTitleId;
+	Ident  const MakerTitleId;
 /*!
 
 */
-			Text DisplayName;
+	Text DisplayName;
 /*!
 
 */
-			Text Description;
+	Text Description;
 /*!
 
 */
-			Text InfoUrl;
+	Text InfoUrl;
 /*!
 
 */
-			Text DownloadUrl;
+	Text DownloadUrl;
 /*!
 
 */
-			Text TitleVersion;
+	Text TitleVersion;
 /*!
 
 */
-			Text AllowedClientTitleVersion;
+	Text AllowedClientTitleVersion;
 /*!
 
 */
-			Text BaseTitleIds;
+	Text BaseTitleIds;
 /*!
 
 */
-			Text ForcedPlayerModel;
+	Text ForcedPlayerModel;
 /*!
 
 */
-			Text Packaging_ImageFileName;
+	Text Packaging_ImageFileName;
 /*!
 
 */
-			Text Packaging_LogosFileName;
+	Text Packaging_LogosFileName;
 /*!
 
 */
-			Text Packaging_Group;
+	Text Packaging_Group;
 /*!
 Can be an http://url or a ./path/in/title/datas/station.app.txt
 */
-			Text Station_ManialinkUrl;
+	Text Station_ManialinkUrl;
 /*!
 
 */
-			Text Menus_BgReplayFileName;
+	Text Menus_BgReplayFileName;
 /*!
 
 */
-			Text Menus_ManiaAppFileName;
+	Text Menus_ManiaAppFileName;
 /*!
 
 */
-			Text Menus_MusicFileName;
+	Text Menus_MusicFileName;
 /*!
 Use  CGameManiaTitleEditionScriptAPI::SetTitleCampaign() to modify
 */
-	const	Boolean Solo_HasCampaign;
+	Boolean  const Solo_HasCampaign;
 /*!
 
 */
-			Text FallbackFontFileName;
+	Text FallbackFontFileName;
 /*!
 
 */
-			Text Hud3dFontFileName;
+	Text Hud3dFontFileName;
 /*!
 
 */
-			Text HudDefaultModuleScriptName;
+	Text HudDefaultModuleScriptName;
 /*!
 
 */
-			Text MusicFolder;
+	Text MusicFolder;
 /*!
 
 */
-			Text Editor_MusicFileName;
+	Text Editor_MusicFileName;
 };
 
 /*!
@@ -18254,23 +18742,23 @@ public :
 /*!
 
 */
-			Array<Vec2> Points;
+	Array<Vec2> Points;
 /*!
 
 */
-			Vec3 Color;
+	Vec3 Color;
 /*!
 
 */
-			Void SortPoints();
+	Void SortPoints();
 /*!
 
 */
-			Text Style;
+	Text Style;
 /*!
 Values in range (0.000000-50.000000)
 */
-			Real Width;
+	Real Width;
 };
 
 /*!
@@ -18284,23 +18772,23 @@ public :
 /*!
 
 */
-			Boolean OnlyUserFiles;
+	Boolean OnlyUserFiles;
 /*!
 
 */
-			Void ClearFileNames();
+	Void ClearFileNames();
 /*!
 
 */
-	const	Text FullFileName;
+	Text  const FullFileName;
 /*!
 
 */
-	const	Text RelativeNameToRoot;
+	Text  const RelativeNameToRoot;
 /*!
 
 */
-	const	Text RelativeNameToTypeFolder;
+	Text  const RelativeNameToTypeFolder;
 };
 
 /*!
@@ -18311,43 +18799,43 @@ public :
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text TextContents;
+	Text  const TextContents;
 /*!
 
 */
-	const	Text TextRawContents;
+	Text  const TextRawContents;
 /*!
 
 */
-	const	Text TextRecursiveContents;
+	Text  const TextRecursiveContents;
 /*!
 
 */
-	const	Array<CParsingNode> Children;
+	Array<CParsingNode* const > Children;
 /*!
 
 */
-			Text GetAttributeText(Text Name,Text DefaultValue);
+	Text GetAttributeText(Text Name,Text DefaultValue);
 /*!
 
 */
-			Integer GetAttributeInteger(Text Name,Integer DefaultValue);
+	Integer GetAttributeInteger(Text Name,Integer DefaultValue);
 /*!
 
 */
-			Real GetAttributeReal(Text Name,Real DefaultValue);
+	Real GetAttributeReal(Text Name,Real DefaultValue);
 /*!
 
 */
-			Boolean GetAttributeBoolean(Text Name,Boolean DefaultValue);
+	Boolean GetAttributeBoolean(Text Name,Boolean DefaultValue);
 /*!
 
 */
-			CParsingNode GetFirstChild(Text Name);
+	CParsingNode GetFirstChild(Text Name);
 };
 
 /*!
@@ -18358,11 +18846,11 @@ public :
 /*!
 
 */
-			Void IsUnlocked();
+	Void IsUnlocked();
 /*!
 
 */
-	const	Array<CMapInfo> MapInfos;
+	Array<CMapInfo* const > MapInfos;
 };
 
 /*!
@@ -18383,67 +18871,67 @@ public :
 /*!
 
 */
-	const	Text ActivityId;
+	Text  const ActivityId;
 /*!
 
 */
-	const	Integer CreationTimeStamp;
+	Integer  const CreationTimeStamp;
 /*!
 
 */
-	const	Text CreatorAccountId;
+	Text  const CreatorAccountId;
 /*!
 
 */
-	const	Text CreatorWebServicesUserId;
+	Text  const CreatorWebServicesUserId;
 /*!
 
 */
-	const	Text CreatorDisplayName;
+	Text  const CreatorDisplayName;
 /*!
 
 */
-	const	Boolean CreatorIsFirstPartyDisplayName;
+	Boolean  const CreatorIsFirstPartyDisplayName;
 /*!
 
 */
-	const	Text ClubId;
+	Text  const ClubId;
 /*!
 
 */
-			CNadeoServicesItemCollectionVersion CurrentVersion;
+	CNadeoServicesItemCollectionVersion * CurrentVersion;
 /*!
 
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 
 */
-	const	Boolean HasVersionList;
+	Boolean  const HasVersionList;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Boolean IsCurrentVersionNull;
+	Boolean  const IsCurrentVersionNull;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-	const	Integer UpdateTimeStamp;
+	Integer  const UpdateTimeStamp;
 /*!
 
 */
-			Array<CNadeoServicesItemCollectionVersion> VersionList;
+	Array<CNadeoServicesItemCollectionVersion*> VersionList;
 };
 
 /*!
@@ -18474,87 +18962,87 @@ public :
 /*!
 
 */
-	const	Text AuthorAccountId;
+	Text  const AuthorAccountId;
 /*!
 
 */
-	const	Text AuthorWebServicesUserId;
+	Text  const AuthorWebServicesUserId;
 /*!
 
 */
-	const	Text AuthorDisplayName;
+	Text  const AuthorDisplayName;
 /*!
 
 */
-	const	Boolean AuthorIsFirstPartyDisplayName;
+	Boolean  const AuthorIsFirstPartyDisplayName;
 /*!
 
 */
-	const	Integer AuthorScore;
+	Integer  const AuthorScore;
 /*!
 
 */
-	const	Integer BronzeScore;
+	Integer  const BronzeScore;
 /*!
 
 */
-	const	Text CollectionName;
+	Text  const CollectionName;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 
 */
-	const	Text FileUrl;
+	Text  const FileUrl;
 /*!
 
 */
-	const	Integer GoldScore;
+	Integer  const GoldScore;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Boolean IsPlayable;
+	Boolean  const IsPlayable;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Integer SilverScore;
+	Integer  const SilverScore;
 /*!
 
 */
-	const	Text Style;
+	Text  const Style;
 /*!
 
 */
-	const	Text SubmitterAccountId;
+	Text  const SubmitterAccountId;
 /*!
 
 */
-	const	Text SubmitterWebServicesUserId;
+	Text  const SubmitterWebServicesUserId;
 /*!
 
 */
-	const	Text ThumbnailUrl;
+	Text  const ThumbnailUrl;
 /*!
 
 */
-	const	Integer TimeStamp;
+	Integer  const TimeStamp;
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-	const	Text Uid;
+	Text  const Uid;
 };
 
 /*!
@@ -18585,55 +19073,55 @@ public :
 /*!
 
 */
-	const	Text Checksum;
+	Text  const Checksum;
 /*!
 
 */
-	const	Text CreatorAccountId;
+	Text  const CreatorAccountId;
 /*!
 
 */
-	const	Text CreatorWebServicesUserId;
+	Text  const CreatorWebServicesUserId;
 /*!
 
 */
-	const	Text CreatorDisplayName;
+	Text  const CreatorDisplayName;
 /*!
 
 */
-	const	Boolean CreatorIsFirstPartyDisplayName;
+	Boolean  const CreatorIsFirstPartyDisplayName;
 /*!
 
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 
 */
-	const	Text FileUrl;
+	Text  const FileUrl;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text ThumbnailUrl;
+	Text  const ThumbnailUrl;
 /*!
 
 */
-	const	Integer TimeStamp;
+	Integer  const TimeStamp;
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 };
 
 /*!
@@ -18654,19 +19142,19 @@ public :
 /*!
 
 */
-	const	Text MapUid;
+	Text  const MapUid;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 };
 
 /*!
@@ -18677,23 +19165,23 @@ public :
 /*!
 Name of the GameMode
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 
 */
-	const	Text Description;
+	Text  const Description;
 /*!
 
 */
-	const	Text Version;
+	Text  const Version;
 /*!
 
 */
-	const	Array<Text> CompatibleMapTypes;
+	Array<Text> CompatibleMapTypes;
 };
 
 /*!
@@ -18714,67 +19202,67 @@ public :
 /*!
 
 */
-	const	Text AccountId;
+	Text  const AccountId;
 /*!
 
 */
-	const	Text WebServicesUserId;
+	Text  const WebServicesUserId;
 /*!
 
 */
-	const	Text MapId;
+	Text  const MapId;
 /*!
 
 */
-	const	Ident MapUid;
+	Ident  const MapUid;
 /*!
 
 */
-	const	Text ScopeType;
+	Text  const ScopeType;
 /*!
 
 */
-	const	Text ScopeId;
+	Text  const ScopeId;
 /*!
 
 */
-	const	Text GameMode;
+	Text  const GameMode;
 /*!
 
 */
-	const	Text GameModeCustomData;
+	Text  const GameModeCustomData;
 /*!
 
 */
-	const	Integer Score;
+	Integer  const Score;
 /*!
 
 */
-	const	Integer Time;
+	Integer  const Time;
 /*!
 
 */
-	const	Integer RespawnCount;
+	Integer  const RespawnCount;
 /*!
 
 */
-	const	Integer Timestamp;
+	Integer  const Timestamp;
 /*!
 
 */
-	const	Integer MultiAsyncLevel;
+	Integer  const MultiAsyncLevel;
 /*!
 
 */
-	const	Integer SkillPoints;
+	Integer  const SkillPoints;
 /*!
 
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 
 */
-	const	Text ReplayUrl;
+	Text  const ReplayUrl;
 };
 
 /*!
@@ -18785,79 +19273,79 @@ public :
 /*!
 
 */
-	const	CMapInfo MapInfo;
+	CMapInfo * const  MapInfo;
 /*!
 
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 
 */
-	const	Integer RecordScore;
+	Integer  const RecordScore;
 /*!
 
 */
-	const	Integer RecordTime;
+	Integer  const RecordTime;
 /*!
 
 */
-	const	Integer RecordRespawnCount;
+	Integer  const RecordRespawnCount;
 /*!
 
 */
-	const	Integer RecordDate;
+	Integer  const RecordDate;
 /*!
 
 */
-	const	Text RecordDateString;
+	Text  const RecordDateString;
 /*!
 
 */
-	const	Integer RecordElapsedTime;
+	Integer  const RecordElapsedTime;
 /*!
 
 */
-	const	Integer RecordCount;
+	Integer  const RecordCount;
 /*!
 
 */
-	const	Text OpponentLogin;
+	Text  const OpponentLogin;
 /*!
 
 */
-	const	Text OpponentDisplayName;
+	Text  const OpponentDisplayName;
 /*!
 
 */
-	const	Text OpponentRecordUrl;
+	Text  const OpponentRecordUrl;
 /*!
 
 */
-	const	Integer OpponentRecordScore;
+	Integer  const OpponentRecordScore;
 /*!
 
 */
-	const	Integer OpponentRecordTime;
+	Integer  const OpponentRecordTime;
 /*!
 
 */
-	const	Integer OpponentRecordRespawnCount;
+	Integer  const OpponentRecordRespawnCount;
 /*!
 
 */
-	const	Integer OpponentRecordDate;
+	Integer  const OpponentRecordDate;
 /*!
 
 */
-	const	Text OpponentRecordDateString;
+	Text  const OpponentRecordDateString;
 /*!
 
 */
-	const	Integer OpponentRecordElapsedTime;
+	Integer  const OpponentRecordElapsedTime;
 /*!
 
 */
-	const	Integer OpponentRecordCount;
+	Integer  const OpponentRecordCount;
 };
 
 /*!
@@ -18868,47 +19356,47 @@ public :
 /*!
 
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 
 */
-	const	Integer BestRecordCount;
+	Integer  const BestRecordCount;
 /*!
 
 */
-	const	Integer BestRecordLastDate;
+	Integer  const BestRecordLastDate;
 /*!
 
 */
-	const	Text BestRecordLastDateString;
+	Text  const BestRecordLastDateString;
 /*!
 
 */
-	const	Integer BestRecordElapsedTime;
+	Integer  const BestRecordElapsedTime;
 /*!
 
 */
-	const	Text OpponentLogin;
+	Text  const OpponentLogin;
 /*!
 
 */
-	const	Text OpponentDisplayName;
+	Text  const OpponentDisplayName;
 /*!
 
 */
-	const	Integer OpponentBestRecordCount;
+	Integer  const OpponentBestRecordCount;
 /*!
 
 */
-	const	Integer OpponentBestRecordLastDate;
+	Integer  const OpponentBestRecordLastDate;
 /*!
 
 */
-	const	Text OpponentBestRecordLastDateString;
+	Text  const OpponentBestRecordLastDateString;
 /*!
 
 */
-	const	Integer OpponentBestRecordElapsedTime;
+	Integer  const OpponentBestRecordElapsedTime;
 };
 
 /*!
@@ -18919,35 +19407,35 @@ public :
 /*!
 Rank.
 */
-	const	Integer Rank;
+	Integer  const Rank;
 /*!
 UserId.
 */
-	const	Ident UserId;
+	Ident  const UserId;
 /*!
 Login.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 Display name.
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 Is display name from first party.
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 Score.
 */
-	const	Integer Score;
+	Integer  const Score;
 /*!
 FileName.
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 ReplayUrl.
 */
-	const	Text ReplayUrl;
+	Text  const ReplayUrl;
 };
 
 /*!
@@ -18968,47 +19456,47 @@ public :
 /*!
 
 */
-	const	Text CreatorAccountId;
+	Text  const CreatorAccountId;
 /*!
 
 */
-	const	Text CreatorWebServicesUserId;
+	Text  const CreatorWebServicesUserId;
 /*!
 
 */
-	const	Text GameMode;
+	Text  const GameMode;
 /*!
 
 */
-	const	Text GameModeCustomData;
+	Text  const GameModeCustomData;
 /*!
 
 */
-	const	Text MapRecordType;
+	Text  const MapRecordType;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Integer CreationTimeStamp;
+	Integer  const CreationTimeStamp;
 /*!
 
 */
-	const	Integer StartTimeStamp;
+	Integer  const StartTimeStamp;
 /*!
 
 */
-	const	Integer EndTimeStamp;
+	Integer  const EndTimeStamp;
 /*!
 
 */
-			Array<CSeasonMapInfo> MapInfoList;
+	Array<CSeasonMapInfo*> MapInfoList;
 };
 
 /*!
@@ -19029,35 +19517,35 @@ public :
 /*!
 Rank.
 */
-	const	Integer Rank;
+	Integer  const Rank;
 /*!
 UserId.
 */
-	const	Ident UserId;
+	Ident  const UserId;
 /*!
 Login.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 Display name.
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 Is display name from first party.
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 Score.
 */
-	const	Real Score;
+	Real  const Score;
 /*!
 FileName.
 */
-	const	Text FileName;
+	Text  const FileName;
 /*!
 ReplayUrl.
 */
-	const	Text ReplayUrl;
+	Text  const ReplayUrl;
 };
 
 /*!
@@ -19088,51 +19576,51 @@ public :
 /*!
 
 */
-	const	Text AccountId;
+	Text  const AccountId;
 /*!
 
 */
-	const	Text WebServicesUserId;
+	Text  const WebServicesUserId;
 /*!
 
 */
-	const	Integer T1Count;
+	Integer  const T1Count;
 /*!
 
 */
-	const	Integer T2Count;
+	Integer  const T2Count;
 /*!
 
 */
-	const	Integer T3Count;
+	Integer  const T3Count;
 /*!
 
 */
-	const	Integer T4Count;
+	Integer  const T4Count;
 /*!
 
 */
-	const	Integer T5Count;
+	Integer  const T5Count;
 /*!
 
 */
-	const	Integer T6Count;
+	Integer  const T6Count;
 /*!
 
 */
-	const	Integer T7Count;
+	Integer  const T7Count;
 /*!
 
 */
-	const	Integer T8Count;
+	Integer  const T8Count;
 /*!
 
 */
-	const	Integer T9Count;
+	Integer  const T9Count;
 /*!
 
 */
-	const	Integer TimeStamp;
+	Integer  const TimeStamp;
 };
 
 /*!
@@ -19153,23 +19641,23 @@ public :
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-			CTrophySoloMedalAchievementLevelSettings AllBronzeLevelSettings;
+	CTrophySoloMedalAchievementLevelSettings * AllBronzeLevelSettings;
 /*!
 
 */
-			CTrophySoloMedalAchievementLevelSettings AllSilverLevelSettings;
+	CTrophySoloMedalAchievementLevelSettings * AllSilverLevelSettings;
 /*!
 
 */
-			CTrophySoloMedalAchievementLevelSettings AllGoldLevelSettings;
+	CTrophySoloMedalAchievementLevelSettings * AllGoldLevelSettings;
 /*!
 
 */
-			CTrophySoloMedalAchievementLevelSettings AllAuthorLevelSettings;
+	CTrophySoloMedalAchievementLevelSettings * AllAuthorLevelSettings;
 };
 
 /*!
@@ -19190,47 +19678,47 @@ public :
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Text ParentId;
+	Text  const ParentId;
 /*!
 
 */
-	const	Text Path;
+	Text  const Path;
 /*!
 
 */
-	const	Text FullPath;
+	Text  const FullPath;
 /*!
 
 */
-	const	Text FlagUrl;
+	Text  const FlagUrl;
 /*!
 
 */
-	const	Text CountryFlagUrl;
+	Text  const CountryFlagUrl;
 /*!
 
 */
-	const	Text Model_CarSport_SkinName;
+	Text  const Model_CarSport_SkinName;
 /*!
 
 */
-	const	Text Model_CarSport_SkinUrl;
+	Text  const Model_CarSport_SkinUrl;
 /*!
 
 */
-	const	Text Model_HelmetPilot_SkinName;
+	Text  const Model_CharacterPilot_SkinName;
 /*!
 
 */
-	const	Text Model_HelmetPilot_SkinUrl;
+	Text  const Model_CharacterPilot_SkinUrl;
 };
 
 /*!
@@ -19241,39 +19729,39 @@ public :
 /*!
 
 */
-	const	Text ModelDisplayName;
+	Text  const ModelDisplayName;
 /*!
 
 */
-	const	Text ModelName;
+	Text  const ModelName;
 /*!
 ....
 */
-	const	Text SkinName;
+	Text  const SkinName;
 /*!
 
 */
-	const	Text SkinUrl;
+	Text  const SkinUrl;
 /*!
 Values in range (0.100000-10.000000)
 */
-			Real AnalogSensitivity;
+	Real AnalogSensitivity;
 /*!
 Values in range (0.000000-0.250000)
 */
-			Real AnalogDeadZone;
+	Real AnalogDeadZone;
 /*!
 
 */
-			Boolean AnalogSteerV2;
+	Boolean AnalogSteerV2;
 /*!
 Values in range (0.000000-2.000000)
 */
-			Real RumbleIntensity;
+	Real RumbleIntensity;
 /*!
 Values in range (0.000000-1.000000)
 */
-			Real CenterSpringIntensity;
+	Real CenterSpringIntensity;
 };
 
 /*!
@@ -19282,7 +19770,7 @@ Values in range (0.000000-1.000000)
 * Supported declare modes :
 * - Local
 */
-class CWebServicesTaskResult_FriendList : public CTaskResult {
+class CWebServicesTaskResult_WSFriendList : public CTaskResult {
 public :
 };
 
@@ -19294,35 +19782,35 @@ public :
 /*!
 
 */
-	const	Text AccountId;
+	Text  const AccountId;
 /*!
 
 */
-	const	Text CountryFlagUrl;
+	Text  const CountryFlagUrl;
 /*!
 
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 
 */
-	const	Text PlatformType;
+	Text  const PlatformType;
 /*!
 
 */
-	const	Text Presence;
+	Text  const Presence;
 /*!
 
 */
-	const	Text Relationship;
+	Text  const Relationship;
 /*!
 
 */
-	const	Text WebServicesUserId;
+	Text  const WebServicesUserId;
 };
 
 /*!
@@ -19343,51 +19831,187 @@ public :
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-	const	Text Placement;
+	Text  const Placement;
 /*!
 
 */
-	const	Text Locale;
+	Text  const Locale;
 /*!
 
 */
-	const	Text Title;
+	Text  const Title;
 /*!
 
 */
-	const	Text Body;
+	Text  const Body;
 /*!
 
 */
-	const	Text MediaUrl;
+	Text  const MediaUrl;
 /*!
 
 */
-	const	Text MediaType;
+	Text  const MediaType;
 /*!
 
 */
-	const	Text PublicationDate;
+	Text  const PublicationDate;
 /*!
 
 */
-	const	Integer Priority;
+	Integer  const Priority;
 /*!
 
 */
-	const	Integer DisplayTime;
+	Integer  const DisplayTime;
 /*!
 
 */
-			Array<CNewsLink> LinkList;
+	Array<CNewsLink*> LinkList;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CWebServicesTaskResult_WSUserPrestigeList : public CTaskResult {
+public :
+};
+
+/*!
+* \brief Documentation for class CUserPrestige
+*/
+class CUserPrestige : public CNod {
+public :
+/*!
+
+*/
+	Text  const CategoryType;
+/*!
+
+*/
+	Integer  const CategoryLevel;
+/*!
+
+*/
+	NWebServicesPrestige::EPrestigeMode const  Mode;
+/*!
+
+*/
+	Text  const PrestigeId;
+/*!
+
+*/
+	Integer  const PrestigeLevel;
+/*!
+
+*/
+	Text  const SkinOptions;
+/*!
+
+*/
+	Integer  const TimeStamp;
+/*!
+
+*/
+	Integer  const Year;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CWebServicesTaskResult_WSUserPrestige : public CTaskResult {
+public :
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CWebServicesTaskResult_WSPrestigeList : public CTaskResult {
+public :
+};
+
+/*!
+* \brief Documentation for class CPrestige
+*/
+class CPrestige : public CNod {
+public :
+/*!
+
+*/
+	Text  const CategoryType;
+/*!
+
+*/
+	Integer  const CategoryLevel;
+/*!
+
+*/
+	Boolean  const IsUnlocked;
+/*!
+
+*/
+	NWebServicesPrestige::EPrestigeMode const  Mode;
+/*!
+
+*/
+	Text  const PrestigeId;
+/*!
+
+*/
+	Integer  const PrestigeLevel;
+/*!
+
+*/
+	Text  const RewardDisplayName;
+/*!
+
+*/
+	Text  const RewardFileUrl;
+/*!
+
+*/
+	Text  const RewardThumbnailUrl;
+/*!
+
+*/
+	Text  const RewardType;
+/*!
+
+*/
+	Text  const SkinOptions;
+/*!
+
+*/
+	Integer  const StatCurrentValue;
+/*!
+
+*/
+	Integer  const StatValueForNextLevel;
+/*!
+
+*/
+	Integer  const TimeStamp;
+/*!
+
+*/
+	Integer  const Year;
 };
 
 /*!
@@ -19408,43 +20032,43 @@ public :
 /*!
 
 */
-	const	Integer CreationTimeStamp;
+	Integer  const CreationTimeStamp;
 /*!
 
 */
-	const	Text LeaderAccountId;
+	Text  const LeaderAccountId;
 /*!
 
 */
-	const	Text LeaderWebServicesUserId;
+	Text  const LeaderWebServicesUserId;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-	const	Integer Size;
+	Integer  const Size;
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-	const	Integer UpdateTimeStamp;
+	Integer  const UpdateTimeStamp;
 /*!
 
 */
-			Array<CSquadInvitation> InvitationList;
+	Array<CSquadInvitation*> InvitationList;
 /*!
 
 */
-			Array<CSquadMember> MemberList;
+	Array<CSquadMember*> MemberList;
 };
 
 /*!
@@ -19465,51 +20089,51 @@ public :
 /*!
 Register (or retreive) a package for the currently edited title.
 */
-			Void RegisterPackForEditedTitle();
+	Void RegisterPackForEditedTitle();
 /*!
 
 */
-	const	Boolean RegisterPack_IsInProgess;
+	Boolean  const RegisterPack_IsInProgess;
 /*!
 
 */
-	const	CPackCreatorPack CurrentPack;
+	CPackCreatorPack * const  CurrentPack;
 /*!
 Start a new build for a pack, optionnaly a titlepack.
 */
-			Ident Build_Begin(CPackCreatorPack Pack,CPackCreatorTitleInfo TitleInfo);
+	Ident Build_Begin(CPackCreatorPack Pack,CPackCreatorTitleInfo TitleInfo);
 /*!
 
 */
-			Void Build_AddFile(Ident BuildId,Text FileName);
+	Void Build_AddFile(Ident BuildId,Text FileName);
 /*!
 
 */
-			Void Build_AddFolder(Ident BuildId,Text FolderName);
+	Void Build_AddFolder(Ident BuildId,Text FolderName);
 /*!
 
 */
-			Void Build_AddFile(Ident BuildId,Text FileName,Boolean IsPublic,Boolean IsInternal,Boolean NoAutomaticDeps);
+	Void Build_AddFile(Ident BuildId,Text FileName,Boolean IsPublic,Boolean IsInternal,Boolean NoAutomaticDeps);
 /*!
 
 */
-			Void Build_AddFolder(Ident BuildId,Text FolderName,Boolean IsPublic,Boolean IsInternal,Boolean NoRecursion,Boolean NoAutomaticDeps);
+	Void Build_AddFolder(Ident BuildId,Text FolderName,Boolean IsPublic,Boolean IsInternal,Boolean NoRecursion,Boolean NoAutomaticDeps);
 /*!
 
 */
-			Void Build_Generate(Ident BuildId,Boolean Upload);
+	Void Build_Generate(Ident BuildId,Boolean Upload);
 /*!
 
 */
-			Boolean Build_IsGenerated(Ident BuildId);
+	Boolean Build_IsGenerated(Ident BuildId);
 /*!
 
 */
-			Text Build_ErrorMessage(Ident BuildId);
+	Text Build_ErrorMessage(Ident BuildId);
 /*!
 
 */
-			Void Build_End(Ident BuildId);
+	Void Build_End(Ident BuildId);
 };
 
 /*!
@@ -19527,11 +20151,11 @@ public :
 /*!
 Type of the event.
 */
-	const	CNotificationsConsumerEvent::EType Type;
+	CNotificationsConsumerEvent::EType const  Type;
 /*!
 Notification concerned by the event.
 */
-	const	CNotificationsConsumerNotification Notification;
+	CNotificationsConsumerNotification * const  Notification;
 };
 
 /*!
@@ -19550,35 +20174,35 @@ public :
 /*!
 
 */
-	const	Text Title;
+	Text  const Title;
 /*!
 
 */
-	const	Text Description;
+	Text  const Description;
 /*!
 
 */
-	const	Text ImageUrl;
+	Text  const ImageUrl;
 /*!
 
 */
-	const	CNotificationsConsumerNotification::ENotificationPriority Priority;
+	CNotificationsConsumerNotification::ENotificationPriority const  Priority;
 /*!
 
 */
-	const	Boolean HasBeenRead;
+	Boolean  const HasBeenRead;
 /*!
 
 */
-	const	Boolean HasBeenActivated;
+	Boolean  const HasBeenActivated;
 /*!
 The user has been displayed the Notification for a sufficient time.
 */
-			Void SetRead();
+	Void SetRead();
 /*!
 The user has clicked on the Notification.
 */
-			Void SetActivated();
+	Void SetActivated();
 };
 
 /*!
@@ -19589,15 +20213,15 @@ public :
 /*!
 
 */
-	const	Array<CMapEditorInventoryNode> Children;
+	Array<CMapEditorInventoryNode* const > Children;
 /*!
 
 */
-	const	Boolean HasChildDirectory;
+	Boolean  const HasChildDirectory;
 /*!
 
 */
-	const	Boolean HasChildArticle;
+	Boolean  const HasChildArticle;
 };
 
 /*!
@@ -19608,19 +20232,19 @@ public :
 /*!
 
 */
-	const	Text NodeName;
+	Text  const NodeName;
 /*!
 
 */
-	const	Boolean IsDirectory;
+	Boolean  const IsDirectory;
 /*!
 
 */
-	const	CMapEditorInventoryDirectory ParentNode;
+	CMapEditorInventoryDirectory * const  ParentNode;
 /*!
 
 */
-			CNod GetCollectorNod();
+	CNod GetCollectorNod();
 };
 
 /*!
@@ -19638,23 +20262,23 @@ public :
 /*!
 
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 
 */
-			Text PageName;
+	Text PageName;
 /*!
 
 */
-			Integer InterfaceNumber;
+	Integer InterfaceNumber;
 /*!
 
 */
-	const	CImage Icon;
+	CImage * const  Icon;
 /*!
 
 */
-	const	Text SkinDirectory;
+	Text  const SkinDirectory;
 };
 
 /*!
@@ -19679,15 +20303,15 @@ public :
 /*!
 
 */
-	const	Int3 AbsoluteOffset;
+	Int3  const AbsoluteOffset;
 /*!
 
 */
-	const	CBlockUnitModel BlockUnitModel;
+	CBlockUnitModel * const  BlockUnitModel;
 /*!
 
 */
-	const	CBlock Block;
+	CBlock * const  Block;
 };
 
 /*!
@@ -19698,11 +20322,11 @@ public :
 /*!
 
 */
-	const	Array<Ident> PlayersIds;
+	Array<Ident> PlayersIds;
 /*!
 
 */
-	const	Text Tag;
+	Text  const Tag;
 };
 
 /*!
@@ -19723,23 +20347,23 @@ public :
 /*!
 
 */
-	const	Integer Cooldown;
+	Integer  const Cooldown;
 /*!
 
 */
-	const	Integer CooldownStartTime;
+	Integer  const CooldownStartTime;
 /*!
 
 */
-	const	Integer Energy;
+	Integer  const Energy;
 /*!
 
 */
-	const	Integer EnergyCost;
+	Integer  const EnergyCost;
 /*!
 
 */
-	const	Integer EnergyMax;
+	Integer  const EnergyMax;
 };
 
 /*!
@@ -19750,11 +20374,11 @@ public :
 /*!
 
 */
-			Integer TeamLevel;
+	Integer TeamLevel;
 /*!
 
 */
-			Array<SWebServicesTaskResult_GhostDriver_Download_Member> Members;
+	Array<SWebServicesTaskResult_GhostDriver_Download_Member*> Members;
 };
 
 /*!
@@ -19769,11 +20393,11 @@ public :
 /*!
 Send a custom event to the CMode script.
 */
-			Void SendCustomEvent(Text Type,Array<Text> Data);
+	Void SendCustomEvent(Text Type,Array<Text> Data);
 /*!
 
 */
-			Boolean HoldLoadingScreen;
+	Boolean HoldLoadingScreen;
 };
 
 /*!
@@ -19837,75 +20461,75 @@ public :
 /*!
 
 */
-	const	CManiaAppPlaygroundEvent::Type PlaygroundType;
+	CManiaAppPlaygroundEvent::Type const  PlaygroundType;
 /*!
 
 */
-	const	Text PlaygroundScriptEventType;
+	Text  const PlaygroundScriptEventType;
 /*!
 
 */
-	const	Array<Text> PlaygroundScriptEventData;
+	Array<Text> PlaygroundScriptEventData;
 /*!
 
 */
-	const	CGhost Ghost;
+	CGhost * const  Ghost;
 /*!
 
 */
-	const	CManiaAppPlaygroundEvent::GameplaySpecialType GameplaySpecialType;
+	CManiaAppPlaygroundEvent::GameplaySpecialType const  GameplaySpecialType;
 /*!
 
 */
-	const	CManiaAppPlaygroundEvent::GameplayTurboRoulette GameplayTurboRoulette;
+	CManiaAppPlaygroundEvent::GameplayTurboRoulette const  GameplayTurboRoulette;
 /*!
 
 */
-	const	Boolean IsBoostUpElseDown;
+	Boolean  const IsBoostUpElseDown;
 /*!
 
 */
-	const	Integer WaypointLandmarkIndex;
+	Integer  const WaypointLandmarkIndex;
 /*!
 
 */
-	const	Integer RaceWaypointTime;
+	Integer  const RaceWaypointTime;
 /*!
 
 */
-	const	Integer DiffWithBestRace;
+	Integer  const DiffWithBestRace;
 /*!
 
 */
-	const	Boolean DiffWithBestRace_IsValid;
+	Boolean  const DiffWithBestRace_IsValid;
 /*!
 
 */
-	const	Integer LapWaypointTime;
+	Integer  const LapWaypointTime;
 /*!
 
 */
-	const	Integer DiffWithBestLap;
+	Integer  const DiffWithBestLap;
 /*!
 
 */
-	const	Boolean DiffWithBestLap_IsValid;
+	Boolean  const DiffWithBestLap_IsValid;
 /*!
 
 */
-	const	Boolean IsFinish;
+	Boolean  const IsFinish;
 /*!
 
 */
-	const	Boolean IsNewLap;
+	Boolean  const IsNewLap;
 /*!
 
 */
-	const	Integer RaceWaypointCount;
+	Integer  const RaceWaypointCount;
 /*!
 
 */
-	const	Integer LapWaypointCount;
+	Integer  const LapWaypointCount;
 };
 
 /*!
@@ -19916,27 +20540,27 @@ public :
 /*!
 
 */
-			Text ModuleName;
+	Text ModuleName;
 /*!
 
 */
-			Real PosX;
+	Real PosX;
 /*!
 
 */
-			Real PosY;
+	Real PosY;
 /*!
 
 */
-			Real ZIndex;
+	Real ZIndex;
 /*!
 
 */
-			Real Scale;
+	Real Scale;
 /*!
 
 */
-	const	Text ModulePath;
+	Text  const ModulePath;
 };
 
 /*!
@@ -19947,19 +20571,19 @@ public :
 /*!
 
 */
-			Real Start;
+	Real Start;
 /*!
 
 */
-			Real End;
+	Real End;
 /*!
 
 */
-			Real GetKeyTime(Integer KeyIndex);
+	Real GetKeyTime(Integer KeyIndex);
 /*!
 
 */
-			Integer GetKeysCount();
+	Integer GetKeysCount();
 };
 
 /*!
@@ -19970,11 +20594,11 @@ public :
 /*!
 Name of the map
 */
-	const	Text Name;
+	Text  const Name;
 /*!
 True if the file is found
 */
-	const	Boolean FileExists;
+	Boolean  const FileExists;
 };
 
 /*!
@@ -19985,23 +20609,23 @@ public :
 /*!
 
 */
-	const	Text Checksum;
+	Text  const Checksum;
 /*!
 
 */
-	const	Integer CreationTimeStamp;
+	Integer  const CreationTimeStamp;
 /*!
 
 */
-	const	Text Id;
+	Text  const Id;
 /*!
 
 */
-	const	Integer UpdateTimeStamp;
+	Integer  const UpdateTimeStamp;
 /*!
 
 */
-	const	Text Url;
+	Text  const Url;
 };
 
 /*!
@@ -20012,31 +20636,31 @@ public :
 /*!
 
 */
-	const	Text MapId;
+	Text  const MapId;
 /*!
 
 */
-	const	Ident MapUid;
+	Ident  const MapUid;
 /*!
 
 */
-	const	Integer BronzeScore;
+	Integer  const BronzeScore;
 /*!
 
 */
-	const	Integer SilverScore;
+	Integer  const SilverScore;
 /*!
 
 */
-	const	Integer GoldScore;
+	Integer  const GoldScore;
 /*!
 
 */
-	const	Integer AuthorScore;
+	Integer  const AuthorScore;
 /*!
 
 */
-	const	Integer TimeStamp;
+	Integer  const TimeStamp;
 };
 
 /*!
@@ -20047,43 +20671,43 @@ public :
 /*!
 
 */
-	const	Text Level;
+	Text  const Level;
 /*!
 
 */
-	const	Integer T1Count;
+	Integer  const T1Count;
 /*!
 
 */
-	const	Integer T2Count;
+	Integer  const T2Count;
 /*!
 
 */
-	const	Integer T3Count;
+	Integer  const T3Count;
 /*!
 
 */
-	const	Integer T4Count;
+	Integer  const T4Count;
 /*!
 
 */
-	const	Integer T5Count;
+	Integer  const T5Count;
 /*!
 
 */
-	const	Integer T6Count;
+	Integer  const T6Count;
 /*!
 
 */
-	const	Integer T7Count;
+	Integer  const T7Count;
 /*!
 
 */
-	const	Integer T8Count;
+	Integer  const T8Count;
 /*!
 
 */
-	const	Integer T9Count;
+	Integer  const T9Count;
 };
 
 /*!
@@ -20094,19 +20718,19 @@ public :
 /*!
 
 */
-	const	Text Type;
+	Text  const Type;
 /*!
 
 */
-	const	Text Param;
+	Text  const Param;
 /*!
 
 */
-	const	Text ActionName;
+	Text  const ActionName;
 /*!
 
 */
-	const	Text ActionDescription;
+	Text  const ActionDescription;
 };
 
 /*!
@@ -20117,23 +20741,27 @@ public :
 /*!
 
 */
-	const	Text AccountId;
+	Text  const AccountId;
 /*!
 
 */
-	const	Text CountryFlagUrl;
+	Text  const CountryFlagUrl;
 /*!
 
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 
 */
-			Array<CSkinInfo> SkinList;
+	Text  const PrestigeSkinOptions;
+/*!
+
+*/
+	Array<CSkinInfo*> SkinList;
 };
 
 /*!
@@ -20144,23 +20772,27 @@ public :
 /*!
 
 */
-	const	Text AccountId;
+	Text  const AccountId;
 /*!
 
 */
-	const	Text CountryFlagUrl;
+	Text  const CountryFlagUrl;
 /*!
 
 */
-	const	Text DisplayName;
+	Text  const DisplayName;
 /*!
 
 */
-	const	Boolean IsFirstPartyDisplayName;
+	Boolean  const IsFirstPartyDisplayName;
 /*!
 
 */
-			Array<CSkinInfo> SkinList;
+	Text  const PrestigeSkinOptions;
+/*!
+
+*/
+	Array<CSkinInfo*> SkinList;
 };
 
 /*!
@@ -20171,27 +20803,27 @@ public :
 /*!
 PackId is the TitleId if the pack is a TitlePack.
 */
-	const	Ident PackId;
+	Ident  const PackId;
 /*!
 
 */
-	const	Ident CreatorId;
+	Ident  const CreatorId;
 /*!
 
 */
-	const	Boolean IsTitlePack;
+	Boolean  const IsTitlePack;
 /*!
 
 */
-			Void Recipients_Add(Text Login,Integer UseCost,Integer GetCost);
+	Void Recipients_Add(Text Login,Integer UseCost,Integer GetCost);
 /*!
 
 */
-			Void Recipients_Remove(Text Login);
+	Void Recipients_Remove(Text Login);
 /*!
 
 */
-	const	Array<CPackCreatorRecipient> Recipients;
+	Array<CPackCreatorRecipient* const > Recipients;
 };
 
 /*!
@@ -20202,31 +20834,31 @@ public :
 /*!
 
 */
-			Text Name;
+	Text Name;
 /*!
 
 */
-	const	Boolean IsAllUnderground;
+	Boolean  const IsAllUnderground;
 /*!
 
 */
-	const	Boolean IsPartUnderground;
+	Boolean  const IsPartUnderground;
 /*!
 
 */
-	const	Int3 Size;
+	Int3  const Size;
 /*!
 
 */
-	const	Int3 OffsetBoundingBoxMin;
+	Int3  const OffsetBoundingBoxMin;
 /*!
 
 */
-	const	Int3 OffsetBoundingBoxMax;
+	Int3  const OffsetBoundingBoxMax;
 /*!
 
 */
-	const	Array<CBlockUnitModel> BlockUnitModels;
+	Array<CBlockUnitModel* const > BlockUnitModels;
 };
 
 /*!
@@ -20237,11 +20869,11 @@ public :
 /*!
 
 */
-	const	Int3 RelativeOffset;
+	Int3  const RelativeOffset;
 /*!
 
 */
-	const	Array<CBlockModelClip> Clips;
+	Array<CBlockModelClip* const > Clips;
 };
 
 /*!
@@ -20252,7 +20884,7 @@ public :
 /*!
 
 */
-			Array<SWebServicesTaskResult_GhostDriver_Download_Ghost> Ghosts;
+	Array<SWebServicesTaskResult_GhostDriver_Download_Ghost*> Ghosts;
 };
 
 /*!
@@ -20263,15 +20895,15 @@ public :
 /*!
 Login of the recipient.
 */
-	const	Text Login;
+	Text  const Login;
 /*!
 Cost to read the data (and see it ingame).
 */
-	const	Integer GetCost;
+	Integer  const GetCost;
 /*!
 Cost to use the in other creations.
 */
-	const	Integer UseCost;
+	Integer  const UseCost;
 };
 
 /*!
@@ -20289,7 +20921,7 @@ public :
 /*!
 
 */
-			CGhost Ghost;
+	CGhost * Ghost;
 };
 
 /*!
@@ -20776,6 +21408,15 @@ namespace TextLib {
 	*
 	*/
 	Array<Text> Split(Text _Separators, Text _Text);
+	/*! 
+	* \brief Splits a given text based on a given separators set.
+	* 
+	* \param _Separators : The separators to use
+	* \param _Text : The text to split.
+	* \param _MergeSeparators : Separator may be repeated between values (default = true)
+	*
+	*/
+	Array<Text> Split(Text _Separators, Text _Text, Boolean _MergeSeparators);
 	/*! 
 	* \brief Joins a set of texts with the given separator
 	* 
