@@ -4497,13 +4497,6 @@ public :
 		Rewards,
 		Shop,
 	};
-	/*!
-	
-	*/
-	enum EVoiceChatMuteSetting {
-		Muted,
-		NotMuted,
-	};
 /*!
 
 */
@@ -4671,7 +4664,15 @@ NullId for the mainuser.
 /*!
 
 */
-	Text VoiceChat_Channel;
+	Boolean VoiceChat_Mute_Myself;
+/*!
+
+*/
+	Void VoiceChat_MuteAll();
+/*!
+
+*/
+	Void VoiceChat_UnmuteAll();
 /*!
 
 */
@@ -4695,27 +4696,11 @@ List of users currently speaking. Sorted with local users first.
 /*!
 
 */
-	Boolean VoiceChat_Mute_Myself;
-/*!
-
-*/
-	CUserV2Manager::EVoiceChatMuteSetting VoiceChat_NewRemoteUser_DefaultMuteSetting;
-/*!
-
-*/
-	CGameUserVoiceChat VoiceChat_UserAdd(Text WebServicesUserId);
-/*!
-
-*/
-	Void VoiceChat_ClearUsers();
+	Array<CGameUserVoiceChat* const > VoiceChat_Users_Remote_Muted;
 /*!
 
 */
 	CGameUserVoiceChat VoiceChat_FindUserFromWebServicesUserId(Text WebServicesUserId);
-/*!
-
-*/
-	Void VoiceChat_UnmuteAll();
 /*!
 
 */
@@ -5151,6 +5136,10 @@ Call as soon as the request has been consumed and is being processed.
 
 */
 	Boolean Adverts_Enabled;
+/*!
+
+*/
+	CVoiceChatConfig * const  VoiceChat;
 };
 
 /*!
@@ -13828,7 +13817,7 @@ Automatically begin processing when the layer becomes visible and end when hidde
 */
 	Boolean  const IsPlaying;
 /*!
-
+note: seeking not implemented, setting a value is ignored.
 */
 	Real PlayCursor;
 /*!
@@ -15641,6 +15630,43 @@ Array of the matchsettings
 
 */
 	Array<CMatchSettings* const > MatchSettings_Temp;
+};
+
+/*!
+* \brief Documentation for class CVoiceChatConfig
+*/
+class CVoiceChatConfig {
+public :
+	/*!
+	
+	*/
+	enum ESyncMode {
+		Default,
+		Disabled,
+		Manual,
+		Clan,
+		Squad,
+	};
+/*!
+
+*/
+	CGameUserVoiceChat::EMuteSetting NewRemoteUser_DefaultMuteSetting;
+/*!
+
+*/
+	CVoiceChatConfig::ESyncMode SyncMode;
+/*!
+
+*/
+	Text Manual_Channel;
+/*!
+
+*/
+	Void Manual_ClearUsers();
+/*!
+
+*/
+	CGameUserVoiceChat Manual_UserAdd_Proc(Text WebServicesUserId);
 };
 
 /*!
@@ -17852,6 +17878,10 @@ Locally accessible by the client script to locally override settings from the se
 Set a layer to be displayed on a subscreen. ScreenNum: 0=global, 1,2.... = screen index.  Limitation: a local layer can only be one screen at a time.
 */
 	Void SplitScreenAssignLayer(CUILayer UILayer,Integer ScreenNum);
+/*!
+
+*/
+	CVoiceChatConfig * const  VoiceChat;
 };
 
 /*!
@@ -21016,13 +21046,77 @@ namespace MathLib {
 	*/
 	Real Distance(Real _Argument1, Real _Argument2);
 	/*! 
+	* \brief Euclidian distance between two 2d points.
+	* 
 	*
 	*/
 	Real Distance(Vec2 _Argument1, Vec2 _Argument2);
 	/*! 
+	* \brief Euclidian distance between two 3d points.
+	* 
 	*
 	*/
 	Real Distance(Vec3 _Argument1, Vec3 _Argument2);
+	/*! 
+	* \brief Euclidian norm of the vector.
+	* 
+	*
+	*/
+	Real Length(Vec2 _Argument1);
+	/*! 
+	* \brief Euclidian norm of the vector.
+	* 
+	*
+	*/
+	Real Length(Vec3 _Argument1);
+	/*! 
+	* \brief Returns maximum of the absolute value of each component.
+	* 
+	*
+	*/
+	Real Norm0(Vec2 _Argument1);
+	/*! 
+	* \brief Returns the sum of the absolute value of each component.
+	* 
+	*
+	*/
+	Real Norm1(Vec2 _Argument1);
+	/*! 
+	* \brief Returns maximum of the absolute value of each component.
+	* 
+	*
+	*/
+	Real Norm0(Vec3 _Argument1);
+	/*! 
+	* \brief Returns the sum of the absolute value of each component.
+	* 
+	*
+	*/
+	Real Norm1(Vec3 _Argument1);
+	/*! 
+	* \brief Returns maximum of the absolute value of each component.
+	* 
+	*
+	*/
+	Integer Norm0(Int2 _Argument1);
+	/*! 
+	* \brief Returns the sum of the absolute value of each component.
+	* 
+	*
+	*/
+	Integer Norm1(Int2 _Argument1);
+	/*! 
+	* \brief Returns maximum of the absolute value of each component.
+	* 
+	*
+	*/
+	Integer Norm0(Int3 _Argument1);
+	/*! 
+	* \brief Returns the sum of the absolute value of each component.
+	* 
+	*
+	*/
+	Integer Norm1(Int3 _Argument1);
 	/*! 
 	*
 	*/
@@ -21031,6 +21125,22 @@ namespace MathLib {
 	*
 	*/
 	Vec3 CrossProduct(Vec3 _Argument1, Vec3 _Argument2);
+	/*! 
+	*
+	*/
+	Real DotProduct(Vec2 _Argument1, Vec2 _Argument2);
+	/*! 
+	*
+	*/
+	Integer DotProduct(Int3 _Argument1, Int3 _Argument2);
+	/*! 
+	*
+	*/
+	Int3 CrossProduct(Int3 _Argument1, Int3 _Argument2);
+	/*! 
+	*
+	*/
+	Integer DotProduct(Int2 _Argument1, Int2 _Argument2);
 	/*! 
 	*
 	*/
@@ -21119,6 +21229,78 @@ namespace MathLib {
 	*
 	*/
 	Real Mod(Real _X, Real _Min, Real _Max);
+	/*! 
+	* \brief Returns the maximum between A and B
+	* 
+	*
+	*/
+	Vec2 Max(Vec2 _A, Vec2 _B);
+	/*! 
+	* \brief Returns the minimum between A and B
+	* 
+	*
+	*/
+	Vec2 Min(Vec2 _A, Vec2 _B);
+	/*! 
+	* \brief Returns the value X clamped to the range Min..Max
+	* 
+	*
+	*/
+	Vec2 Clamp(Vec2 _X, Vec2 _Min, Vec2 _Max);
+	/*! 
+	* \brief Returns the maximum between A and B
+	* 
+	*
+	*/
+	Vec3 Max(Vec3 _A, Vec3 _B);
+	/*! 
+	* \brief Returns the minimum between A and B
+	* 
+	*
+	*/
+	Vec3 Min(Vec3 _A, Vec3 _B);
+	/*! 
+	* \brief Returns the value X clamped to the range Min..Max
+	* 
+	*
+	*/
+	Vec3 Clamp(Vec3 _X, Vec3 _Min, Vec3 _Max);
+	/*! 
+	* \brief Returns the maximum between A and B
+	* 
+	*
+	*/
+	Int2 Max(Int2 _A, Int2 _B);
+	/*! 
+	* \brief Returns the minimum between A and B
+	* 
+	*
+	*/
+	Int2 Min(Int2 _A, Int2 _B);
+	/*! 
+	* \brief Returns the value X clamped to the range Min..Max
+	* 
+	*
+	*/
+	Int2 Clamp(Int2 _X, Int2 _Min, Int2 _Max);
+	/*! 
+	* \brief Returns the maximum between A and B
+	* 
+	*
+	*/
+	Int3 Max(Int3 _A, Int3 _B);
+	/*! 
+	* \brief Returns the minimum between A and B
+	* 
+	*
+	*/
+	Int3 Min(Int3 _A, Int3 _B);
+	/*! 
+	* \brief Returns the value X clamped to the range Min..Max
+	* 
+	*
+	*/
+	Int3 Clamp(Int3 _X, Int3 _Min, Int3 _Max);
 };
 
 /*!
@@ -21854,6 +22036,12 @@ namespace TimeLib {
 	*
 	*/
 	Integer GetLocalDelta_Months(Text _Timestamp1, Text _Timestamp2);
+	/*! 
+	* \brief Returns local milliseconds elapsed since game initialisation.
+	* 
+	*
+	*/
+	Integer GetMillisecondsSinceInit();
 };
 
 /*!
