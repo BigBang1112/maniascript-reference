@@ -4540,6 +4540,10 @@ NullId for the mainuser.
 /*!
 
 */
+	Boolean  const IsNetworkAvailable;
+/*!
+
+*/
 	CTaskResult_Connect ConnectUser(Ident UserId);
 /*!
 
@@ -7482,6 +7486,10 @@ public :
 
 */
 	Vec3 ColorSecondary;
+/*!
+
+*/
+	Vec3 ColorUI;
 /*!
 
 */
