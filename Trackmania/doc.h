@@ -257,6 +257,10 @@ Send a custom event to the owner of the layer.
 
 */
 	Text Dbg_DumpDeclareForVariables(CNod Nod,Boolean StatsOnly);
+/*!
+
+*/
+	Text FilterProfanities(Text TextToFilter);
 };
 
 /*!
@@ -419,6 +423,10 @@ Explore to given file or folder. Returns False if it does not exist on the files
 
 */
 	Void TTS_Context_Read(Ident ContextId);
+/*!
+
+*/
+	Text FilterProfanities(Text TextToFilter);
 };
 
 /*!
@@ -1116,6 +1124,76 @@ public :
 };
 
 /*!
+* \brief Documentation for class CNotification_SquadLockStateUpdated
+*/
+class CNotification_SquadLockStateUpdated : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Boolean  const IsLocked;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadMemberAdded
+*/
+class CNotification_SquadMemberAdded : public CNotification_Squad {
+public :
+/*!
+
+*/
+	Text  const MemberAccountId;
+/*!
+
+*/
+	Text  const MemberCountryFlagUrl;
+/*!
+
+*/
+	Text  const MemberDisplayName;
+/*!
+
+*/
+	Boolean  const MemberIsFirstPartyDisplayName;
+/*!
+
+*/
+	Text  const MemberSkinOptions;
+/*!
+
+*/
+	Array<CSkinInfo*> MemberSkinList;
+/*!
+
+*/
+	Text  const MemberWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
 * \brief Documentation for class CNotification_SquadMemberKicked
 */
 class CNotification_SquadMemberKicked : public CNotification_Squad {
@@ -1199,6 +1277,25 @@ public :
 
 */
 	Text  const MemberWebServicesUserId;
+/*!
+
+*/
+	Text  const SquadId;
+/*!
+
+*/
+	Text  const SquadType;
+/*!
+
+*/
+	Integer  const TimeStamp;
+};
+
+/*!
+* \brief Documentation for class CNotification_SquadUpdated
+*/
+class CNotification_SquadUpdated : public CNotification_Squad {
+public :
 /*!
 
 */
@@ -2791,6 +2888,29 @@ Player currently targetted by the camera. Same as InputPlayer when playing. Can 
 };
 
 /*!
+* \brief Documentation for class CVoiceChatEvent_Message
+*/
+class CVoiceChatEvent_Message : public CVoiceChatEvent {
+public :
+/*!
+
+*/
+	CGameUserVoiceChat * const  Sender;
+/*!
+
+*/
+	CGameUserVoiceChat * const  Destination;
+/*!
+
+*/
+	Text  const Message;
+/*!
+
+*/
+	Text  const Lang_BCP47;
+};
+
+/*!
 * \brief Documentation for class CVoiceChatEvent_SpeakingUsersChanged
 */
 class CVoiceChatEvent_SpeakingUsersChanged : public CVoiceChatEvent {
@@ -2850,6 +2970,128 @@ public :
 * \brief Documentation for class CVoiceChatEvent
 */
 class CVoiceChatEvent : public CNod {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_JoinSession
+*/
+class CDirectLink_JoinSession : public CDirectLink {
+public :
+/*!
+
+*/
+	Text  const SessionId;
+/*!
+
+*/
+	Boolean  const IsFirstPartySession;
+/*!
+
+*/
+	Integer  const Context;
+};
+
+/*!
+* \brief Documentation for class CDirectLink_WaitingPage
+*/
+class CDirectLink_WaitingPage : public CDirectLink {
+public :
+/*!
+
+*/
+	Text  const Reason;
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Garage
+*/
+class CDirectLink_Garage : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Splitscreen
+*/
+class CDirectLink_Splitscreen : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Hotseat
+*/
+class CDirectLink_Hotseat : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_ArcadeServer
+*/
+class CDirectLink_ArcadeServer : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Royal
+*/
+class CDirectLink_Royal : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Ranked
+*/
+class CDirectLink_Ranked : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_TrackOfTheDay
+*/
+class CDirectLink_TrackOfTheDay : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_JoinServer
+*/
+class CDirectLink_JoinServer : public CDirectLink {
+public :
+/*!
+
+*/
+	Text  const ServerId;
+/*!
+
+*/
+	Boolean  const IsSpectator;
+};
+
+/*!
+* \brief Documentation for class CDirectLink_OfficialCampaign
+*/
+class CDirectLink_OfficialCampaign : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_NewMap
+*/
+class CDirectLink_NewMap : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink_Home
+*/
+class CDirectLink_Home : public CDirectLink {
+public :
+};
+
+/*!
+* \brief Documentation for class CDirectLink
+*/
+class CDirectLink {
 public :
 };
 
@@ -3024,6 +3266,25 @@ Will be Null if the script is not runing in a layer of an app.
 };
 
 /*!
+* \brief This is the Manialink browser interface.
+*
+* Supported declare modes :
+* - Local
+* - Persistent
+*/
+class CGameScriptHandlerMediaTrack : public CMlScript {
+public :
+/*!
+Info of the map.
+*/
+	CMap * const  CurMap;
+/*!
+
+*/
+	Void ShowCurMapCard();
+};
+
+/*!
 * \brief Documentation for class CMlPage
 *
 * Supported declare modes :
@@ -3140,6 +3401,10 @@ public :
 
 */
 	Text  const CountryPath;
+/*!
+
+*/
+	Array<Text> ZoneIdPath;
 /*!
 
 */
@@ -3276,6 +3541,10 @@ public :
 
 */
 	Text  const Prestige_SkinOptions;
+/*!
+
+*/
+	Text  const Character_SkinOptions;
 /*!
 
 */
@@ -3859,6 +4128,17 @@ public :
 		R2,
 		None,
 	};
+	/*!
+	
+	*/
+	enum EPadType {
+		Keyboard,
+		Mouse,
+		Generic,
+		XBox,
+		PlayStation,
+		Vive,
+	};
 /*!
 
 */
@@ -3914,6 +4194,10 @@ public :
 /*!
 
 */
+	Text GetActionBindingRaw(CInputPad Pad,Text ActionMap,Text ActionId);
+/*!
+
+*/
 	Text GetActionBinding(CInputPad Pad,Text ActionMap,Text ActionId);
 /*!
 
@@ -3922,11 +4206,23 @@ public :
 /*!
 
 */
+	Boolean  const JapanStylePadButtons;
+/*!
+
+*/
 	Boolean ExclusiveMode;
 /*!
 
 */
 	Boolean IsKeyPressed(Integer KeyCode);
+/*!
+
+*/
+	CInputPad * const  LatestActivePad;
+/*!
+
+*/
+	CInputManager::EPadType const  LatestActivePadType;
 /*!
 Duration (ms) elapsed since latest user interraction on any device.
 */
@@ -4466,37 +4762,6 @@ public :
 		Royal,
 		Season,
 	};
-	/*!
-	
-	*/
-	enum EUbisoftClubFlow {
-		OverView,
-		Auth,
-		Reward,
-		Rewards,
-		Challenge,
-		Challenges,
-		CoreChallenges,
-		TimeLimitedChallenges,
-	};
-	/*!
-	
-	*/
-	enum EUplayOverlaySection {
-		Achievements,
-		Actions,
-		Challenges,
-		Chat,
-		Current,
-		Friends,
-		GameOptions,
-		Home,
-		Party,
-		PendingGameInvites,
-		ProductActivation,
-		Rewards,
-		Shop,
-	};
 /*!
 
 */
@@ -4521,6 +4786,10 @@ NullId for the mainuser.
 
 */
 	Text FindDisplayName(Text WebServicesUserId,Boolean IsFirstPartyDisplayName);
+/*!
+
+*/
+	Text WebServicesUserIdFromLogin(Text Login);
 /*!
 
 */
@@ -4556,6 +4825,10 @@ NullId for the mainuser.
 /*!
 
 */
+	CTaskResult Commerce_ShowPrimaryStore(Ident UserId);
+/*!
+
+*/
 	CTaskResult_Bool CrossPlay_IsEnabled(Ident UserId);
 /*!
 
@@ -4576,11 +4849,19 @@ NullId for the mainuser.
 /*!
 
 */
+	Boolean Blocklist_CanViewUGC(Ident UserId,Text WebServicesUserId);
+/*!
+
+*/
 	Integer Friend_GetLastChangeIndex(Ident UserId);
 /*!
 
 */
 	CTaskResult_FriendList Friend_GetList(Ident UserId);
+/*!
+
+*/
+	CTaskResult_Session_Get LiveSession_GetInfo(Ident UserId,Text SessionId);
 /*!
 
 */
@@ -4652,6 +4933,10 @@ NullId for the mainuser.
 /*!
 
 */
+	CTaskResult Squad_JoinSession(Ident UserId,Text SessionId,Boolean IsFirstPartySession);
+/*!
+
+*/
 	CTaskResult_Squad Squad_Leave(Ident UserId,Text SquadId);
 /*!
 
@@ -4661,6 +4946,14 @@ NullId for the mainuser.
 
 */
 	CTaskResult_Squad Squad_SetLeader(Ident UserId,Text SquadId,Text WebServicesUserId);
+/*!
+
+*/
+	Void Squad_SetLocked(Ident UserId,Text SquadId,Boolean Locked);
+/*!
+
+*/
+	Void Squad_SetType(Ident UserId,Text SquadId,Text Type);
 /*!
 
 */
@@ -4721,26 +5014,6 @@ List of users currently speaking. Sorted with local users first.
 
 */
 	CTaskResult Tag_SetClubTag(Ident UserId,Text ClubTag);
-/*!
-
-*/
-	CTaskResult_Session_Get LiveSession_GetInfo(Ident UserId,Text SessionId);
-/*!
-
-*/
-	Void LiveSession_ShowInviteUI(Ident UserId);
-/*!
-
-*/
-	CTaskResult UbisoftClub_Launch(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId);
-/*!
-
-*/
-	CTaskResult UbisoftClub_LaunchAndCompleteActions(Ident UserId,CUserV2Manager::EUbisoftClubFlow UbisoftClubFlow,Text RewardId,Array<Text> ActionIdList);
-/*!
-
-*/
-	CTaskResult Uplay_OpenOverlay(Ident UserId,CUserV2Manager::EUplayOverlaySection OverlaySection);
 };
 
 /*!
@@ -4862,6 +5135,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 
 */
 	Void ItemSetPlayerState(Ident SceneId,Ident ItemId,Vec3 LightrailColor,Vec3 DossardColor,Text DossardNumber,Text DossardTrigram);
+/*!
+
+*/
+	Void ItemSetPlayerState(Ident SceneId,Ident ItemId,CUser User);
 /*!
 
 */
@@ -5875,6 +6152,10 @@ public :
 
 */
 	Boolean PlaceMacroblock_NoTerrain_NoUnvalidate(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+/*!
+
+*/
+	Void ResetAutoRepeat();
 /*!
 
 */
@@ -7526,6 +7807,15 @@ public :
 		ChatMessage,
 		ModeCallback,
 	};
+	/*!
+	
+	*/
+	enum EChatOption {
+		Default,
+		ToSpectatorCurrent,
+		ToSpectatorAll,
+		ToTeam,
+	};
 /*!
 Event type.
 */
@@ -7538,6 +7828,10 @@ Event type.
 
 */
 	Text  const ChatText;
+/*!
+
+*/
+	CServerPluginEvent::EChatOption const  ChatOption;
 /*!
 
 */
@@ -7733,7 +8027,7 @@ Always use NullId as UserId.
 /*!
 
 */
-	Text  const PlatformRestriction;
+	Text  const PlayerRestrictions;
 };
 
 /*!
@@ -13445,6 +13739,14 @@ public :
 		Default,
 		Add,
 	};
+	/*!
+	
+	*/
+	enum EFilterProfanities {
+		Never,
+		OnlyIfNotTranslated,
+		Always,
+	};
 /*!
 
 */
@@ -13537,6 +13839,10 @@ Used to include styling attributes like $s,$o...
 
 */
 	Void TTS_Unfocus();
+/*!
+
+*/
+	CMlLabel::EFilterProfanities FilterProfanities;
 };
 
 /*!
@@ -14890,6 +15196,14 @@ Values in range (0.500000-2.000000)
 /*!
 
 */
+	Text User_CharacterSkinOptions;
+/*!
+
+*/
+	Boolean User_CombinePrestigeAndSkins;
+/*!
+
+*/
 	Boolean Custom_EnableAvatars;
 /*!
 
@@ -15102,11 +15416,19 @@ Values in range (-1.000000-1.000000)
 /*!
 
 */
+	Boolean STT_Enabled;
+/*!
+
+*/
 	Boolean VoiceChat_Loopback;
 /*!
 
 */
 	Boolean VoiceChat_Enabled;
+/*!
+
+*/
+	Boolean  const STT_Available;
 };
 
 /*!
@@ -15223,6 +15545,28 @@ List of friend info contained by this result.
 * Supported declare modes :
 * - Local
 */
+class CTaskResult_Session_Get : public CTaskResult {
+public :
+/*!
+
+*/
+	Text  const SessionId;
+/*!
+
+*/
+	Text  const ServerLogin;
+/*!
+
+*/
+	Text  const ServerPassword;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
 class CTaskResult_UserNewsList : public CWebServicesTaskResult_WSNewsList {
 public :
 /*!
@@ -15317,28 +15661,6 @@ public :
 Get a club name for a webservices user id. Must be called after the task has succeeded.
 */
 	Text GetClubTag(Text WebServicesUserId);
-};
-
-/*!
-* \brief Asynchronous task result.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_Session_Get : public CTaskResult {
-public :
-/*!
-
-*/
-	Text  const SessionId;
-/*!
-
-*/
-	Text  const ServerLogin;
-/*!
-
-*/
-	Text  const ServerPassword;
 };
 
 /*!
@@ -19028,6 +19350,14 @@ public :
 /*!
 
 */
+	Boolean  const CreatedWithGamepadEditor;
+/*!
+
+*/
+	Boolean  const CreatedWithSimpleEditor;
+/*!
+
+*/
 	Text  const FileName;
 /*!
 
@@ -19781,17 +20111,25 @@ public :
 */
 	Text  const SkinUrl;
 /*!
-Values in range (0.100000-10.000000)
+actual range is [1.0..10.0]Values in range (0.100000-10.000000)
 */
 	Real AnalogSensitivity;
 /*!
-Values in range (0.000000-0.250000)
+Values in range (0.000000-0.900000)
 */
 	Real AnalogDeadZone;
 /*!
 
 */
-	Boolean AnalogSteerV2;
+	Boolean InvertSteer;
+/*!
+
+*/
+	Boolean AccelIsToggleMode;
+/*!
+
+*/
+	Boolean BrakeIsToggleMode;
 /*!
 Values in range (0.000000-2.000000)
 */
@@ -20083,6 +20421,10 @@ public :
 
 */
 	Text  const Id;
+/*!
+
+*/
+	Boolean  const IsLocked;
 /*!
 
 */
