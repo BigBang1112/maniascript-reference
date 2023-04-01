@@ -4789,10 +4789,6 @@ NullId for the mainuser.
 /*!
 
 */
-	Text WebServicesUserIdFromLogin(Text Login);
-/*!
-
-*/
 	CMasterServerUser * const  MainUserWebServicesInfo;
 /*!
 
