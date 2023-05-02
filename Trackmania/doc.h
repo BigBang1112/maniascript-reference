@@ -1307,6 +1307,10 @@ public :
 /*!
 
 */
+	Boolean  const WasForcedToLeaveDueToCrossPlaySetting;
+/*!
+
+*/
 	Integer  const TimeStamp;
 };
 
@@ -3646,6 +3650,8 @@ public :
 		AppMenu,
 		Action1,
 		Action2,
+		Action3,
+		Action4,
 		ScrollUp,
 		ScrollDown,
 	};
@@ -5575,6 +5581,10 @@ public :
 /*!
 
 */
+	Boolean  const BackToMainMenuRequested;
+/*!
+
+*/
 	Boolean HoldLoadingScreen;
 /*!
 
@@ -6703,6 +6713,17 @@ public :
 		Summer,
 		Fall,
 	};
+	/*!
+	
+	*/
+	enum EPlayTimeContext {
+		None,
+		Club,
+		Create,
+		Live,
+		Local,
+		Solo,
+	};
 /*!
 Array of task results.
 */
@@ -6711,6 +6732,10 @@ Array of task results.
 Release a task result no more used.
 */
 	Void TaskResult_Release(Ident TaskId);
+/*!
+Track_Context_PlayTime
+*/
+	Void Track_Context_PlayTime(Ident UserId,CTrackingMgr::EPlayTimeContext PlayTimeContext);
 /*!
 Track_Context_MenuStart
 */
@@ -6760,9 +6785,9 @@ Track_Live_RankedPlayed
 */
 	Void Track_Live_RankedPlayed(Ident UserId,Integer Rank,Boolean Win);
 /*!
-Track_Live_RoyalPlayed
+Track_Live_RoyalPlayed_V2
 */
-	Void Track_Live_RoyalPlayed(Ident UserId,Integer Rank,Boolean Win);
+	Void Track_Live_RoyalPlayed_V2(Ident UserId,Integer Rank,Boolean Win,Boolean IsSuperRoyal,Text Division);
 /*!
 Track_Live_RoyalSectionFinished_V2
 */
@@ -6799,6 +6824,14 @@ Track_Player_TrackOfTheDayWeekAllTrackCompleted_V2
 Track_Player_TrophyEarned
 */
 	Void Track_Player_TrophyEarned(Ident UserId,Integer T1CountPtr,Integer T2CountPtr,Integer T3CountPtr,Integer T4CountPtr,Integer T5CountPtr,Integer T6CountPtr,Integer T7CountPtr,Integer T8CountPtr,Integer T9CountPtr);
+/*!
+Track_Player_StartActivity
+*/
+	Void Track_Player_StartActivity(Ident UserId,Text ActivityId);
+/*!
+Track_Player_EndActivity
+*/
+	Void Track_Player_EndActivity(Ident UserId,Text ActivityId);
 };
 
 /*!
@@ -13705,11 +13738,7 @@ public :
 /*!
 
 */
-	Integer MaxLine;
-/*!
-
-*/
-	Boolean AutoNewLine;
+	Integer MaxLength;
 /*!
 
 */
@@ -15732,6 +15761,8 @@ public :
 		AppMenu,
 		Action1,
 		Action2,
+		Action3,
+		Action4,
 		ScrollUp,
 		ScrollDown,
 	};
