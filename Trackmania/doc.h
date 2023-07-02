@@ -1307,6 +1307,14 @@ public :
 /*!
 
 */
+	Text  const LeaderAccountId;
+/*!
+
+*/
+	Text  const LeaderWebServicesUserId;
+/*!
+
+*/
 	Boolean  const WasForcedToLeaveDueToCrossPlaySetting;
 /*!
 
@@ -2892,6 +2900,17 @@ Player currently targetted by the camera. Same as InputPlayer when playing. Can 
 };
 
 /*!
+* \brief Documentation for class CVoiceChatEvent_DisplayUI
+*/
+class CVoiceChatEvent_DisplayUI : public CVoiceChatEvent {
+public :
+/*!
+
+*/
+	Boolean  const NewValue;
+};
+
+/*!
 * \brief Documentation for class CVoiceChatEvent_Message
 */
 class CVoiceChatEvent_Message : public CVoiceChatEvent {
@@ -3211,14 +3230,6 @@ Will be Null if the script is not runing in a layer of an app.
 */
 class CMlBrowser : public CMlScript {
 public :
-	/*!
-	
-	*/
-	enum EBuddyResult {
-		Ok,
-		Error,
-		NotFinished,
-	};
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
@@ -3231,14 +3242,6 @@ Will be Null if the script is not runing in a layer of an app.
 
 */
 	Void ShowCurMapCard();
-/*!
-
-*/
-	CMlBrowser::EBuddyResult const  BuddyDoResult;
-/*!
-
-*/
-	Text  const BuddyDoErrorMessage;
 /*!
 
 */
@@ -3263,10 +3266,6 @@ Will be Null if the script is not runing in a layer of an app.
 
 */
 	Text BrowserFocusedFrameId;
-/*!
-
-*/
-	Void SetLocalUserClubLink(Text ClubLink);
 };
 
 /*!
@@ -4594,10 +4593,6 @@ Returns the skillpoints for a campaign.
 */
 	Integer Campaign_GetSkillPoints(Ident UserId,Text CampaignId);
 /*!
-Returns the all the records of an opponent specified by its login for a campaign.
-*/
-	CTaskResult_MapRecordList Campaign_GetOpponentRecords(Ident UserId,Text CampaignId,Text OpponentLogin);
-/*!
 Returns the buddies records for a map of a campaign.
 */
 	CTaskResult_BuddiesChallengeRecord Campaign_GetBuddiesMapRecord(Ident UserId,Text CampaignId,Text MapUid);
@@ -4661,10 +4656,6 @@ Loads and synchronizes season scores.
 Loads and synchronizes scores for a list of season.
 */
 	CTaskResult Season_LoadScoreList(Ident UserId,Array<Text> SeasonIdList);
-/*!
-
-*/
-	CTaskResult_MapRecordList Season_GetOpponentRecordList(Ident UserId,Text SeasonId,Text OpponentWebServicesUserId);
 /*!
 Add points to multiplayer score.
 */
@@ -4959,7 +4950,15 @@ NullId for the mainuser.
 /*!
 
 */
+	Void Squad_SetEnabled(Ident UserId,Boolean Enabled);
+/*!
+
+*/
 	Array<CVoiceChatEvent* const > VoiceChat_Events;
+/*!
+
+*/
+	Boolean  const VoiceChat_DisplayUI;
 /*!
 
 */
@@ -5004,6 +5003,10 @@ List of users currently speaking. Sorted with local users first.
 
 */
 	Integer Subscription_GetEndTimeStamp(Ident UserId,Text SubscriptionName);
+/*!
+
+*/
+	Boolean Subscription_IsRefreshingInfo(Ident UserId);
 /*!
 
 */
@@ -6213,19 +6216,19 @@ public :
 /*!
 
 */
-	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CMapEditorPlugin::MapElemColor Color,Boolean ForceMacroblockColor);
 /*!
 
 */
-	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,Integer UserData);
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CMapEditorPlugin::MapElemColor Color,Boolean ForceMacroblockColor,Integer UserData);
 /*!
 
 */
-	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList);
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList,CMapEditorPlugin::MapElemColor Color,Boolean ForceMacroblockColor);
 /*!
 
 */
-	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList,Integer UserData);
+	CMacroblockInstance CreateMacroblockInstance(CMacroblockModel MacroblockModel,Int3 Coord,CMapEditorPlugin::CardinalDirections Dir,CBlockClipList DefaultClipList,CMapEditorPlugin::MapElemColor Color,Boolean ForceMacroblockColor,Integer UserData);
 /*!
 
 */
@@ -8656,6 +8659,38 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 /*!
 
 */
+	Void Activity_Match_Create_Begin(Text ActivityId);
+/*!
+
+*/
+	Void Activity_Match_Create_AddPlayer(Text WebServicesUserId,Text TeamName);
+/*!
+
+*/
+	Void Activity_Match_Create_AddTeam(Text TeamName);
+/*!
+
+*/
+	Void Activity_Match_Create_End();
+/*!
+
+*/
+	Void Activity_Match_ReportResult_Begin();
+/*!
+
+*/
+	Void Activity_Match_ReportResult_SetPlayerResult(Text WebServicesUserId,Integer Rank,Integer Score);
+/*!
+
+*/
+	Void Activity_Match_ReportResult_SetTeamResult(Text TeamName,Integer Rank,Integer Score);
+/*!
+
+*/
+	Void Activity_Match_ReportResult_End();
+/*!
+
+*/
 	Boolean EnableGhostRecording;
 /*!
 
@@ -8705,6 +8740,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 
 */
 	CWebServicesTaskResult_GhostDriver_Download GhostDriver_Download_End();
+/*!
+
+*/
+	CTaskResult_MapRecordList MapRecord_GetListByMapAndPlayerList(Ident UserId,Array<Text> WebServicesUserIdList,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
 
 */
@@ -14794,7 +14833,7 @@ Description of the GameMode
 * Supported declare modes :
 * - Local
 */
-class CTaskResult_MapRecordList : public CWebServicesTaskResult_MapRecordList {
+class CTaskResult_MapRecordList : public CWebServicesTaskResult_WSMapRecordList {
 public :
 /*!
 List of map record info retrieve from NadeoServices contained by this result.
@@ -15150,6 +15189,22 @@ public :
 		SpectatorOnly,
 		Always,
 	};
+	/*!
+	
+	*/
+	enum EIngameChatBackground {
+		Hidden,
+		Transparent,
+		Opaque,
+	};
+	/*!
+	
+	*/
+	enum EIngameChatTextSize {
+		Medium,
+		Small,
+		Big,
+	};
 /*!
 
 */
@@ -15389,6 +15444,14 @@ Values in range (0.500000-15.000000)
 /*!
 
 */
+	CUserV2Profile::EIngameChatBackground Interface_IngameChatBackground;
+/*!
+
+*/
+	CUserV2Profile::EIngameChatTextSize Interface_IngameChatTextSize;
+/*!
+
+*/
 	Boolean Inputs_MouseLookInvertY;
 /*!
 
@@ -15454,6 +15517,10 @@ Values in range (-1.000000-1.000000)
 
 */
 	Boolean  const STT_Available;
+/*!
+
+*/
+	Boolean VoiceChat_SendTextAsVoice;
 };
 
 /*!
@@ -16407,6 +16474,14 @@ public :
 
 */
 	Array<Int3> UnitCoords;
+/*!
+
+*/
+	CMapEditorPlugin::MapElemColor const  Color;
+/*!
+
+*/
+	Boolean  const ForceMacroblockColor;
 /*!
 
 */
@@ -19585,7 +19660,7 @@ Name of the GameMode
 * Supported declare modes :
 * - Local
 */
-class CWebServicesTaskResult_MapRecordList : public CTaskResult {
+class CWebServicesTaskResult_WSMapRecordList : public CTaskResult {
 public :
 };
 
@@ -19642,6 +19717,10 @@ public :
 
 */
 	Integer  const Timestamp;
+/*!
+
+*/
+	Integer  const Medal;
 /*!
 
 */
@@ -20161,6 +20240,10 @@ Values in range (0.000000-0.900000)
 Values in range (0.000000-2.000000)
 */
 	Real RumbleIntensity;
+/*!
+
+*/
+	Boolean HapticFeedbackEnabled;
 /*!
 Values in range (0.000000-1.000000)
 */
