@@ -3119,6 +3119,81 @@ public :
 };
 
 /*!
+* \brief Documentation for class NGameScriptChat::SEvent_HistoryChange
+*/
+class NGameScriptChat::SEvent_HistoryChange : public NGameScriptChat::SEvent {
+public :
+};
+
+/*!
+* \brief Documentation for class NGameScriptChat::SEvent
+*/
+class NGameScriptChat::SEvent {
+public :
+};
+
+/*!
+* \brief Documentation for class NGameScriptChat::SEntry
+*/
+class NGameScriptChat::SEntry {
+public :
+/*!
+
+*/
+	SConstStringInt * const  Text;
+/*!
+
+*/
+	Boolean  const IsTargeted;
+};
+
+/*!
+* \brief Documentation for class NGameScriptChat::SHistory
+*/
+class NGameScriptChat::SHistory {
+public :
+/*!
+
+*/
+	Array<NGameScriptChat::SEntry* const > Entries;
+/*!
+
+*/
+	Integer Window_Size;
+/*!
+
+*/
+	Integer Window_Offset;
+/*!
+
+*/
+	Integer  const Window_OffsetMax;
+/*!
+
+*/
+	Array<NGameScriptChat::SEvent*> PendingEvents;
+};
+
+/*!
+* \brief Documentation for class NGameScriptChat::SContext
+*/
+class NGameScriptChat::SContext {
+public :
+/*!
+
+*/
+	Array<NGameScriptChat::SHistory*> Histories;
+/*!
+
+*/
+	NGameScriptChat::SHistory History_Create(Text Filter,Integer MaxSize);
+/*!
+
+*/
+	Void History_Destroy(NGameScriptChat::SHistory History);
+};
+
+/*!
 * \brief Documentation for class CNod
 */
 class CNod {
@@ -7290,19 +7365,7 @@ If False they are merged.
 /*!
 
 */
-	Boolean OverlayHideOpponentsInfo;
-/*!
-
-*/
 	Boolean OverlayHideChat;
-/*!
-
-*/
-	Boolean OverlayHideCheckPointList;
-/*!
-
-*/
-	Boolean OverlayHideRoundScores;
 /*!
 
 */
@@ -7330,47 +7393,11 @@ If False they are merged.
 /*!
 
 */
-	Boolean OverlayHideBackground;
-/*!
-
-*/
-	Boolean OverlayHideChrono;
-/*!
-
-*/
-	Boolean OverlayHideSpeedAndDist;
-/*!
-
-*/
-	Boolean OverlayHidePersonnalBestAndRank;
-/*!
-
-*/
-	Boolean OverlayHidePosition;
-/*!
-
-*/
-	Boolean OverlayHideCheckPointTime;
-/*!
-
-*/
 	Boolean OverlayHideEndMapLadderRecap;
 /*!
 
 */
-	Boolean OverlayHideMultilapInfos;
-/*!
-
-*/
-	Boolean OverlayHideSpectatorControllers;
-/*!
-
-*/
 	Boolean OverlayHideSpectatorInfos;
-/*!
-
-*/
-	Boolean OverlayChatHideAvatar;
 /*!
 Values in range (0 - 40)
 */
@@ -8708,6 +8735,18 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 
 */
 	Void GhostDriver_Playlist_Add(CPlayer Player,CGhost Ghost);
+/*!
+
+*/
+	Void GhostDriver_UploadLimits_Begin();
+/*!
+
+*/
+	Void GhostDriver_UploadLimits_AddLevel(Integer TeamLevel);
+/*!
+
+*/
+	CWebServicesTaskResult_GhostDriver_UploadLimits GhostDriver_UploadLimits_End();
 /*!
 
 */
@@ -10314,6 +10353,13 @@ public :
 
 */
 	CUser * const  MatchingPlayerInfo;
+};
+
+/*!
+* \brief Documentation for class SConstStringInt
+*/
+class SConstStringInt {
+public :
 };
 
 /*!
@@ -12807,12 +12853,6 @@ public :
 		ItemEditor,
 		InterfaceDesigner,
 		MeshModeler,
-		ModuleStudio,
-		PixelArt,
-		EditorEditor,
-		VehicleAssembler,
-		MaterialEditor,
-		*unused*,
 	};
 	/*!
 	
@@ -17645,6 +17685,20 @@ public :
 * Supported declare modes :
 * - Local
 */
+class CWebServicesTaskResult_GhostDriver_UploadLimits : public CTaskResult {
+public :
+/*!
+
+*/
+	Array<SWebServicesTaskResult_GhostDriver_UploadLimit*> Limits;
+};
+
+/*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
 class CWebServicesTaskResult_GhostDriver_Download : public CTaskResult {
 public :
 /*!
@@ -20854,6 +20908,21 @@ public :
 
 */
 	Integer  const EnergyMax;
+};
+
+/*!
+* \brief Documentation for class SWebServicesTaskResult_GhostDriver_UploadLimit
+*/
+class SWebServicesTaskResult_GhostDriver_UploadLimit {
+public :
+/*!
+
+*/
+	Integer TeamLevel;
+/*!
+
+*/
+	Integer Limit;
 };
 
 /*!
