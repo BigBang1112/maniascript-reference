@@ -3119,6 +3119,17 @@ public :
 };
 
 /*!
+* \brief Documentation for class NGameScriptChat::SEvent_NewEntry
+*/
+class NGameScriptChat::SEvent_NewEntry : public NGameScriptChat::SEvent {
+public :
+/*!
+
+*/
+	NGameScriptChat::SEntry * Entry;
+};
+
+/*!
 * \brief Documentation for class NGameScriptChat::SEvent_HistoryChange
 */
 class NGameScriptChat::SEvent_HistoryChange : public NGameScriptChat::SEvent {
@@ -3144,7 +3155,27 @@ public :
 /*!
 
 */
-	Boolean  const IsTargeted;
+	SConstString * const  SenderLogin;
+/*!
+
+*/
+	SConstStringInt * const  SenderDisplayName;
+/*!
+
+*/
+	SConstStringInt * const  SenderFullDisplayName;
+/*!
+
+*/
+	SConstStringInt * const  SenderTeamColorText;
+/*!
+
+*/
+	Boolean  const IsSystemMessage;
+/*!
+
+*/
+	EChatScope const  ChatScope;
 };
 
 /*!
@@ -6891,6 +6922,10 @@ Track_Player_MedalEarned
 */
 	Void Track_Player_MedalEarned(Ident UserId,Integer Finished,Integer BronzeMedal,Integer SilverMedal,Integer GoldMedal,Integer AuthorMedal,Boolean IsOfficialCampaign,Boolean IsTOTD);
 /*!
+Track_Player_OfficialCampaign10TrackCompleted
+*/
+	Void Track_Player_OfficialCampaign10TrackCompleted(Ident UserId,Integer Year,CTrackingMgr::EEventSeason Season,CTrackingMgr::EEventMedalLevel MedalLevel);
+/*!
 Track_Player_OfficialCampaignAllTrackCompleted_V2
 */
 	Void Track_Player_OfficialCampaignAllTrackCompleted_V2(Ident UserId,Integer Year,CTrackingMgr::EEventSeason Season,CTrackingMgr::EEventMedalLevel MedalLevel);
@@ -10359,6 +10394,13 @@ public :
 * \brief Documentation for class SConstStringInt
 */
 class SConstStringInt {
+public :
+};
+
+/*!
+* \brief Documentation for class SConstString
+*/
+class SConstString {
 public :
 };
 
