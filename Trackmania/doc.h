@@ -14,6 +14,10 @@ struct Array {
 	ElemType operator[](Integer Index);
 	ElemType operator[](Ident Id);
 	ElemType operator[](CNod Object);
+	ElemType get(Integer Index);
+	ElemType get(Integer Index, ElemType DefaultValue);
+	ElemType get(Ident Id);
+	ElemType get(Ident Id, ElemType DefaultValue);
 	Integer count;
 	Array<ElemType> sort();
 	Array<ElemType> sortreverse();
@@ -1749,6 +1753,10 @@ If not 0, we use this number of laps instead of the number defined in the map
 /*!
 
 */
+	Boolean CharCanFly;
+/*!
+
+*/
 	Boolean UseProtectClanmates;
 /*!
 
@@ -1906,6 +1914,14 @@ Declare that the game mode will only use forced models, so the client can avoid 
 
 */
 	Array<Integer> ClanScores;
+/*!
+
+*/
+	Void Save_Request(Text FileName);
+/*!
+
+*/
+	Void Load_Request(Text FileName);
 /*!
 
 */
@@ -3164,6 +3180,10 @@ public :
 
 */
 	SConstStringInt * const  SenderFullDisplayName;
+/*!
+
+*/
+	SConstStringInt * const  SenderFullDisplayName_ForTTS;
 /*!
 
 */
@@ -5261,6 +5281,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 /*!
 
 */
+	Void ItemSetVisible(Ident SceneId,Ident ItemId,Boolean IsVisible);
+/*!
+
+*/
 	Void PlaneReflectEnable(Ident SceneId,Real OutOpacity,CMlQuad Quad0,CMlQuad Quad1,CMlQuad Quad2,CMlQuad Quad3);
 /*!
 
@@ -5767,6 +5791,10 @@ public :
 
 */
 	Void TestMapFromCoord(Int3 Coord,CMapEditorPlugin::CardinalDirections Dir);
+/*!
+
+*/
+	Void TestMapFromMacroblockInstance(CMacroblockInstance MbInstance);
 /*!
 
 */
@@ -9343,7 +9371,7 @@ public :
 		None,
 	};
 /*!
-
+Event type
 */
 	CSmModeEvent::EType const  Type;
 /*!
@@ -9599,7 +9627,7 @@ public :
 /*!
 
 */
-	Integer  const TeamNum;
+	Integer TeamNum;
 /*!
 
 */
@@ -16282,6 +16310,53 @@ public :
 };
 
 /*!
+* \brief Documentation for class CMacroblockInstance
+*/
+class CMacroblockInstance : public CNod {
+public :
+/*!
+
+*/
+	CMacroblockModel * const  MacroblockModel;
+/*!
+
+*/
+	CBlockClipList * const  ClipList;
+/*!
+
+*/
+	CMapEditorPlugin::CardinalDirections Dir;
+/*!
+
+*/
+	Int3  const Coord;
+/*!
+
+*/
+	Integer Order;
+/*!
+
+*/
+	Integer UserData;
+/*!
+
+*/
+	Array<Int3> UnitCoords;
+/*!
+
+*/
+	CMapEditorPlugin::MapElemColor const  Color;
+/*!
+
+*/
+	Boolean  const ForceMacroblockColor;
+/*!
+
+*/
+	Int3 GetSize();
+};
+
+/*!
 * \brief Documentation for class CMapEditorInventory
 */
 class CMapEditorInventory : public CNod {
@@ -16521,53 +16596,6 @@ public :
 
 */
 	CGameItemModel * const  ItemModel;
-};
-
-/*!
-* \brief Documentation for class CMacroblockInstance
-*/
-class CMacroblockInstance : public CNod {
-public :
-/*!
-
-*/
-	CMacroblockModel * const  MacroblockModel;
-/*!
-
-*/
-	CBlockClipList * const  ClipList;
-/*!
-
-*/
-	CMapEditorPlugin::CardinalDirections Dir;
-/*!
-
-*/
-	Int3  const Coord;
-/*!
-
-*/
-	Integer Order;
-/*!
-
-*/
-	Integer UserData;
-/*!
-
-*/
-	Array<Int3> UnitCoords;
-/*!
-
-*/
-	CMapEditorPlugin::MapElemColor const  Color;
-/*!
-
-*/
-	Boolean  const ForceMacroblockColor;
-/*!
-
-*/
-	Int3 GetSize();
 };
 
 /*!
@@ -21048,6 +21076,8 @@ public :
 		Cruise,
 		ReactorBoost_Oriented,
 		ReactorBoost2_Oriented,
+		VehicleTransform_Reset,
+		VehicleTransform_CarSnow,
 		XXX Null,
 	};
 	/*!
