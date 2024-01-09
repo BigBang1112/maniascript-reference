@@ -826,6 +826,10 @@ public :
 /*!
 
 */
+	Boolean  const InvitedIsCommunicationRestricted;
+/*!
+
+*/
 	Boolean  const InvitedIsFirstPartyDisplayName;
 /*!
 
@@ -1167,6 +1171,10 @@ public :
 
 */
 	Text  const MemberDisplayName;
+/*!
+
+*/
+	Boolean  const MemberIsCommunicationRestricted;
 /*!
 
 */
@@ -1638,6 +1646,13 @@ public :
 		DoNothing,
 		GiveUp,
 	};
+	/*!
+	
+	*/
+	enum EVehicleTransformType {
+		Reset,
+		CarSnow,
+	};
 /*!
 
 */
@@ -1994,6 +2009,10 @@ Activate or Deactivate Fragile on the player's vehicle with a 250ms delay
 Activate or Deactivate Cruise at the given speed on the player's vehicle with a 250ms delay
 */
 	Void SetPlayer_Delayed_Cruise(CSmPlayer Player,Boolean Activate,Real CruiseSpeedValue);
+/*!
+Transform the car into another car model with a 250ms delay
+*/
+	Void SetPlayer_Delayed_VehicleTransform(CSmPlayer Player,CSmMode::EVehicleTransformType VehicleTransformType);
 /*!
 
 */
@@ -8689,6 +8708,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 /*!
 
 */
+	Ident ItemList_AddWithSkin(Text ModelName,Text SkinNameOrUrl,Text SkinOptions);
+/*!
+
+*/
 	Void ItemList_End();
 /*!
 
@@ -12697,10 +12720,6 @@ public :
 
 */
 	Text SkinName;
-/*!
-
-*/
-	Boolean IsSkinHelmetOk;
 /*!
 
 */
@@ -21078,6 +21097,7 @@ public :
 		ReactorBoost2_Oriented,
 		VehicleTransform_Reset,
 		VehicleTransform_CarSnow,
+		VehicleTransform_CarRally,
 		XXX Null,
 	};
 	/*!
