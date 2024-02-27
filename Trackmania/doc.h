@@ -1652,6 +1652,7 @@ public :
 	enum EVehicleTransformType {
 		Reset,
 		CarSnow,
+		CarRally,
 	};
 /*!
 
