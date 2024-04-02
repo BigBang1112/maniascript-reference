@@ -8274,6 +8274,10 @@ Trigram of the player.
 /*!
 
 */
+	Text OverrideZoneIcon_ImageUrl;
+/*!
+
+*/
 	Void SetProfileInfoFromUser(CUser User);
 };
 
@@ -22557,6 +22561,7 @@ namespace TimeLib {
 	enum EDateFormats {
 		Full,
 		Date,
+		DateCompact,
 		DateShort,
 		Time,
 		TimeShort,
