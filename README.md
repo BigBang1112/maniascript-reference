@@ -15,7 +15,7 @@ For ManiaPlanet, it's no longer expected that the game will update.
 
 ## Doxygen Awesome
 
-The project includes the Doxygen Awesome CSS theme as submodule, but it is not currently used for official builds.
+The project includes the Doxygen Awesome CSS theme as submodule and is currently used for official builds.
 
 ## Plans
 
