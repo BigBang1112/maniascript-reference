@@ -1,3 +1,14 @@
+/***********************************************************************************
+ *                                                                                  
+ *                       Maniaplanet Script API Documentation                       
+ *                                                                                  
+ *                                                                                  
+ *  BuildInfo : date=2024-04-30_16_52 git=127012-8c94a9edc65 GameVersion=3.3.0
+ *  Defines   : Windowless TrackmaniaStandalone .
+ *                                                                                  
+ ***********************************************************************************/
+
+
 struct Void {};
 struct Integer{};
 struct Real{};
@@ -1653,6 +1664,7 @@ public :
 		Reset,
 		CarSnow,
 		CarRally,
+		CarDesert,
 	};
 /*!
 
@@ -2936,6 +2948,58 @@ Player currently targetted by the camera. Same as InputPlayer when playing. Can 
 };
 
 /*!
+* \brief Documentation for class CTaskResult_GhostDriver_UploadLimit
+*/
+class CTaskResult_GhostDriver_UploadLimit {
+public :
+/*!
+
+*/
+	Integer TeamLevel;
+/*!
+
+*/
+	Integer Limit;
+};
+
+/*!
+* \brief Documentation for class CTaskResult_GhostDriverDownload_Team
+*/
+class CTaskResult_GhostDriverDownload_Team {
+public :
+/*!
+
+*/
+	Integer TeamLevel;
+/*!
+
+*/
+	Array<CTaskResult_GhostDriverDownload_Member*> Members;
+};
+
+/*!
+* \brief Documentation for class CTaskResult_GhostDriverDownload_Member
+*/
+class CTaskResult_GhostDriverDownload_Member {
+public :
+/*!
+
+*/
+	Array<CTaskResult_GhostDriverDownload_Ghost*> Ghosts;
+};
+
+/*!
+* \brief Documentation for class CTaskResult_GhostDriverDownload_Ghost
+*/
+class CTaskResult_GhostDriverDownload_Ghost {
+public :
+/*!
+
+*/
+	CGhost * Ghost;
+};
+
+/*!
 * \brief Documentation for class CVoiceChatEvent_DisplayUI
 */
 class CVoiceChatEvent_DisplayUI : public CVoiceChatEvent {
@@ -3155,34 +3219,34 @@ public :
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SEvent_NewEntry
+* \brief Documentation for class CChatEvent_NewEntry
 */
-class NGameScriptChat::SEvent_NewEntry : public NGameScriptChat::SEvent {
+class CChatEvent_NewEntry : public CChatEvent {
 public :
 /*!
 
 */
-	NGameScriptChat::SEntry * Entry;
+	CChatEntry * Entry;
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SEvent_HistoryChange
+* \brief Documentation for class CChatEvent_HistoryChange
 */
-class NGameScriptChat::SEvent_HistoryChange : public NGameScriptChat::SEvent {
+class CChatEvent_HistoryChange : public CChatEvent {
 public :
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SEvent
+* \brief Documentation for class CChatEvent
 */
-class NGameScriptChat::SEvent {
+class CChatEvent {
 public :
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SEntry
+* \brief Documentation for class CChatEntry
 */
-class NGameScriptChat::SEntry {
+class CChatEntry {
 public :
 /*!
 
@@ -3219,14 +3283,14 @@ public :
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SHistory
+* \brief Documentation for class CChatHistory
 */
-class NGameScriptChat::SHistory {
+class CChatHistory {
 public :
 /*!
 
 */
-	Array<NGameScriptChat::SEntry* const > Entries;
+	Array<CChatEntry* const > Entries;
 /*!
 
 */
@@ -3242,26 +3306,26 @@ public :
 /*!
 
 */
-	Array<NGameScriptChat::SEvent*> PendingEvents;
+	Array<CChatEvent*> PendingEvents;
 };
 
 /*!
-* \brief Documentation for class NGameScriptChat::SContext
+* \brief Documentation for class CChatContext
 */
-class NGameScriptChat::SContext {
+class CChatContext {
 public :
 /*!
 
 */
-	Array<NGameScriptChat::SHistory*> Histories;
+	Array<CChatHistory*> Histories;
 /*!
 
 */
-	NGameScriptChat::SHistory History_Create(Text Filter,Integer MaxSize);
+	CChatHistory History_Create(Text Filter,Integer MaxSize);
 /*!
 
 */
-	Void History_Destroy(NGameScriptChat::SHistory History);
+	Void History_Destroy(CChatHistory History);
 };
 
 /*!
@@ -5328,7 +5392,7 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 	Void ColorGradingSetImage2ds(Ident SceneId,Text RelName0,Text RelName1,Text RelName2,Text RelName3);
 /*!
 iMood: BackgroundQuads
-AltitudeDeg: 0=horizon, 90=Zenith
+AltitudeDeg: 0=horizon, 90°=Zenith
 AzimutDeg: 0=North(+Z), 90=East(-X), 180=South(-Z), 270=West(+X)
 !! the feature is enabled only when all 4 Moods have been set !!
 */
@@ -17784,7 +17848,7 @@ public :
 /*!
 
 */
-	Array<SWebServicesTaskResult_GhostDriver_UploadLimit*> Limits;
+	Array<CTaskResult_GhostDriver_UploadLimit*> Limits;
 };
 
 /*!
@@ -17798,7 +17862,7 @@ public :
 /*!
 
 */
-	Array<SWebServicesTaskResult_GhostDriver_Download_Team*> Teams;
+	Array<CTaskResult_GhostDriverDownload_Team*> Teams;
 };
 
 /*!
@@ -21005,36 +21069,6 @@ public :
 };
 
 /*!
-* \brief Documentation for class SWebServicesTaskResult_GhostDriver_UploadLimit
-*/
-class SWebServicesTaskResult_GhostDriver_UploadLimit {
-public :
-/*!
-
-*/
-	Integer TeamLevel;
-/*!
-
-*/
-	Integer Limit;
-};
-
-/*!
-* \brief Documentation for class SWebServicesTaskResult_GhostDriver_Download_Team
-*/
-class SWebServicesTaskResult_GhostDriver_Download_Team {
-public :
-/*!
-
-*/
-	Integer TeamLevel;
-/*!
-
-*/
-	Array<SWebServicesTaskResult_GhostDriver_Download_Member*> Members;
-};
-
-/*!
 * \brief This is the client ManiaApp for game modes.
 *
 * Supported declare modes :
@@ -21103,6 +21137,7 @@ public :
 		VehicleTransform_Reset,
 		VehicleTransform_CarSnow,
 		VehicleTransform_CarRally,
+		VehicleTransform_CarDesert,
 		XXX Null,
 	};
 	/*!
@@ -21533,17 +21568,6 @@ public :
 };
 
 /*!
-* \brief Documentation for class SWebServicesTaskResult_GhostDriver_Download_Member
-*/
-class SWebServicesTaskResult_GhostDriver_Download_Member {
-public :
-/*!
-
-*/
-	Array<SWebServicesTaskResult_GhostDriver_Download_Ghost*> Ghosts;
-};
-
-/*!
 * \brief A recipient included in the bill for a Pack.
 */
 class CPackCreatorRecipient : public CNod {
@@ -21567,17 +21591,6 @@ Cost to use the in other creations.
 */
 class CBlockModelClip : public CBlockModel {
 public :
-};
-
-/*!
-* \brief Documentation for class SWebServicesTaskResult_GhostDriver_Download_Ghost
-*/
-class SWebServicesTaskResult_GhostDriver_Download_Ghost {
-public :
-/*!
-
-*/
-	CGhost * Ghost;
 };
 
 /*!
