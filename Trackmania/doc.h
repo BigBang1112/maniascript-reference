@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2024-04-30_16_52 git=127012-8c94a9edc65 GameVersion=3.3.0
+ *  BuildInfo : date=2024-06-28_13_46 git=127171-f9027664de1 GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
@@ -1791,6 +1791,14 @@ If not 0, we use this number of laps instead of the number defined in the map
 */
 	Boolean UseAllies;
 /*!
+
+*/
+	Boolean UseStunts;
+/*!
+
+*/
+	Boolean CanReTriggerLatestWaypoint;
+/*!
 Declare that the game mode will only use forced models, so the client can avoid preloading player own skins.
 */
 	Boolean DisableDefaultSkinPreload;
@@ -3329,6 +3337,130 @@ public :
 };
 
 /*!
+* \brief Documentation for class CStuntFigure
+*/
+class CStuntFigure {
+public :
+	/*!
+	
+	*/
+	enum EStuntName {
+		None,
+		BasicJump,
+		Flip,
+		Backflip,
+		Spin,
+		Aerial,
+		AlleyOop,
+		Roll,
+		Corkscrew,
+		SpinOff,
+		Rodeo,
+		FlipFlap,
+		Twister,
+		FreeStyle,
+		SpinningChaos,
+		FlippingMix,
+		RollingMadness,
+	};
+/*!
+
+*/
+	CStuntFigure::EStuntName Name;
+/*!
+Values in range (0 - 255)
+*/
+	Integer Combo;
+/*!
+Values in range (0 - 65535)
+*/
+	Integer Angle;
+/*!
+Values in range (0 - 65535)
+*/
+	Integer Points;
+/*!
+
+*/
+	Real Factor;
+/*!
+
+*/
+	Boolean StraightLanding;
+/*!
+
+*/
+	Boolean ReverseLanding;
+/*!
+
+*/
+	Boolean PerfectLanding;
+/*!
+
+*/
+	Boolean MasterJump;
+/*!
+
+*/
+	Boolean MasterLanding;
+/*!
+
+*/
+	Boolean EpicLanding;
+/*!
+
+*/
+	Boolean Wreck;
+};
+
+/*!
+* \brief Documentation for class CStuntStatus
+*/
+class CStuntStatus {
+public :
+/*!
+
+*/
+	Integer LatestFigureTime;
+/*!
+
+*/
+	CStuntFigure * LatestFigure;
+/*!
+
+*/
+	Boolean IsInFigure;
+/*!
+
+*/
+	Boolean IsNoAirControl;
+/*!
+
+*/
+	Boolean IsEpicAirControl;
+/*!
+
+*/
+	Boolean IsMasterAirControl;
+/*!
+Values in range (0 - 255)
+*/
+	Integer ChainCounter;
+/*!
+Values in range (0 - 65535)
+*/
+	Integer ChainDelay;
+/*!
+
+*/
+	Integer  const TimeLeftForStuntCombo;
+/*!
+
+*/
+	Integer  const TimeElapsedSinceLastStunt;
+};
+
+/*!
 * \brief Documentation for class CNod
 */
 class CNod {
@@ -4193,6 +4325,10 @@ public :
 /*!
 
 */
+	CVideo CreateVideo(Text Url,Boolean IsLooping,Boolean AutoProcessing,Boolean UseMipMap);
+/*!
+
+*/
 	Void DestroyVideo(CVideo Video);
 /*!
 
@@ -4763,6 +4899,10 @@ Returns the user record time for a map.
 */
 	Integer Map_GetRecord_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
+Returns the user record full score (time, score, respawn) for a map.
+*/
+	Void Map_GetRecordFullScore(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer Time,Integer Points,Integer RespawnCount);
+/*!
 Returns the user record ghost for  a map.
 */
 	CTaskResult_Ghost Map_GetRecordGhost_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
@@ -4786,10 +4926,6 @@ Returns the skillpoints for a map.
 
 */
 	CTaskResult_MapRecordList Map_GetPlayerListRecordList(Ident UserId,Array<Text> WebServicesUserIdList,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
-/*!
-
-*/
-	CWebServicesTaskResult_Natural MapLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text MapUid,Text Context,Text Zone);
 /*!
 Returns the number of medals for a campaign.
 */
@@ -4818,18 +4954,6 @@ Returns the buddies records comparison for a campaign.
 Returns the records comparison with a buddy for a campaign.
 */
 	CTaskResult_BuddyChallengeRecordsComparison Campaign_GetBuddyMapRecordsComparison(Ident UserId,Text OpponentLogin,Text CampaignId);
-/*!
-Returns the user ranking on a campaign.
-*/
-	CWebServicesTaskResult_Natural CampaignLeaderBoard_GetPlayerRankingAsync(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints);
-/*!
-Returns the number of user ranked on a campaign.
-*/
-	Integer CampaignLeaderBoard_GetPlayerCount(Text CampaignId,Text Zone,Boolean UseSkillPoints);
-/*!
-Returns a part of the campaign leaderboard.
-*/
-	CTaskResult_NaturalLeaderBoardInfoList CampaignLeaderBoard_GetPlayerList(Ident UserId,Text CampaignId,Text Zone,Boolean UseSkillPoints,Integer FromIndex,Integer Count);
 /*!
 Creates a new season.
 */
@@ -4866,30 +4990,6 @@ Loads and synchronizes season scores.
 Loads and synchronizes scores for a list of season.
 */
 	CTaskResult Season_LoadScoreList(Ident UserId,Array<Text> SeasonIdList);
-/*!
-Add points to multiplayer score.
-*/
-	Void Multiplayer_AddToScore(Ident UserId,Real ScoreDiff,Integer Timestamp);
-/*!
-Returns the multiplayer ranking.
-*/
-	Integer MultiplayerLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
-/*!
-Returns the number of user ranked in multiplayer leaderboard.
-*/
-	Integer MultiplayerLeaderBoard_GetPlayerCount(Text Zone);
-/*!
-Returns the user global ranking.
-*/
-	Integer GlobalLeaderBoard_GetPlayerRanking(Ident UserId,Text Zone);
-/*!
-Returns the number of user ranked in global leaderboard.
-*/
-	Integer GlobalLeaderBoard_GetPlayerCount(Text Zone);
-/*!
-Returns a part of the global leaderboard.
-*/
-	CTaskResult_RealLeaderBoardInfoList GlobalLeaderBoard_GetPlayerList(Ident UserId,Text Zone,Integer FromIndex,Integer Count);
 /*!
 Returns the account trophy history.
 */
@@ -5931,6 +6031,18 @@ public :
 
 */
 	Boolean ForceMacroblockColor;
+/*!
+
+*/
+	CMapEditorPlugin::MapElemColor GetMapElemColor(CBlock Block);
+/*!
+
+*/
+	CMapEditorPlugin::MapElemColor GetMapElemColor(CItemAnchor AnchoredObject);
+/*!
+
+*/
+	CMapEditorPlugin::MapElemColor GetMapElemColor(CAnchorData Anchor);
 /*!
 
 */
@@ -7165,10 +7277,6 @@ public :
 
 */
 	Text  const MapStyle;
-/*!
-
-*/
-	Boolean  const Unlocked;
 /*!
 
 */
@@ -9085,6 +9193,10 @@ Values in range (0.100000-1.000000)
 /*!
 
 */
+	Ident ForceModelId;
+/*!
+
+*/
 	Boolean IsHighlighted;
 /*!
 Values in range (0.000000-1.000000)
@@ -9121,7 +9233,7 @@ Values in range (0.000000-1.000000)
 /*!
 
 */
-	Ident ForceModelId;
+	Boolean ForceLightTrail;
 /*!
 
 */
@@ -9371,6 +9483,10 @@ Values in range (0.000000-1.000000)
 */
 	Real  const FlyingDistance;
 /*!
+Latest stunt event, and stunt currently building-up. Available when `UseStunts` is enabled.
+*/
+	CStuntStatus * const  Stunt;
+/*!
 
 */
 	Integer  const HandicapNoGasDuration;
@@ -9427,6 +9543,7 @@ public :
 		OnVehicleCollision,
 		OnVehicleVsVehicleCollision,
 		OnPlayerRequestItemInteraction,
+		OnStuntFigure,
 	};
 	/*!
 	
@@ -9662,6 +9779,10 @@ Event type
 
 */
 	Integer  const ActionChange;
+/*!
+
+*/
+	CStuntFigure * const  StuntFigure;
 };
 
 /*!
@@ -15040,20 +15161,6 @@ List of map record info retrieve from NadeoServices contained by this result.
 };
 
 /*!
-* \brief Asynchronous task result.
-*
-* Supported declare modes :
-* - Local
-*/
-class CWebServicesTaskResult_Natural : public CTaskResult {
-public :
-/*!
-
-*/
-	Integer  const Value;
-};
-
-/*!
 * \brief List of all buddies record for a map.
 *
 * Supported declare modes :
@@ -15172,28 +15279,6 @@ Sort the results by record date.
 };
 
 /*!
-* \brief Results containing a part of the leaderboard.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_NaturalLeaderBoardInfoList : public CTaskResult {
-public :
-/*!
-Starting index.
-*/
-	Integer  const FromIndex;
-/*!
-Number of item contained.
-*/
-	Integer  const Count;
-/*!
-List of the ranking info. Array of CNaturalLeaderBoardInfo objects.
-*/
-	Array<CNaturalLeaderBoardInfo* const > LeaderBoardInfo;
-};
-
-/*!
 * \brief Task result containing a season.
 *
 * Supported declare modes :
@@ -15219,28 +15304,6 @@ public :
 List of season contained by this result.
 */
 	Array<CSeason* const > SeasonList;
-};
-
-/*!
-* \brief Results containing a part of the leaderboard.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_RealLeaderBoardInfoList : public CTaskResult {
-public :
-/*!
-Starting index.
-*/
-	Integer  const FromIndex;
-/*!
-Number of item contained.
-*/
-	Integer  const Count;
-/*!
-List of the ranking info. Array of CRealLeaderBoardInfo objects.
-*/
-	Array<CRealLeaderBoardInfo* const > LeaderBoardInfo;
 };
 
 /*!
@@ -16445,6 +16508,118 @@ public :
 };
 
 /*!
+* \brief Documentation for class CBlock
+*/
+class CBlock : public CNod {
+public :
+	/*!
+	
+	*/
+	enum CardinalDirections {
+		North,
+		East,
+		South,
+		West,
+	};
+/*!
+
+*/
+	Boolean  const CanHaveAnchor;
+/*!
+
+*/
+	Void UseDefaultAnchor();
+/*!
+
+*/
+	Void UseCustomAnchor();
+/*!
+
+*/
+	Int3  const Coord;
+/*!
+
+*/
+	CMapEditorPlugin::CardinalDirections const  Dir;
+/*!
+
+*/
+	CBlock::CardinalDirections const  Direction;
+/*!
+
+*/
+	Array<CBlockUnit* const > BlockUnits;
+/*!
+
+*/
+	CBlockModel * const  BlockModel;
+/*!
+
+*/
+	Boolean IsGhostBlock();
+};
+
+/*!
+* \brief Documentation for class CItemAnchor
+*/
+class CItemAnchor : public CNod {
+public :
+/*!
+
+*/
+	Vec3  const Position;
+/*!
+
+*/
+	CGameItemModel * const  ItemModel;
+};
+
+/*!
+* \brief Landmark of a map.
+*
+* Supported declare modes :
+* - Metadata
+*/
+class CAnchorData : public CNod {
+public :
+	/*!
+	
+	*/
+	enum EWaypointType {
+		Start,
+		Finish,
+		Checkpoint,
+		None,
+		StartFinish,
+		Dispenser,
+	};
+/*!
+
+*/
+	Text  const DefaultTag;
+/*!
+
+*/
+	Integer  const DefaultOrder;
+/*!
+
+*/
+	Text Tag;
+/*!
+
+*/
+	Integer Order;
+/*!
+
+*/
+	CAnchorData::EWaypointType const  WaypointType;
+/*!
+
+*/
+	Vec3  const Position;
+};
+
+/*!
 * \brief Documentation for class CMapEditorInventory
 */
 class CMapEditorInventory : public CNod {
@@ -16613,122 +16788,10 @@ public :
 };
 
 /*!
-* \brief Documentation for class CBlock
-*/
-class CBlock : public CNod {
-public :
-	/*!
-	
-	*/
-	enum CardinalDirections {
-		North,
-		East,
-		South,
-		West,
-	};
-/*!
-
-*/
-	Boolean  const CanHaveAnchor;
-/*!
-
-*/
-	Void UseDefaultAnchor();
-/*!
-
-*/
-	Void UseCustomAnchor();
-/*!
-
-*/
-	Int3  const Coord;
-/*!
-
-*/
-	CMapEditorPlugin::CardinalDirections const  Dir;
-/*!
-
-*/
-	CBlock::CardinalDirections const  Direction;
-/*!
-
-*/
-	Array<CBlockUnit* const > BlockUnits;
-/*!
-
-*/
-	CBlockModel * const  BlockModel;
-/*!
-
-*/
-	Boolean IsGhostBlock();
-};
-
-/*!
 * \brief Documentation for class CGameItemModel
 */
 class CGameItemModel : public CCollector {
 public :
-};
-
-/*!
-* \brief Documentation for class CItemAnchor
-*/
-class CItemAnchor : public CNod {
-public :
-/*!
-
-*/
-	Vec3  const Position;
-/*!
-
-*/
-	CGameItemModel * const  ItemModel;
-};
-
-/*!
-* \brief Landmark of a map.
-*
-* Supported declare modes :
-* - Metadata
-*/
-class CAnchorData : public CNod {
-public :
-	/*!
-	
-	*/
-	enum EWaypointType {
-		Start,
-		Finish,
-		Checkpoint,
-		None,
-		StartFinish,
-		Dispenser,
-	};
-/*!
-
-*/
-	Text  const DefaultTag;
-/*!
-
-*/
-	Integer  const DefaultOrder;
-/*!
-
-*/
-	Text Tag;
-/*!
-
-*/
-	Integer Order;
-/*!
-
-*/
-	CAnchorData::EWaypointType const  WaypointType;
-/*!
-
-*/
-	Vec3  const Position;
 };
 
 /*!
@@ -19520,10 +19583,6 @@ public :
 /*!
 
 */
-	Void IsUnlocked();
-/*!
-
-*/
 	Array<CMapInfo* const > MapInfos;
 };
 
@@ -20086,45 +20145,6 @@ public :
 };
 
 /*!
-* \brief Ranking item of a leaderboard.
-*/
-class CNaturalLeaderBoardInfo : public CNod {
-public :
-/*!
-Rank.
-*/
-	Integer  const Rank;
-/*!
-UserId.
-*/
-	Ident  const UserId;
-/*!
-Login.
-*/
-	Text  const Login;
-/*!
-Display name.
-*/
-	Text  const DisplayName;
-/*!
-Is display name from first party.
-*/
-	Boolean  const IsFirstPartyDisplayName;
-/*!
-Score.
-*/
-	Integer  const Score;
-/*!
-FileName.
-*/
-	Text  const FileName;
-/*!
-ReplayUrl.
-*/
-	Text  const ReplayUrl;
-};
-
-/*!
 * \brief Asynchronous task result.
 *
 * Supported declare modes :
@@ -20193,45 +20213,6 @@ public :
 */
 class CWebServicesTaskResult_SeasonList : public CTaskResult {
 public :
-};
-
-/*!
-* \brief Ranking item of a leaderboard.
-*/
-class CRealLeaderBoardInfo : public CNod {
-public :
-/*!
-Rank.
-*/
-	Integer  const Rank;
-/*!
-UserId.
-*/
-	Ident  const UserId;
-/*!
-Login.
-*/
-	Text  const Login;
-/*!
-Display name.
-*/
-	Text  const DisplayName;
-/*!
-Is display name from first party.
-*/
-	Boolean  const IsFirstPartyDisplayName;
-/*!
-Score.
-*/
-	Real  const Score;
-/*!
-FileName.
-*/
-	Text  const FileName;
-/*!
-ReplayUrl.
-*/
-	Text  const ReplayUrl;
 };
 
 /*!
@@ -20908,6 +20889,25 @@ The user has clicked on the Notification.
 };
 
 /*!
+* \brief A 1-square-sized part of a block instance.
+*/
+class CBlockUnit : public CNod {
+public :
+/*!
+
+*/
+	Int3  const AbsoluteOffset;
+/*!
+
+*/
+	CBlockUnitModel * const  BlockUnitModel;
+/*!
+
+*/
+	CBlock * const  Block;
+};
+
+/*!
 * \brief Documentation for class CMapEditorInventoryDirectory
 */
 class CMapEditorInventoryDirectory : public CMapEditorInventoryNode {
@@ -20995,25 +20995,6 @@ public :
 */
 class CBlockModelVariantAir : public CBlockModelVariant {
 public :
-};
-
-/*!
-* \brief A 1-square-sized part of a block instance.
-*/
-class CBlockUnit : public CNod {
-public :
-/*!
-
-*/
-	Int3  const AbsoluteOffset;
-/*!
-
-*/
-	CBlockUnitModel * const  BlockUnitModel;
-/*!
-
-*/
-	CBlock * const  Block;
 };
 
 /*!
@@ -21518,6 +21499,21 @@ PackId is the TitleId if the pack is a TitlePack.
 };
 
 /*!
+* \brief A 1-square-sized part of a block model.
+*/
+class CBlockUnitModel : public CNod {
+public :
+/*!
+
+*/
+	Int3  const RelativeOffset;
+/*!
+
+*/
+	Array<CBlockModelClip* const > Clips;
+};
+
+/*!
 * \brief Documentation for class CBlockModelVariant
 */
 class CBlockModelVariant : public CNod {
@@ -21550,21 +21546,6 @@ public :
 
 */
 	Array<CBlockUnitModel* const > BlockUnitModels;
-};
-
-/*!
-* \brief A 1-square-sized part of a block model.
-*/
-class CBlockUnitModel : public CNod {
-public :
-/*!
-
-*/
-	Int3  const RelativeOffset;
-/*!
-
-*/
-	Array<CBlockModelClip* const > Clips;
 };
 
 /*!
@@ -22092,6 +22073,13 @@ namespace TextLib {
 	*
 	*/
 	Text FormatInteger(Integer _Argument1, Integer _Argument2);
+	/*! 
+	* \param _Value : The Integer value you want to convert
+	* \param _MinLength : Minimum number of digits of the number, padded with leading zeroes. (excluding the minus sign)
+	* \param _WithSeparator : Optionally add a thousands separator space.
+	*
+	*/
+	Text FormatInteger(Integer _Value, Integer _MinLength, Boolean _WithSeparator);
 	/*! 
 	* \brief Returns the rank corresponding to a number, formatted according to the locale.  ShortFormat: '25k' otherwise '25654th'.
 	* 
