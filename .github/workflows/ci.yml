@@ -13,26 +13,26 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: true
       
     - name: Generate ManiaPlanet documentation
-      uses: mattnotmitt/doxygen-action@v1.9.4
+      uses: mattnotmitt/doxygen-action@v1.9.8
       with:
         working-directory: ManiaPlanet
       
     - name: Generate Trackmania documentation
-      uses: mattnotmitt/doxygen-action@v1.9.4
+      uses: mattnotmitt/doxygen-action@v1.9.8
       with:
         working-directory: Trackmania
       
     - name: Generate Trackmania Turbo documentation
-      uses: mattnotmitt/doxygen-action@v1.9.4
+      uses: mattnotmitt/doxygen-action@v1.9.8
       with:
         working-directory: TrackmaniaTurbo
       
     - name: Generate ManiaPlanet 3 documentation
-      uses: mattnotmitt/doxygen-action@v1.9.4
+      uses: mattnotmitt/doxygen-action@v1.9.8
       with:
         working-directory: ManiaPlanet3
