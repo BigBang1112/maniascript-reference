@@ -19,7 +19,6 @@ The project includes the Doxygen Awesome CSS theme as submodule and is currently
 
 ## Plans
 
-- Add `index.html` to the root folder to with game options to pick
 - Automatically update the build version in Doxyfile in some way
 - Deploy to [bigbang1112.cz](https://bigbang1112.cz)
 - Add some very wacky way to automatically update the `doc.h` files (probably won't happen)
