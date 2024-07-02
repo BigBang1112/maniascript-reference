@@ -18,21 +18,21 @@ jobs:
         submodules: true
       
     - name: Generate ManiaPlanet documentation
-      uses: mattnotmitt/doxygen-action@v1.9.8
+      uses: mattnotmitt/doxygen-action@edge
       with:
         working-directory: ManiaPlanet
       
     - name: Generate Trackmania documentation
-      uses: mattnotmitt/doxygen-action@v1.9.8
+      uses: mattnotmitt/doxygen-action@edge
       with:
         working-directory: Trackmania
       
     - name: Generate Trackmania Turbo documentation
-      uses: mattnotmitt/doxygen-action@v1.9.8
+      uses: mattnotmitt/doxygen-action@edge
       with:
         working-directory: TrackmaniaTurbo
       
     - name: Generate ManiaPlanet 3 documentation
-      uses: mattnotmitt/doxygen-action@v1.9.8
+      uses: mattnotmitt/doxygen-action@edge
       with:
         working-directory: ManiaPlanet3
