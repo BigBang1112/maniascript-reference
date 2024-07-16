@@ -61,6 +61,7 @@ jobs:
         run: |
           mkdir docs
           sudo mv index.html docs/index.html
+          sudo mv 404.html docs/404.html
           sudo mv ManiaPlanet/docs/html docs/maniaplanet
           sudo mv Trackmania/docs/html docs/trackmania
           sudo mv TrackmaniaTurbo/docs/html docs/tmturbo
