@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2024-07-02_14_35 git=127172-c8715502da1 GameVersion=3.3.0
+ *  BuildInfo : date=2024-09-17_11_17 git=127252-120dea21a9e GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
@@ -4852,24 +4852,6 @@ Background write to usersave in progress. Do not switch off the console.
 */
 class CScoreMgr : public CNod {
 public :
-	/*!
-	
-	*/
-	enum ELocalScoreStatus {
-		None,
-		Loading,
-		NotLoaded,
-		Loaded,
-	};
-	/*!
-	
-	*/
-	enum EMasterServerScoreStatus {
-		None,
-		Synchronizing,
-		NotSynchronized,
-		Synchronized,
-	};
 /*!
 Array of task results.
 */
@@ -4879,17 +4861,13 @@ Release a task result no more used.
 */
 	Void TaskResult_Release(Ident TaskId);
 /*!
-Returns the local status of user records for the specified context.
-*/
-	CScoreMgr::ELocalScoreStatus ScoreStatus_GetLocalStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
-/*!
-Returns the masterserver status of user records for the specified context.
-*/
-	CScoreMgr::EMasterServerScoreStatus ScoreStatus_GetMasterServerStatusForContext(Ident UserId,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
-/*!
 Returns the ghost currently being recorded for a player on the current playground. (or the latest ghost if the player is not playing.)
 */
 	CGhost Playground_GetPlayerGhost(CPlayer GamePlayer);
+/*!
+Get respawn count and time from a compressed platform score value.
+*/
+	Void Score_GetFromCompressedPlatformScore(Integer CompressedScore,Integer RespawnCount,Integer Time);
 /*!
 Set a new record for a map.
 */
@@ -4919,41 +4897,13 @@ Returns the record ghost of the medal for a map.
 */
 	CTaskResult_Ghost Map_GetMultiAsyncLevelRecordGhost_v2(Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData,Integer MultiAsyncLevel);
 /*!
-Returns the skillpoints for a map.
-*/
-	Integer Map_GetSkillPoints_v2(Ident UserId,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
-/*!
 
 */
 	CTaskResult_MapRecordList Map_GetPlayerListRecordList(Ident UserId,Array<Text> WebServicesUserIdList,Text MapUid,Text ScopeType,Text ScopeId,Text GameMode,Text GameModeCustomData);
 /*!
-Returns the number of medals for a campaign.
+Loads and synchronizes scores for a list of map.
 */
-	Integer Campaign_GetMultiAsyncLevel(Ident UserId,Text CampaignId);
-/*!
-Returns the number of medals of the specified level for a campaign.
-*/
-	Integer Campaign_GetMultiAsyncLevelCount(Ident UserId,Text CampaignId,Integer MultiAsyncLevel);
-/*!
-Returns the skillpoints for a campaign.
-*/
-	Integer Campaign_GetSkillPoints(Ident UserId,Text CampaignId);
-/*!
-Returns the buddies records for a map of a campaign.
-*/
-	CTaskResult_BuddiesChallengeRecord Campaign_GetBuddiesMapRecord(Ident UserId,Text CampaignId,Text MapUid);
-/*!
-Returns if the buddies records for a map of a campaign are dirty.
-*/
-	Boolean Campaign_IsBuddiesMapRecordDirty(Ident UserId,Text CampaignId,Text MapUid);
-/*!
-Returns the buddies records comparison for a campaign.
-*/
-	CTaskResult_BuddiesChallengeRecordsComparison Campaign_GetBuddiesMapRecordsComparison(Ident UserId,Text CampaignId);
-/*!
-Returns the records comparison with a buddy for a campaign.
-*/
-	CTaskResult_BuddyChallengeRecordsComparison Campaign_GetBuddyMapRecordsComparison(Ident UserId,Text OpponentLogin,Text CampaignId);
+	CTaskResult Map_LoadPBScoreList(Ident UserId,Array<Text> MapUidList,Text GameMode,Text GameModeCustomData);
 /*!
 Creates a new season.
 */
@@ -5875,6 +5825,24 @@ public :
 		VeryLow,
 		Lowest,
 	};
+	/*!
+	
+	*/
+	enum MapElemColorPalette {
+		Classic,
+		Stunt,
+		Red,
+		Orange,
+		Yellow,
+		Lime,
+		Green,
+		Cyan,
+		Blue,
+		Purple,
+		Pink,
+		White,
+		Black,
+	};
 /*!
 
 */
@@ -6030,6 +5998,22 @@ public :
 /*!
 
 */
+	CMapEditorPlugin::MapElemColorPalette MapElemColorPalette;
+/*!
+
+*/
+	Void SetNextMapElemColorPalette();
+/*!
+
+*/
+	Boolean  const IsColorBlindModeActive;
+/*!
+
+*/
+	Array<CMapEditorPlugin::MapElemColorPalette> MapElemColorPalettes;
+/*!
+
+*/
 	Boolean ForceMacroblockColor;
 /*!
 
@@ -6043,6 +6027,34 @@ public :
 
 */
 	CMapEditorPlugin::MapElemColor GetMapElemColor(CAnchorData Anchor);
+/*!
+
+*/
+	Void SetMapElemColor(CBlock Block,CMapEditorPlugin::MapElemColor Color);
+/*!
+
+*/
+	Void SetMapElemColor(CItemAnchor AnchoredObject,CMapEditorPlugin::MapElemColor Color);
+/*!
+
+*/
+	Void SetMapElemColor(CAnchorData Anchor,CMapEditorPlugin::MapElemColor Color);
+/*!
+
+*/
+	Text GetColorPaletteName(CMapEditorPlugin::MapElemColorPalette EColorPalette);
+/*!
+
+*/
+	Vec3 GetColorPaletteCurrentColor(CMapEditorPlugin::MapElemColorPalette EColorPalette,CMapEditorPlugin::MapElemColor EColor);
+/*!
+
+*/
+	Vec3 GetColorPaletteColorblindColor(CMapEditorPlugin::MapElemColorPalette EColorPalette,CMapEditorPlugin::MapElemColor EColor);
+/*!
+
+*/
+	Vec3 GetColorPaletteNotColorblindColor(CMapEditorPlugin::MapElemColorPalette EColorPalette,CMapEditorPlugin::MapElemColor EColor);
 /*!
 
 */
@@ -9123,6 +9135,14 @@ Equals CurrentLapWaypointTimes when not empty. If it is empty (i.e. before the 1
 */
 	Integer  const CurrentLapTime;
 /*!
+
+*/
+	Integer  const CurrentRaceRespawns;
+/*!
+
+*/
+	Integer  const CurrentLapRespawns;
+/*!
 Values in range (0.000000-10.000000)
 */
 	Real AmmoGain;
@@ -9885,6 +9905,14 @@ public :
 
 */
 	Array<Integer> PrevLapTimes;
+/*!
+
+*/
+	Integer BestRaceNbRespawns;
+/*!
+
+*/
+	Integer PrevRaceNbRespawns;
 };
 
 /*!
@@ -15161,124 +15189,6 @@ List of map record info retrieve from NadeoServices contained by this result.
 };
 
 /*!
-* \brief List of all buddies record for a map.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_BuddiesChallengeRecord : public CTaskResult {
-public :
-/*!
-Login of the user who has launched the task.
-*/
-	Text  const Login;
-/*!
-
-*/
-	Array<CHighScoreComparison* const > BuddiesChallengeRecord;
-/*!
-Sort the results by opponent record count.
-*/
-	Void SortByOpponentCount();
-/*!
-Sort the results by opponent display name.
-*/
-	Void SortByOpponentDisplayName();
-/*!
-Sort the results by opponent login.
-*/
-	Void SortByOpponentLogin();
-/*!
-Sort the results by opponent record date.
-*/
-	Void SortByOpponentRecordDate();
-/*!
-Sort the results by opponent record time.
-*/
-	Void SortByOpponentRecordTime();
-};
-
-/*!
-* \brief Results for comparison of challenge records with all the buddies.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_BuddiesChallengeRecordsComparison : public CTaskResult {
-public :
-/*!
-Login of the user who has launched the task.
-*/
-	Text  const Login;
-/*!
-List of comparison summary between user records and buddy records. Array of CHighScoreComparisonSummary objects.
-*/
-	Array<CHighScoreComparisonSummary* const > BuddiesComparison;
-/*!
-Sort the results by user best record count.
-*/
-	Void SortByPlayerCount();
-/*!
-Sort the results by opponent login.
-*/
-	Void SortByOpponentLogin();
-/*!
-Sort the results by opponent best record count.
-*/
-	Void SortByOpponentCount();
-/*!
-Sort the results by opponent last record date.
-*/
-	Void SortByOpponentDate();
-/*!
-Sort the results by opponent display name.
-*/
-	Void SortByOpponentDisplayName();
-};
-
-/*!
-* \brief Results for comparison of challenge records between a user and one of its buddy.
-*
-* Supported declare modes :
-* - Local
-*/
-class CTaskResult_BuddyChallengeRecordsComparison : public CTaskResult {
-public :
-/*!
-Login of the user who has launched the task.
-*/
-	Text  const Login;
-/*!
-Buddy login.
-*/
-	Text  const BuddyLogin;
-/*!
-List of best challenge records for user. Array of CHighScoreComparison objects.
-*/
-	Array<CHighScoreComparison* const > PlayerBestRecordsComparison;
-/*!
-List of best challenge records for buddy. Array of CHighScoreComparison objects.
-*/
-	Array<CHighScoreComparison* const > BuddyBestRecordsComparison;
-/*!
-Sort the results by map name.
-*/
-	Void SortByMapName();
-/*!
-Sort the results by record time.
-*/
-	Void SortByRecordTime();
-/*!
-Sort the results by record time diff.
-*/
-	Void SortByRecordTimeDiff();
-/*!
-Sort the results by record date.
-*/
-	Void SortByRecordDate();
-};
-
-/*!
 * \brief Task result containing a season.
 *
 * Supported declare modes :
@@ -15445,6 +15355,14 @@ public :
 	/*!
 	
 	*/
+	enum EDisplayRecords {
+		Progressive,
+		Always,
+		Hide,
+	};
+	/*!
+	
+	*/
 	enum ERoadsideSpectatorVisibility {
 		Never,
 		SpectatorOnly,
@@ -15581,6 +15499,10 @@ Favoured way to open the Map Editor
 /*!
 
 */
+	Integer Editors_MapEditorQuickstartMapType;
+/*!
+
+*/
 	Boolean Online_AutoSaveReplay;
 /*!
 
@@ -15693,7 +15615,7 @@ Values in range (0.500000-15.000000)
 /*!
 
 */
-	Boolean Interface_AlwaysDisplayRecords;
+	CUserV2Profile::EDisplayRecords Interface_DisplayRecords;
 /*!
 
 */
@@ -20008,140 +19930,6 @@ public :
 
 */
 	Text  const ReplayUrl;
-};
-
-/*!
-* \brief Documentation for class CHighScoreComparison
-*/
-class CHighScoreComparison : public CNod {
-public :
-/*!
-
-*/
-	CMapInfo * const  MapInfo;
-/*!
-
-*/
-	Text  const Login;
-/*!
-
-*/
-	Integer  const RecordScore;
-/*!
-
-*/
-	Integer  const RecordTime;
-/*!
-
-*/
-	Integer  const RecordRespawnCount;
-/*!
-
-*/
-	Integer  const RecordDate;
-/*!
-
-*/
-	Text  const RecordDateString;
-/*!
-
-*/
-	Integer  const RecordElapsedTime;
-/*!
-
-*/
-	Integer  const RecordCount;
-/*!
-
-*/
-	Text  const OpponentLogin;
-/*!
-
-*/
-	Text  const OpponentDisplayName;
-/*!
-
-*/
-	Text  const OpponentRecordUrl;
-/*!
-
-*/
-	Integer  const OpponentRecordScore;
-/*!
-
-*/
-	Integer  const OpponentRecordTime;
-/*!
-
-*/
-	Integer  const OpponentRecordRespawnCount;
-/*!
-
-*/
-	Integer  const OpponentRecordDate;
-/*!
-
-*/
-	Text  const OpponentRecordDateString;
-/*!
-
-*/
-	Integer  const OpponentRecordElapsedTime;
-/*!
-
-*/
-	Integer  const OpponentRecordCount;
-};
-
-/*!
-* \brief Documentation for class CHighScoreComparisonSummary
-*/
-class CHighScoreComparisonSummary : public CNod {
-public :
-/*!
-
-*/
-	Text  const Login;
-/*!
-
-*/
-	Integer  const BestRecordCount;
-/*!
-
-*/
-	Integer  const BestRecordLastDate;
-/*!
-
-*/
-	Text  const BestRecordLastDateString;
-/*!
-
-*/
-	Integer  const BestRecordElapsedTime;
-/*!
-
-*/
-	Text  const OpponentLogin;
-/*!
-
-*/
-	Text  const OpponentDisplayName;
-/*!
-
-*/
-	Integer  const OpponentBestRecordCount;
-/*!
-
-*/
-	Integer  const OpponentBestRecordLastDate;
-/*!
-
-*/
-	Text  const OpponentBestRecordLastDateString;
-/*!
-
-*/
-	Integer  const OpponentBestRecordElapsedTime;
 };
 
 /*!
