@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2024-09-17_11_17 git=127252-120dea21a9e GameVersion=3.3.0
+ *  BuildInfo : date=2024-12-12_15_15 git=127322-0e952939855 GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
@@ -4712,7 +4712,15 @@ Get the list of map stored in the specified path. Scope is used to specify if th
 /*!
 
 */
+	Integer Map_NadeoServices_GetVote(Ident UserId,Text MapUid);
+/*!
+
+*/
 	CTaskResult_NSMap Map_NadeoServices_Register(Ident UserId,Text MapUid);
+/*!
+
+*/
+	Void Map_NadeoServices_Vote(Ident UserId,Text MapUid,Integer Vote);
 /*!
 
 */
@@ -16531,6 +16539,10 @@ public :
 
 */
 	Integer Order;
+/*!
+
+*/
+	Text RuntimeCustomMarker;
 /*!
 
 */
