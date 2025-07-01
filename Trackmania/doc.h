@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2024-12-12_15_15 git=127322-0e952939855 GameVersion=3.3.0
+ *  BuildInfo : date=2025-06-19_21_37 git=127528-9decae8bf25 GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
@@ -788,6 +788,10 @@ public :
 
 */
 	Integer  const StatValueForNextLevel;
+/*!
+
+*/
+	Integer  const StatValueForCurrentLevel;
 /*!
 
 */
@@ -4724,6 +4728,22 @@ Get the list of map stored in the specified path. Scope is used to specify if th
 /*!
 
 */
+	CTaskResult Map_NadeoServices_AddFavorite(Ident UserId,Text MapUid);
+/*!
+
+*/
+	CTaskResult_NSMapList Map_NadeoServices_GetFavoriteList(Ident UserId,Array<Text> MapTypeList,Boolean SortByDateElseByName,Boolean SortOrderAsc,Boolean OnlyPlayable,Boolean OnlyMine);
+/*!
+
+*/
+	CTaskResult_NSMapList Map_NadeoServices_GetFavoriteListByUid(Ident UserId,Array<Text> MapUidList);
+/*!
+
+*/
+	CTaskResult Map_NadeoServices_RemoveFavorite(Ident UserId,Text MapUid);
+/*!
+
+*/
 	CTaskResult_NSSkin Skin_NadeoServices_Get(Ident UserId,Text SkinId);
 /*!
 
@@ -5381,6 +5401,10 @@ LayoutFileName: can be 'Default' (or '') for default painter scene, 'Empty' for 
 */
 	Void LightDir0Set(Ident SceneId,Vec3 sRGB,Real Intensity);
 /*!
+
+*/
+	Void LightDir0Set(Ident SceneId,Vec3 sRGB,Real Intensity,Real AltitudeDeg,Real AzimutDeg);
+/*!
 SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for item default skin, 'Profile' for the user choice for the model. ModelName: item filename.
 */
 	Ident ItemCreate(Ident SceneId,Text ModelName,Text SkinName,Text SkinUrl);
@@ -5444,6 +5468,10 @@ SkinNameOrUrl: can be 'Skins/Model/....', 'http://....', 'Default' (or '') for i
 
 */
 	Void CubeMapSetImage2ds(Ident SceneId,Text RelName0,Text RelName1,Text RelName2,Text RelName3);
+/*!
+
+*/
+	Void CubeMapSetFromEquirect(Ident SceneId,CMlQuad Quad);
 /*!
 
 */
@@ -19394,10 +19422,6 @@ Use  CGameManiaTitleEditionScriptAPI::SetTitleCampaign() to modify
 /*!
 
 */
-	Text HudDefaultModuleScriptName;
-/*!
-
-*/
 	Text MusicFolder;
 /*!
 
@@ -20483,6 +20507,10 @@ public :
 
 */
 	Integer  const StatValueForNextLevel;
+/*!
+
+*/
+	Integer  const StatValueForCurrentLevel;
 /*!
 
 */
