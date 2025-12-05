@@ -4017,6 +4017,10 @@ Supported declare modes : Local  Persistent
 This is the client ManiaApp for Trackmania game modes.
 */
 struct CTrackManiaAppPlayground : public CManiaAppPlayground {
+/*!
+
+*/
+			Void SetVehicleInputs(Integer SplitScreenNum, Real Steer, Boolean Accelerate, Boolean Brake, Boolean Respawn, Boolean GiveUp, Boolean Horn);
 };
 
 /*!
