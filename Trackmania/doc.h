@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2025-06-19_21_37 git=127528-9decae8bf25 GameVersion=3.3.0
+ *  BuildInfo : date=2026-01-26_15_06 git=128126-baaeccd6dc5 GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
@@ -763,6 +763,10 @@ public :
 /*!
 
 */
+	Integer  const PrestigeLevelMax;
+/*!
+
+*/
 	Text  const RewardDisplayName;
 /*!
 
@@ -787,11 +791,11 @@ public :
 /*!
 
 */
-	Integer  const StatValueForNextLevel;
+	Integer  const StatValueForCurrentLevel;
 /*!
 
 */
-	Integer  const StatValueForCurrentLevel;
+	Integer  const StatValueForNextLevel;
 /*!
 
 */
@@ -2454,6 +2458,10 @@ Only available in solo mode and map is loaded.
 
 */
 	CGhost Ghost_RetrieveFromPlayer(CSmPlayer Player,Boolean TruncateLaunchedCheckpointsRespawns);
+/*!
+
+*/
+	Integer Ghost_GetTimeClosestToPlayer(CGhost Ghost,CSmPlayer Player);
 /*!
 Transfer this ghost checkpoint-times to the score best race. The best lap of this ghost is transferred as the score best lap.
 */
@@ -4744,6 +4752,14 @@ Get the list of map stored in the specified path. Scope is used to specify if th
 /*!
 
 */
+	CWebServicesTaskResult_Natural Map_NadeoServices_GetZenCount(Ident UserId,Text MapUid);
+/*!
+
+*/
+	CWebServicesTaskResult_Natural Map_NadeoServices_IncrZenCount(Ident UserId,Text MapUid);
+/*!
+
+*/
 	CTaskResult_NSSkin Skin_NadeoServices_Get(Ident UserId,Text SkinId);
 /*!
 
@@ -5110,6 +5126,26 @@ NullId for the mainuser.
 /*!
 
 */
+	Boolean Config_GetBoolValue(Text Key,Boolean Value);
+/*!
+
+*/
+	Boolean Config_GetNatValue(Text Key,Integer Value);
+/*!
+
+*/
+	Boolean Config_GetRealValue(Text Key,Real Value);
+/*!
+
+*/
+	Boolean Config_GetStringIntValue(Text Key,Text Value);
+/*!
+
+*/
+	Boolean Config_GetStringValue(Text Key,Text Value);
+/*!
+
+*/
 	CTaskResult_Bool CrossPlay_IsEnabled(Ident UserId);
 /*!
 
@@ -5171,6 +5207,10 @@ NullId for the mainuser.
 
 */
 	CTaskResult_PrestigeList Prestige_GetPrestigeList(Ident UserId,CUserV2Manager::EPrestigeMode Mode,Integer Year,Text CategoryType);
+/*!
+
+*/
+	CTaskResult_PrestigeList Prestige_GetPrestigeListByYear(Ident UserId,Integer Year);
 /*!
 
 */
@@ -7365,6 +7405,10 @@ public :
 
 */
 	Boolean  const TMObjective_IsLapRace;
+/*!
+
+*/
+	Integer  const TMObjective_NbClones;
 /*!
 
 */
@@ -10186,6 +10230,12 @@ Player holding the object, or Null if the object isn't held by a player.
 */
 class CGhostManager : public CNod {
 public :
+	/*!
+	
+	*/
+	enum EGhostPhyMode {
+		SoftCollisions,
+	};
 /*!
 
 */
@@ -10202,6 +10252,10 @@ public :
 
 */
 	Ident Ghost_AddWaypointSynced(CGhost Ghost,Boolean IsGhostLayer);
+/*!
+
+*/
+	Ident Ghost_AddPhysicalized(CGhost Ghost,Integer TimeOffset,Real PlaySpeed,CGhostManager::EGhostPhyMode GhostPhyMode,Boolean ForceRandomSkin);
 /*!
 
 */
@@ -10226,6 +10280,10 @@ public :
 5 ascii chars (ex: '01TMN') or empty for default value + color
 */
 	Void Ghost_SetDossard(Ident GhostInstanceId,Text Dossard,Vec3 Color);
+/*!
+
+*/
+	Void Ghost_SetMarker(Ident GhostInstanceId,CUIConfigMarker::EHudVisibility Visibility,Text Name,Text IconUrlPtr);
 };
 
 /*!
@@ -13676,6 +13734,14 @@ public :
 */
 class CMlFrame : public CMlControl {
 public :
+	/*!
+	
+	*/
+	enum EScrollWheel {
+		Vertical,
+		Horizontal,
+		NonInteractive,
+	};
 /*!
 
 */
@@ -13688,6 +13754,10 @@ public :
 
 */
 	Boolean ScrollActive;
+/*!
+
+*/
+	CMlFrame::EScrollWheel ScrollWheel;
 /*!
 
 */
@@ -15103,6 +15173,20 @@ List of map info retrieve from NadeoServices contained by this result.
 };
 
 /*!
+* \brief Asynchronous task result.
+*
+* Supported declare modes :
+* - Local
+*/
+class CWebServicesTaskResult_Natural : public CTaskResult {
+public :
+/*!
+
+*/
+	Integer  const Value;
+};
+
+/*!
 * \brief Task result containing a Skin info from NadeoServices.
 *
 * Supported declare modes :
@@ -15358,6 +15442,17 @@ public :
 	/*!
 	
 	*/
+	enum EMapEditorEnviro {
+		Ask,
+		Stadium,
+		BlueBay,
+		RedIsland,
+		GreenCoast,
+		WhiteShore,
+	};
+	/*!
+	
+	*/
 	enum EMapEditorDifficulty {
 		Simple,
 		Advanced,
@@ -15532,6 +15627,10 @@ Favoured way to open the Map Editor
 
 */
 	CUserV2Profile::EMapEditorMood Editors_MapEditorQuickstartMood;
+/*!
+
+*/
+	CUserV2Profile::EMapEditorEnviro Editors_MapEditorQuickstartEnviro;
 /*!
 
 */
@@ -19701,6 +19800,10 @@ public :
 /*!
 
 */
+	Boolean  const HasClones;
+/*!
+
+*/
 	Text  const Id;
 /*!
 
@@ -20482,6 +20585,10 @@ public :
 /*!
 
 */
+	Integer  const PrestigeLevelMax;
+/*!
+
+*/
 	Text  const RewardDisplayName;
 /*!
 
@@ -20506,11 +20613,11 @@ public :
 /*!
 
 */
-	Integer  const StatValueForNextLevel;
+	Integer  const StatValueForCurrentLevel;
 /*!
 
 */
-	Integer  const StatValueForCurrentLevel;
+	Integer  const StatValueForNextLevel;
 /*!
 
 */
