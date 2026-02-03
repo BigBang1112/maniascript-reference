@@ -3,7 +3,7 @@
  *                       Maniaplanet Script API Documentation                       
  *                                                                                  
  *                                                                                  
- *  BuildInfo : date=2026-01-26_15_06 git=128126-baaeccd6dc5 GameVersion=3.3.0
+ *  BuildInfo : date=2026-02-02_17_51 git=128149-c7d05ad2551 GameVersion=3.3.0
  *  Defines   : Windowless TrackmaniaStandalone .
  *                                                                                  
  ***********************************************************************************/
