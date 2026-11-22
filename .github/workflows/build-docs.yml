@@ -11,7 +11,7 @@ on:
         default: false
 
 env:
-  DOXYGEN_VERSION: 1.18.0 # https://github.com/doxygen/doxygen/releases
+  DOXYGEN_VERSION: 1.16.1 # https://github.com/doxygen/doxygen/releases (last before the 1.17 HTML/JS refactor)
   DOXYGEN_AWESOME_CSS_VERSION: v2.5.0 # https://github.com/jothepro/doxygen-awesome-css/releases
 
 jobs:
