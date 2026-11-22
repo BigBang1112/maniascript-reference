@@ -1,4 +1,4 @@
-# Doxyfile 1.16.1
+# Doxyfile 1.9.4
 
 PROJECT_LOGO           = logo.png
 OUTPUT_DIRECTORY       = docs
@@ -10,7 +10,6 @@ TOC_INCLUDE_HEADINGS   = 0
 CASE_SENSE_NAMES       = NO
 
 HTML_EXTRA_STYLESHEET  = ../doxygen-awesome-css/doxygen-awesome.css
-HTML_COLORSTYLE        = LIGHT
 HTML_COLORSTYLE_HUE    = 205
 HTML_COLORSTYLE_SAT    = 134
 HTML_COLORSTYLE_GAMMA  = 108
