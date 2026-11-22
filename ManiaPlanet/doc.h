@@ -170,6 +170,14 @@ Local user structure.
 */
 	const	CScoreMgr ScoreMgr;
 /*!
+Only available on console.
+*/
+	const	CPrivilegeMgr PrivilegeMgr;
+/*!
+Only available on console.
+*/
+	const	CPresenceMgr PresenceMgr;
+/*!
 
 */
 	const	CAnimManager AnimMgr;
@@ -657,6 +665,10 @@ struct CMlBrowser : public CMlScript {
 		NotFinished,
 	};
 /*!
+Maniaplanet System API, only available when the script has elevated privileges.
+*/
+	const	CManiaPlanet ManiaPlanet;
+/*!
 Will be Null if the script is not runing in a layer of an app.
 */
 	const	CManiaAppBrowser ParentApp;
@@ -808,6 +820,14 @@ Explore to given file or folder. Returns False if it does not exist on the files
 */
 	const	CScoreMgr ScoreMgr;
 /*!
+Only available on console.
+*/
+	const	CPrivilegeMgr PrivilegeMgr;
+/*!
+Only available on console.
+*/
+	const	CPresenceMgr PresenceMgr;
+/*!
 
 */
 	const	CUserV2Manager UserMgr;
@@ -815,6 +835,10 @@ Explore to given file or folder. Returns False if it does not exist on the files
 
 */
 	const	CSystemPlatform System;
+/*!
+Maniaplanet System API, only available when the script has elevated privileges.
+*/
+	const	CManiaPlanet ManiaPlanet;
 /*!
 
 */
@@ -1512,6 +1536,10 @@ Supported declare modes : Local  Persistent
 This is the stations Manialink interface.
 */
 struct CMlStation : public CMlScript {
+/*!
+Maniaplanet System API, only available when the script has elevated privileges.
+*/
+	const	CManiaPlanet ManiaPlanet;
 /*!
 Will be Null if the script is not runing in a layer of an app.
 */
@@ -4024,6 +4052,280 @@ struct CTrackManiaAppPlayground : public CManiaAppPlayground {
 };
 
 /*!
+Supported declare modes : Local  Persistent 
+API for Maniaplanet plugins.
+*/
+struct CManiaplanetPlugin : public CManiaApp {
+	enum EContext {
+		MenuStartUp,
+		MenuManiaPlanet,
+		MenuManiaTitleMain,
+		MenuProfile,
+		MenuSolo,
+		MenuLocal,
+		MenuMulti,
+		MenuEditors,
+		EditorPainter,
+		EditorTrack,
+		EditorMediaTracker,
+		Solo,
+		SoloLoadScreen,
+		Multi,
+		MultiLoadScreen,
+		MenuCustom,
+		Unknown,
+	};
+	enum EUISound {
+		Alert,
+		ShowDialog,
+		HideDialog,
+	};
+/*!
+
+*/
+	const	CManiaAppEvent[] PendingEvents;
+/*!
+
+*/
+	const	CTitle[] TitlesAvailable;
+/*!
+
+*/
+	const	CTitle[] TitlesBases;
+/*!
+
+*/
+	const	Text[] TitleIdsInstalled;
+/*!
+
+*/
+	const	Text[] TitleIdsPayed;
+/*!
+
+*/
+	const	Integer CurrentAppId;
+/*!
+
+*/
+	const	Text CurrentServerLogin;
+/*!
+
+*/
+	const	Text CurrentServerName;
+/*!
+
+*/
+	const	Text CurrentServerModeName;
+/*!
+
+*/
+	const	Text CurrentServerJoinLink;
+/*!
+
+*/
+	const	CUser[] CurrentServerPlayers;
+/*!
+
+*/
+	const	CMap CurrentMap;
+/*!
+
+*/
+	const	EContext ActiveContext;
+/*!
+
+*/
+	const	Text ActiveContext_MenuFrame;
+/*!
+
+*/
+	const	Text ActiveContext_DialogFrame;
+/*!
+
+*/
+	const	Text ActiveContext_SystemDialogFrame;
+/*!
+
+*/
+	const	Boolean ActiveContext_ClassicDialogDisplayed;
+/*!
+
+*/
+	const	Integer ActiveContext_GameWill;
+/*!
+
+*/
+	const	Boolean ActiveContext_ManialinkBrowserDisplayed;
+/*!
+
+*/
+			Boolean PrivateSession;
+/*!
+
+*/
+	const	CChatManager ChatManager;
+/*!
+
+*/
+	const	CPlaygroundClient Playground;
+/*!
+
+*/
+	const	CAchievementsManager AchievementsManager;
+/*!
+
+*/
+	const	CNotificationsProducer NotificationsProducer;
+/*!
+
+*/
+	const	CNotificationsConsumer Notifications;
+/*!
+
+*/
+			Boolean ToolBarForceShow;
+/*!
+
+*/
+	const	Boolean ToolBarIsActive;
+/*!
+
+*/
+			Boolean ToolBarClockVisible;
+/*!
+
+*/
+			Boolean ToolBarPlanetsVisible;
+/*!
+
+*/
+			Boolean ToolBarBrowserVisible;
+/*!
+
+*/
+			Boolean ToolBarSoundVisible;
+/*!
+
+*/
+			Boolean ToolBarSettingsVisible;
+/*!
+Values in range (0.000000-1.000000)
+*/
+			Real MusicVolume;
+/*!
+
+*/
+			Void HackSetCurMenuControlVisible(Text ControlId,Boolean Visible);
+/*!
+
+*/
+			Boolean HackIsCurMenuControlVisible(Text ControlId);
+/*!
+
+*/
+			Boolean RequestStartUpFreeze;
+/*!
+
+*/
+			Void ClipboardSet(Text ClipboardText);
+/*!
+
+*/
+			Void QuitGameAndOpenLink(Text Url);
+/*!
+
+*/
+			Void ShowTitle(Text TitleId,Boolean ShowStation);
+/*!
+
+*/
+			Void EnterTitle(Text TitleId);
+/*!
+
+*/
+			Void ShowCurMapCard();
+/*!
+
+*/
+	const	CDialogs SystemDialogs;
+/*!
+
+*/
+	const	Boolean Dialog_IsFinished;
+/*!
+
+*/
+	const	Boolean Dialog_Success;
+/*!
+
+*/
+	const	Boolean Dialog_Aborted;
+/*!
+
+*/
+	const	Boolean UseAllies;
+/*!
+
+*/
+	const	Integer TotalTimePlay;
+/*!
+
+*/
+			Boolean LoadingScreenRequireKeyPressed;
+/*!
+
+*/
+			Void SetLocalUserClubLink(Text ClubLink);
+/*!
+
+*/
+			Void SetLocalUserNickName(Text NickName);
+/*!
+
+*/
+			Void FlashWindow();
+/*!
+
+*/
+	const	Integer Messenger_MessagesCount;
+/*!
+
+*/
+			Void PlaySound(EUISound Sound,Integer SoundVariant);
+/*!
+Internal api to the manilink browser
+*/
+	const	CBrowser ManialinkBrowser;
+/*!
+
+*/
+			Void SendExternalCustomEvent(Text Type,Text[] Data);
+/*!
+
+*/
+	const	CManiaplanetPluginInterfaces Plugins;
+};
+
+/*!
+Supported declare modes : Local  Persistent 
+This is the Maniaplanet plugins Manialink interface.
+*/
+struct CMlManiaPlanet : public CMlScript {
+/*!
+
+*/
+	const	CManiaPlanet ManiaPlanet;
+/*!
+Will be Null if the script is not runing in a layer of an app.
+*/
+	const	CManiaplanetPlugin ParentApp;
+/*!
+
+*/
+	const	CManiaplanetPluginInterfaces Plugins;
+};
+
+/*!
 
 */
 struct CNod {
@@ -4390,6 +4692,10 @@ struct CParsingManager : public CNod {
 */
 			Void Destroy(CParsingDocument Document);
 /*!
+Use struct.fromjson instead
+*/
+			Void Destroy(CJsonDocument Document);
+/*!
 Parses an XML document
 */
 			CParsingDocument Parse_Xml(Text Contents);
@@ -4401,6 +4707,10 @@ Parses an XML document
 
 */
 			Void Parse_Destroy(CParsingDocument Document);
+/*!
+Use struct.fromjson instead
+*/
+			Void Parse_Destroy(CJsonDocument Document);
 /*!
 
 */
@@ -4737,6 +5047,14 @@ struct CInputManager : public CNod {
 /*!
 
 */
+			Integer Dbg_AutoRepeat_InitialDelay;
+/*!
+
+*/
+			Integer Dbg_AutoRepeat_Period;
+/*!
+
+*/
 	const	Integer TimeSinceLatestMouseActivity;
 /*!
 
@@ -5009,6 +5327,78 @@ Returns a part of the global leaderboard.
 };
 
 /*!
+User privileges manager.
+*/
+struct CPrivilegeMgr : public CNod {
+	enum EPrivilege {
+		PlayMultiplayerMode,
+		PlayMultiplayerSession,
+		UploadUserCreatedContent,
+		ViewOnlinePresence,
+		ViewUserCreatedContent,
+		ViewUserCreatedContentRequired,
+		ViewUserGameHistory,
+		VoiceChat,
+		PlayMultiplayerAsync,
+		DownloadUserCreatedContent,
+	};
+/*!
+Array of task results.
+*/
+	const	CTaskResult[] TaskResults;
+/*!
+Release a task result no more used.
+*/
+			Void ReleaseTaskResult(Ident TaskId);
+/*!
+Check if the user has the specified privilege.
+*/
+			CTaskResult CheckPrivilege(Ident UserId,EPrivilege Privilege);
+/*!
+
+*/
+			CTaskResult CheckPrivilegeForAllUsers(EPrivilege Privilege);
+/*!
+Check if the user has the specified privilege related to each target user.
+*/
+			CTaskResult_CheckTargetedPrivilege CheckTargetedPrivilege(Ident UserId,EPrivilege Privilege);
+/*!
+
+*/
+			CTaskResult_CheckTargetedPrivilege CheckTargetedPrivilegeForAllUsers(EPrivilege Privilege);
+};
+
+/*!
+
+*/
+struct CPresenceMgr : public CNod {
+	enum ERichPresence {
+		Undefined,
+		MainMenu,
+		Solo,
+		Multi,
+		Party,
+		Create,
+	};
+/*!
+
+*/
+	const	CTaskResult[] TaskResults;
+/*!
+
+*/
+			Void ReleaseTaskResult(Ident TaskId);
+/*!
+
+*/
+			Void SetPresence(Ident UserId,ERichPresence UplayFlow);
+/*!
+
+*/
+			CTaskResult_GetOnlinePresence GetOnlinePresenceForPlayers(Ident UserId);
+};
+
+/*!
 
 */
 struct CAnimManager : public CNod {
@@ -5268,6 +5658,742 @@ Values in range (0.000000-50.000000)
 
 /*!
 Supported declare modes : Local  Persistent 
+Internal API for Maniaplanet.
+*/
+struct CManiaPlanet : public CNod {
+	enum EContext {
+		MenuStartUp,
+		MenuManiaPlanet,
+		MenuManiaTitleMain,
+		MenuProfile,
+		MenuSolo,
+		MenuLocal,
+		MenuMulti,
+		MenuEditors,
+		EditorPainter,
+		EditorTrack,
+		EditorMediaTracker,
+		Solo,
+		SoloLoadScreen,
+		Multi,
+		MultiLoadScreen,
+		MenuCustom,
+		Unknown,
+	};
+	enum ELinkType {
+		ExternalBrowser,
+		ManialinkBrowser,
+	};
+	enum EBuyTitleMode {
+		OpenStore,
+		BuyIfNeeded,
+		Ask,
+	};
+	enum EMenuStationsPage {
+		Channels,
+		Play,
+		Options,
+		Help,
+	};
+	enum EUplayFlow {
+		OverView,
+		Auth,
+		Reward,
+		Rewards,
+		Actions,
+	};
+	enum EHmdWearingState {
+		Dismount,
+		Mount,
+		Unknown,
+	};
+	enum EHmdTrackingState {
+		NotStarted,
+		Calibrating,
+		NotTracking,
+		Tracking,
+	};
+	enum EInputsListFilter {
+		All,
+		OnlyGeneral,
+		OnlyPlayer,
+	};
+/*!
+
+*/
+	const	Integer Now;
+/*!
+
+*/
+	const	Text CurrentTimezone;
+/*!
+
+*/
+	const	CUser LocalUser;
+/*!
+
+*/
+	const	CTitle LoadedTitle;
+/*!
+
+*/
+	const	CTitle[] TitlesAvailable;
+/*!
+
+*/
+	const	CTitle[] TitlesBases;
+/*!
+
+*/
+	const	Text[] TitleIdsInstalled;
+/*!
+
+*/
+	const	Text[] TitleIdsPayed;
+/*!
+
+*/
+	const	Integer EmptyStationsCount;
+/*!
+
+*/
+	const	CSystemPlatform System;
+/*!
+
+*/
+	const	CMap CurrentMap;
+/*!
+
+*/
+	const	EContext ActiveContext;
+/*!
+
+*/
+	const	Text ActiveContext_MenuFrame;
+/*!
+
+*/
+	const	Text ActiveContext_InGameDialogFrame;
+/*!
+
+*/
+	const	Text ActiveContext_DialogFrame;
+/*!
+
+*/
+	const	Text ActiveContext_SystemDialogFrame;
+/*!
+
+*/
+	const	Boolean ActiveContext_ClassicDialogDisplayed;
+/*!
+
+*/
+	const	Integer ActiveContext_GameWill;
+/*!
+
+*/
+	const	Boolean ActiveContext_ManialinkBrowserDisplayed;
+/*!
+
+*/
+	const	Boolean ActiveContext_MenuStationsDisplayed;
+/*!
+
+*/
+	const	Boolean ActiveContext_InGameMenuDisplayed;
+/*!
+
+*/
+	const	EMenuStationsPage ActiveContext_MenuStationsPage;
+/*!
+
+*/
+	const	EMenuStationsPage ActiveContext_MenuStationsClickedPage;
+/*!
+
+*/
+	const	Boolean ActiveContext_IsProfileEditable;
+/*!
+
+*/
+	const	Text CurrentServerLogin;
+/*!
+
+*/
+	const	Text CurrentServerName;
+/*!
+
+*/
+	const	Text CurrentServerModeName;
+/*!
+
+*/
+	const	Text CurrentServerJoinLink;
+/*!
+
+*/
+	const	CUser[] CurrentServerPlayers;
+/*!
+
+*/
+	const	Integer CurrentAppId;
+/*!
+
+*/
+			Boolean IsPrivateSession;
+/*!
+
+*/
+	const	Boolean IsKioskMode;
+/*!
+
+*/
+	const	Boolean ParentalLock_IsLocked;
+/*!
+
+*/
+	const	Integer TotalTimePlay;
+/*!
+
+*/
+	const	Integer Messenger_MessagesCount;
+/*!
+
+*/
+	const	Integer AccountPlanets;
+/*!
+
+*/
+	const	Boolean IsTitleTimeLimited;
+/*!
+
+*/
+	const	Boolean IsTitleTimeLimitActivated;
+/*!
+
+*/
+	const	Boolean CanUnlockTitleTimeLimitOnStore;
+/*!
+
+*/
+	const	Integer TitleTimeLeft;
+/*!
+
+*/
+	const	Integer CurConnectionDate;
+/*!
+
+*/
+	const	Integer PrevConnectionDate;
+/*!
+Values in range (-40.000000-0.000000)
+*/
+			Real MasterSoundVolume;
+/*!
+Values in range (-40.000000-0.000000)
+*/
+			Real MasterMusicVolume;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsDemo;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsPartialInstall;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsBeta;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsBetaDeactivated;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsOpenBeta;
+/*!
+
+*/
+	const	Boolean TmTurbo_IsSlowInstall;
+/*!
+
+*/
+			Boolean Settings_StationsManualLayout;
+/*!
+Overwrite the user's system clipboard.
+*/
+			Void ClipboardSet(Text ClipboardText);
+/*!
+
+*/
+			Void OpenLink(Text Url,ELinkType LinkType);
+/*!
+
+*/
+			Void QuitGameAndOpenLink(Text Url);
+/*!
+
+*/
+			Void InstallTitle(Text TitleId);
+/*!
+
+*/
+			Void InstallTitleFromUrl(Text Url,Text DisplayName);
+/*!
+
+*/
+			Void InstallTitleFromUrl(Text Url,Text DisplayName,Boolean EnterAfterInstall);
+/*!
+
+*/
+			Void InstallTitleFromUrl(Text Url,Text DisplayName,Text OpenLinkAfterInstall);
+/*!
+
+*/
+			Void ShowTitle(Text TitleId,Boolean ShowStation);
+/*!
+
+*/
+			Void SelectTitle(Text TitleId);
+/*!
+
+*/
+			Void EnterTitle(Text TitleId);
+/*!
+
+*/
+			Void ShowCurMapCard();
+/*!
+
+*/
+			Void SetMenuStationsActive(Boolean Activate);
+/*!
+
+*/
+			Void Dialog_Message(Text Message);
+/*!
+
+*/
+			Void Dialog_EnterGameKey();
+/*!
+
+*/
+			Void Dialog_BuyTitleDialog(Text TitleId,Text OverrideBuyUrl,Integer OverrideActionAfterBuy);
+/*!
+
+*/
+			Void Dialog_BuyTitleEx(Text TitleId,EBuyTitleMode Mode,Text OverrideBuyUrl,Integer OverrideActionAfterBuy);
+/*!
+
+*/
+			Void Dialog_GenerateGameKeys(Text TitleId,Integer FeaturesLevel,Integer NbToGenerate,Boolean AddBuddyOnRegistration);
+/*!
+
+*/
+			Void Dialog_BuyStations();
+/*!
+
+*/
+			Void Dialog_SetServerFavourite(Text ServerLogin,Boolean Favorite,Boolean Silent);
+/*!
+
+*/
+			Void Dialog_JoinServer(Text ServerLogin,Text ServerPassword,Boolean LAN,Boolean Spectate,Text TitleId,Boolean Silent,Boolean ChannelServer);
+/*!
+Only available if ActiveContext_IsProfileEditable
+*/
+			Void Dialog_ChangeAvatar();
+/*!
+Only available if ActiveContext_IsProfileEditable
+*/
+			Void Dialog_ChangeHorn();
+/*!
+
+*/
+			Void Dialog_ChangeCrosshair();
+/*!
+Only available if ActiveContext_IsProfileEditable
+*/
+			Void Dialog_ChangeZone();
+/*!
+Only available if ActiveContext_IsProfileEditable
+*/
+			Void Dialog_ChangePassword();
+/*!
+Only available if ActiveContext_IsProfileEditable
+*/
+			Void Dialog_CommitProfileChanges();
+/*!
+Device==Null -> allow all devices, ActionIndex==-1 -> unbind input
+*/
+			Void Dialog_BindInput(Integer ActionIndex,CInputPad Device);
+/*!
+Unbind all inputs from the specified device
+*/
+			Void Dialog_UnbindInputDevice(CInputPad Device);
+/*!
+Device==Null -> all devices
+*/
+			Void Dialog_DefaultInputBindings(CInputPad Device);
+/*!
+
+*/
+	const	Boolean Dialog_IsFinished;
+/*!
+
+*/
+	const	Boolean Dialog_Success;
+/*!
+
+*/
+	const	Boolean Dialog_Aborted;
+/*!
+
+*/
+			Void CustomMenu_Request(Text Type,Text[] Data);
+/*!
+
+*/
+			Boolean ParentalLock_Lock(Text Password);
+/*!
+
+*/
+			Boolean ParentalLock_Unlock(Text Password,Boolean UnlockOnce);
+/*!
+
+*/
+			Void SetLocalUserClubLink(Text ClubLink);
+/*!
+
+*/
+			Void SetLocalUserNickName(Text NickName);
+/*!
+
+*/
+			Void FlashWindow();
+/*!
+
+*/
+			Void CreateShortcut(Text ShortcutName,Text Url);
+/*!
+
+*/
+			Void HideSystemLoadingScreen();
+/*!
+
+*/
+			Boolean IsLiveStreamingEnabled;
+/*!
+
+*/
+			Boolean IsRemotePlayEnabled;
+/*!
+
+*/
+			Void TmTurbo_LoadingOpportunity();
+/*!
+
+*/
+	const	CChatManager ChatManager;
+/*!
+
+*/
+	const	CAchievementsManager AchievementsManager;
+/*!
+
+*/
+	const	CUserV2Manager UserMgr;
+/*!
+
+*/
+			Void Authentication_GetToken(Ident UserId,Text AppLogin);
+/*!
+
+*/
+	const	Boolean Authentication_GetTokenResponseReceived;
+/*!
+
+*/
+	const	Integer Authentication_ErrorCode;
+/*!
+
+*/
+	const	Text Authentication_Token;
+/*!
+
+*/
+	const	CTaskResult[] MasterServer_MSTaskResults;
+/*!
+
+*/
+			Void MasterServer_ReleaseMSTaskResult(Ident TaskId);
+/*!
+
+*/
+			Text MasterServer_GetURL(Text ShortCutId);
+/*!
+
+*/
+	const	CMasterServerUser MasterServer_MainMSUser;
+/*!
+
+*/
+	const	CMasterServerUser[] MasterServer_MSUsers;
+/*!
+
+*/
+			CMasterServerUser MasterServer_GetMSUserFromId(Ident UserId);
+/*!
+
+*/
+			CTaskResult_Connect MasterServer_Connect(Ident UserId);
+/*!
+
+*/
+			CTaskResult_GetDisplayNameResult MasterServer_GetDisplayName(Ident UserId);
+/*!
+
+*/
+			CTaskResult MasterServer_CheckNetworkAvailability(Ident UserId);
+/*!
+
+*/
+			CTaskResult_Session_Get MasterServer_GetSessionInfo(Ident UserId,Text SessionId);
+/*!
+
+*/
+			Void MasterServer_Zone_GetPathAndName(Text ZoneFullPath,Text ZonePath,Text ZoneName);
+/*!
+
+*/
+			CTaskResult_ZoneList MasterServer_Zone_GetChilds(Text ZoneFullPath);
+/*!
+
+*/
+			CTaskResult MasterServer_Zone_ChangeZone(Ident UserId,Text ZoneFullPath);
+/*!
+
+*/
+			CTaskResult_LaunchUplayResult MasterServer_UplayLaunch(Ident UserId,EUplayFlow UplayFlow,Integer RewardCode);
+/*!
+
+*/
+			CTaskResult_LaunchUplayResult MasterServer_UplayLaunch_v2(Ident UserId,EUplayFlow UplayFlow,Text RewardId);
+/*!
+
+*/
+			CTaskResult_LaunchUplayResult MasterServer_UplayLaunchAndCompleteActions(Ident UserId,EUplayFlow UplayFlow,Text RewardId);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextMenuStart(Ident UserId,Text MenuName);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextMenuStop(Ident UserId,Text MenuName);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextGameModeStart(Ident UserId,Text GameMode);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextGameModeStop(Ident UserId,Text GameMode);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextMapStart(Ident UserId,Text MapUid,Text Environment);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextMapStop(Ident UserId,Text MapUid);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextPlayStart(Ident UserId,Text Type);
+/*!
+
+*/
+			Void MasterServer_Tracking_ContextPlayStop(Ident UserId,Text Type,Text Reason,Integer NbRespawns);
+/*!
+
+*/
+			Void MasterServer_Tracking_MedalUnlock(Ident UserId,Integer Medal);
+/*!
+
+*/
+			Void MasterServer_Tracking_MedalUnlock_v2(Ident UserId,Integer PreviousMedal,Integer Medal);
+/*!
+
+*/
+			Void MasterServer_Tracking_NewMapCreated(Ident UserId,Text Environment,Boolean IsRandomlyGenerated);
+/*!
+
+*/
+			Void MasterServer_Tracking_NewsImpression(Ident UserId,Text NewsId);
+/*!
+
+*/
+			Void MasterServer_Tracking_NewsClick(Ident UserId,Text NewsId);
+/*!
+
+*/
+			Void MasterServer_Tracking_PlayerAchievement(Ident UserId,Integer AchievementId);
+/*!
+
+*/
+			Void MasterServer_Tracking_PlayerProgressionMap(Ident UserId,Text Value);
+/*!
+
+*/
+			Void MasterServer_Tracking_PlayerRespawn(Ident UserId,Integer RaceTime);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatCampaign(Ident UserId,Integer PlayedMapCount,Integer BronzeMedalCount,Integer SilverMedalCount,Integer GoldMedalCount,Integer AuthorMedalCount,Integer MaxDifficultyLevel);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatCampaign_v2(Ident UserId,Integer PlayedMapCount,Integer PlayedEnvCount,Integer BronzeMedalCount,Integer SilverMedalCount,Integer GoldMedalCount,Integer AuthorMedalCount,Integer MaxDifficultyLevel);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatChallenge(Ident UserId,Integer PendingChallengeCount);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatGlobalRanking(Ident UserId,Integer GlobalRanking);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatOnline(Ident UserId,Integer Echelon);
+/*!
+
+*/
+			Void MasterServer_Tracking_StatRecordCenter(Ident UserId,Integer BestCount,Integer EqualCount,Integer WorstCount);
+/*!
+
+*/
+			CTaskResult MasterServer_Beta_RetrieveUserInfo(Ident UserId);
+/*!
+
+*/
+			CTaskResult MasterServer_Beta_AcceptNDA(Ident UserId);
+/*!
+
+*/
+			CTaskResult_PlanetsTransationBill PlanetsTransaction_GivePlanets(Text LoginPayee,Integer Cost,Text Label);
+/*!
+
+*/
+			CTaskResult BuyFullGame(Ident UserId);
+/*!
+
+*/
+			CTaskResult ShowSystemError(Ident UserId,Integer ErrorCode);
+/*!
+
+*/
+			Void HMD_Activate(Boolean Enable);
+/*!
+
+*/
+	const	Boolean HMD_IsActive;
+/*!
+
+*/
+	const	Vec3 HMD_HeadTranslation;
+/*!
+
+*/
+	const	Real HMD_HeadYaw;
+/*!
+
+*/
+	const	Real HMD_HeadPitch;
+/*!
+
+*/
+	const	Real HMD_HeadRoll;
+/*!
+
+*/
+			Void HMD_ResetTracking();
+/*!
+
+*/
+			Void HMD_SelectUser();
+/*!
+
+*/
+	const	CUserV2 HMD_CurrentUser;
+/*!
+
+*/
+			Real HMD_WorldScale;
+/*!
+Be careful, when this value is not 1, the behavior is non-physic. May induce motion sicknessValues in range (0.000010-10000.000000)
+*/
+			Real HMD_MoveScale;
+/*!
+Values in range (0.200000-100.000000)
+*/
+			Real HMD_HUD_Distance;
+/*!
+
+*/
+	const	EHmdWearingState HMD_WearingState;
+/*!
+
+*/
+	const	EHmdTrackingState HMD_TrackingState;
+/*!
+
+*/
+	const	Boolean HMD_IsUserWarnBySystem_OutOfPlayArea;
+/*!
+
+*/
+			Boolean Cameras_BlackOut;
+/*!
+
+*/
+			Void DisplaySettings_LoadCurrent();
+/*!
+
+*/
+			Void DisplaySettings_Unload();
+/*!
+
+*/
+			Void DisplaySettings_Apply();
+/*!
+
+*/
+	const	CDisplaySettings DisplaySettings;
+/*!
+
+*/
+			Void InputBindings_UpdateList(EInputsListFilter Filter,CInputPad Device);
+/*!
+
+*/
+	const	Text[] InputBindings_ActionNames;
+/*!
+
+*/
+	const	Text[] InputBindings_Bindings;
+/*!
+In the list, players inputs come first, and then general inputs
+*/
+	const	Integer InputBindings_PlayerInputsCount;
+};
+
+/*!
+Supported declare modes : Local  Persistent 
 API for Maniaplanet client scripts.
 */
 struct CManiaAppBrowser : public CManiaApp {
@@ -5496,6 +6622,50 @@ struct CUserV2Manager : public CNod {
 NullId for the mainuser.
 */
 			CTaskResult_StringIntList GetGroups(Ident UserId);
+/*!
+
+*/
+			Void RequestMainUserChange();
+/*!
+
+*/
+	const	CUserV2[] Users;
+/*!
+
+*/
+	const	CInputPad MainUserPad;
+/*!
+
+*/
+	const	Boolean MainUserLogged;
+/*!
+
+*/
+	const	CUserV2 MainUser;
+/*!
+
+*/
+	const	Boolean Intro;
+/*!
+
+*/
+			Boolean CanSkipIntro;
+/*!
+
+*/
+			Void SetSkipIntro();
+/*!
+
+*/
+	const	Boolean MainUser_CanUseVoiceChat;
+/*!
+
+*/
+			Boolean VoiceChat_MuteAll;
+/*!
+
+*/
+			Void ShowProfile(Ident UserId,Text ProfileLogin);
 };
 
 /*!
@@ -6109,11 +7279,19 @@ struct CEditorModule : public CEditorBase {
 /*!
 
 */
+	const	CModulePlaygroundPlayerStateModel EditedPlaygroundPlayerState;
+/*!
+
+*/
 	const	CModulePlaygroundHudModel EditedPlaygroundHud;
 /*!
 
 */
 			Void EditedPlaygroundHud_SetPreviewContext(Ident ContextId);
+/*!
+
+*/
+			Boolean GetControlRect(Ident ElementId,Vec2 Center,Vec2 Size);
 /*!
 
 */
@@ -6636,6 +7814,10 @@ struct CEditorMesh : public CEditorAsset {
 
 */
 	const	Integer MaterialsUpdateId;
+/*!
+Use Material_GetBitmapBase or Material_GetBitmap instead; this array is necessary only for building the cannonical stack.
+*/
+	const	CImage[] AllBitmaps;
 /*!
 
 */
@@ -9639,6 +10821,10 @@ struct CMlScriptIngame : public CMlScript {
 */
 	const	CPlaygroundClient Playground;
 /*!
+Maniaplanet System API, only available when the script has elevated privileges.
+*/
+	const	CManiaPlanet ManiaPlanet;
+/*!
 (read-only) UI actually displayed, as defined by the server.
 */
 			CUIConfig UI;
@@ -10739,6 +11925,506 @@ struct CTmModeEvent : public CNod {
 };
 
 /*!
+Manager of buddies instant messaging.
+*/
+struct CChatManager : public CNod {
+	enum EConnectionStatus {
+		Offline,
+		Online,
+		Connecting,
+	};
+	enum EDesiredConnectionStatus {
+		Offline,
+		Online,
+	};
+	enum EPresenceShow {
+		Available,
+		WantToChat,
+		DoNotDisturb,
+		Away,
+		ExtendedAway,
+	};
+/*!
+
+*/
+	const	EConnectionStatus CurrentConnectionStatus;
+/*!
+
+*/
+			EDesiredConnectionStatus DesiredConnectionStatus;
+/*!
+
+*/
+	const	Boolean SteamIsEnabled;
+/*!
+
+*/
+			Void SendMessage(CChatContact Buddy,Text Body);
+/*!
+
+*/
+			Void SendMessage(CChatContact Buddy,Text Body,Text Link,Text Metadata);
+/*!
+
+*/
+			Void OpenSteamChat(CChatContact Buddy);
+/*!
+
+*/
+			Void PresenceSet(EPresenceShow Show,Text Status);
+/*!
+
+*/
+	const	EPresenceShow Presence_Show;
+/*!
+
+*/
+	const	Text Presence_Status;
+/*!
+
+*/
+			Void Room_SendMessage(CChatRoom Room,Text Body);
+/*!
+
+*/
+	const	Text CurrentServerLogin;
+/*!
+
+*/
+	const	Text CurrentServerName;
+/*!
+
+*/
+	const	Text CurrentServerJoinLink;
+/*!
+
+*/
+	const	Text CurrentServerModeName;
+/*!
+
+*/
+	const	Text CurrentServerModeStatus;
+/*!
+
+*/
+	const	Integer CurrentServerPlayerCount;
+/*!
+
+*/
+	const	Integer CurrentServerPlayerCountMax;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFull;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFullSpec;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsPrivate;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsPrivateSpec;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsHidden;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsLobby;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsRelay;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFavourite;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsWarmUp;
+/*!
+
+*/
+			CChatContact GetContactFromLogin(Text Login);
+/*!
+
+*/
+			Text Filter_SearchText;
+/*!
+
+*/
+			Boolean Filter_PlayingOnline;
+/*!
+
+*/
+	const	CChatContact[] Contacts;
+/*!
+List of all the buddies.
+*/
+	const	CChatContact[] Buddies;
+/*!
+
+*/
+	const	CChatContact[] FilteredBuddies;
+/*!
+List of the connected buddies.
+*/
+	const	CChatContact[] OnlineBuddies;
+/*!
+
+*/
+	const	CChatContact[] PlayingOnlineBuddies;
+/*!
+
+*/
+	const	CChatContact[] OfflineBuddies;
+/*!
+
+*/
+	const	CChatContact[] XmppBuddies;
+/*!
+
+*/
+	const	CChatContact[] XmppOnlineBuddies;
+/*!
+
+*/
+	const	CChatContact[] XmppOfflineBuddies;
+/*!
+
+*/
+	const	CChatContact[] SteamBuddies;
+/*!
+
+*/
+	const	CChatContact[] SteamOnlineBuddies;
+/*!
+
+*/
+	const	CChatContact[] SteamOfflineBuddies;
+/*!
+People that want to add you as a buddy
+*/
+	const	CChatContact[] IncomingBuddyRequests;
+/*!
+People that you want to add as a buddy
+*/
+	const	CChatContact[] OutgoingBuddyRequests;
+/*!
+
+*/
+	const	CChatEvent[] PendingEvents;
+/*!
+
+*/
+			Void AddBuddy(Text Login);
+/*!
+
+*/
+			Void RemoveBuddy(CChatContact Buddy);
+/*!
+
+*/
+			Void AcceptBuddy(CChatContact Buddy);
+/*!
+
+*/
+			Void AddBuddySlot();
+/*!
+
+*/
+	const	CChatHistory[] Histories;
+/*!
+
+*/
+			CChatHistory History_Create();
+/*!
+
+*/
+			CChatHistory History_Create_Contact(CChatContact Contact);
+/*!
+
+*/
+			CChatHistory History_Create_Room(CChatRoom Room);
+/*!
+
+*/
+			Void History_Destroy(CChatHistory History);
+/*!
+
+*/
+			Void History_DestroyAll();
+/*!
+
+*/
+	const	CChatRoom[] Channels;
+/*!
+
+*/
+	const	CChatRoom Squad;
+/*!
+
+*/
+	const	Text Squad_PreferredServer;
+/*!
+
+*/
+			Void Squad_Invite(Text Login);
+/*!
+
+*/
+			Void Squad_Leave();
+/*!
+
+*/
+	const	CChatSquadInvitation[] Squad_Invitations;
+/*!
+
+*/
+			Void Squad_Invitation_Accept(CChatSquadInvitation Invitation);
+/*!
+
+*/
+			Void Squad_Invitation_Decline(CChatSquadInvitation Invitation);
+};
+
+/*!
+Supported declare modes : Local  Persistent 
+API for plugins to get playground info.
+*/
+struct CPlaygroundClient : public CNod {
+/*!
+Null when no map loaded.
+*/
+	const	CMap Map;
+/*!
+
+*/
+	const	Integer GameTime;
+/*!
+
+*/
+	const	CUser LocalUser;
+/*!
+
+*/
+	const	CUIConfig UI;
+/*!
+
+*/
+	const	CServerInfo ServerInfo;
+/*!
+
+*/
+	const	Ident SettingsPlayerModelId;
+/*!
+Is in spectator mode - may be only for a short time between rounds.
+*/
+	const	Boolean IsSpectator;
+/*!
+Client actually desires to spectate instead of playing.
+*/
+	const	Boolean IsSpectatorClient;
+/*!
+
+*/
+	const	Boolean UseClans;
+/*!
+
+*/
+	const	Boolean UseForcedClans;
+/*!
+
+*/
+	const	Boolean IsLoadingScreen;
+/*!
+
+*/
+			Void QuitServer(Boolean Silent);
+/*!
+
+*/
+			Void QuitServerAndSetResult(Boolean Silent,Text Type,Text[] Data);
+/*!
+
+*/
+	const	Boolean IsInGameMenuDisplayed;
+/*!
+
+*/
+			Void JoinTeam1();
+/*!
+
+*/
+			Void JoinTeam2();
+/*!
+
+*/
+	const	CTeam[] Teams;
+/*!
+Request change of IsSpectatorClient (not immediate, and it may be refused).
+*/
+			Void RequestSpectatorClient(Boolean Spectator);
+/*!
+
+*/
+			Void SetSpectateTarget(Text Player);
+/*!
+
+*/
+			Void ShowProfile(Text Player);
+/*!
+
+*/
+			Boolean DisablePlayingStateTracking;
+};
+
+/*!
+Notifications Producing manager.
+*/
+struct CNotificationsProducer : public CNod {
+	enum ENotificationLifeSpan {
+		Game,
+		Session,
+		NeverEnding,
+	};
+	enum ENotificationPriority {
+		Memo,
+		Notice,
+		Alarm,
+	};
+/*!
+Events.
+*/
+	const	CNotificationsProducerEvent[] Events;
+/*!
+
+*/
+			Void SendNotification(Text[] CallbackParams,Text Title,Text Description,Text ImageUrl,ENotificationLifeSpan LifeSpan,ENotificationPriority Priority);
+};
+
+/*!
+
+*/
+struct CDialogs : public CNod {
+	enum EDialog {
+		None,
+		Message,
+		WaitMessage,
+	};
+/*!
+
+*/
+			Boolean EnableCustomSystemDialogs;
+/*!
+
+*/
+	const	EDialog Dialog;
+/*!
+
+*/
+	const	Text Message_LabelText;
+/*!
+
+*/
+	const	Text Message_ButtonText;
+/*!
+
+*/
+	const	Boolean Message_FocusOnButton;
+/*!
+
+*/
+			Void Message_Ok();
+/*!
+
+*/
+	const	Text WaitMessage_LabelText;
+/*!
+
+*/
+	const	Text WaitMessage_ButtonText;
+/*!
+Values in range (0.000000-1.000000)
+*/
+	const	Real WaitMessage_Progress;
+/*!
+
+*/
+	const	Boolean WaitMessage_ShowProgressBar;
+/*!
+
+*/
+	const	Boolean WaitMessage_ShowAbortButton;
+/*!
+
+*/
+			Void WaitMessage_Ok();
+};
+
+/*!
+Internal API to the manilink browser.
+*/
+struct CBrowser : public CNod {
+/*!
+
+*/
+			Boolean Manialink_Active;
+/*!
+
+*/
+			Text ManialinkBrowser_Link;
+/*!
+
+*/
+			Ident ManialinkBrowser_Frame3dFocused;
+/*!
+
+*/
+			Void ManialinkBrowser_OnHome();
+/*!
+
+*/
+			Void ManialinkBrowser_OnQuit();
+/*!
+
+*/
+			Void ManialinkBrowser_OnBack();
+/*!
+
+*/
+			Void ManialinkBrowser_OnForward();
+/*!
+
+*/
+			Void GoToHomeAndResetHistory();
+/*!
+Go to the url set in ManialinkBrowser_Link
+*/
+			Void GoToCurUrl();
+};
+
+/*!
+Script API to communicate with plugins.
+*/
+struct CManiaplanetPluginInterfaces : public CNod {
+/*!
+Fetch a specific plugin API.
+*/
+			CManiaplanetPluginInterface GetInterface(Text Name);
+/*!
+List of all the Plugins' APIs.
+*/
+	const	CManiaplanetPluginInterface[] Interfaces;
+};
+
+/*!
 Supported declare modes : Local 
 
 */
@@ -10747,6 +12433,10 @@ struct CMlFrame : public CMlControl {
 
 */
 	const	CMlControl[] Controls;
+/*!
+This array exists only for internal engine purposes, use GetFirstChild instead.
+*/
+	const	CMlControl[] ControlsCache;
 /*!
 
 */
@@ -11667,9 +13357,448 @@ List of the ranking info. Array of CRealLeaderBoardInfo objects.
 };
 
 /*!
+Results of task requesting if the registered login have a privilege.
+*/
+struct CTaskResult_CheckTargetedPrivilege : public CTaskResult {
+/*!
+Add a login to the request. Must be called before starting the task.
+*/
+			Void AddLogin(Text Login);
+/*!
+Start the request of privilege.
+*/
+			Void StartTask();
+/*!
+Returns true if the player has the privilege.
+*/
+			Boolean HasPrivilege(Text Login);
+/*!
+Returns the reason why the user does not have the privilege.
+*/
+			Text GetDenyReason(Text Login);
+};
+
+/*!
+Results of task requesting the list of servers where the logins are playing.
+*/
+struct CTaskResult_GetOnlinePresence : public CTaskResult {
+/*!
+List of the online presence. Array of CGameMasterServerPlayerOnlinePresenceScript objects.
+*/
+	const	COnlinePresence[] OnlinePresences;
+/*!
+Add a login to the request. Must be called before starting the task.
+*/
+			Void AddLogin(Text Login);
+/*!
+Start the request for getting the list of servers.
+*/
+			Void StartTask();
+};
+
+/*!
 
 */
 struct CPlug : public CNod {
+};
+
+/*!
+Masterserver user info.
+*/
+struct CMasterServerUser : public CNod {
+/*!
+
+*/
+	const	Boolean NeedToChangeZone;
+/*!
+Number of level in the full path of the user zone.
+*/
+	const	Integer ZoneLevelCount;
+/*!
+Returns the zone path of the indicated level.
+*/
+			Text GetZone(Integer ZoneLevel);
+/*!
+
+*/
+	const	Integer MultiInternetPlayTimeLeft;
+	enum EMasterServerConnectionStatus {
+		NotConnected,
+		Connecting,
+		Connected,
+		Disconnecting,
+	};
+/*!
+
+*/
+	const	Ident Id;
+/*!
+Login.
+*/
+	const	Text Login;
+/*!
+Display name.
+*/
+	const	Text DisplayName;
+/*!
+Connection status: NotConnected, Connecting, Connected or Disconnecting.
+*/
+	const	EMasterServerConnectionStatus ConnectionStatus;
+/*!
+
+*/
+	const	Text LastConnectionErrorType;
+/*!
+
+*/
+	const	Text LastConnectionErrorCode;
+/*!
+
+*/
+	const	Text LastConnectionErrorDescription;
+/*!
+Return if the user has a Uplay profile.
+*/
+	const	Boolean HasUplayProfile;
+/*!
+Return if the user has a accepted DNA.
+*/
+	const	Boolean HasAcceptedNDA;
+};
+
+/*!
+Asynchronous task result.
+*/
+struct CTaskResult_Connect : public CTaskResult {
+};
+
+/*!
+Results of task requesting the display name of registered login.
+*/
+struct CTaskResult_GetDisplayNameResult : public CTaskResult {
+/*!
+Add a login to the request. Must be called before starting the task.
+*/
+			Void AddLogin(Text Login);
+/*!
+Start the request of display name.
+*/
+			Void StartTask();
+/*!
+Get a display name for a login. Must be called after the task has succeeded.
+*/
+			Text GetDisplayName(Text Login);
+};
+
+/*!
+Asynchronous task result.
+*/
+struct CTaskResult_Session_Get : public CTaskResult {
+/*!
+
+*/
+	const	Text SessionId;
+/*!
+
+*/
+	const	Text ServerLogin;
+/*!
+
+*/
+	const	Text ServerPassword;
+};
+
+/*!
+Results containing a list of child zones of a specified zone.
+*/
+struct CTaskResult_ZoneList : public CTaskResult {
+/*!
+Path of the parent zone.
+*/
+	const	Text Path;
+/*!
+Number of child zones.
+*/
+	const	Integer ZoneCount;
+/*!
+List of the child zones. Array of CZone objects.
+*/
+	const	CZone[] Zones;
+};
+
+/*!
+Results of task launching Uplay and completing action at registration.
+*/
+struct CTaskResult_LaunchUplayResult : public CTaskResult {
+/*!
+Add an action to complete at registration. Must be called before starting the task.
+*/
+			Void AddActionToComplete(Text ActionId);
+/*!
+Start the launch of uplay.
+*/
+			Void StartTask();
+};
+
+/*!
+Asynchronous task result.
+*/
+struct CTaskResult_PlanetsTransationBill : public CTaskResult {
+	enum EState {
+		Void,
+		CreatingTransaction,
+		Issued,
+		ValidatingPayement,
+		Payed,
+		Refused,
+		Error,
+	};
+/*!
+
+*/
+	const	EState State;
+/*!
+
+*/
+	const	Integer TransactionId;
+/*!
+
+*/
+	const	Text LoginPayer;
+/*!
+
+*/
+	const	Text LoginPayee;
+/*!
+
+*/
+	const	Text Label;
+/*!
+
+*/
+	const	Integer Cost;
+};
+
+/*!
+Supported declare modes : Local  Persistent 
+SystemUser from the platform.
+*/
+struct CUserV2 : public CNod {
+/*!
+
+*/
+	const	Text SystemName;
+/*!
+
+*/
+	const	Text DisplayName;
+/*!
+
+*/
+	const	Vec3 Color;
+/*!
+
+*/
+	const	Boolean PersistentIsReady;
+/*!
+
+*/
+			Void PersistentSave();
+/*!
+
+*/
+	const	CUserV2Profile Config;
+};
+
+/*!
+Script API for graphic settings
+*/
+struct CDisplaySettings : public CNod {
+	enum EDisplayMode {
+		FullscreenExclusive,
+		Windowed,
+		WindowedFull,
+	};
+	enum EGpuSync {
+		None,
+		_3Frames,
+		_2Frames,
+		_1Frames,
+		Immediate,
+	};
+	enum EDisplaySync {
+		None,
+		VBlank1,
+		VBlank2,
+		VBlank3,
+	};
+	enum ETripleBuffer {
+		Off,
+		On,
+	};
+	enum EForwardAA {
+		None,
+		_2x,
+		_4x,
+		_6x,
+		_8x,
+		_16x,
+	};
+	enum EDeferredAA {
+		None,
+		FXAA,
+	};
+	enum ETextureFilter {
+		Bilinear,
+		Trilinear,
+		Aniso_2x,
+		Aniso_4x,
+		Aniso_8x,
+		Aniso_16x,
+		Aniso_16x_Everywhere,
+	};
+	enum EFxBloomHdr {
+		None,
+		Medium,
+		High,
+	};
+	enum EFxMotionBlur {
+		None,
+		Enabled,
+	};
+	enum EWaterReflect {
+		Low,
+		Med,
+		High,
+	};
+	enum EVehicleReflect {
+		Low,
+		HighInReplay,
+		High,
+	};
+	enum EScreenshotExt {
+		JPEG,
+		WebP,
+		TGA,
+	};
+	enum ERealtimeSSAA {
+		Disabled,
+		_2Renders,
+		_3Renders,
+		_4Renders,
+		_5Renders,
+		_6Renders,
+		_7Renders,
+		_8Renders,
+		_9Renders,
+	};
+	enum ERealtimeSSAA_Motion {
+		Disabled,
+		_1Frame,
+		_2Frames,
+		_3Frames,
+		_4Frames,
+	};
+/*!
+This value is incremented when FullscreenSizes, IsDeferred, DisplayMode, WindowSize, or WindowFullSize change .
+*/
+	const	Integer DirtyCounter;
+/*!
+
+*/
+			Text DeviceInfo;
+/*!
+
+*/
+			EDisplayMode DisplayMode;
+/*!
+
+*/
+			Int2 WindowSize;
+/*!
+
+*/
+			Boolean WindowBorderless;
+/*!
+
+*/
+	const	Int2 WindowFullSize;
+/*!
+
+*/
+			Int2 FullscreenSize;
+/*!
+
+*/
+	const	Int2[] FullscreenSizes;
+/*!
+Current shading pipeline, if true Antialias_Deferred setting is used, otherwise it is Antialias_Forward.
+*/
+	const	Boolean IsDeferred;
+/*!
+
+*/
+			EForwardAA Antialias_Forward;
+/*!
+
+*/
+			EDeferredAA Antialias_Deferred;
+/*!
+
+*/
+			ETextureFilter TextureFiltering;
+/*!
+
+*/
+			Integer MaxFps;
+/*!
+
+*/
+			EGpuSync GpuSync;
+/*!
+
+*/
+			EDisplaySync DisplaySync;
+/*!
+
+*/
+			ETripleBuffer TripleBuffer;
+/*!
+
+*/
+			EWaterReflect WaterReflect;
+/*!
+
+*/
+			EVehicleReflect VehicleReflect;
+/*!
+
+*/
+			EFxBloomHdr FxBloomHdr;
+/*!
+
+*/
+			EFxMotionBlur FxMotionBlur;
+/*!
+Values in range (0.000000-1.000000)
+*/
+			Real FxMotionBlurIntens;
+/*!
+
+*/
+			EScreenshotExt ScreenshotExt;
+/*!
+
+*/
+			ERealtimeSSAA RealtimeSSAA;
+/*!
+
+*/
+			ERealtimeSSAA_Motion RealtimeSSAA_Motion;
+/*!
+
+*/
+			Integer RealtimeSSAA_MinimumFps;
 };
 
 /*!
@@ -12300,97 +14429,6 @@ struct CManiaAppPlaygroundEvent : public CManiaAppEvent {
 };
 
 /*!
-Supported declare modes : Local  Persistent 
-API for plugins to get playground info.
-*/
-struct CPlaygroundClient : public CNod {
-/*!
-Null when no map loaded.
-*/
-	const	CMap Map;
-/*!
-
-*/
-	const	Integer GameTime;
-/*!
-
-*/
-	const	CUser LocalUser;
-/*!
-
-*/
-	const	CUIConfig UI;
-/*!
-
-*/
-	const	CServerInfo ServerInfo;
-/*!
-
-*/
-	const	Ident SettingsPlayerModelId;
-/*!
-Is in spectator mode - may be only for a short time between rounds.
-*/
-	const	Boolean IsSpectator;
-/*!
-Client actually desires to spectate instead of playing.
-*/
-	const	Boolean IsSpectatorClient;
-/*!
-
-*/
-	const	Boolean UseClans;
-/*!
-
-*/
-	const	Boolean UseForcedClans;
-/*!
-
-*/
-	const	Boolean IsLoadingScreen;
-/*!
-
-*/
-			Void QuitServer(Boolean Silent);
-/*!
-
-*/
-			Void QuitServerAndSetResult(Boolean Silent,Text Type,Text[] Data);
-/*!
-
-*/
-	const	Boolean IsInGameMenuDisplayed;
-/*!
-
-*/
-			Void JoinTeam1();
-/*!
-
-*/
-			Void JoinTeam2();
-/*!
-
-*/
-	const	CTeam[] Teams;
-/*!
-Request change of IsSpectatorClient (not immediate, and it may be refused).
-*/
-			Void RequestSpectatorClient(Boolean Spectator);
-/*!
-
-*/
-			Void SetSpectateTarget(Text Player);
-/*!
-
-*/
-			Void ShowProfile(Text Player);
-/*!
-
-*/
-			Boolean DisablePlayingStateTracking;
-};
-
-/*!
 Supported declare modes : Local  NetworkRead  NetworkWrite 
 This object handles the interface.
 */
@@ -12944,6 +14982,48 @@ struct CModuleMenuPageModel : public CNod {
 
 */
 			Text ManialinkText;
+};
+
+/*!
+
+*/
+struct CModulePlaygroundPlayerStateModel : public CGameModulePlaygroundModel {
+/*!
+
+*/
+			Boolean DynamicPreview;
+/*!
+
+*/
+			Real PreviewSpeed;
+/*!
+
+*/
+			Ident ComponentAdd(CModulePlaygroundPlayerStateComponentModel::Model ComponentModel);
+/*!
+
+*/
+			Ident ComponentAdd(CModulePlaygroundPlayerStateComponentModel::Model ComponentModel,Text ComponentName);
+/*!
+
+*/
+			Ident ComponentSetNameAndId(Ident ComponentId,Text NewComponentName);
+/*!
+
+*/
+			Void ComponentRemove(Ident ComponentId);
+/*!
+
+*/
+	const	Ident[] ComponentIds;
+/*!
+
+*/
+			Void ComponentRetrieve(Ident ComponentId);
+/*!
+
+*/
+			CModulePlaygroundPlayerStateComponentModel Component;
 };
 
 /*!
@@ -13889,6 +15969,463 @@ struct CTmResult : public CNod {
 };
 
 /*!
+A buddy from the buddy list.
+*/
+struct CChatContact : public CNod {
+	enum ESubscription {
+		None,
+		Pending,
+		Accepted,
+	};
+	enum EPresenceShow {
+		Offline,
+		Available,
+		WantToChat,
+		DoNotDisturb,
+		Away,
+		ExtendedAway,
+	};
+/*!
+
+*/
+	const	Text Login;
+/*!
+
+*/
+	const	Text Name;
+/*!
+
+*/
+	const	Text Description;
+/*!
+
+*/
+	const	Text ZonePath;
+/*!
+Buddy chat state
+*/
+	const	EPresenceShow PresenceShow;
+/*!
+Human readable status, reflecting show.
+*/
+	const	Text PresenceStatus;
+/*!
+
+*/
+	const	ESubscription Subscription_From;
+/*!
+
+*/
+	const	ESubscription Subscription_To;
+/*!
+
+*/
+	const	Boolean IsXmpp;
+/*!
+
+*/
+	const	Boolean IsSteam;
+/*!
+
+*/
+	const	Boolean IsLegacy;
+/*!
+True is the player as at least one resource connected.
+*/
+	const	Boolean IsOnline;
+/*!
+
+*/
+	const	Boolean IsOnlineInLegacy;
+/*!
+
+*/
+	const	Boolean IsOnlineInXmpp;
+/*!
+
+*/
+	const	Boolean IsOnlineInSteam;
+/*!
+
+*/
+	const	Boolean IsBuddyInManiaPlanet;
+/*!
+
+*/
+			Boolean IsAlly;
+/*!
+
+*/
+	const	Text CurrentServerLogin;
+/*!
+
+*/
+	const	Text CurrentServerName;
+/*!
+
+*/
+	const	Text CurrentServerJoinLink;
+/*!
+
+*/
+	const	Text CurrentServerModeName;
+/*!
+
+*/
+	const	Text CurrentServerModeStatus;
+/*!
+
+*/
+	const	Integer CurrentServerPlayerCount;
+/*!
+
+*/
+	const	Integer CurrentServerPlayerCountMax;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFull;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFullSpec;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsPrivate;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsPrivateSpec;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsHidden;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsLobby;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsRelay;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsFavourite;
+/*!
+
+*/
+	const	Boolean CurrentServer_IsWarmUp;
+/*!
+
+*/
+			Void NotifyInteraction();
+/*!
+
+*/
+	const	CImage Avatar;
+/*!
+
+*/
+	const	Text AvatarUrl;
+};
+
+/*!
+Supported declare modes : Local 
+Event from the BuddiesManager.
+*/
+struct CChatEvent : public CBaseConstEvent {
+	enum EType {
+		Message,
+		ChatRoomMessage,
+		PresenceChange,
+		BuddyChange,
+		AddBuddyResult,
+		RemoveBuddyResult,
+		JoinRoomResult,
+		ConnectionStatusUpdate,
+		HistoryUpdate,
+		ContactListChange,
+		AddBuddySlotResult,
+		SquadInviteResult,
+		SquadInvitationReceived,
+	};
+	enum ESubscriptionStatus {
+		None,
+		RequestFrom,
+		RequestTo,
+		Both,
+	};
+	enum ESubscription {
+		None,
+		Pending,
+		Accepted,
+	};
+	enum EPresenceShow {
+		Offline,
+		Available,
+		WantToChat,
+		DoNotDisturb,
+		Away,
+		ExtendedAway,
+	};
+	enum EAddBuddySlotStatus {
+		Success,
+		AlreadyBuddy,
+		NotConnected,
+		UnknownLogin,
+		RosterFull,
+		SubscriptionsFull,
+		Timeout,
+		Invalid,
+		ParentalLock,
+	};
+/*!
+Type of the event
+*/
+	const	EType Type;
+/*!
+
+*/
+	const	CChatContact Sender;
+/*!
+
+*/
+	const	Text SenderResource;
+/*!
+
+*/
+	const	Text MessageBody;
+/*!
+
+*/
+	const	CChatRoom ChatRoom;
+/*!
+
+*/
+	const	Text SenderNickname;
+/*!
+
+*/
+	const	CChatContact Buddy;
+/*!
+
+*/
+	const	Boolean PreviousIsOnline;
+/*!
+
+*/
+	const	EPresenceShow PreviousShow;
+/*!
+
+*/
+	const	Text PreviousStatus;
+/*!
+
+*/
+	const	Text PreviousServerLogin;
+/*!
+
+*/
+	const	Text PreviousServerName;
+/*!
+
+*/
+	const	Text PreviousServerJoinLink;
+/*!
+
+*/
+	const	Text PreviousServerModeName;
+/*!
+
+*/
+	const	Text PreviousServerModeStatus;
+/*!
+
+*/
+	const	Integer PreviousServerPlayerCount;
+/*!
+
+*/
+	const	Integer PreviousServerPlayerCountMax;
+/*!
+
+*/
+	const	ESubscriptionStatus PreviousSubscriptionStatus;
+/*!
+
+*/
+	const	ESubscription PreviousSubscription_From;
+/*!
+
+*/
+	const	ESubscription PreviousSubscription_To;
+/*!
+
+*/
+	const	Text PreviousNickname;
+/*!
+
+*/
+	const	Text PreviousDescription;
+/*!
+
+*/
+	const	Boolean ContactList;
+/*!
+
+*/
+	const	Boolean ContactListBuddies;
+/*!
+
+*/
+	const	Boolean ContactListPlayingOnlineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListOnlineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListOfflineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListXmppBuddies;
+/*!
+
+*/
+	const	Boolean ContactListXmppOnlineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListXmppOfflineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListSteamBuddies;
+/*!
+
+*/
+	const	Boolean ContactListSteamOnlineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListSteamOfflineBuddies;
+/*!
+
+*/
+	const	Boolean ContactListIncomingBuddyRequest;
+/*!
+
+*/
+	const	Boolean ContactListOutgoingBuddyRequest;
+/*!
+
+*/
+	const	Text BuddyLogin;
+/*!
+
+*/
+	const	EAddBuddySlotStatus Status;
+/*!
+
+*/
+	const	Text RoomName;
+/*!
+
+*/
+	const	Boolean Success;
+/*!
+
+*/
+	const	Text ErrorMessage;
+/*!
+
+*/
+	const	CChatHistory History;
+/*!
+
+*/
+	const	CChatSquadInvitation Invitation;
+};
+
+/*!
+A filtered history
+*/
+struct CChatHistory : public CNod {
+/*!
+An combination of filter in Inverse Polish Notation 	 <ul> 		<li> 			<em>[XXXXX] [YYYYY] *</em> : must match both filters 		</li> 		<li> 			<em>[XXXXX] [YYYYY] +</em> : must match one of the filters 		</li> 		<li> 			<em>l[XXXXX];</em> : remote login must match (case insensitive)		</li> 		<li> 			<em>r[XXXXX];</em> : room name must match (case insensitive)		</li> 		<li> 			<em>it</em> : must be a room message. <em>if</em> : must be a non-room message. 		</li> 	</ul> 	Important note : If the Filter is empty, no Entry will appear. 	Exemples : 	 <ul> 		<li> 			<em>lgugli; if *</em> : remote login must be gugli AND message must not come from a chatroom 		</li> 		<li> 			<em>lgugli1; lgugli2; + it *</em> : (remote login must be gugli1 OR gugli2) AND message must come from a chatroom 		</li> 		<li> 			Inside a script, it should look like <em> History.Filter = "l" ^ MyLogin ^ "; if *"</em> 		</li> 	</ul> 	
+*/
+			Text Filter;
+/*!
+
+*/
+	const	Boolean Filter_IsValid;
+/*!
+
+*/
+	const	CChatEntry[] Entries;
+};
+
+/*!
+A chat room.
+*/
+struct CChatRoom : public CNod {
+/*!
+Id of the room
+*/
+	const	Text RoomId;
+/*!
+
+*/
+	const	CChatContact[] Members;
+};
+
+/*!
+An invitation to join a squad.
+*/
+struct CChatSquadInvitation : public CNod {
+/*!
+Sender of the invitation
+*/
+	const	CChatContact Sender;
+};
+
+/*!
+An event.
+*/
+struct CNotificationsProducerEvent : public CNod {
+	enum EType {
+		NotificationHasBeenActivated,
+	};
+/*!
+Type of the event.
+*/
+	const	EType Type;
+};
+
+/*!
+Supported declare modes : Local 
+
+*/
+struct CManiaplanetPluginInterface : public CNod {
+/*!
+
+*/
+	const	Text Name;
+/*!
+
+*/
+			Void CustomEvent(Text Type,Text[] Data);
+/*!
+
+*/
+	const	CManiaplanetPluginInterfaceEvent[] PendingEvents;
+};
+
+/*!
 
 */
 struct CParsingNode : public CNod {
@@ -14265,6 +16802,50 @@ ReplayUrl.
 };
 
 /*!
+Online presence
+*/
+struct COnlinePresence : public CNod {
+/*!
+Player login.
+*/
+	const	Text Login;
+/*!
+Player dsiplay name.
+*/
+	const	Text DisplayName;
+/*!
+Login of the server on which the player is.
+*/
+	const	Text ServerLogin;
+/*!
+Boolean indicating if the player is online
+*/
+	const	Boolean IsOnline;
+};
+
+/*!
+
+*/
+struct CZone : public CNod {
+/*!
+
+*/
+	const	Text Name;
+/*!
+
+*/
+	const	Text Path;
+/*!
+
+*/
+	const	Text FullPath;
+/*!
+
+*/
+	const	Text FlagUrl;
+};
+
+/*!
 Vehicle or Character settings.
 */
 struct CVehicleSettings : public CNod {
@@ -14344,6 +16925,58 @@ Name of the map
 True if the file is found
 */
 	const	Boolean FileExists;
+};
+
+/*!
+
+*/
+struct CGameModulePlaygroundModel : public CNod {
+};
+
+/*!
+
+*/
+struct CModulePlaygroundPlayerStateComponentModel : public CNod {
+	enum Type {
+		Invalid,
+		Gauge,
+		List,
+	};
+	enum Model {
+		Invalid,
+		WeaponGauge,
+		ArmorGauge,
+		StaminaGauge,
+		WeaponList,
+	};
+/*!
+
+*/
+	const	Type Type;
+/*!
+
+*/
+			Text Name;
+/*!
+
+*/
+			Real PosX;
+/*!
+
+*/
+			Real PosY;
+/*!
+
+*/
+			Real ZIndex;
+/*!
+
+*/
+			Real Scale;
+/*!
+
+*/
+			Real Rotation;
 };
 
 /*!
@@ -14593,6 +17226,63 @@ struct CMapObjectAnchor : public CNod {
 };
 
 /*!
+Supported declare modes : Local 
+An message from the history.
+*/
+struct CChatEntry : public CNod {
+	enum EDirection {
+		Sent,
+		Recieved,
+	};
+/*!
+Was the message sent or recieved
+*/
+	const	EDirection Direction;
+/*!
+True if the messages were sent to/recieved form a room
+*/
+	const	Boolean InRoom;
+/*!
+Formated date
+*/
+	const	Text Date;
+/*!
+List of the entry's messages
+*/
+	const	CChatMessage[] Messages;
+/*!
+Nickname of the sender contact.
+*/
+	const	Text SenderNickname;
+/*!
+Url of the sender's avatar
+*/
+	const	Text SenderAvatarUrl;
+};
+
+/*!
+Supported declare modes : Local 
+An event
+*/
+struct CManiaplanetPluginInterfaceEvent : public CBaseConstEvent {
+	enum EType {
+		PluginCustomEvent,
+	};
+/*!
+
+*/
+	const	EType Type;
+/*!
+
+*/
+	const	Text EventType;
+/*!
+
+*/
+	const	Text[] EventData;
+};
+
+/*!
 A recipient included in the bill for a Pack.
 */
 struct CPackCreatorRecipient : public CNod {
@@ -14655,6 +17345,25 @@ struct CSmBase : public CNod {
 
 */
 	const	Integer NumberOfCollectors;
+};
+
+/*!
+Supported declare modes : Local 
+An message in the history.
+*/
+struct CChatMessage : public CNod {
+/*!
+Text of the message
+*/
+	const	Text Body;
+/*!
+
+*/
+	const	Text Link;
+/*!
+
+*/
+	const	Text Metadata;
 };
 
 /*!
