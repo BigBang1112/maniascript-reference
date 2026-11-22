@@ -21,60 +21,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
+  build:
+    uses: ./.github/workflows/build-docs.yml
+    with:
+      upload-pages-artifact: true
+
   deploy:
-  
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     runs-on: ubuntu-latest
-    
+
     steps:
-    
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-      
-      - name: Generate ManiaPlanet documentation
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          working-directory: ManiaPlanet
-      
-      - name: Generate Trackmania documentation
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          working-directory: Trackmania
-      
-      - name: Generate Trackmania Turbo documentation
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          working-directory: TrackmaniaTurbo
-      
-      - name: Generate ManiaPlanet 3 documentation
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          working-directory: ManiaPlanet3
-      
-      - name: Organize the docs
-        run: |
-          mkdir docs
-          sudo mv index.html docs/index.html
-          sudo mv 404.html docs/404.html
-          sudo mv ManiaPlanet/docs/html docs/maniaplanet
-          sudo mv Trackmania/docs/html docs/trackmania
-          sudo mv TrackmaniaTurbo/docs/html docs/tmturbo
-          sudo mv ManiaPlanet3/docs/html docs/maniaplanet3outdated
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-          
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@main
+        uses: actions/deploy-pages@v5

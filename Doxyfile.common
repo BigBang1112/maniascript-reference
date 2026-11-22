@@ -1,0 +1,25 @@
+# Doxyfile 1.18.0
+
+PROJECT_LOGO           = logo.png
+OUTPUT_DIRECTORY       = docs
+
+INPUT                  = README.md \
+                         doc.h
+USE_MDFILE_AS_MAINPAGE = README.md
+TOC_INCLUDE_HEADINGS   = 0
+CASE_SENSE_NAMES       = NO
+
+HTML_EXTRA_STYLESHEET  = ../doxygen-awesome-css/doxygen-awesome.css
+HTML_COLORSTYLE        = LIGHT
+HTML_COLORSTYLE_HUE    = 205
+HTML_COLORSTYLE_SAT    = 134
+HTML_COLORSTYLE_GAMMA  = 108
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+
+GENERATE_LATEX         = NO
+
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = svg
+COLLABORATION_GRAPH    = NO

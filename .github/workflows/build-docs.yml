@@ -1,0 +1,70 @@
+# Reusable workflow that builds all documentation sets.
+# Tool versions are pinned here (single source of truth for CI and Pages).
+name: Build documentation
+
+on:
+  workflow_call:
+    inputs:
+      upload-pages-artifact:
+        description: Upload the built site as a GitHub Pages artifact
+        type: boolean
+        default: false
+
+env:
+  DOXYGEN_VERSION: 1.18.0 # https://github.com/doxygen/doxygen/releases
+  DOXYGEN_AWESOME_CSS_VERSION: v2.5.0 # https://github.com/jothepro/doxygen-awesome-css/releases
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Checkout Doxygen Awesome CSS ${{ env.DOXYGEN_AWESOME_CSS_VERSION }}
+        uses: actions/checkout@v7
+        with:
+          repository: jothepro/doxygen-awesome-css
+          ref: ${{ env.DOXYGEN_AWESOME_CSS_VERSION }}
+          path: doxygen-awesome-css
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends graphviz
+
+      - name: Install Doxygen ${{ env.DOXYGEN_VERSION }}
+        run: |
+          tag="Release_${DOXYGEN_VERSION//./_}"
+          url="https://github.com/doxygen/doxygen/releases/download/${tag}/doxygen-${DOXYGEN_VERSION}.linux.bin.tar.gz"
+          curl -fsSL "$url" | tar -xz -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/doxygen-${DOXYGEN_VERSION}/bin" >> "$GITHUB_PATH"
+
+      - name: Generate documentation
+        run: |
+          doxygen --version
+          for dir in ManiaPlanet Trackmania TrackmaniaTurbo ManiaPlanet3; do
+            echo "::group::$dir"
+            (cd "$dir" && doxygen Doxyfile)
+            echo "::endgroup::"
+          done
+
+      - name: Organize the docs
+        run: |
+          mkdir docs
+          cp index.html 404.html docs/
+          mv ManiaPlanet/docs/html docs/maniaplanet
+          mv Trackmania/docs/html docs/trackmania
+          mv TrackmaniaTurbo/docs/html docs/tmturbo
+          mv ManiaPlanet3/docs/html docs/maniaplanet3outdated
+
+      - name: Setup Pages
+        if: inputs.upload-pages-artifact
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        if: inputs.upload-pages-artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs

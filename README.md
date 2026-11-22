@@ -15,7 +15,14 @@ For ManiaPlanet, it's no longer expected that the game will update.
 
 ## Doxygen Awesome
 
-The project includes the Doxygen Awesome CSS theme as submodule and is currently used for official builds.
+Official builds use the [Doxygen Awesome CSS](https://github.com/jothepro/doxygen-awesome-css) theme. The Doxygen and Doxygen Awesome CSS versions are pinned in [`.github/workflows/build-docs.yml`](.github/workflows/build-docs.yml) (`DOXYGEN_VERSION` and `DOXYGEN_AWESOME_CSS_VERSION`), so updating either one only takes a change there.
+
+To build locally, clone the theme into the repository root at the same version (the folder is git-ignored):
+
+```sh
+git clone --depth 1 --branch v2.5.0 https://github.com/jothepro/doxygen-awesome-css
+cd Trackmania && doxygen Doxyfile
+```
 
 ## Plans
 
