@@ -11,7 +11,7 @@ on:
         default: false
 
 env:
-  DOXYGEN_VERSION: 1.9.4 # https://github.com/doxygen/doxygen/releases (last before 1.9.5 added dark mode)
+  DOXYGEN_VERSION: 1.13.2 # https://github.com/doxygen/doxygen/releases (1.14+ removes spacing between member rows)
   DOXYGEN_AWESOME_CSS_VERSION: v2.5.0 # https://github.com/jothepro/doxygen-awesome-css/releases
 
 jobs:
